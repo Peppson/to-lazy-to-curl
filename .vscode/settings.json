@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/.vs": true
+  },
+  "search.exclude": {
+    "**/MyProject/**": true
+  },
+  
+  "workspaceKeybindings.dotnetRun.enabled": true
+}

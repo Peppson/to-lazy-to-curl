@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Dotnet run",
+            "type": "shell",
+            "command": "dotnet run",
+            "group": "build",
+            "presentation": {
+                "panel": "shared", 
+                "reveal": "always",
+                "focus": true,
+                "clear": true,
+                "showReuseMessage": false
+            },
+            "options": {
+                "cwd": "${fileDirname}"
+            }
+        }
+    ]
+}
