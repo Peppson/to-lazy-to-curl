@@ -67,6 +67,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!--  URL  -->
@@ -116,22 +117,53 @@
                 VerticalScrollBarVisibility="Auto" />
         </Grid>
 
-        <!--  Button  -->
-        <Grid Grid.Row="2" Margin="0,20,0,0">
+        <!--  Message  -->
+        <TextBlock
+            x:Name="MessageTextBlock"
+            Grid.Row="2"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Center"
+            FontSize="14"
+            FontWeight="Bold"
+            Text="please do something here"
+            TextAlignment="Center" />
+
+        <!--  Buttons  -->
+        <Grid Grid.Row="3" Margin="0,20,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
+            <!--  Submit  -->
             <Button
                 x:Name="SubmitButton"
-                Grid.Column="1"
+                Grid.Column="0"
                 Height="42"
                 Click="SubmitButton_Click"
-                Content="POST!"
+                Content="POST"
                 Cursor="Hand"
                 Style="{StaticResource NoHoverFocusButtonStyle}" />
+
+            <!--  Clear  -->
+            <Button
+                x:Name="ClearButton"
+                Grid.Column="2"
+                Height="42"
+                Click="ClearButton_Click"
+                Content="CLEAR"
+                Cursor="Hand"
+                Style="{StaticResource NoHoverFocusButtonStyle}" />
+
         </Grid>
+
+
+
+
+
+
+
+
     </Grid>
 </Window>

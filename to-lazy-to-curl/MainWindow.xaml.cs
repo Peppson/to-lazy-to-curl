@@ -25,13 +25,8 @@ public partial class MainWindow : Window
         SetWindowSizeAndPosition();
         UpdateBorderColors();
 
-        DebugPreFillTextBoxes();
-    }
-
-    private void DebugPreFillTextBoxes() // todo
-    {
         UrlTextBox.Text = "https://localhost:7291/snus/test";
-        JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
+        //JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -55,6 +50,8 @@ public partial class MainWindow : Window
         }
     }
 
+    
+
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
         string url = UrlTextBox.Text;
@@ -64,25 +61,51 @@ public partial class MainWindow : Window
 
         if (state != FormState.Filled)
         {
-            await AnimateInvalidInputs(state);
+            var tasks = new List<Task>
+            {
+                ShowMessageAsync("Please fill in all fields correctly!", Brushes.Red, 3000),
+                AnimateInvalidInputs(state)
+            };
+            await Task.WhenAll(tasks);
+
             return;
         }
 
-        SubmitButton.Background = Brushes.Green;
+        //SubmitButton.Background = Brushes.Green;
+
 
         if (await SendPostRequestAsync(url, json))
         {
-            //MessageBox.Show("POST request sent successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             Console.WriteLine("POST request sent successfully!");
         }
         else
         {
             Console.WriteLine("Failed to send POST request.");
-            //MessageBox.Show("Failed to send POST request.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        submitButtonColor = submitButtonColor; ;
+        SubmitButton.Background = submitButtonColor;
     }
+
+
+
+    private void ClearButton_Click(object sender, RoutedEventArgs e)
+    {
+        UrlTextBox.Text = string.Empty;
+        JsonTextBox.Text = string.Empty;
+        UrlTextBox.BorderBrush = Brushes.Gray;
+        JsonTextBox.BorderBrush = Brushes.Gray;
+        MessageTextBlock.Opacity = 0;
+        MessageTextBlock.Text = "";
+    }
+
+    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        UpdateBorderColors();
+    }
+
+
+
+
 
     private static async Task<bool> SendPostRequestAsync(string url, string json)
     {
@@ -124,10 +147,7 @@ public partial class MainWindow : Window
         return FormState.Filled;
     }
 
-    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-    {
-        UpdateBorderColors();
-    }
+    
 
     private void UpdateBorderColors()
     {
@@ -136,11 +156,30 @@ public partial class MainWindow : Window
         var UrlhasText =
             !string.IsNullOrWhiteSpace(UrlTextBox!.Text) &&
             Uri.IsWellFormedUriString(UrlTextBox!.Text, UriKind.Absolute);
-            
+
         var JsonhasText = !string.IsNullOrWhiteSpace(JsonTextBox!.Text);
 
         UrlTextBox.BorderBrush = UrlhasText ? Brushes.Green : Brushes.Gray;
         JsonTextBox.BorderBrush = JsonhasText ? Brushes.Green : Brushes.Gray;
+    }
+
+
+    private async Task ShowMessageAsync(string message, SolidColorBrush color, int durationMs)
+    { 
+        MessageTextBlock.Text = message;
+        MessageTextBlock.Foreground = color;
+        MessageTextBlock.Opacity = 1;
+
+        // Fade in
+        var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
+        MessageTextBlock.BeginAnimation(OpacityProperty, fadeIn);
+
+        // Wait
+        await Task.Delay(durationMs);
+
+        // Fade out
+        var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(300));
+        MessageTextBlock.BeginAnimation(OpacityProperty, fadeOut);
     }
 
 
@@ -150,7 +189,7 @@ public partial class MainWindow : Window
 
     private async Task AnimateInvalidInputs(FormState formState)
     {
-        const int durationMs = 350;
+        const int durationMs = 450;
         const double shakeOffset = 3;
         var animation = GetAnimation(shakeOffset, durationMs);
 
@@ -201,8 +240,7 @@ public partial class MainWindow : Window
         return animation;
     }
     
-
-
+    
 
     
     
