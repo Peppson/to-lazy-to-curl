@@ -125,7 +125,7 @@
             HorizontalAlignment="Center"
             FontSize="14"
             FontWeight="Bold"
-            Text="please do something here"
+            Text=""
             TextAlignment="Center" />
 
         <!--  Buttons  -->
