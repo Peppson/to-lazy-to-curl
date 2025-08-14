@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using Newtonsoft.Json;
 
 namespace to_lazy_to_curl;
 
@@ -29,8 +30,55 @@ public partial class MainWindow : Window
         SetWindowSizeAndPosition();
         UpdateBorderColors();
 
+
+        JsonTextBox.Options.EnableHyperlinks = false;
+        JsonTextBox.Options.EnableEmailHyperlinks = false;
+
+
+        
+
+
+        string jsonRaw = "{" +
+            "\"id\": 42," +
+            "\"name\": \"Some Name\"," +
+            "\"email\": \"Some.Name@example.com\"," +
+            "\"isActive\": true," +
+            "\"roles\": [\"admin\", \"editor\"]," +
+            "\"profile\": {" +
+                "\"age\": 31," +
+                "\"address\": {" +
+                    "\"street\": \"123 Main St\"," +
+                    "\"city\": \"New York\"," +
+                    "\"zip\": \"10001\"" +
+                "}" +
+            "}," +
+            "\"projects\": [" +
+                "{" +
+                    "\"id\": 1," +
+                    "\"name\": \"Worst WPF App\"," +
+                    "\"status\": \"Done-in-a-day\"" +
+                "}," +
+                "{" +
+                    "\"id\": 2," +
+                    "\"name\": \"ESP32 Shenanigans\"," +
+                    "\"status\": \"Completed\"" +
+                "}" +
+            "]" +
+        "}";
+
+        string formattedJson = JsonConvert.SerializeObject(
+            JsonConvert.DeserializeObject(jsonRaw), 
+            Formatting.Indented
+        ); 
+        JsonTextBox.Text = formattedJson;
+        
+
+       
+
+
+
         UrlTextBox.Text = "https://localhost:7291/snus/test"; // todo
-        JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
+        //JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -76,7 +124,7 @@ public partial class MainWindow : Window
             _ = ShowMessageAsync("POST request sent successfully!", Brushes.Green, _messageDuration);
         else
             _ = ShowMessageAsync(ErrorMsg!, Brushes.Red, _messageDuration);
-            
+
         SubmitButton.IsEnabled = true;
     }
 
@@ -105,7 +153,7 @@ public partial class MainWindow : Window
             var response = await client.PostAsync(url, content);
 
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-            { 
+            {
                 return (false, "404: Endpoint not found!");
             }
 
@@ -137,8 +185,8 @@ public partial class MainWindow : Window
 
     private static FormState ValidateInputs(string url, string json)
     {
-        bool isUrlEmpty = string.IsNullOrWhiteSpace(url);
-        bool isJsonEmpty = string.IsNullOrWhiteSpace(json);
+        var isUrlEmpty = string.IsNullOrWhiteSpace(url);
+        var isJsonEmpty = string.IsNullOrWhiteSpace(json);
 
         isUrlEmpty = isUrlEmpty || !Uri.IsWellFormedUriString(url, UriKind.Absolute);
 
@@ -164,7 +212,7 @@ public partial class MainWindow : Window
     }
 
     private async Task ShowMessageAsync(string message, SolidColorBrush color, int durationMs)
-    { 
+    {
         // Cancel any previous messages
         _messageCts?.Cancel();
         _messageCts = new CancellationTokenSource();
@@ -192,17 +240,14 @@ public partial class MainWindow : Window
     }
 
     private static void ShowMessageBox(string msg)
-    { 
+    {
         MessageBox.Show(
             msg,
-            "Warning",
+            "Error",
             MessageBoxButton.OK,
-            MessageBoxImage.Warning
+            MessageBoxImage.Error
         );
     }
-
-
-
 
     private async Task InvalidInputAnimationAsync(FormState formState)
     {
@@ -258,12 +303,4 @@ public partial class MainWindow : Window
 
         return animation;
     }
-    
-    
-
-    
-    
-
-
-    
 }
