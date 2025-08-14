@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Net.Http;
+using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -9,7 +11,7 @@ public partial class MainWindow : Window
 {
     private enum FormState
     {
-        HasText,
+        Filled,
         UrlEmpty,
         JsonEmpty,
         BothEmpty
@@ -22,6 +24,14 @@ public partial class MainWindow : Window
         InitializeComponent();
         SetWindowSizeAndPosition();
         UpdateBorderColors();
+
+        DebugPreFillTextBoxes();
+    }
+
+    private void DebugPreFillTextBoxes() // todo
+    {
+        UrlTextBox.Text = "https://localhost:7291/snus/test";
+        JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -50,14 +60,54 @@ public partial class MainWindow : Window
         string url = UrlTextBox.Text;
         string json = JsonTextBox.Text;
         var state = ValidateInputs(url, json);
+        var submitButtonColor = SubmitButton.Background;
 
-        if (state != FormState.HasText)
+        if (state != FormState.Filled)
         {
             await AnimateInvalidInputs(state);
             return;
         }
 
-        MessageBox.Show($"URL: {url}\nJSON:\n{json}", "Debug");
+        SubmitButton.Background = Brushes.Green;
+
+        if (await SendPostRequestAsync(url, json))
+        {
+            //MessageBox.Show("POST request sent successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            Console.WriteLine("POST request sent successfully!");
+        }
+        else
+        {
+            Console.WriteLine("Failed to send POST request.");
+            //MessageBox.Show("Failed to send POST request.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        submitButtonColor = submitButtonColor; ;
+    }
+
+    private static async Task<bool> SendPostRequestAsync(string url, string json)
+    {
+        try
+        {
+            using var client = new HttpClient
+            {
+                Timeout = TimeSpan.FromSeconds(5)
+            };
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(url, content);
+
+            return response.IsSuccessStatusCode;
+        }
+        catch (TaskCanceledException)
+        {
+            MessageBox.Show("POST request timed out after 5 seconds.", "Timeout", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return false;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error sending POST request: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            return false;
+        }
     }
 
     private static FormState ValidateInputs(string url, string json)
@@ -65,11 +115,13 @@ public partial class MainWindow : Window
         bool isUrlEmpty = string.IsNullOrWhiteSpace(url);
         bool isJsonEmpty = string.IsNullOrWhiteSpace(json);
 
+        isUrlEmpty = isUrlEmpty || !Uri.IsWellFormedUriString(url, UriKind.Absolute);
+
         if (isUrlEmpty && isJsonEmpty) return FormState.BothEmpty;
         if (isUrlEmpty) return FormState.UrlEmpty;
         if (isJsonEmpty) return FormState.JsonEmpty;
 
-        return FormState.HasText;
+        return FormState.Filled;
     }
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -81,7 +133,10 @@ public partial class MainWindow : Window
     {
         if (UrlTextBox == null && JsonTextBox == null) return;
 
-        var UrlhasText = !string.IsNullOrWhiteSpace(UrlTextBox!.Text);
+        var UrlhasText =
+            !string.IsNullOrWhiteSpace(UrlTextBox!.Text) &&
+            Uri.IsWellFormedUriString(UrlTextBox!.Text, UriKind.Absolute);
+            
         var JsonhasText = !string.IsNullOrWhiteSpace(JsonTextBox!.Text);
 
         UrlTextBox.BorderBrush = UrlhasText ? Brushes.Green : Brushes.Gray;
@@ -97,11 +152,11 @@ public partial class MainWindow : Window
     {
         const int durationMs = 350;
         const double shakeOffset = 3;
+        var animation = GetAnimation(shakeOffset, durationMs);
 
         var urlTextBoxColor = UrlTextBox.BorderBrush;
         var jsonTextBoxColor = JsonTextBox.BorderBrush;
         var submitButtonColor = SubmitButton.Background;
-        var animation = GetAnimation(shakeOffset, durationMs);
 
         // Button
         SubmitButton.Background = Brushes.Red;
