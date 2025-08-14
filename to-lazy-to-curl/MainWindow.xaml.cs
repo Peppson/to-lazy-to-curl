@@ -1,23 +1,21 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using to_lazy_to_curl.Properties;
-using System;
-using System.Runtime.InteropServices;
-using System.Windows;
-using System.Windows.Interop;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace to_lazy_to_curl;
 
 public partial class MainWindow : Window
 {
-    private readonly Brush _emptyBorder = Brushes.Gray;
-    private readonly Brush _filledBorder = Brushes.Green;
+    private enum FormState
+    {
+        HasText,
+        UrlEmpty,
+        JsonEmpty,
+        BothEmpty
+    }
+
+
 
     public MainWindow()
     {
@@ -47,16 +45,31 @@ public partial class MainWindow : Window
         }
     }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
+    private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
         string url = UrlTextBox.Text;
         string json = JsonTextBox.Text;
+        var state = ValidateInputs(url, json);
 
-        if (!ValidateInputs(url, json))
-            return; 
+        if (state != FormState.HasText)
+        {
+            await AnimateInvalidInputs(state);
+            return;
+        }
 
-        // For now, just show what was entered
         MessageBox.Show($"URL: {url}\nJSON:\n{json}", "Debug");
+    }
+
+    private static FormState ValidateInputs(string url, string json)
+    {
+        bool isUrlEmpty = string.IsNullOrWhiteSpace(url);
+        bool isJsonEmpty = string.IsNullOrWhiteSpace(json);
+
+        if (isUrlEmpty && isJsonEmpty) return FormState.BothEmpty;
+        if (isUrlEmpty) return FormState.UrlEmpty;
+        if (isJsonEmpty) return FormState.JsonEmpty;
+
+        return FormState.HasText;
     }
 
     private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -68,32 +81,77 @@ public partial class MainWindow : Window
     {
         if (UrlTextBox == null && JsonTextBox == null) return;
 
-        var UrlhasText = !string.IsNullOrWhiteSpace(UrlTextBox.Text);
-        var JsonhasText = !string.IsNullOrWhiteSpace(JsonTextBox.Text);
+        var UrlhasText = !string.IsNullOrWhiteSpace(UrlTextBox!.Text);
+        var JsonhasText = !string.IsNullOrWhiteSpace(JsonTextBox!.Text);
 
-        UrlTextBox.BorderBrush = UrlhasText ? _filledBorder : _emptyBorder;
-        JsonTextBox.BorderBrush = JsonhasText ? _filledBorder : _emptyBorder;
-
-
-        Console.WriteLine($"URL TextBox Border: {UrlTextBox.BorderBrush}, JSON TextBox Border: {JsonTextBox.BorderBrush}");
+        UrlTextBox.BorderBrush = UrlhasText ? Brushes.Green : Brushes.Gray;
+        JsonTextBox.BorderBrush = JsonhasText ? Brushes.Green : Brushes.Gray;
     }
 
-    private static bool ValidateInputs(string url, string json)
+
+
+
+
+
+    private async Task AnimateInvalidInputs(FormState formState)
     {
-        if (string.IsNullOrWhiteSpace(url) || url.Length > 300)
+        const int durationMs = 350;
+        const double shakeOffset = 3;
+
+        var urlTextBoxColor = UrlTextBox.BorderBrush;
+        var jsonTextBoxColor = JsonTextBox.BorderBrush;
+        var submitButtonColor = SubmitButton.Background;
+        var animation = GetAnimation(shakeOffset, durationMs);
+
+        // Button
+        SubmitButton.Background = Brushes.Red;
+        SubmitButton.RenderTransform = new TranslateTransform();
+        SubmitButton.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
+
+        // Fields
+        if (formState == FormState.UrlEmpty || formState == FormState.BothEmpty)
         {
-            MessageBox.Show("Please enter a URL.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            return false;
+            UrlTextBox.BorderBrush = Brushes.Red;
+            UrlTextBox.RenderTransform = new TranslateTransform();
+            UrlTextBox.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
         }
 
-        if (string.IsNullOrWhiteSpace(json) || json.Length > 700)
+        if (formState == FormState.JsonEmpty || formState == FormState.BothEmpty)
         {
-            MessageBox.Show("Please enter JSON data.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            return false;
+            JsonTextBox.BorderBrush = Brushes.Red;
+            JsonTextBox.RenderTransform = new TranslateTransform();
+            JsonTextBox.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
         }
 
-        return true;
+        await Task.Delay(durationMs);
+        SubmitButton.Background = submitButtonColor;
+        UrlTextBox.BorderBrush = urlTextBoxColor;
+        JsonTextBox.BorderBrush = jsonTextBoxColor;
     }
+
+    private static DoubleAnimationUsingKeyFrames GetAnimation(double offset, int durationMs)
+    {
+        var animation = new DoubleAnimationUsingKeyFrames
+        {
+            Duration = TimeSpan.FromMilliseconds(durationMs)
+        };
+
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromPercent(0)));
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(-offset, KeyTime.FromPercent(0.1)));
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(offset, KeyTime.FromPercent(0.2)));
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(-offset, KeyTime.FromPercent(0.3)));
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(offset, KeyTime.FromPercent(0.4)));
+        animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromPercent(0.5)));
+
+        return animation;
+    }
+    
+
+
+
+    
+    
+
 
     
 }

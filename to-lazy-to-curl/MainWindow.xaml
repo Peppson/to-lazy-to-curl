@@ -36,6 +36,30 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="NoHoverFocusButtonStyle" TargetType="Button">
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Background" Value="#FFDDDDDD" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="1"
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                RecognizesAccessKey="True" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Grid Margin="20,10,20,20">
@@ -101,12 +125,13 @@
             </Grid.ColumnDefinitions>
 
             <Button
+                x:Name="SubmitButton"
                 Grid.Column="1"
                 Height="42"
-                Click="Button_Click"
-                Content="POST!" />
+                Click="SubmitButton_Click"
+                Content="POST!"
+                Cursor="Hand"
+                Style="{StaticResource NoHoverFocusButtonStyle}" />
         </Grid>
     </Grid>
-
-
 </Window>
