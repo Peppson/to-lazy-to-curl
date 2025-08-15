@@ -193,7 +193,7 @@ public partial class MainWindow : Window
 
         var JsonHasText = !string.IsNullOrWhiteSpace(JsonTextBox!.Text);
 
-        UrlTextBox.BorderBrush = UrlHasText ? Brushes.Green : Brushes.Gray;
+        //UrlTextBox.BorderBrush = UrlHasText ? Brushes.Green : Brushes.Gray;
         JsonTextBox.BorderBrush = JsonHasText ? Brushes.Green : Brushes.Gray;
     }
 

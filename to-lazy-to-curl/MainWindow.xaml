@@ -12,6 +12,7 @@
     MinWidth="400"
     MinHeight="480"
     MaxWidth="1400"
+    Background="#fdfdfd"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/test2.ico"
     mc:Ignorable="d">
@@ -20,8 +21,6 @@
         <Style x:Key="NoHoverFocusTextBoxStyle" TargetType="TextBox">
             <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="BorderBrush" Value="Black" />
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -41,6 +40,7 @@
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="White" />
         </Style>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     </Window.Resources>
 
 
@@ -55,71 +55,117 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!--  URL  -->
+        <!--  URL Form  -->
         <StackPanel Grid.Row="0" Orientation="Vertical">
+
             <TextBlock
-                Margin="0,0,0,5"
+                Margin="0,0,0,6"
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
+                Foreground="#333333"
                 Text="URL" />
 
-            <TextBox
-                x:Name="UrlTextBox"
-                Height="34"
-                Margin="0,0,0,10"
-                VerticalAlignment="Center"
-                VerticalContentAlignment="Center"
-                Background="#e5e9f0"
-                FontSize="15"
-                Style="{StaticResource NoHoverFocusTextBoxStyle}"
-                TextAlignment="Center"
-                TextChanged="TextBox_TextChanged"
-                TextWrapping="NoWrap" />
+            <Border
+                Background="#fefefe"
+                BorderBrush="#d4d4d4"
+                BorderThickness="1"
+                CornerRadius="6">
+
+                <Border
+                    Margin="12,12,12,12"
+                    VerticalAlignment="Center"
+                    BorderBrush="#d4d4d4"
+                    BorderThickness="1"
+                    CornerRadius="4">
+
+                    <Grid>
+                        <TextBox
+                            x:Name="UrlTextBox"
+                            Height="32"
+                            Padding="4,0"
+                            VerticalContentAlignment="Center"
+                            Background="#ffffff"
+                            FontSize="15"
+                            Foreground="#333333"
+                            Style="{StaticResource NoHoverFocusTextBoxStyle}"
+                            TextChanged="TextBox_TextChanged"
+                            TextWrapping="NoWrap" />
+
+                        <TextBlock
+                            Padding="6,0"
+                            VerticalAlignment="Center"
+                            FontSize="15"
+                            Foreground="#999999"
+                            IsHitTestVisible="False"
+                            Text="Enter a URL..."
+                            Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
+                    </Grid>
+                </Border>
+            </Border>
         </StackPanel>
+
 
         <!--  JSON  -->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <!--<RowDefinition Height="Auto" />-->
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
+
+            <!--
             <StackPanel
                 Grid.Row="1"
-                Margin="0,4,0,5"
+                Margin="0,4,0,6"
                 HorizontalAlignment="Left"
                 Orientation="Horizontal">
                 <Button
                     x:Name="RequestButton"
                     Width="80"
+                    Background="#323234"
                     Content="Request" />
                 <Button
                     x:Name="ResponseButton"
                     Width="80"
+                    Background="#323234"
                     Content="Response" />
             </StackPanel>
+            -->
 
             <TextBlock
                 Grid.Row="0"
-                Margin="0,4,0,5"
+                Margin="0,10,0,6"
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
+                Foreground="#333333"
                 Text="Body" />
 
-            <avalonEdit:TextEditor
-                Name="JsonTextBox"
+            <Border
                 Grid.Row="2"
-                Background="Transparent"
-                FontFamily="Consolas"
-                FontSize="14"
-                HorizontalScrollBarVisibility="Auto"
-                IsReadOnly="false"
-                ShowLineNumbers="True"
-                SyntaxHighlighting="Json"
-                VerticalScrollBarVisibility="Visible" />
+                Background="#fefefe"
+                BorderBrush="#d4d4d4"
+                BorderThickness="1"
+                CornerRadius="6">
+
+
+
+                <avalonEdit:TextEditor
+                    Name="JsonTextBox"
+                    Background="#ffffff"
+                    FontFamily="Consolas"
+                    FontSize="14"
+                    HorizontalScrollBarVisibility="Auto"
+                    IsReadOnly="false"
+                    ShowLineNumbers="True"
+                    SyntaxHighlighting="Json"
+                    VerticalScrollBarVisibility="Visible" />
+
+            </Border>
+
+
         </Grid>
 
 
@@ -140,7 +186,7 @@
         <StackPanel Grid.Row="3" Orientation="Vertical">
 
             <TextBlock
-                Margin="0,0,0,5"
+                Margin="0,0,0,6"
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
@@ -416,6 +462,8 @@
                 </Button.Template>
             </Button>
         </Grid>
+
+
 
 
 
