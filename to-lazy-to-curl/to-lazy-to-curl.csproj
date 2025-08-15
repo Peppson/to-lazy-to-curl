@@ -27,6 +27,7 @@
     <None Remove="Assets\kalv.ico" />
     <None Remove="Assets\kalv.png" />
     <None Remove="Assets\kalv2.ico" />
+    <None Remove="Assets\test2.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +35,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\kalv2.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\test2.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

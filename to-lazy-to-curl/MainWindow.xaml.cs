@@ -63,15 +63,15 @@ public partial class MainWindow : Window
     { 
         string jsonRaw = "{" +
             "\"id\": 42," +
-            "\"name\": \"Some Name\"," +
-            "\"email\": \"Some.Name@example.com\"," +
+            "\"name\": \"Name\"," +
+            "\"email\": \"Name@example.com\"," +
             "\"isActive\": true," +
-            "\"roles\": [\"admin\", \"editor\"]," +
+            "\"roles\": [\"admin\", \"programmer\"]," +
             "\"projects\": [" +
                 "{" +
                     "\"id\": 1," +
-                    "\"name\": \"Worst WPF App\"," +
-                    "\"status\": \"Done-in-a-day\"" +
+                    "\"name\": \"Worst WPF App in History\"," +
+                    "\"status\": \"Done-in-a-day-maybe\"" +
                 "}," +
                 "{" +
                     "\"id\": 2," +

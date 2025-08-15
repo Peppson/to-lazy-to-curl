@@ -8,11 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="To Lazy to Curl"
     Width="620"
-    Height="760"
-    MinWidth="420"
+    Height="670"
+    MinWidth="400"
     MinHeight="480"
+    MaxWidth="1400"
     FontFamily="Consolas"
-    Icon="pack://application:,,,/Assets/kalv2.ico"
+    Icon="pack://application:,,,/Assets/test2.ico"
     mc:Ignorable="d">
 
     <Window.Resources>
@@ -30,7 +31,6 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="1"
-                            CornerRadius="3"
                             SnapsToDevicePixels="True">
                             <ScrollViewer x:Name="PART_ContentHost" Focusable="False" />
                         </Border>
@@ -42,6 +42,9 @@
             <Setter Property="Foreground" Value="White" />
         </Style>
     </Window.Resources>
+
+
+
 
     <Grid Margin="24,10,24,24">
         <Grid.RowDefinitions>
@@ -79,8 +82,24 @@
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+
+            <StackPanel
+                Grid.Row="1"
+                Margin="0,4,0,5"
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="RequestButton"
+                    Width="80"
+                    Content="Request" />
+                <Button
+                    x:Name="ResponseButton"
+                    Width="80"
+                    Content="Response" />
+            </StackPanel>
 
             <TextBlock
                 Grid.Row="0"
@@ -88,11 +107,12 @@
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
-                Text="JSON" />
+                Text="Body" />
 
             <avalonEdit:TextEditor
                 Name="JsonTextBox"
-                Grid.Row="1"
+                Grid.Row="2"
+                Background="Transparent"
                 FontFamily="Consolas"
                 FontSize="14"
                 HorizontalScrollBarVisibility="Auto"
@@ -102,16 +122,19 @@
                 VerticalScrollBarVisibility="Visible" />
         </Grid>
 
+
+
         <!--  Message  -->
         <TextBlock
             x:Name="MessageTextBlock"
             Grid.Row="2"
-            Margin="0,10,0,20"
+            Margin="0,10,0,0"
             HorizontalAlignment="Center"
             FontSize="14"
             FontWeight="Bold"
-            Text="fdsfs dsdfsd fsdf sdfsdf sdfds fsdf sd"
+            Text=""
             TextAlignment="Center" />
+
 
         <!--  Buttons  -->
         <StackPanel Grid.Row="3" Orientation="Vertical">
@@ -121,7 +144,7 @@
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
-                Text="Method" />
+                Text="Actions" />
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -132,79 +155,78 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-
-
-
                 <Button
                     Grid.Column="0"
                     Height="32"
                     Margin="0,0,4,0"
-                    Content="GET"
+                    Content="Get"
                     Cursor="Hand"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <!--  Left stripe  -->
-                                <Border
-                                    Width="8"
-                                    HorizontalAlignment="Left"
-                                    Background="Red">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Border>
-
-                                <!--  Main button  -->
-                                <Border
-                                    x:Name="border"
-                                    Background="#4c566a"
-                                    BorderBrush="Black"
-                                    BorderThickness="1" />
-                            </Grid>
+                            <Border
+                                x:Name="outer"
+                                Background="#4c566a"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                <Grid>
+                                    <Border
+                                        x:Name="leftStripe"
+                                        Width="6"
+                                        HorizontalAlignment="Left"
+                                        Background="#60affe" />
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        RecognizesAccessKey="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
+                            </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#60affe" />
+                                    <Setter TargetName="outer" Property="Background" Value="#60affe" />
                                 </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#60affe" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
-                                    <Setter Property="Foreground" Value="white" />
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="outer" Property="Background" Value="#60affe" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
 
-
-
-
-
-
-
-
                 <Button
                     Grid.Column="1"
                     Height="32"
-                    Margin="4,0"
-                    Content="POST"
+                    Margin="0,0,4,0"
+                    Content="Post"
                     Cursor="Hand"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
-                                x:Name="border"
+                                x:Name="outer"
                                 Background="#4c566a"
                                 BorderBrush="Black"
                                 BorderThickness="1">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Grid>
+                                    <Border
+                                        x:Name="leftStripe"
+                                        Width="6"
+                                        HorizontalAlignment="Left"
+                                        Background="#49cc90" />
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        RecognizesAccessKey="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#49cc90" />
+                                    <Setter TargetName="outer" Property="Background" Value="#49cc90" />
                                 </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#49cc90" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
-                                    <Setter Property="Foreground" Value="white" />
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="outer" Property="Background" Value="#49cc90" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -214,27 +236,36 @@
                 <Button
                     Grid.Column="2"
                     Height="32"
-                    Margin="4,0"
-                    Content="PATCH"
+                    Margin="0,0,4,0"
+                    Content="Patch"
                     Cursor="Hand"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
-                                x:Name="border"
+                                x:Name="outer"
                                 Background="#4c566a"
                                 BorderBrush="Black"
                                 BorderThickness="1">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Grid>
+                                    <Border
+                                        x:Name="leftStripe"
+                                        Width="6"
+                                        HorizontalAlignment="Left"
+                                        Background="#50e3c1" />
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        RecognizesAccessKey="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#50e3c1" />
+                                    <Setter TargetName="outer" Property="Background" Value="#50e3c1" />
                                 </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#50e3c1" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
-                                    <Setter Property="Foreground" Value="white" />
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="outer" Property="Background" Value="#50e3c1" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -244,27 +275,36 @@
                 <Button
                     Grid.Column="3"
                     Height="32"
-                    Margin="4,0"
-                    Content="PUT"
+                    Margin="0,0,4,0"
+                    Content="Put"
                     Cursor="Hand"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
-                                x:Name="border"
+                                x:Name="outer"
                                 Background="#4c566a"
                                 BorderBrush="Black"
                                 BorderThickness="1">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Grid>
+                                    <Border
+                                        x:Name="leftStripe"
+                                        Width="6"
+                                        HorizontalAlignment="Left"
+                                        Background="#fca131" />
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        RecognizesAccessKey="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#fca131" />
+                                    <Setter TargetName="outer" Property="Background" Value="#fca131" />
                                 </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#fca131" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
-                                    <Setter Property="Foreground" Value="white" />
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="outer" Property="Background" Value="#fca131" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -274,27 +314,36 @@
                 <Button
                     Grid.Column="4"
                     Height="32"
-                    Margin="4,0,0,0"
-                    Content="DELETE"
+                    Margin="0,0,4,0"
+                    Content="Delete"
                     Cursor="Hand"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
-                                x:Name="border"
+                                x:Name="outer"
                                 Background="#4c566a"
                                 BorderBrush="Black"
                                 BorderThickness="1">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <Grid>
+                                    <Border
+                                        x:Name="leftStripe"
+                                        Width="6"
+                                        HorizontalAlignment="Left"
+                                        Background="#f93f3e" />
+                                    <ContentPresenter
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        RecognizesAccessKey="True"
+                                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                                </Grid>
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="border" Property="Background" Value="#f93f3e" />
+                                    <Setter TargetName="outer" Property="Background" Value="#f93f3e" />
                                 </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="true">
-                                    <Setter TargetName="border" Property="Background" Value="#f93f3e" />
-                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
-                                    <Setter Property="Foreground" Value="white" />
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="outer" Property="Background" Value="#f93f3e" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -303,21 +352,20 @@
             </Grid>
         </StackPanel>
 
-
-        <Grid Grid.Row="4" Margin="0,14,0,0">
+        <Grid Grid.Row="4" Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <!--  POST  -->
+            <!--  Send  -->
             <Button
                 x:Name="SubmitButton"
                 Grid.Column="0"
                 Height="42"
                 Click="SubmitButton_Click"
-                Content="Submit"
+                Content="Send"
                 Cursor="Hand"
                 FontSize="14"
                 FontWeight="Bold">
@@ -327,8 +375,7 @@
                             x:Name="border"
                             Background="#4c566a"
                             BorderBrush="Black"
-                            BorderThickness="1"
-                            CornerRadius="4">
+                            BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
@@ -340,13 +387,13 @@
                 </Button.Template>
             </Button>
 
-            <!--  RESET  -->
+            <!--  Clear  -->
             <Button
                 x:Name="ClearButton"
                 Grid.Column="2"
                 Height="42"
                 Click="ClearButton_Click"
-                Content="Reset"
+                Content="Clear"
                 Cursor="Hand"
                 FontSize="14"
                 FontWeight="Bold">
@@ -357,8 +404,7 @@
                             x:Name="border"
                             Background="#4c566a"
                             BorderBrush="Black"
-                            BorderThickness="1"
-                            CornerRadius="4">
+                            BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
@@ -370,6 +416,7 @@
                 </Button.Template>
             </Button>
         </Grid>
+
 
 
 
