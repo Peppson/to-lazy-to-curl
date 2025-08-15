@@ -1,7 +1,11 @@
 Riktiga:
-dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop/Output"
+dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 
 
 
+ico:
+https://icon-icons.com/search/icons/?filtro=send+internet&sort=popular&page=4
 
+smaller icons
 
+get put post patch delete

@@ -9,8 +9,8 @@
     Title="To Lazy to Curl"
     Width="620"
     Height="760"
-    MinWidth="400"
-    MinHeight="440"
+    MinWidth="420"
+    MinHeight="480"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/kalv2.ico"
     mc:Ignorable="d">
@@ -38,14 +38,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
     </Window.Resources>
 
     <Grid Margin="24,10,24,24">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
@@ -104,15 +106,205 @@
         <TextBlock
             x:Name="MessageTextBlock"
             Grid.Row="2"
-            Margin="0,10,0,-10"
+            Margin="0,10,0,20"
             HorizontalAlignment="Center"
             FontSize="14"
             FontWeight="Bold"
-            Text=""
+            Text="fdsfs dsdfsd fsdf sdfsdf sdfds fsdf sd"
             TextAlignment="Center" />
 
         <!--  Buttons  -->
-        <Grid Grid.Row="3" Margin="0,20,0,0">
+        <StackPanel Grid.Row="3" Orientation="Vertical">
+
+            <TextBlock
+                Margin="0,0,0,5"
+                VerticalAlignment="Center"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="Method" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+
+
+                <Button
+                    Grid.Column="0"
+                    Height="32"
+                    Margin="0,0,4,0"
+                    Content="GET"
+                    Cursor="Hand"
+                    FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <!--  Left stripe  -->
+                                <Border
+                                    Width="8"
+                                    HorizontalAlignment="Left"
+                                    Background="Red">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+
+                                <!--  Main button  -->
+                                <Border
+                                    x:Name="border"
+                                    Background="#4c566a"
+                                    BorderBrush="Black"
+                                    BorderThickness="1" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#60affe" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="#60affe" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="Foreground" Value="white" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+
+
+
+
+
+
+
+                <Button
+                    Grid.Column="1"
+                    Height="32"
+                    Margin="4,0"
+                    Content="POST"
+                    Cursor="Hand"
+                    FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                x:Name="border"
+                                Background="#4c566a"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#49cc90" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="#49cc90" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="Foreground" Value="white" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button
+                    Grid.Column="2"
+                    Height="32"
+                    Margin="4,0"
+                    Content="PATCH"
+                    Cursor="Hand"
+                    FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                x:Name="border"
+                                Background="#4c566a"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#50e3c1" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="#50e3c1" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="Foreground" Value="white" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button
+                    Grid.Column="3"
+                    Height="32"
+                    Margin="4,0"
+                    Content="PUT"
+                    Cursor="Hand"
+                    FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                x:Name="border"
+                                Background="#4c566a"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#fca131" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="#fca131" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="Foreground" Value="white" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button
+                    Grid.Column="4"
+                    Height="32"
+                    Margin="4,0,0,0"
+                    Content="DELETE"
+                    Cursor="Hand"
+                    FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                x:Name="border"
+                                Background="#4c566a"
+                                BorderBrush="Black"
+                                BorderThickness="1">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="#f93f3e" />
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="#f93f3e" />
+                                    <Setter TargetName="border" Property="BorderBrush" Value="Gray" />
+                                    <Setter Property="Foreground" Value="white" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </StackPanel>
+
+
+        <Grid Grid.Row="4" Margin="0,14,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="20" />
@@ -125,11 +317,10 @@
                 Grid.Column="0"
                 Height="42"
                 Click="SubmitButton_Click"
-                Content="POST"
+                Content="Submit"
                 Cursor="Hand"
                 FontSize="14"
-                FontWeight="Bold"
-                Foreground="White">
+                FontWeight="Bold">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -155,11 +346,10 @@
                 Grid.Column="2"
                 Height="42"
                 Click="ClearButton_Click"
-                Content="RESET"
+                Content="Reset"
                 Cursor="Hand"
                 FontSize="14"
-                FontWeight="Bold"
-                Foreground="White">
+                FontWeight="Bold">
                 <Button.Template>
 
                     <ControlTemplate TargetType="Button">

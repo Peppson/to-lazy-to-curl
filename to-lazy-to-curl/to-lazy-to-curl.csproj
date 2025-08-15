@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>ToLazyToCurl</AssemblyName>
+    <AssemblyName>ToLazyToCurl2</AssemblyName>
+    <ApplicationIcon>Assets\test2.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows</TargetFramework>
     <RootNamespace>to_lazy_to_curl</RootNamespace>
