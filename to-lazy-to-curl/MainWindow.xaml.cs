@@ -63,8 +63,8 @@ public partial class MainWindow : Window
     { 
         string jsonRaw = "{" +
             "\"id\": 42," +
-            "\"name\": \"Name\"," +
-            "\"email\": \"Name@example.com\"," +
+            "\"name\": \"Peppson\"," +
+            "\"email\": \"Peppson@example.com\"," +
             "\"isActive\": true," +
             "\"roles\": [\"admin\", \"programmer\"]," +
             "\"projects\": [" +

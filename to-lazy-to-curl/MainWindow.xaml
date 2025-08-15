@@ -38,7 +38,8 @@
             </Setter>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="#333333" />
+            <Setter Property="Background" Value="#fefefe" />
         </Style>
         <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     </Window.Resources>
@@ -67,41 +68,33 @@
                 Text="URL" />
 
             <Border
-                Background="#fefefe"
+                VerticalAlignment="Center"
                 BorderBrush="#d4d4d4"
                 BorderThickness="1"
-                CornerRadius="6">
+                CornerRadius="4">
 
-                <Border
-                    Margin="12,12,12,12"
-                    VerticalAlignment="Center"
-                    BorderBrush="#d4d4d4"
-                    BorderThickness="1"
-                    CornerRadius="4">
+                <Grid>
+                    <TextBox
+                        x:Name="UrlTextBox"
+                        Height="32"
+                        Padding="4,0"
+                        VerticalContentAlignment="Center"
+                        Background="#ffffff"
+                        FontSize="15"
+                        Foreground="#333333"
+                        Style="{StaticResource NoHoverFocusTextBoxStyle}"
+                        TextChanged="TextBox_TextChanged"
+                        TextWrapping="NoWrap" />
 
-                    <Grid>
-                        <TextBox
-                            x:Name="UrlTextBox"
-                            Height="32"
-                            Padding="4,0"
-                            VerticalContentAlignment="Center"
-                            Background="#ffffff"
-                            FontSize="15"
-                            Foreground="#333333"
-                            Style="{StaticResource NoHoverFocusTextBoxStyle}"
-                            TextChanged="TextBox_TextChanged"
-                            TextWrapping="NoWrap" />
-
-                        <TextBlock
-                            Padding="6,0"
-                            VerticalAlignment="Center"
-                            FontSize="15"
-                            Foreground="#999999"
-                            IsHitTestVisible="False"
-                            Text="Enter a URL..."
-                            Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
-                    </Grid>
-                </Border>
+                    <TextBlock
+                        Padding="6,0"
+                        VerticalAlignment="Center"
+                        FontSize="15"
+                        Foreground="#999999"
+                        IsHitTestVisible="False"
+                        Text="Enter a URL..."
+                        Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
+                </Grid>
             </Border>
         </StackPanel>
 
@@ -115,28 +108,25 @@
             </Grid.RowDefinitions>
 
 
-            <!--
             <StackPanel
-                Grid.Row="1"
                 Margin="0,4,0,6"
                 HorizontalAlignment="Left"
                 Orientation="Horizontal">
                 <Button
                     x:Name="RequestButton"
                     Width="80"
-                    Background="#323234"
                     Content="Request" />
                 <Button
                     x:Name="ResponseButton"
                     Width="80"
-                    Background="#323234"
                     Content="Response" />
             </StackPanel>
-            -->
+
+
 
             <TextBlock
                 Grid.Row="0"
-                Margin="0,10,0,6"
+                Margin="0,14,0,6"
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
@@ -145,12 +135,9 @@
 
             <Border
                 Grid.Row="2"
-                Background="#fefefe"
                 BorderBrush="#d4d4d4"
                 BorderThickness="1"
-                CornerRadius="6">
-
-
+                CornerRadius="4">
 
                 <avalonEdit:TextEditor
                     Name="JsonTextBox"
@@ -162,15 +149,12 @@
                     ShowLineNumbers="True"
                     SyntaxHighlighting="Json"
                     VerticalScrollBarVisibility="Visible" />
-
             </Border>
-
-
         </Grid>
 
 
 
-        <!--  Message  -->
+        <!--  Status Message  -->
         <TextBlock
             x:Name="MessageTextBlock"
             Grid.Row="2"
@@ -182,7 +166,7 @@
             TextAlignment="Center" />
 
 
-        <!--  Buttons  -->
+        <!--  Action Buttons  -->
         <StackPanel Grid.Row="3" Orientation="Vertical">
 
             <TextBlock
@@ -190,6 +174,7 @@
                 VerticalAlignment="Center"
                 FontSize="16"
                 FontWeight="Bold"
+                Foreground="#333333"
                 Text="Actions" />
 
             <Grid>
@@ -207,20 +192,22 @@
                     Margin="0,0,4,0"
                     Content="Get"
                     Cursor="Hand"
+                    FontSize="14"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
                                 x:Name="outer"
-                                Background="#4c566a"
-                                BorderBrush="Black"
-                                BorderThickness="1">
+                                BorderBrush="#d4d4d4"
+                                BorderThickness="1"
+                                CornerRadius="4">
                                 <Grid>
                                     <Border
                                         x:Name="leftStripe"
-                                        Width="6"
-                                        HorizontalAlignment="Left"
-                                        Background="#60affe" />
+                                        Height="1"
+                                        VerticalAlignment="bottom"
+                                        Background="#60affe"
+                                        CornerRadius="0,0,0,4" />
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -231,9 +218,11 @@
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#60affe" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#60affe" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -246,20 +235,22 @@
                     Margin="0,0,4,0"
                     Content="Post"
                     Cursor="Hand"
+                    FontSize="14"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
                                 x:Name="outer"
-                                Background="#4c566a"
-                                BorderBrush="Black"
-                                BorderThickness="1">
+                                BorderBrush="#d4d4d4"
+                                BorderThickness="1"
+                                CornerRadius="4">
                                 <Grid>
                                     <Border
                                         x:Name="leftStripe"
-                                        Width="6"
-                                        HorizontalAlignment="Left"
-                                        Background="#49cc90" />
+                                        Height="1"
+                                        VerticalAlignment="bottom"
+                                        Background="#87e37d"
+                                        CornerRadius="0,0,0,4" />
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -269,10 +260,12 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="#49cc90" />
+                                    <Setter TargetName="outer" Property="Background" Value="#87e37d" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="#49cc90" />
+                                    <Setter TargetName="outer" Property="Background" Value="#87e37d" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -285,20 +278,22 @@
                     Margin="0,0,4,0"
                     Content="Patch"
                     Cursor="Hand"
+                    FontSize="14"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
                                 x:Name="outer"
-                                Background="#4c566a"
-                                BorderBrush="Black"
-                                BorderThickness="1">
+                                BorderBrush="#d4d4d4"
+                                BorderThickness="1"
+                                CornerRadius="4">
                                 <Grid>
                                     <Border
                                         x:Name="leftStripe"
-                                        Width="6"
-                                        HorizontalAlignment="Left"
-                                        Background="#50e3c1" />
+                                        Height="1"
+                                        VerticalAlignment="bottom"
+                                        Background="#50e3c1"
+                                        CornerRadius="0,0,0,4" />
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -309,9 +304,11 @@
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#50e3c1" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#50e3c1" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -324,20 +321,22 @@
                     Margin="0,0,4,0"
                     Content="Put"
                     Cursor="Hand"
+                    FontSize="14"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
                                 x:Name="outer"
-                                Background="#4c566a"
-                                BorderBrush="Black"
-                                BorderThickness="1">
+                                BorderBrush="#d4d4d4"
+                                BorderThickness="1"
+                                CornerRadius="4">
                                 <Grid>
                                     <Border
                                         x:Name="leftStripe"
-                                        Width="6"
-                                        HorizontalAlignment="Left"
-                                        Background="#fca131" />
+                                        Height="1"
+                                        VerticalAlignment="bottom"
+                                        Background="#fca131"
+                                        CornerRadius="0,0,0,4" />
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -348,9 +347,11 @@
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#fca131" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
                                     <Setter TargetName="outer" Property="Background" Value="#fca131" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -360,23 +361,24 @@
                 <Button
                     Grid.Column="4"
                     Height="32"
-                    Margin="0,0,4,0"
                     Content="Delete"
                     Cursor="Hand"
+                    FontSize="14"
                     FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border
                                 x:Name="outer"
-                                Background="#4c566a"
-                                BorderBrush="Black"
-                                BorderThickness="1">
+                                BorderBrush="#d4d4d4"
+                                BorderThickness="1"
+                                CornerRadius="4">
                                 <Grid>
                                     <Border
                                         x:Name="leftStripe"
-                                        Width="6"
-                                        HorizontalAlignment="Left"
-                                        Background="#f93f3e" />
+                                        Height="1"
+                                        VerticalAlignment="bottom"
+                                        Background="#ff5d5c"
+                                        CornerRadius="0,0,0,4" />
                                     <ContentPresenter
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -386,10 +388,12 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="#f93f3e" />
+                                    <Setter TargetName="outer" Property="Background" Value="#ff5d5c" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                                 <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="#f93f3e" />
+                                    <Setter TargetName="outer" Property="Background" Value="#ff5d5c" />
+                                    <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -401,7 +405,7 @@
         <Grid Grid.Row="4" Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="4" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -418,15 +422,26 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
-                            x:Name="border"
-                            Background="#4c566a"
-                            BorderBrush="Black"
-                            BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            x:Name="outer"
+                            BorderBrush="#d4d4d4"
+                            BorderThickness="1"
+                            CornerRadius="4">
+                            <Grid>
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#3b4252" />
+                                <Setter TargetName="outer" Property="Background" Value="#60affe" />
+                                <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="outer" Property="Background" Value="#60affe" />
+                                <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -444,37 +459,33 @@
                 FontSize="14"
                 FontWeight="Bold">
                 <Button.Template>
-
                     <ControlTemplate TargetType="Button">
                         <Border
-                            x:Name="border"
-                            Background="#4c566a"
-                            BorderBrush="Black"
-                            BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            x:Name="outer"
+                            BorderBrush="#d4d4d4"
+                            BorderThickness="1"
+                            CornerRadius="4">
+                            <Grid>
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Background" Value="#3b4252" />
+                                <Setter TargetName="outer" Property="Background" Value="#ff5d5c" />
+                                <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="outer" Property="Background" Value="#ff5d5c" />
+                                <Setter TargetName="outer" Property="BorderBrush" Value="#999999" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </Grid>
-
-
-
-
-
-
-
-        <!--  Background="#FFDDDDDD"  -->
-
-
-
-
-
-
     </Grid>
 </Window>
