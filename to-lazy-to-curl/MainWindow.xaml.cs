@@ -10,7 +10,7 @@ namespace to_lazy_to_curl;
 
 public partial class MainWindow : Window
 {
-    private CancellationTokenSource _messageCts;
+    private CancellationTokenSource? _messageCts;
     private const int _messageDuration = 5000; // ms
     private const long _connectionTimeout = 5; // s
 
@@ -30,55 +30,12 @@ public partial class MainWindow : Window
         SetWindowSizeAndPosition();
         UpdateBorderColors();
 
-
         JsonTextBox.Options.EnableHyperlinks = false;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
 
-
-        
-
-
-        string jsonRaw = "{" +
-            "\"id\": 42," +
-            "\"name\": \"Some Name\"," +
-            "\"email\": \"Some.Name@example.com\"," +
-            "\"isActive\": true," +
-            "\"roles\": [\"admin\", \"editor\"]," +
-            "\"profile\": {" +
-                "\"age\": 31," +
-                "\"address\": {" +
-                    "\"street\": \"123 Main St\"," +
-                    "\"city\": \"New York\"," +
-                    "\"zip\": \"10001\"" +
-                "}" +
-            "}," +
-            "\"projects\": [" +
-                "{" +
-                    "\"id\": 1," +
-                    "\"name\": \"Worst WPF App\"," +
-                    "\"status\": \"Done-in-a-day\"" +
-                "}," +
-                "{" +
-                    "\"id\": 2," +
-                    "\"name\": \"ESP32 Shenanigans\"," +
-                    "\"status\": \"Completed\"" +
-                "}" +
-            "]" +
-        "}";
-
-        string formattedJson = JsonConvert.SerializeObject(
-            JsonConvert.DeserializeObject(jsonRaw), 
-            Formatting.Indented
-        ); 
-        JsonTextBox.Text = formattedJson;
-        
-
-       
-
-
-
-        UrlTextBox.Text = "https://localhost:7291/snus/test"; // todo
-        //JsonTextBox.Text = @"{""name"":""John Doe"",""age"":30,""city"":""New York""}";
+        //#if !RELEASE
+        LoadDebugSampleData();
+        //#endif
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -100,6 +57,35 @@ public partial class MainWindow : Window
             this.Top = Properties.Settings.Default.WindowTop;
             this.Left = Properties.Settings.Default.WindowLeft;
         }
+    }
+
+    private void LoadDebugSampleData()
+    { 
+        string jsonRaw = "{" +
+            "\"id\": 42," +
+            "\"name\": \"Some Name\"," +
+            "\"email\": \"Some.Name@example.com\"," +
+            "\"isActive\": true," +
+            "\"roles\": [\"admin\", \"editor\"]," +
+            "\"projects\": [" +
+                "{" +
+                    "\"id\": 1," +
+                    "\"name\": \"Worst WPF App\"," +
+                    "\"status\": \"Done-in-a-day\"" +
+                "}," +
+                "{" +
+                    "\"id\": 2," +
+                    "\"name\": \"ESP32 Shenanigans\"," +
+                    "\"status\": \"Completed\"" +
+                "}" +
+            "]" +
+        "}";
+
+        JsonTextBox.Text = JsonConvert.SerializeObject(
+            JsonConvert.DeserializeObject(jsonRaw), 
+            Formatting.Indented
+        ); 
+        UrlTextBox.Text = "https://localhost:7291/snus/test";
     }
 
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -238,7 +224,7 @@ public partial class MainWindow : Window
             // Do nothing
         }
     }
-
+ 
     private static void ShowMessageBox(string msg)
     {
         MessageBox.Show(

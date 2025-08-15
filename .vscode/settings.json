@@ -2,7 +2,8 @@
   "files.exclude": {
     "**/bin": true,
     "**/obj": true,
-    "**/.vs": true
+    "**/.vs": true,
+    "**/*.csproj.user": true
   },
   "search.exclude": {
     "**/MyProject/**": true
