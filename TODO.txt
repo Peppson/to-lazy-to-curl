@@ -11,11 +11,13 @@ https://icon-icons.com/search/icons/?filtro=send+internet&sort=popular&page=4
 placeholder url to real site:
 https://jsonplaceholder.typicode.com/posts
 
-Colors:
 
-Background app - #fdfdfd
-Background input #ffffff
-Background annat - #fefefe
+
+Colors:
+BackgroundWindow - #fdfdfd
+BackgroundInput #ffffff
+BackgroundMisc - #fefefe
 Border - #d4d4d4
-Primary Text - #333333
-PlaceHolder Text - #999999
+PrimaryText - #333333
+PlaceHolderText + HoverButtonBorder - #999999
+
