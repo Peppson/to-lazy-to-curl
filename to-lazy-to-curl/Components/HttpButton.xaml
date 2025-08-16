@@ -41,14 +41,10 @@
                     <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
                         <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                     </Trigger>
-
-
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
                         <Setter TargetName="outerBorder" Property="Background" Value="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}" />
                         <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                     </DataTrigger>
-
-
                 </ControlTemplate.Triggers>
             </ControlTemplate>
         </Button.Template>

@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Services;
+using to_lazy_to_curl.State;
 
 namespace to_lazy_to_curl.Components;
 
@@ -15,18 +16,18 @@ public partial class HttpButton : UserControl
         InitializeComponent();
         MainButton.Click += (_, __) =>
         {
-            State.SelectedAction = (State.SelectedAction == this.ActionType)
+            States.SelectedAction = (States.SelectedAction == this.ActionType)
                 ? HttpAction.None 
                 : this.ActionType;
         };
 
         EventHandler handler = (_, __) =>
         {
-            IsSelected = State.SelectedAction == this.ActionType;
+            IsSelected = States.SelectedAction == this.ActionType;
         };
 
-        State.SelectedActionChanged += handler;
-        this.Unloaded += (_, __) => State.SelectedActionChanged -= handler;
+        States.SelectedActionChanged += handler;
+        this.Unloaded += (_, __) => States.SelectedActionChanged -= handler;
     }
 
     public static readonly DependencyProperty IsSelectedProperty =

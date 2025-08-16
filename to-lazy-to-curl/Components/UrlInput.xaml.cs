@@ -1,5 +1,7 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Media;
 using to_lazy_to_curl.Services;
+using to_lazy_to_curl.State;
 
 namespace to_lazy_to_curl.Components;
 
@@ -8,18 +10,19 @@ public partial class UrlInput : UserControl
     public UrlInput()
     {
         InitializeComponent();
-        UrlTextBox.Text = StartupData.GetUrlSampleData();
+        UrlTextBox.Text = Config.UrlStartupData;
     }
 
     private void UrlTextBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (UrlTextBox == null) return;
 
-        var UrlHasText =
+        /*var validUrl =
             !string.IsNullOrWhiteSpace(UrlTextBox!.Text) &&
             Uri.IsWellFormedUriString(UrlTextBox!.Text, UriKind.Absolute);
 
-        //UrlTextBox.BorderBrush = UrlHasText ? Brushes.Green : Brushes.Gray; todo
-        //UrlTextBox.BorderBrush = (Brush)TryFindResource(brushKey);
+        var validColor = Brushes.Green;
+        var defaultBorderColor = (Brush)(TryFindResource("Border") ?? Brushes.LightGray);
+        UrlBorder.BorderBrush = validUrl ? validColor : defaultBorderColor;*/
     }
 }

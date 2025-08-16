@@ -22,7 +22,6 @@
                         <ControlTemplate TargetType="TextBox">
                             <Border
                                 x:Name="Bd"
-                                Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1"
                                 SnapsToDevicePixels="True">

@@ -11,3 +11,11 @@ https://icon-icons.com/search/icons/?filtro=send+internet&sort=popular&page=4
 placeholder url to real site:
 https://jsonplaceholder.typicode.com/posts
 
+
+
+/Models       <- data objects, enums, DTOs
+/State        <- app-wide state, startup data, config
+/Services     <- logic that does things (network, animation, messaging)
+/Components   <- UserControls, custom controls
+/Views        <- Windows, Pages, XAML
+

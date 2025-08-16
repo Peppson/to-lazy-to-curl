@@ -1,9 +1,8 @@
-using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Models;
 
-namespace to_lazy_to_curl.Services;
+namespace to_lazy_to_curl.State;
 
-static public class State
+static public class States
 {
     private static HttpAction _selectedAction = HttpAction.None;
     public static HttpAction SelectedAction
