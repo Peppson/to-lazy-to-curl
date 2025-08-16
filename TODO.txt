@@ -14,9 +14,9 @@ https://jsonplaceholder.typicode.com/posts
 
 
 Colors:
-BackgroundWindow - #fdfdfd
-BackgroundInput #ffffff
-BackgroundMisc - #fefefe
+WindowBackground - #fdfdfd
+InputBackground #ffffff
+ButtonBackground - #fefefe
 Border - #d4d4d4
 PrimaryText - #333333
 PlaceHolderText + HoverButtonBorder - #999999

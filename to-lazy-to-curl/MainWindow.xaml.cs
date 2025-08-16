@@ -4,7 +4,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using ICSharpCode.AvalonEdit.Highlighting;
 using Newtonsoft.Json;
+using to_lazy_to_curl.Components;
 
 namespace to_lazy_to_curl;
 
@@ -22,8 +24,6 @@ public partial class MainWindow : Window
         BothEmpty
     }
 
-
-
     public MainWindow()
     {
         InitializeComponent();
@@ -35,7 +35,27 @@ public partial class MainWindow : Window
 
         //#if !RELEASE
         LoadDebugSampleData();
+        //DoIt();
         //#endif
+    }
+
+    private void DoIt()
+    {
+        var highlighting = HighlightingManager.Instance.GetDefinition("C#");
+
+        highlighting.GetNamedColor("String").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
+        highlighting.GetNamedColor("Comment").Foreground = new SimpleHighlightingBrush(Colors.Red);
+        highlighting.GetNamedColor("Keywords").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
+        JsonTextBox.Background = new SolidColorBrush(Colors.Black); 
+        JsonTextBox.Foreground = new SolidColorBrush(Colors.White);
+
+        foreach (var color in highlighting.NamedHighlightingColors)
+        {
+            color.FontWeight = null;
+        }
+
+        // finally assign the customized highlighting to the editor
+        JsonTextBox.SyntaxHighlighting = highlighting;
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -85,12 +105,12 @@ public partial class MainWindow : Window
             JsonConvert.DeserializeObject(jsonRaw), 
             Formatting.Indented
         ); 
-        UrlTextBox.Text = "https://localhost:7291/snus/test";
+        //UrlTextBox.Text = "https://localhost:7291/snus/test";
     }
 
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
-        SubmitButton.IsEnabled = false;
+        /*SubmitButton.IsEnabled = false;
         _ = ShowMessageAsync("Sending...", Brushes.Black, 10000);
 
         string url = UrlTextBox.Text;
@@ -111,23 +131,23 @@ public partial class MainWindow : Window
         else
             _ = ShowMessageAsync(ErrorMsg!, Brushes.Red, _messageDuration);
 
-        SubmitButton.IsEnabled = true;
+        SubmitButton.IsEnabled = true;*/
     }
 
     private void ClearButton_Click(object sender, RoutedEventArgs e)
     {
-        UrlTextBox.Text = string.Empty;
+        /*UrlTextBox.Text = string.Empty;
         JsonTextBox.Text = string.Empty;
         UrlTextBox.BorderBrush = Brushes.Gray;
         JsonTextBox.BorderBrush = Brushes.Gray;
         MessageTextBlock.Opacity = 0;
-        MessageTextBlock.Text = "";
+        MessageTextBlock.Text = "";*/
     }
 
-    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    /* private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         UpdateBorderColors();
-    }
+    } */
 
     private static async Task<(bool Success, string? ErrorMsg)> SendPostRequestAsync(string url, string json)
     {
@@ -185,7 +205,7 @@ public partial class MainWindow : Window
 
     private void UpdateBorderColors()
     {
-        if (UrlTextBox == null && JsonTextBox == null) return;
+        /*if (UrlTextBox == null && JsonTextBox == null) return;
 
         var UrlHasText =
             !string.IsNullOrWhiteSpace(UrlTextBox!.Text) &&
@@ -194,7 +214,7 @@ public partial class MainWindow : Window
         var JsonHasText = !string.IsNullOrWhiteSpace(JsonTextBox!.Text);
 
         //UrlTextBox.BorderBrush = UrlHasText ? Brushes.Green : Brushes.Gray;
-        JsonTextBox.BorderBrush = JsonHasText ? Brushes.Green : Brushes.Gray;
+        JsonTextBox.BorderBrush = JsonHasText ? Brushes.Green : Brushes.Gray;*/
     }
 
     private async Task ShowMessageAsync(string message, SolidColorBrush color, int durationMs)
@@ -237,7 +257,7 @@ public partial class MainWindow : Window
 
     private async Task InvalidInputAnimationAsync(FormState formState)
     {
-        const int durationMs = 450;
+        /*const int durationMs = 450;
         const double shakeOffset = 3;
         var animation = GetAnimation(shakeOffset, durationMs);
 
@@ -270,7 +290,7 @@ public partial class MainWindow : Window
         UrlTextBox.BorderBrush = urlTextBoxColor;
         JsonTextBox.BorderBrush = jsonTextBoxColor;
 
-        SubmitButton.IsEnabled = true;
+        SubmitButton.IsEnabled = true;*/
     }
 
     private static DoubleAnimationUsingKeyFrames GetAnimation(double offset, int durationMs)

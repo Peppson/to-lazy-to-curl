@@ -1,0 +1,49 @@
+﻿<UserControl
+    x:Class="to_lazy_to_curl.Components.UrlInput"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:to_lazy_to_curl.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Grid.Row="0" Orientation="Vertical">
+        <TextBlock
+            Margin="0,0,0,6"
+            VerticalAlignment="Center"
+            FontSize="16"
+            FontWeight="Bold"
+            Foreground="{StaticResource PrimaryText}"
+            Text="URL" />
+
+        <Border
+            VerticalAlignment="Center"
+            BorderBrush="{StaticResource Border}"
+            BorderThickness="1"
+            CornerRadius="4">
+
+            <Grid>
+                <TextBox
+                    x:Name="UrlTextBox"
+                    Height="32"
+                    Padding="4,0"
+                    VerticalContentAlignment="Center"
+                    Background="{StaticResource InputBackground}"
+                    FontSize="15"
+                    Foreground="{StaticResource PrimaryText}"
+                    Style="{StaticResource NoHoverFocusTextBoxStyle}"
+                    TextChanged="UrlTextBox_TextChanged"
+                    TextWrapping="NoWrap" />
+
+                <TextBlock
+                    Padding="6,0"
+                    VerticalAlignment="Center"
+                    FontSize="15"
+                    Foreground="{StaticResource PlaceHolderText}"
+                    IsHitTestVisible="False"
+                    Text="Enter a URL..."
+                    Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>ToLazyToCurl2</AssemblyName>
-    <ApplicationIcon>Assets\test2.ico</ApplicationIcon>
-    <OutputType>WinExe</OutputType>
+    <AssemblyName>ToLazyToCurl</AssemblyName>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net9.0-windows</TargetFramework>
     <RootNamespace>to_lazy_to_curl</RootNamespace>
     <Nullable>enable</Nullable>
@@ -24,20 +24,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\kalv.ico" />
-    <None Remove="Assets\kalv.png" />
-    <None Remove="Assets\kalv2.ico" />
-    <None Remove="Assets\test2.ico" />
+    <None Remove="Assets\AppIcon.ico" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Resource Include="Assets\kalv.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\kalv2.ico">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assets\test2.ico">
+    <Resource Include="Assets\AppIcon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
