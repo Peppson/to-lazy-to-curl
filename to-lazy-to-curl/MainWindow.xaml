@@ -18,120 +18,21 @@
     Icon="pack://application:,,,/Assets/AppIcon.ico"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <Style x:Key="NoHoverFocusTextBoxStyle" TargetType="TextBox">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBox">
-                        <Border
-                            x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="1"
-                            SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" />
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource PrimaryText}" />
-            <Setter Property="Background" Value="Yellow" />
-        </Style>
-        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-    </Window.Resources>
-
     <Grid Margin="24,10,24,24">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <!--  URL Form  -->
-        <components:UrlInput />
-        <!--
-        <StackPanel Grid.Row="0" Orientation="Vertical">
-
-            <TextBlock
-                Margin="0,0,0,6"
-                VerticalAlignment="Center"
-                FontSize="16"
-                FontWeight="Bold"
-                Foreground="{StaticResource PrimaryText}"
-                Text="URL" />
-
-            <Border
-                VerticalAlignment="Center"
-                BorderBrush="{StaticResource Border}"
-                BorderThickness="1"
-                CornerRadius="4">
-
-                <Grid>
-                    <TextBox
-                        x:Name="UrlTextBox"
-                        Height="32"
-                        Padding="4,0"
-                        VerticalContentAlignment="Center"
-                        Background="{StaticResource InputBackground}"
-                        FontSize="15"
-                        Foreground="{StaticResource PrimaryText}"
-                        Style="{StaticResource NoHoverFocusTextBoxStyle}"
-                        TextChanged="TextBox_TextChanged"
-                        TextWrapping="NoWrap" />
-
-                    <TextBlock
-                        Padding="6,0"
-                        VerticalAlignment="Center"
-                        FontSize="15"
-                        Foreground="{StaticResource PlaceHolderText}"
-                        IsHitTestVisible="False"
-                        Text="Enter a URL..."
-                        Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
-                </Grid>
-            </Border>
-        </StackPanel>-->
+        <!--  URL  -->
+        <components:UrlInput Grid.Row="0" />
 
         <!--  JSON  -->
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <TextBlock
-                Grid.Row="0"
-                Margin="0,14,0,6"
-                VerticalAlignment="Center"
-                FontSize="16"
-                FontWeight="Bold"
-                Foreground="{StaticResource PrimaryText}"
-                Text="Body" />
-
-            <Border
-                Grid.Row="1"
-                BorderBrush="{StaticResource Border}"
-                BorderThickness="1"
-                CornerRadius="4">
-
-                <avalonEdit:TextEditor
-                    Name="JsonTextBox"
-                    Background="{StaticResource InputBackground}"
-                    FontSize="14"
-                    HorizontalScrollBarVisibility="Auto"
-                    IsReadOnly="false"
-                    ShowLineNumbers="True"
-                    SyntaxHighlighting="Json"
-                    VerticalScrollBarVisibility="Visible" />
-            </Border>
-        </Grid>
+        <components:JsonInput Grid.Row="1" />
 
         <!--  Status Message  -->
         <TextBlock
@@ -144,9 +45,8 @@
             Text=""
             TextAlignment="Center" />
 
-        <!--  Action Buttons  -->
+        <!--  HTTP Action Buttons  -->
         <StackPanel Grid.Row="4" Orientation="Vertical">
-
             <TextBlock
                 Margin="0,0,0,6"
                 VerticalAlignment="Center"
@@ -164,219 +64,36 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button
+                <components:HttpButton
                     Grid.Column="0"
-                    Height="32"
                     Margin="0,0,4,0"
-                    Content="Get"
-                    Cursor="Hand"
-                    FontSize="14"
-                    FontWeight="Bold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outer"
-                                Background="{StaticResource ButtonBackground}"
-                                BorderBrush="{StaticResource Border}"
-                                BorderThickness="1"
-                                CornerRadius="4">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <Border
-                                        x:Name="leftStripe"
-                                        Height="1"
-                                        VerticalAlignment="bottom"
-                                        Background="{StaticResource GetButton}"
-                                        CornerRadius="0,0,0,4" />
-                                    <ContentPresenter
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="{StaticResource GetButton}" />
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button
+                    ActionType="Get"
+                    ButtonColor="{StaticResource GetButton}"
+                    ButtonContent="Get" />
+                <components:HttpButton
                     Grid.Column="1"
-                    Height="32"
                     Margin="0,0,4,0"
-                    Content="Post"
-                    Cursor="Hand"
-                    FontSize="14"
-                    FontWeight="Bold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outer"
-                                Background="{StaticResource ButtonBackground}"
-                                BorderBrush="{StaticResource Border}"
-                                BorderThickness="1"
-                                CornerRadius="4">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <Border
-                                        x:Name="leftStripe"
-                                        Height="1"
-                                        VerticalAlignment="bottom"
-                                        Background="{StaticResource PostButton}"
-                                        CornerRadius="0,0,0,4" />
-                                    <ContentPresenter
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="{StaticResource PostButton}" />
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button
+                    ActionType="Post"
+                    ButtonColor="{StaticResource PostButton}"
+                    ButtonContent="Post" />
+                <components:HttpButton
                     Grid.Column="2"
-                    Height="32"
                     Margin="0,0,4,0"
-                    Content="Patch"
-                    Cursor="Hand"
-                    FontSize="14"
-                    FontWeight="Bold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outer"
-                                Background="{StaticResource ButtonBackground}"
-                                BorderBrush="{StaticResource Border}"
-                                BorderThickness="1"
-                                CornerRadius="4">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <Border
-                                        x:Name="leftStripe"
-                                        Height="1"
-                                        VerticalAlignment="bottom"
-                                        Background="{StaticResource PatchButton}"
-                                        CornerRadius="0,0,0,4" />
-                                    <ContentPresenter
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="{StaticResource PatchButton}" />
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button
+                    ActionType="Patch"
+                    ButtonColor="{StaticResource PatchButton}"
+                    ButtonContent="Patch" />
+                <components:HttpButton
                     Grid.Column="3"
-                    Height="32"
                     Margin="0,0,4,0"
-                    Content="Put"
-                    Cursor="Hand"
-                    FontSize="14"
-                    FontWeight="Bold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outer"
-                                Background="{StaticResource ButtonBackground}"
-                                BorderBrush="{StaticResource Border}"
-                                BorderThickness="1"
-                                CornerRadius="4">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <Border
-                                        x:Name="leftStripe"
-                                        Height="1"
-                                        VerticalAlignment="bottom"
-                                        Background="{StaticResource PutButton}"
-                                        CornerRadius="0,0,0,4" />
-                                    <ContentPresenter
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="{StaticResource PutButton}" />
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button
+                    ActionType="Put"
+                    ButtonColor="{StaticResource PutButton}"
+                    ButtonContent="Put" />
+                <components:HttpButton
                     Grid.Column="4"
-                    Height="32"
-                    Content="Delete"
-                    Cursor="Hand"
-                    FontSize="14"
-                    FontWeight="Bold">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outer"
-                                Background="{StaticResource ButtonBackground}"
-                                BorderBrush="{StaticResource Border}"
-                                BorderThickness="1"
-                                CornerRadius="4">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <Border
-                                        x:Name="leftStripe"
-                                        Height="1"
-                                        VerticalAlignment="bottom"
-                                        Background="{StaticResource DeleteButton}"
-                                        CornerRadius="0,0,0,4" />
-                                    <ContentPresenter
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                            <ControlTemplate.Triggers>
-                                <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                                <Trigger Property="IsKeyboardFocused" Value="True">
-                                    <Setter TargetName="outer" Property="Background" Value="{StaticResource DeleteButton}" />
-                                    <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                                </Trigger>
-                            </ControlTemplate.Triggers>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                    Margin="0,0,4,0"
+                    ActionType="Delete"
+                    ButtonColor="{StaticResource DeleteButton}"
+                    ButtonContent="Delete" />
             </Grid>
         </StackPanel>
 

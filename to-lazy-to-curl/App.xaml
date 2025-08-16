@@ -36,7 +36,6 @@
             <!--  Buttons  -->
             <Style TargetType="Button">
                 <Setter Property="Foreground" Value="{StaticResource PrimaryText}" />
-                <Setter Property="Background" Value="Yellow" />
             </Style>
 
             <!--  PlaceholderText helper  -->

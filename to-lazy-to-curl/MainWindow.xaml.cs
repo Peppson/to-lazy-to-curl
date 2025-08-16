@@ -7,6 +7,7 @@ using System.Windows.Media.Animation;
 using ICSharpCode.AvalonEdit.Highlighting;
 using Newtonsoft.Json;
 using to_lazy_to_curl.Components;
+using to_lazy_to_curl.Services;
 
 namespace to_lazy_to_curl;
 
@@ -30,32 +31,13 @@ public partial class MainWindow : Window
         SetWindowSizeAndPosition();
         UpdateBorderColors();
 
-        JsonTextBox.Options.EnableHyperlinks = false;
-        JsonTextBox.Options.EnableEmailHyperlinks = false;
+        //JsonTextBox.Options.EnableHyperlinks = false;
+        //JsonTextBox.Options.EnableEmailHyperlinks = false;
 
         //#if !RELEASE
-        LoadDebugSampleData();
+        //LoadSampleData();
         //DoIt();
         //#endif
-    }
-
-    private void DoIt()
-    {
-        var highlighting = HighlightingManager.Instance.GetDefinition("C#");
-
-        highlighting.GetNamedColor("String").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
-        highlighting.GetNamedColor("Comment").Foreground = new SimpleHighlightingBrush(Colors.Red);
-        highlighting.GetNamedColor("Keywords").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
-        JsonTextBox.Background = new SolidColorBrush(Colors.Black); 
-        JsonTextBox.Foreground = new SolidColorBrush(Colors.White);
-
-        foreach (var color in highlighting.NamedHighlightingColors)
-        {
-            color.FontWeight = null;
-        }
-
-        // finally assign the customized highlighting to the editor
-        JsonTextBox.SyntaxHighlighting = highlighting;
     }
 
     protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -79,34 +61,11 @@ public partial class MainWindow : Window
         }
     }
 
-    private void LoadDebugSampleData()
-    { 
-        string jsonRaw = "{" +
-            "\"id\": 42," +
-            "\"name\": \"Peppson\"," +
-            "\"email\": \"Peppson@example.com\"," +
-            "\"isActive\": true," +
-            "\"roles\": [\"admin\", \"programmer\"]," +
-            "\"projects\": [" +
-                "{" +
-                    "\"id\": 1," +
-                    "\"name\": \"Worst WPF App in History\"," +
-                    "\"status\": \"Done-in-a-day-maybe\"" +
-                "}," +
-                "{" +
-                    "\"id\": 2," +
-                    "\"name\": \"ESP32 Shenanigans\"," +
-                    "\"status\": \"Completed\"" +
-                "}" +
-            "]" +
-        "}";
 
-        JsonTextBox.Text = JsonConvert.SerializeObject(
-            JsonConvert.DeserializeObject(jsonRaw), 
-            Formatting.Indented
-        ); 
-        //UrlTextBox.Text = "https://localhost:7291/snus/test";
-    }
+
+
+
+
 
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
@@ -136,6 +95,8 @@ public partial class MainWindow : Window
 
     private void ClearButton_Click(object sender, RoutedEventArgs e)
     {
+        State.SelectedAction = Models.HttpAction.None;
+        Console.WriteLine("Reset");
         /*UrlTextBox.Text = string.Empty;
         JsonTextBox.Text = string.Empty;
         UrlTextBox.BorderBrush = Brushes.Gray;
@@ -244,7 +205,7 @@ public partial class MainWindow : Window
             // Do nothing
         }
     }
- 
+
     private static void ShowMessageBox(string msg)
     {
         MessageBox.Show(
@@ -308,5 +269,25 @@ public partial class MainWindow : Window
         animation.KeyFrames.Add(new EasingDoubleKeyFrame(0, KeyTime.FromPercent(0.5)));
 
         return animation;
+    }
+    
+
+    private void DoIt()
+    {
+        var highlighting = HighlightingManager.Instance.GetDefinition("C#");
+
+        highlighting.GetNamedColor("String").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
+        highlighting.GetNamedColor("Comment").Foreground = new SimpleHighlightingBrush(Colors.Red);
+        highlighting.GetNamedColor("Keywords").Foreground = new SimpleHighlightingBrush(Colors.GreenYellow);
+        //JsonTextBox.Background = new SolidColorBrush(Colors.Black); 
+        //JsonTextBox.Foreground = new SolidColorBrush(Colors.White);
+
+        foreach (var color in highlighting.NamedHighlightingColors)
+        {
+            color.FontWeight = null;
+        }
+
+        // finally assign the customized highlighting to the editor
+        //JsonTextBox.SyntaxHighlighting = highlighting;
     }
 }

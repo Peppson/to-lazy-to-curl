@@ -19,4 +19,6 @@
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
 
+    <SolidColorBrush x:Key="Test" Color="Red" />
+    
 </ResourceDictionary>
