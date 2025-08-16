@@ -13,7 +13,7 @@
         Height="32"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
-        FontSize="14"
+        FontSize="13"
         FontWeight="Bold">
         <Button.Template>
             <ControlTemplate TargetType="Button">

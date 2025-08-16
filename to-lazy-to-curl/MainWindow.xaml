@@ -29,10 +29,10 @@
         </Grid.RowDefinitions>
 
         <!--  URL  -->
-        <components:UrlInput Grid.Row="0" />
+        <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
         <!--  JSON  -->
-        <components:JsonInput Grid.Row="1" />
+        <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
 
         <!--  Status Message  -->
         <TextBlock
@@ -69,31 +69,31 @@
                     Margin="0,0,4,0"
                     ActionType="Get"
                     ButtonColor="{StaticResource GetButton}"
-                    ButtonContent="Get" />
+                    ButtonContent="GET" />
                 <components:HttpButton
                     Grid.Column="1"
                     Margin="0,0,4,0"
                     ActionType="Post"
                     ButtonColor="{StaticResource PostButton}"
-                    ButtonContent="Post" />
+                    ButtonContent="POST" />
                 <components:HttpButton
                     Grid.Column="2"
                     Margin="0,0,4,0"
                     ActionType="Patch"
                     ButtonColor="{StaticResource PatchButton}"
-                    ButtonContent="Patch" />
+                    ButtonContent="PATCH" />
                 <components:HttpButton
                     Grid.Column="3"
                     Margin="0,0,4,0"
                     ActionType="Put"
                     ButtonColor="{StaticResource PutButton}"
-                    ButtonContent="Put" />
+                    ButtonContent="PUT" />
                 <components:HttpButton
                     Grid.Column="4"
                     Margin="0,0,4,0"
                     ActionType="Delete"
                     ButtonColor="{StaticResource DeleteButton}"
-                    ButtonContent="Delete" />
+                    ButtonContent="DELETE" />
             </Grid>
         </StackPanel>
 

@@ -1,62 +1,158 @@
-using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+using to_lazy_to_curl.Models;
+using to_lazy_to_curl.State;
 
 namespace to_lazy_to_curl.Services;
 
-static public class HttpService
+public static class HttpService
 {
-    private const long _connectionTimeout = 5; // s
-    
-    /* private static async Task<(bool Success, string? ErrorMsg)> SendPostRequestAsync(string url, string json)
+    private const long _connectionTimeout = Config.ConnectionTimeout;
+    private const int _messageDuration = Config.MessageDuration;
+
+    public static async Task SubmitRequestAsync(string url, string json)
     {
-        const string genericError = "Error sending POST request!";
+        if (!CanSubmitRequest(url, json))
+            return;
+
+        _ = UiService.ShowMessageAsync("Sending...", "PrimaryText", 10000);
+
+        var httpAction = States.SelectedHttpAction;
+        await TrySendRequestAsync(url, json, httpAction);
+    }
+
+    private static async Task TrySendRequestAsync(string url, string json, HttpAction httpAction)
+    {
+        var errorMsg = GetRequestFailedMessage();
+
         try
         {
-            using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(_connectionTimeout) };
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(url, content);
-
-            if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
-            {
-                return (false, "404: Endpoint not found!");
-            }
-
-            if (!response.IsSuccessStatusCode)
-            {
-                var statusCode = (int)response.StatusCode;
-                var reason = response.ReasonPhrase;
-                ShowMessageBox($"{genericError} \n\nStatus: {statusCode} \nReason: {reason}\n ");
-                return (false, genericError);
-            }
-
-            return (true, null);
+            await SendRequestAsync(url, json, httpAction);
+            _ = UiService.ShowMessageAsync(GetSuccessMessage(), "Success", _messageDuration);
         }
         catch (HttpRequestException ex)
         {
-            ShowMessageBox($"{genericError}\n\n{ex.Message}");
-            return (false, $"{genericError}");
+            _ = UiService.ShowMessageAsync(errorMsg, "Failure", _messageDuration);
+            UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
         catch (TaskCanceledException)
         {
-            return (false, $"POST request timed out after {_connectionTimeout} seconds!");
+            _ = UiService.ShowMessageAsync(GetTimeoutMessage(), "Failure", _messageDuration);
         }
         catch (Exception ex)
         {
-            ShowMessageBox($"{genericError}\n\n {ex.Message}");
-            return (false, $"{genericError}");
+            _ = UiService.ShowMessageAsync(errorMsg, "Failure", _messageDuration);
+            UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
-    } */
+    }
 
-    /* private static FormState ValidateInputs(string url, string json)
+    private static async Task SendRequestAsync(string url, string json, HttpAction httpAction)
     {
-        var isUrlEmpty = string.IsNullOrWhiteSpace(url);
-        var isJsonEmpty = string.IsNullOrWhiteSpace(json);
+        using var client = new HttpClient
+        {
+            Timeout = TimeSpan.FromSeconds(_connectionTimeout)
+        };
 
-        isUrlEmpty = isUrlEmpty || !Uri.IsWellFormedUriString(url, UriKind.Absolute);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await client.PostAsync(url, content); // this 
 
-        if (isUrlEmpty && isJsonEmpty) return FormState.BothEmpty;
-        if (isUrlEmpty) return FormState.UrlEmpty;
-        if (isJsonEmpty) return FormState.JsonEmpty;
 
-        return FormState.Filled;
-    } */
+
+        /* if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            return (false, "404: Endpoint not found!");
+        }
+
+
+        if (!response.IsSuccessStatusCode)
+        {
+            var statusCode = (int)response.StatusCode;
+            var reason = response.ReasonPhrase;
+            ShowMessageBox($"{genericError} \n\nStatus: {statusCode} \nReason: {reason}\n ");
+            return (false, genericError);
+        }
+
+        return (true, null); */
+    }
+
+    private static (bool IsUrlValid, bool IsJsonValid) ValidateInputs(string url, string json)
+    {
+        bool isUrlValid = !string.IsNullOrWhiteSpace(url) && Uri.IsWellFormedUriString(url, UriKind.Absolute);
+        bool isJsonValid = !string.IsNullOrWhiteSpace(json);
+
+        return (isUrlValid, isJsonValid);
+    }
+
+    private static bool GetIsJsonRequired(HttpAction action)
+    {
+        return action switch
+        {
+            HttpAction.GET => false,
+            HttpAction.POST => true,
+            HttpAction.PUT => true,
+            HttpAction.PATCH => true,
+            HttpAction.DELETE => false,
+            _ => false
+        };
+    }
+
+    private static bool CanSubmitRequest(string url, string json)
+    {
+        var (IsUrlValid, IsJsonValid) = ValidateInputs(url, json);
+
+        if (!IsUrlValid)
+        {
+            _ = UiService.ShowMessageAsync("Please enter a valid URL!", "Failure", _messageDuration);
+            return false;
+        }
+
+        if (States.SelectedHttpAction == HttpAction.NONE)
+        {
+            _ = UiService.ShowMessageAsync("Please choose an HTTP action!", "Failure", _messageDuration);
+            return false;
+        }
+
+        var isJsonRequired = GetIsJsonRequired(States.SelectedHttpAction);
+
+        if (isJsonRequired && !IsJsonValid)
+        {
+            _ = UiService.ShowMessageAsync(GetJsonRequiredMessage(), "Failure", _messageDuration);
+            return false;
+        }
+
+        // Let GET and DELETE pass through without Json body
+        if ((isJsonRequired && IsJsonValid) ||
+            States.SelectedHttpAction == HttpAction.GET ||
+            States.SelectedHttpAction == HttpAction.DELETE)
+        {
+            return true;
+        }
+
+        return false; // Should never get here
+    }
+
+    private static string GetJsonRequiredMessage()
+    {
+        var httpAction = States.SelectedHttpAction.ToString();
+        return $"Provide a JSON body for the {httpAction} request!";
+    }
+
+    private static string GetRequestFailedMessage()
+    {
+        var httpAction = States.SelectedHttpAction.ToString();
+        return $"Failed to send {httpAction} request";
+    }
+
+    private static string GetTimeoutMessage()
+    {
+        var httpAction = States.SelectedHttpAction.ToString();
+        return $"{httpAction} request timed out after {_connectionTimeout} seconds!";
+    }
+    
+    private static string GetSuccessMessage()
+    {
+        var httpAction = States.SelectedHttpAction.ToString();
+        return $"{httpAction} request sent successfully!";
+    }
+
 }

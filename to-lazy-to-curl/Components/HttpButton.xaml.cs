@@ -9,21 +9,21 @@ namespace to_lazy_to_curl.Components;
 
 public partial class HttpButton : UserControl
 {
-    public HttpAction ActionType { get; set; } = HttpAction.None;
+    public HttpAction ActionType { get; set; } = HttpAction.NONE;
 
     public HttpButton()
     {
         InitializeComponent();
         MainButton.Click += (_, __) =>
         {
-            States.SelectedAction = (States.SelectedAction == this.ActionType)
-                ? HttpAction.None 
+            States.SelectedHttpAction = (States.SelectedHttpAction == this.ActionType)
+                ? HttpAction.NONE 
                 : this.ActionType;
         };
 
         EventHandler handler = (_, __) =>
         {
-            IsSelected = States.SelectedAction == this.ActionType;
+            IsSelected = States.SelectedHttpAction == this.ActionType;
         };
 
         States.SelectedActionChanged += handler;

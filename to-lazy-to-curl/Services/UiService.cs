@@ -13,32 +13,35 @@ namespace to_lazy_to_curl.Services;
 
 static public class UiService
 {
+    public static TextBlock MessageTextBlock { get; set; } = null!;
     private static CancellationTokenSource? _messageCts;
     
-    public static async Task ShowMessageAsync(string message, TextBlock messageTextBlock, SolidColorBrush color, int durationMs)
+    public static async Task ShowMessageAsync(string msg, string colorName, int durationMs)
     {
         // Cancel any previous messages
         _messageCts?.Cancel();
         _messageCts = new CancellationTokenSource();
         var token = _messageCts.Token;
+        var color = (SolidColorBrush)Application.Current.FindResource(colorName);
 
-        messageTextBlock.Text = message;
-        messageTextBlock.Foreground = color;
+        MessageTextBlock.Text = msg;
+        MessageTextBlock.Foreground = color;
 
         // Fade in
         var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
-        messageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+        MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
 
+         // Fade out
         try
         {
             await Task.Delay(durationMs, token);
-            // Fade out
+
             var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(300));
-            messageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
         catch (TaskCanceledException)
         {
-            // Do nothing
+            // Do nothing :)
         }
     }
 
@@ -51,6 +54,8 @@ static public class UiService
             MessageBoxImage.Error
         );
     }
+
+   
 
     /*private async Task InvalidInputAnimationAsync(FormState formState)
     {

@@ -7,12 +7,18 @@ namespace to_lazy_to_curl.Components;
 
 public partial class UrlInput : UserControl
 {
+    public string UrlText
+    {
+        get => UrlTextBox.Text;
+        set => UrlTextBox.Text = value;
+    }
+
     public UrlInput()
     {
         InitializeComponent();
         UrlTextBox.Text = Config.UrlStartupData;
     }
-
+    
     private void UrlTextBox_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (UrlTextBox == null) return;

@@ -5,6 +5,12 @@ namespace to_lazy_to_curl.Components;
 
 public partial class JsonInput : UserControl
 {
+    public string JsonText
+    {
+        get => JsonTextBox.Text;
+        set => JsonTextBox.Text = value;
+    }
+    
     public JsonInput()
     {
         InitializeComponent();

@@ -5,6 +5,7 @@ namespace to_lazy_to_curl.State;
 static public class Config
 {
     public const int MessageDuration = 5000; // ms
+    public const long ConnectionTimeout = 5; // Seconds
     public const string UrlStartupData = "https://localhost:7291/snus/test"; //"https://jsonplaceholder.typicode.com/posts"; //todo
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(
         JsonConvert.DeserializeObject(@"
