@@ -11,7 +11,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         SetWindowSizeAndPosition();
-        UiService.MessageTextBlock = MessageTextBlock; // ;)
+        UiService.MessageTextBlock = MessageTextBlock;
     }
 
     private void SetWindowSizeAndPosition()

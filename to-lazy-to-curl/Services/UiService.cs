@@ -15,7 +15,7 @@ static public class UiService
 {
     public static TextBlock MessageTextBlock { get; set; } = null!;
     private static CancellationTokenSource? _messageCts;
-    
+        
     public static async Task ShowMessageAsync(string msg, string colorName, int durationMs)
     {
         // Cancel any previous messages
@@ -31,7 +31,7 @@ static public class UiService
         var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
         MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
 
-         // Fade out
+        // Fade out
         try
         {
             await Task.Delay(durationMs, token);
@@ -57,7 +57,7 @@ static public class UiService
 
    
 
-    /*private async Task InvalidInputAnimationAsync(FormState formState)
+    /* private static async Task InvalidInputAnimationAsync(FormState formState)
     {
         const int durationMs = 450;
         const double shakeOffset = 3;
@@ -93,7 +93,7 @@ static public class UiService
         JsonTextBox.BorderBrush = jsonTextBoxColor;
 
         SubmitButton.IsEnabled = true;
-    }*/
+    } */
 
     private static DoubleAnimationUsingKeyFrames GetAnimation(double offset, int durationMs)
     {

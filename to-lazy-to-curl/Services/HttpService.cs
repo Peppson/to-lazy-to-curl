@@ -1,4 +1,5 @@
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.State;
@@ -7,6 +8,7 @@ namespace to_lazy_to_curl.Services;
 
 public static class HttpService
 {
+    public static ICSharpCode.AvalonEdit.TextEditor? JsonInputEditor { get; set; }
     private const long _connectionTimeout = Config.ConnectionTimeout;
     private const int _messageDuration = Config.MessageDuration;
 
@@ -28,7 +30,6 @@ public static class HttpService
         try
         {
             await SendRequestAsync(url, json, httpAction);
-            _ = UiService.ShowMessageAsync(GetSuccessMessage(), "Success", _messageDuration);
         }
         catch (HttpRequestException ex)
         {
@@ -52,27 +53,33 @@ public static class HttpService
         {
             Timeout = TimeSpan.FromSeconds(_connectionTimeout)
         };
+        var body = new StringContent(json, Encoding.UTF8, "application/json");
 
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await client.PostAsync(url, content); // this 
+        // Send it!
+        var response = await SendHttpRequestAsync(client, httpAction, url, body);
+        ShowHttpResponseMessage(response);
 
 
-
-        /* if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        // todo update response ??
+        if (JsonInputEditor != null)
         {
-            return (false, "404: Endpoint not found!");
+            var responseText = await response.Content.ReadAsStringAsync();
+            JsonInputEditor.Text = responseText;
         }
 
+    }
 
-        if (!response.IsSuccessStatusCode)
+    private static async Task<HttpResponseMessage> SendHttpRequestAsync(HttpClient client, HttpAction action, string url, HttpContent? body = null)
+    {
+        return action switch
         {
-            var statusCode = (int)response.StatusCode;
-            var reason = response.ReasonPhrase;
-            ShowMessageBox($"{genericError} \n\nStatus: {statusCode} \nReason: {reason}\n ");
-            return (false, genericError);
-        }
-
-        return (true, null); */
+            HttpAction.GET => await client.GetAsync(url),
+            HttpAction.POST => await client.PostAsync(url, body),
+            HttpAction.PUT => await client.PutAsync(url, body),
+            HttpAction.PATCH => await client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), url) { Content = body }),
+            HttpAction.DELETE => await client.DeleteAsync(url),
+            _ => throw new InvalidOperationException("No valid HTTP action selected.")
+        };
     }
 
     private static (bool IsUrlValid, bool IsJsonValid) ValidateInputs(string url, string json)
@@ -131,6 +138,18 @@ public static class HttpService
         return false; // Should never get here
     }
 
+    public static void ShowHttpResponseMessage(HttpResponseMessage response)
+    {
+        if (response.IsSuccessStatusCode)
+        {
+            _ = UiService.ShowMessageAsync(GetSuccessMessage(), "Success", _messageDuration);
+        }
+        else
+        { 
+            _ = UiService.ShowMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", "Failure", _messageDuration);
+        }
+    }
+
     private static string GetJsonRequiredMessage()
     {
         var httpAction = States.SelectedHttpAction.ToString();
@@ -154,5 +173,4 @@ public static class HttpService
         var httpAction = States.SelectedHttpAction.ToString();
         return $"{httpAction} request sent successfully!";
     }
-
 }
