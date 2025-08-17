@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.State;
 
@@ -18,9 +19,6 @@ public partial class JsonInput : UserControl
             typeof(bool),
             typeof(JsonInput),
             new PropertyMetadata(false));
-
-    public bool HighlightRequestButton => RequestButton.IsMouseOver && IsResponseEditor;
-    public bool HighlightResponseButton => ResponseButton.IsMouseOver && !IsResponseEditor;
 
     public bool IsResponseEditor
     {
@@ -54,6 +52,7 @@ public partial class JsonInput : UserControl
             _wasNarrow = window.ActualWidth < Config.SplitEditorThreshold;
         };
 
+        Splitter.LayoutUpdated += (s, e) => SetResponseButtonPositionSplitView();
         HttpService.JsonResponseBody = ResponseEditor;
         UiService.JsonEditorBorder = JsonEditorsBorder;
     }
@@ -74,18 +73,20 @@ public partial class JsonInput : UserControl
     {
         IsResponseEditor = false;
         UpdateEditorPositions();
+        JsonTextBox.Focus();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
     {
         IsResponseEditor = true;
         UpdateEditorPositions();
+        ResponseEditor.Focus();
     }
 
     private void SetupEditors()
     {
         IsResponseEditor = false;
-        
+
         JsonTextBox.Text = Config.JsonSampleData;
         JsonTextBox.Options.EnableHyperlinks = false;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
@@ -131,32 +132,45 @@ public partial class JsonInput : UserControl
         if (isNarrow)
         {
             SingleViewButtonPanel.Visibility = Visibility.Visible;
+            SplitViewButtonPanel.Visibility = Visibility.Collapsed;
 
             UpdateEditorPositions();
             UpdateEditorVisibility();
 
             // Save widths before swaping layout
-            _lastLeftWidth = MainGrid.ColumnDefinitions[0].Width;
-            _lastRightWidth = MainGrid.ColumnDefinitions[2].Width;
+            _lastLeftWidth = JsonEditorGrid.ColumnDefinitions[0].Width;
+            _lastRightWidth = JsonEditorGrid.ColumnDefinitions[2].Width;
 
-            MainGrid.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
-            MainGrid.ColumnDefinitions[1].Width = new GridLength(0);
-            MainGrid.ColumnDefinitions[2].Width = new GridLength(0);
+            JsonEditorGrid.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
+            JsonEditorGrid.ColumnDefinitions[1].Width = new GridLength(0);
+            JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(0);
+            JsonEditorGrid.ColumnDefinitions[0].MinWidth = 0;
+            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 0;
         }
         else // Split view
         {
-            SingleViewButtonPanel.Visibility = Visibility.Hidden;
+            SingleViewButtonPanel.Visibility = Visibility.Collapsed;
+            SplitViewButtonPanel.Visibility = Visibility.Visible;
 
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);
             UpdateEditorVisibility(true);
 
             // Restore last split widths
-            MainGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
-            MainGrid.ColumnDefinitions[1].Width = new GridLength(10);
-            MainGrid.ColumnDefinitions[2].Width = _lastRightWidth;
+            JsonEditorGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
+            JsonEditorGrid.ColumnDefinitions[1].Width = new GridLength(10);
+            JsonEditorGrid.ColumnDefinitions[2].Width = _lastRightWidth;
+            JsonEditorGrid.ColumnDefinitions[0].MinWidth = 157;
+            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 170;
 
+            SetResponseButtonPositionSplitView();
         }
+    }
+
+    private void SetResponseButtonPositionSplitView()
+    {
+        double leftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth;
+        ResponseButton2.Margin = new Thickness(leftWidth + 6f, 0, 0, - 1f);
     }
 
     public void Reset()
@@ -168,10 +182,11 @@ public partial class JsonInput : UserControl
         // Layout and grid
         _lastLeftWidth = new GridLength(1, GridUnitType.Star);
         _lastRightWidth = new GridLength(1, GridUnitType.Star);
-        MainGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
-        MainGrid.ColumnDefinitions[2].Width = _lastRightWidth;
-        
+        JsonEditorGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
+        JsonEditorGrid.ColumnDefinitions[2].Width = _lastRightWidth;
+
         Window parentWindow = Window.GetWindow(this);
         UpdateEditorLayouts(parentWindow.ActualWidth);
+        SetResponseButtonPositionSplitView();
     }
 }

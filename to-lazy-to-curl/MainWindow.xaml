@@ -47,7 +47,7 @@
         <!--  HTTP Action Buttons  -->
         <StackPanel
             Grid.Row="4"
-            MaxWidth="880"
+            MaxWidth="900"
             Orientation="Vertical">
 
             <TextBlock
@@ -106,7 +106,7 @@
         <!--  Bottom Buttons  -->
         <Grid
             Grid.Row="5"
-            MaxWidth="880"
+            MaxWidth="900"
             Margin="0,12,0,0">
 
             <Grid.ColumnDefinitions>

@@ -28,7 +28,6 @@
             x:Name="SingleViewButtonPanel"
             Grid.Row="1"
             Height="30"
-            MinWidth="430"
             HorizontalAlignment="Stretch"
             Panel.ZIndex="1"
             SnapsToDevicePixels="True">
@@ -98,7 +97,7 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
-                            x:Name="outerBorder"
+                            x:Name="outerBorder2"
                             Background="{StaticResource WindowBackground}"
                             BorderBrush="{StaticResource Border}"
                             BorderThickness="1,1,1,0"
@@ -113,18 +112,119 @@
                             </Grid>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
-                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            <Trigger SourceName="outerBorder2" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder2" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
                             <DataTrigger Binding="{Binding IsMouseOver, ElementName=ResponseEditor}" Value="True">
-                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                                <Setter TargetName="outerBorder2" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding IsKeyboardFocusWithin, ElementName=ResponseEditor}" Value="True">
-                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                                <Setter TargetName="outerBorder2" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
                                 <Setter TargetName="contentPresenter" Property="Margin" Value="0,0,0,1" />
                                 <Setter Property="Margin" Value="0,0,0,-1" />
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid
+            x:Name="SplitViewButtonPanel"
+            Grid.Row="1"
+            Height="30"
+            HorizontalAlignment="Stretch"
+            Panel.ZIndex="1"
+            SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="RequestButton2"
+                Grid.Column="0"
+                Width="164"
+                Margin="0,0,0,-1"
+                HorizontalAlignment="Left"
+                Content="Request"
+                Focusable="False"
+                FontSize="{StaticResource FontSizeTabs}"
+                FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="outerBorder3"
+                            Background="{StaticResource WindowBackground}"
+                            BorderBrush="{StaticResource Border}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="4, 4, 0, 0">
+                            <Grid x:Name="innerArea" Background="Transparent">
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    Margin="0,0,0,1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="outerBorder3" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder3" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=JsonEditorsBorder}" Value="True">
+                                <Setter TargetName="outerBorder3" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsKeyboardFocusWithin, ElementName=JsonEditorsBorder}" Value="True">
+                                <Setter TargetName="outerBorder3" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=ResponseButton2}" Value="True">
+                                <Setter TargetName="outerBorder3" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button
+                x:Name="ResponseButton2"
+                Grid.Column="0"
+                Width="164"
+                HorizontalAlignment="Left"
+                Content="Response"
+                Focusable="False"
+                FontSize="{StaticResource FontSizeTabs}"
+                FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="outerBorder4"
+                            Background="{StaticResource WindowBackground}"
+                            BorderBrush="{StaticResource Border}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="4, 4, 0, 0">
+                            <Grid x:Name="innerArea" Background="Transparent">
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    Margin="0,0,0,1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="outerBorder4" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=JsonEditorsBorder}" Value="True">
+                                <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsKeyboardFocusWithin, ElementName=JsonEditorsBorder}" Value="True">
+                                <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=RequestButton2}" Value="True">
+                                <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </DataTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -142,12 +242,21 @@
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="{StaticResource Border}" />
                     <Style.Triggers>
+
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocusWithin" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </Trigger>
+
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=RequestButton2}" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=ResponseButton2}" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        </DataTrigger>
+
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsMouseOver, ElementName=RequestButton}" Value="True" />
@@ -155,6 +264,7 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </MultiDataTrigger>
+
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsMouseOver, ElementName=ResponseButton}" Value="True" />
@@ -162,11 +272,12 @@
                             </MultiDataTrigger.Conditions>
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </MultiDataTrigger>
+
                     </Style.Triggers>
                 </Style>
             </Border.Style>
 
-            <Grid x:Name="MainGrid">
+            <Grid x:Name="JsonEditorGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="auto" />
@@ -185,8 +296,9 @@
                     VerticalScrollBarVisibility="Auto" />
 
                 <GridSplitter
+                    x:Name="Splitter"
                     Grid.Column="1"
-                    Width="2"
+                    Width="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
                     Background="{StaticResource BorderHover}"
@@ -194,7 +306,8 @@
                     Focusable="False"
                     ResizeBehavior="PreviousAndNext"
                     ResizeDirection="Columns"
-                    ShowsPreview="False" />
+                    ShowsPreview="False"
+                    SnapsToDevicePixels="True" />
 
                 <avalonEdit:TextEditor
                     Name="ResponseEditor"
