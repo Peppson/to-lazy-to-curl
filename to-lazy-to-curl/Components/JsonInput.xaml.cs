@@ -151,8 +151,8 @@ private void ResponseButton2_PreviewMouseLeftButtonUp(object sender, MouseButton
         JsonTextBox.Text = Config.JsonSampleData;
         JsonTextBox.Options.EnableHyperlinks = false;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
-
-        ResponseEditor.Text = Config.UrlStartupData; // todo
+        
+        ResponseEditor.Text = Config.JsonSampleResponse;
         ResponseEditor.Options.EnableHyperlinks = false;
         ResponseEditor.Options.EnableEmailHyperlinks = false;
     }
