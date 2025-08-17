@@ -19,6 +19,9 @@ public partial class JsonInput : UserControl
             typeof(JsonInput),
             new PropertyMetadata(false));
 
+    public bool HighlightRequestButton => RequestButton.IsMouseOver && IsResponseEditor;
+    public bool HighlightResponseButton => ResponseButton.IsMouseOver && !IsResponseEditor;
+
     public bool IsResponseEditor
     {
         get => (bool)GetValue(RandomNameProperty);
@@ -127,7 +130,7 @@ public partial class JsonInput : UserControl
         // Single view
         if (isNarrow)
         {
-            ModeButtonPanel.Visibility = Visibility.Visible;
+            SingleViewButtonPanel.Visibility = Visibility.Visible;
 
             UpdateEditorPositions();
             UpdateEditorVisibility();
@@ -142,7 +145,7 @@ public partial class JsonInput : UserControl
         }
         else // Split view
         {
-            ModeButtonPanel.Visibility = Visibility.Hidden;
+            SingleViewButtonPanel.Visibility = Visibility.Hidden;
 
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);

@@ -24,18 +24,11 @@
             Foreground="{StaticResource PrimaryText}"
             Text="Body" />
 
-
-
-
-
-
-
         <Grid
-            x:Name="ModeButtonPanel"
+            x:Name="SingleViewButtonPanel"
             Grid.Row="1"
             Height="30"
             MinWidth="430"
-            Margin="0,0,0,-2"
             HorizontalAlignment="Stretch"
             Panel.ZIndex="1"
             SnapsToDevicePixels="True">
@@ -48,9 +41,6 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-
-
-
             <Button
                 x:Name="RequestButton"
                 Grid.Column="0"
@@ -60,7 +50,6 @@
                 Cursor="Hand"
                 FontSize="{StaticResource FontSizeTabs}"
                 FontWeight="Bold">
-
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -71,37 +60,31 @@
                             CornerRadius="4, 4, 0, 0">
                             <Grid x:Name="innerArea" Background="Transparent">
                                 <ContentPresenter
+                                    x:Name="contentPresenter"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     RecognizesAccessKey="True"
                                     TextElement.Foreground="{TemplateBinding Foreground}" />
                             </Grid>
                         </Border>
-
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
-
-                            <!--
-
-                            <Trigger SourceName="outerBorder" Property="IsKeyboardFocusWithin" Value="True">
-                                <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
-                            </Trigger>
-
-
-                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="false">
-                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="Red" />
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=JsonTextBox}" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </DataTrigger>
-                            -->
-
+                            <DataTrigger Binding="{Binding IsKeyboardFocusWithin, ElementName=JsonTextBox}" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                <Setter TargetName="contentPresenter" Property="Margin" Value="0,0,0,1" />
+                                <Setter Property="Margin" Value="0,0,0,-1" />
+                            </DataTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-
-
 
             <Button
                 x:Name="ResponseButton"
@@ -109,29 +92,50 @@
                 HorizontalAlignment="Stretch"
                 Click="ResponseButton_Click"
                 Content="Response"
-                FontSize="{StaticResource FontSizeTabs}">
-                <Button.Style>
-                    <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
-                                <Setter Property="Background" Value="Red" />
+                Cursor="Hand"
+                FontSize="{StaticResource FontSizeTabs}"
+                FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="outerBorder"
+                            Background="{StaticResource WindowBackground}"
+                            BorderBrush="{StaticResource Border}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="4, 4, 0, 0">
+                            <Grid x:Name="innerArea" Background="Transparent">
+                                <ContentPresenter
+                                    x:Name="contentPresenter"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=ResponseEditor}" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+                            <DataTrigger Binding="{Binding IsKeyboardFocusWithin, ElementName=ResponseEditor}" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                                <Setter TargetName="contentPresenter" Property="Margin" Value="0,0,0,1" />
+                                <Setter Property="Margin" Value="0,0,0,-1" />
+                            </DataTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
         </Grid>
-
-
-
-
-
-
 
         <Border
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
-            Background="Transparent"
+            Background="{StaticResource WindowBackground}"
             BorderThickness="1"
             CornerRadius="0, 4, 4, 4">
             <Border.Style>
@@ -144,6 +148,20 @@
                         <Trigger Property="IsKeyboardFocusWithin" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsMouseOver, ElementName=RequestButton}" Value="True" />
+                                <Condition Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsMouseOver, ElementName=ResponseButton}" Value="True" />
+                                <Condition Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        </MultiDataTrigger>
                     </Style.Triggers>
                 </Style>
             </Border.Style>
@@ -173,6 +191,7 @@
                     VerticalAlignment="Stretch"
                     Background="{StaticResource BorderHover}"
                     DragIncrement="1"
+                    Focusable="False"
                     ResizeBehavior="PreviousAndNext"
                     ResizeDirection="Columns"
                     ShowsPreview="False" />
