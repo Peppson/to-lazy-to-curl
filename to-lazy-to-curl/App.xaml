@@ -10,6 +10,7 @@
             <!--  Colors  -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Sizes.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <!--  No hover/focus on inputs  -->

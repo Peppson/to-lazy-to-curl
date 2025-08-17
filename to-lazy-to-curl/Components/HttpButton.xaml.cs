@@ -14,34 +14,43 @@ public partial class HttpButton : UserControl
     public HttpButton()
     {
         InitializeComponent();
-        MainButton.Click += (_, __) =>
-        {
-            States.SelectedHttpAction = (States.SelectedHttpAction == this.ActionType)
-                ? HttpAction.NONE 
-                : this.ActionType;
-        };
-
-        EventHandler handler = (_, __) =>
-        {
-            IsSelected = States.SelectedHttpAction == this.ActionType;
-        };
-
+        EventHandler handler = (_, __) => { IsSelected = States.SelectedHttpAction == this.ActionType; };
+        MainButton.Click += MainButton_Click;
         States.SelectedActionChanged += handler;
         this.Unloaded += (_, __) => States.SelectedActionChanged -= handler;
     }
 
-    public static readonly DependencyProperty IsSelectedProperty =
-    DependencyProperty.Register(
-        nameof(IsSelected),
-        typeof(bool),
-        typeof(HttpButton),
-        new PropertyMetadata(false));
+    private void MainButton_Click(object sender, RoutedEventArgs e)
+    {
+        States.SelectedHttpAction = (States.SelectedHttpAction == this.ActionType)
+            ? HttpAction.NONE
+            : this.ActionType;
+    }
 
     public bool IsSelected
     {
         get => (bool)GetValue(IsSelectedProperty);
         set => SetValue(IsSelectedProperty, value);
     }
+
+    public object ButtonContent
+    {
+        get => GetValue(ButtonContentProperty);
+        set => SetValue(ButtonContentProperty, value);
+    }
+
+    public Brush ButtonColor
+    {
+        get => (Brush)GetValue(ButtonColorProperty);
+        set => SetValue(ButtonColorProperty, value);
+    }
+    
+    public static readonly DependencyProperty IsSelectedProperty =
+    DependencyProperty.Register(
+        nameof(IsSelected),
+        typeof(bool),
+        typeof(HttpButton),
+        new PropertyMetadata(false));
 
     public static readonly DependencyProperty ButtonContentProperty =
         DependencyProperty.Register(
@@ -50,22 +59,10 @@ public partial class HttpButton : UserControl
             typeof(HttpButton),
             new PropertyMetadata(null));
 
-    public object ButtonContent
-    {
-        get => GetValue(ButtonContentProperty);
-        set => SetValue(ButtonContentProperty, value);
-    }
-
     public static readonly DependencyProperty ButtonColorProperty =
     DependencyProperty.Register(
         nameof(ButtonColor),
         typeof(Brush),
         typeof(HttpButton),
         new PropertyMetadata(Brushes.Gray));
-
-    public Brush ButtonColor
-    {
-        get => (Brush)GetValue(ButtonColorProperty);
-        set => SetValue(ButtonColorProperty, value);
-    }
 }

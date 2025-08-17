@@ -9,9 +9,9 @@
 
     <StackPanel Orientation="Vertical">
         <TextBlock
-            Margin="0,0,0,6"
+            Margin="0,5,0,6"
             VerticalAlignment="Center"
-            FontSize="16"
+            FontSize="{StaticResource FontSizeH1}"
             FontWeight="Bold"
             Foreground="{StaticResource PrimaryText}"
             Text="URL" />
@@ -34,7 +34,6 @@
                     </Style.Triggers>
                 </Style>
             </Border.Style>
-
             <Grid>
                 <TextBox
                     x:Name="UrlTextBox"
@@ -42,7 +41,7 @@
                     Padding="4,0"
                     VerticalContentAlignment="Center"
                     Background="{StaticResource InputBackground}"
-                    FontSize="15"
+                    FontSize="{StaticResource FontSizeUrlInput}"
                     Foreground="{StaticResource PrimaryText}"
                     Style="{StaticResource NoHoverFocusTextBoxStyle}"
                     TextChanged="UrlTextBox_TextChanged"
@@ -51,7 +50,7 @@
                 <TextBlock
                     Padding="6,0"
                     VerticalAlignment="Center"
-                    FontSize="15"
+                    FontSize="{StaticResource FontSizeUrlInput}"
                     Foreground="{StaticResource PlaceHolderText}"
                     IsHitTestVisible="False"
                     Text="Enter a URL..."

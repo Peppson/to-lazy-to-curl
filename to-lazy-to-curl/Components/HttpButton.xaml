@@ -10,10 +10,10 @@
 
     <Button
         x:Name="MainButton"
-        Height="34"
+        Height="36"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
-        FontSize="13"
+        FontSize="{DynamicResource FontSizeHttpButtons}"
         FontWeight="Bold">
         <Button.Template>
             <ControlTemplate TargetType="Button">

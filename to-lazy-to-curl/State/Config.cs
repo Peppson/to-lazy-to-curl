@@ -9,8 +9,8 @@ static public class Config
     public const double SplitEditorThreshold = 880; // App width in px to switch layout
 
 
-    //public const string UrlStartupData = "https://localhost:7291/snus"; // todo
-    public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
+    public const string UrlStartupData = "https://localhost:7291/snus"; // todo
+    //public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
 
     
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(

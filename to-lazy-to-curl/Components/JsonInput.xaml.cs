@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Controls;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.State;
@@ -7,10 +8,22 @@ namespace to_lazy_to_curl.Components;
 
 public partial class JsonInput : UserControl
 {
-    private bool _isResponseEditor = false;
-    private bool _wasNarrow;
-    private GridLength _lastLeftWidth = new GridLength(1, GridUnitType.Star);
-    private GridLength _lastRightWidth = new GridLength(1, GridUnitType.Star);
+    private bool _wasNarrow = false;
+    private GridLength _lastLeftWidth = new(1, GridUnitType.Star);
+    private GridLength _lastRightWidth = new(1, GridUnitType.Star);
+
+    public static readonly DependencyProperty RandomNameProperty =
+        DependencyProperty.Register(
+            nameof(IsResponseEditor),
+            typeof(bool),
+            typeof(JsonInput),
+            new PropertyMetadata(false));
+
+    public bool IsResponseEditor
+    {
+        get => (bool)GetValue(RandomNameProperty);
+        private set => SetValue(RandomNameProperty, value);
+    }
 
     public string JsonRequestBody
     {
@@ -35,6 +48,7 @@ public partial class JsonInput : UserControl
             Window window = Window.GetWindow(this)!;
             window.SizeChanged += Window_SizeChanged;
             UpdateEditorLayouts(window.ActualWidth);
+            _wasNarrow = window.ActualWidth < Config.SplitEditorThreshold;
         };
 
         HttpService.JsonResponseBody = ResponseEditor;
@@ -55,18 +69,20 @@ public partial class JsonInput : UserControl
 
     private void RequestButton_Click(object sender, RoutedEventArgs e)
     {
-        _isResponseEditor = false;
+        IsResponseEditor = false;
         UpdateEditorPositions();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
     {
-        _isResponseEditor = true;
+        IsResponseEditor = true;
         UpdateEditorPositions();
     }
 
     private void SetupEditors()
     {
+        IsResponseEditor = false;
+        
         JsonTextBox.Text = Config.JsonSampleData;
         JsonTextBox.Options.EnableHyperlinks = false;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
@@ -80,7 +96,7 @@ public partial class JsonInput : UserControl
     {
         UpdateEditorVisibility();
 
-        if (_isResponseEditor)
+        if (IsResponseEditor)
         {
             Grid.SetColumn(JsonTextBox, 2);
             Grid.SetColumn(ResponseEditor, 0);
@@ -100,8 +116,8 @@ public partial class JsonInput : UserControl
             ResponseEditor.Visibility = Visibility.Visible;
             return;
         }
-        ResponseEditor.Visibility = _isResponseEditor ? Visibility.Visible : Visibility.Collapsed;
-        JsonTextBox.Visibility = _isResponseEditor ? Visibility.Collapsed : Visibility.Visible;
+        ResponseEditor.Visibility = IsResponseEditor ? Visibility.Visible : Visibility.Collapsed;
+        JsonTextBox.Visibility = IsResponseEditor ? Visibility.Collapsed : Visibility.Visible;
     }
 
     private void UpdateEditorLayouts(double width)
@@ -126,7 +142,7 @@ public partial class JsonInput : UserControl
         }
         else // Split view
         {
-            ModeButtonPanel.Visibility = Visibility.Collapsed;
+            ModeButtonPanel.Visibility = Visibility.Hidden;
 
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);
@@ -142,7 +158,7 @@ public partial class JsonInput : UserControl
 
     public void Reset()
     {
-        _isResponseEditor = false;
+        IsResponseEditor = false;
         JsonRequestBody = string.Empty;
         JsonResponseBody = string.Empty;
 

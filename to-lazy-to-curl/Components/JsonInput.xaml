@@ -17,39 +17,123 @@
 
         <TextBlock
             Grid.Row="0"
-            Margin="0,14,0,6"
+            Margin="0,16,0,6"
             VerticalAlignment="Center"
-            FontSize="16"
+            FontSize="{StaticResource FontSizeH1}"
             FontWeight="Bold"
             Foreground="{StaticResource PrimaryText}"
             Text="Body" />
 
 
 
-        <StackPanel
+
+
+
+
+        <Grid
             x:Name="ModeButtonPanel"
-            Grid.Row="0"
-            Margin="0,1,0,6"
-            HorizontalAlignment="Center"
-            Orientation="Horizontal">
+            Grid.Row="1"
+            Height="30"
+            MinWidth="430"
+            Margin="0,0,0,-2"
+            HorizontalAlignment="Stretch"
+            Panel.ZIndex="1"
+            SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+
             <Button
                 x:Name="RequestButton"
-                Margin="0,0,6,0"
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
                 Click="RequestButton_Click"
-                Content="Request" />
+                Content="Request"
+                Cursor="Hand"
+                FontSize="{StaticResource FontSizeTabs}"
+                FontWeight="Bold">
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            x:Name="outerBorder"
+                            Background="{StaticResource WindowBackground}"
+                            BorderBrush="{StaticResource Border}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="4, 4, 0, 0">
+                            <Grid x:Name="innerArea" Background="Transparent">
+                                <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    RecognizesAccessKey="True"
+                                    TextElement.Foreground="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+
+                            <!--
+
+                            <Trigger SourceName="outerBorder" Property="IsKeyboardFocusWithin" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+
+
+                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="false">
+                                <Setter TargetName="outerBorder" Property="BorderBrush" Value="Red" />
+                            </DataTrigger>
+                            -->
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+
             <Button
                 x:Name="ResponseButton"
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
                 Click="ResponseButton_Click"
-                Content="Response" />
-        </StackPanel>
+                Content="Response"
+                FontSize="{StaticResource FontSizeTabs}">
+                <Button.Style>
+                    <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsResponseEditor, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                                <Setter Property="Background" Value="Red" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+
+
+
+
 
 
 
         <Border
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
+            Background="Transparent"
             BorderThickness="1"
-            CornerRadius="4">
+            CornerRadius="0, 4, 4, 4">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="{StaticResource Border}" />
@@ -64,7 +148,7 @@
                 </Style>
             </Border.Style>
 
-            <Grid x:Name="MainGrid" Background="{StaticResource InputBackground}">
+            <Grid x:Name="MainGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="auto" />
@@ -74,7 +158,7 @@
                 <avalonEdit:TextEditor
                     Name="JsonTextBox"
                     Grid.Column="0"
-                    Background="{StaticResource InputBackground}"
+                    Background="Transparent"
                     FontSize="14"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
@@ -96,8 +180,8 @@
                 <avalonEdit:TextEditor
                     Name="ResponseEditor"
                     Grid.Column="2"
-                    Background="{StaticResource InputBackground}"
-                    FontSize="14"
+                    Background="Transparent"
+                    FontSize="{StaticResource FontSizeJsonEditor}"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"

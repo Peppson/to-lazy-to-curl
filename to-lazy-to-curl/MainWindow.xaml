@@ -12,7 +12,7 @@
     Height="670"
     MinWidth="400"
     MinHeight="480"
-    Background="{StaticResource WindowBackground}"
+    Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/AppIcon.ico"
     mc:Ignorable="d">
@@ -37,7 +37,7 @@
         <TextBlock
             x:Name="MessageTextBlock"
             Grid.Row="3"
-            Margin="0,10,0,-4"
+            Margin="0,10,0,-10"
             HorizontalAlignment="Center"
             FontSize="14"
             FontWeight="Bold"
@@ -47,12 +47,13 @@
         <!--  HTTP Action Buttons  -->
         <StackPanel
             Grid.Row="4"
-            MaxWidth="1000"
+            MaxWidth="880"
             Orientation="Vertical">
+
             <TextBlock
                 Margin="0,0,0,6"
                 VerticalAlignment="Center"
-                FontSize="16"
+                FontSize="{StaticResource FontSizeH1}"
                 FontWeight="Bold"
                 Foreground="{StaticResource PrimaryText}"
                 Text="Actions" />
@@ -60,39 +61,42 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <components:HttpButton
                     Grid.Column="0"
-                    Margin="0,0,4,0"
                     ActionType="Get"
                     ButtonColor="{StaticResource GetButton}"
                     ButtonContent="GET" />
+
                 <components:HttpButton
-                    Grid.Column="1"
-                    Margin="0,0,4,0"
+                    Grid.Column="2"
                     ActionType="Post"
                     ButtonColor="{StaticResource PostButton}"
                     ButtonContent="POST" />
+
                 <components:HttpButton
-                    Grid.Column="2"
-                    Margin="0,0,4,0"
+                    Grid.Column="4"
                     ActionType="Patch"
                     ButtonColor="{StaticResource PatchButton}"
                     ButtonContent="PATCH" />
+
                 <components:HttpButton
-                    Grid.Column="3"
-                    Margin="0,0,4,0"
+                    Grid.Column="6"
                     ActionType="Put"
                     ButtonColor="{StaticResource PutButton}"
                     ButtonContent="PUT" />
+
                 <components:HttpButton
-                    Grid.Column="4"
-                    Margin="0,0,4,0"
+                    Grid.Column="8"
                     ActionType="Delete"
                     ButtonColor="{StaticResource DeleteButton}"
                     ButtonContent="DELETE" />
@@ -102,8 +106,9 @@
         <!--  Bottom Buttons  -->
         <Grid
             Grid.Row="5"
-            MaxWidth="1000"
+            MaxWidth="880"
             Margin="0,12,0,0">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="4" />
@@ -117,7 +122,7 @@
                 Click="SubmitButton_Click"
                 Content="Send"
                 Cursor="Hand"
-                FontSize="14"
+                FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -155,7 +160,7 @@
                 Click="ClearButton_Click"
                 Content="Clear"
                 Cursor="Hand"
-                FontSize="14"
+                FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
