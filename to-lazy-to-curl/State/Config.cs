@@ -4,8 +4,9 @@ namespace to_lazy_to_curl.State;
 
 static public class Config
 {
-    public const int MessageDuration = 5000; // ms
-    public const long ConnectionTimeout = 5; // Seconds
+    public const int MessageDuration = 5000; // Show status message for x ms
+    public const long ConnectionTimeout = 5; // Http timout in Seconds
+    public const double SplitEditorThreshold = 940; // App width in px to switch layout
 
 
     public const string UrlStartupData = "https://localhost:7291/snus"; // todo

@@ -10,7 +10,7 @@
 
     <Button
         x:Name="MainButton"
-        Height="32"
+        Height="34"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
         FontSize="13"
