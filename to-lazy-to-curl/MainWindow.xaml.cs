@@ -1,5 +1,7 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Windows;
+using FontAwesome.WPF;
 using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.State;

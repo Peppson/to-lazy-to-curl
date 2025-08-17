@@ -5,6 +5,7 @@
     xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
     xmlns:components="clr-namespace:to_lazy_to_curl.Components"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:to_lazy_to_curl"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="To Lazy to Curl"
@@ -120,10 +121,24 @@
                 Grid.Column="0"
                 Height="42"
                 Click="SubmitButton_Click"
-                Content="Send"
                 Cursor="Hand"
                 FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
+                <Grid>
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="Send" />
+                    <fa:ImageAwesome
+                        Width="17"
+                        Height="17"
+                        Margin="-64,0,0,2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource PrimaryText}"
+                        Icon="PaperPlaneOutline"
+                        Rotation="20" />
+                </Grid>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -132,16 +147,14 @@
                             BorderBrush="{StaticResource Border}"
                             BorderThickness="1"
                             CornerRadius="4">
-                            <Grid x:Name="innerArea" Background="Transparent">
-                                <ContentPresenter
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    RecognizesAccessKey="True"
-                                    TextElement.Foreground="{TemplateBinding Foreground}" />
-                            </Grid>
+                            <ContentPresenter
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                RecognizesAccessKey="True"
+                                TextElement.Foreground="{TemplateBinding Foreground}" />
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
+                            <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
@@ -158,10 +171,24 @@
                 Grid.Column="2"
                 Height="42"
                 Click="ClearButton_Click"
-                Content="Reset"
                 Cursor="Hand"
                 FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
+                <Grid>
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="Reset" />
+                    <fa:ImageAwesome
+                        Width="15"
+                        Height="15"
+                        Margin="-64,0,0,-1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource PrimaryText}"
+                        Icon="Refresh"
+                        Rotation="0" />
+                </Grid>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -170,21 +197,19 @@
                             BorderBrush="{StaticResource Border}"
                             BorderThickness="1"
                             CornerRadius="4">
-                            <Grid x:Name="innerArea" Background="Transparent">
-                                <ContentPresenter
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    RecognizesAccessKey="True"
-                                    TextElement.Foreground="{TemplateBinding Foreground}" />
-                            </Grid>
+                            <ContentPresenter
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                RecognizesAccessKey="True"
+                                TextElement.Foreground="{TemplateBinding Foreground}" />
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger SourceName="innerArea" Property="IsMouseOver" Value="True">
+                            <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                                 <Setter TargetName="outer" Property="Background" Value="{StaticResource BorderHover}" />
+                                <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

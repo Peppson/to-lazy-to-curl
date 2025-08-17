@@ -19,6 +19,7 @@
         <Border
             x:Name="UrlBorder"
             VerticalAlignment="Center"
+            Background="{StaticResource InputBackground}"
             BorderThickness="1"
             CornerRadius="4">
             <Border.Style>
@@ -40,7 +41,6 @@
                     Height="32"
                     Padding="4,0"
                     VerticalContentAlignment="Center"
-                    Background="{StaticResource InputBackground}"
                     FontSize="{StaticResource FontSizeUrlInput}"
                     Foreground="{StaticResource PrimaryText}"
                     Style="{StaticResource NoHoverFocusTextBoxStyle}"
