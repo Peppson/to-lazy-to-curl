@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="To Lazy to Curl"
     Width="620"
-    Height="670"
+    Height="683"
     MinWidth="400"
     MinHeight="480"
     Background="{DynamicResource WindowBackground}"
@@ -124,21 +124,24 @@
                 Cursor="Hand"
                 FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
-                <Grid>
-                    <TextBlock
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="Send" />
+
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
                     <fa:ImageAwesome
-                        Width="17"
-                        Height="17"
-                        Margin="-64,0,0,2"
-                        HorizontalAlignment="Center"
+                        Width="16"
+                        Height="16"
+                        Margin="0,0,6,0"
                         VerticalAlignment="Center"
                         Foreground="{StaticResource PrimaryText}"
-                        Icon="PaperPlaneOutline"
-                        Rotation="20" />
-                </Grid>
+                        Icon="PaperPlaneOutline" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="{DynamicResource FontSizeBottomButtons}"
+                        Text="Send" />
+                </StackPanel>
+
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -174,21 +177,24 @@
                 Cursor="Hand"
                 FontSize="{DynamicResource FontSizeBottomButtons}"
                 FontWeight="Bold">
-                <Grid>
-                    <TextBlock
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="Reset" />
+
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
                     <fa:ImageAwesome
                         Width="15"
                         Height="15"
-                        Margin="-64,0,0,-1"
-                        HorizontalAlignment="Center"
+                        Margin="0,0,6,0"
                         VerticalAlignment="Center"
                         Foreground="{StaticResource PrimaryText}"
-                        Icon="Refresh"
-                        Rotation="0" />
-                </Grid>
+                        Icon="Refresh" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="{DynamicResource FontSizeBottomButtons}"
+                        Text="Reset" />
+                </StackPanel>
+
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
