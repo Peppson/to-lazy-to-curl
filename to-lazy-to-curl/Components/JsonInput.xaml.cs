@@ -8,43 +8,49 @@ namespace to_lazy_to_curl.Components;
 public partial class JsonInput : UserControl
 {
     private bool _isResponseEditor = false;
-    private bool _isSplitMode = false;
+    private bool _wasNarrow;
+    private GridLength _lastLeftWidth = new GridLength(1, GridUnitType.Star);
+    private GridLength _lastRightWidth = new GridLength(1, GridUnitType.Star);
 
-    public string JsonText
+    public string JsonRequestBody
     {
         get => JsonTextBox.Text;
         set => JsonTextBox.Text = value;
     }
 
+    public string JsonResponseBody
+    {
+        get => ResponseEditor.Text;
+        set => ResponseEditor.Text = value;
+    }
+
     public JsonInput()
     {
         InitializeComponent();
+        SetupEditors();
 
         // Track window width for Json editor split or single view
         Loaded += (_, __) =>
         {
             Window window = Window.GetWindow(this)!;
             window.SizeChanged += Window_SizeChanged;
-
             UpdateEditorLayouts(window.ActualWidth);
         };
-        JsonTextBox.Options.EnableHyperlinks = false;
-        JsonTextBox.Options.EnableEmailHyperlinks = false;
 
-
-        // todo
-        JsonTextBox.Text = Config.JsonSampleData;
-        ResponseEditor.Text = Config.UrlStartupData;
-
-
-        HttpService.JsonInputEditor = JsonTextBox;
-        //UiService.JsonInputEditor = JsonTextBox; // todo border instead
+        HttpService.JsonResponseBody = ResponseEditor;
+        UiService.JsonEditorBorder = JsonEditorsBorder;
     }
 
     private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
     {
         double width = e.NewSize.Width;
-        UpdateEditorLayouts(width);
+        bool isNarrow = width < Config.SplitEditorThreshold;
+
+        if (isNarrow != _wasNarrow)
+        {
+            _wasNarrow = isNarrow;
+            UpdateEditorLayouts(width);
+        }
     }
 
     private void RequestButton_Click(object sender, RoutedEventArgs e)
@@ -59,10 +65,20 @@ public partial class JsonInput : UserControl
         UpdateEditorPositions();
     }
 
+    private void SetupEditors()
+    {
+        JsonTextBox.Text = Config.JsonSampleData;
+        JsonTextBox.Options.EnableHyperlinks = false;
+        JsonTextBox.Options.EnableEmailHyperlinks = false;
+
+        ResponseEditor.Text = Config.UrlStartupData; // todo
+        ResponseEditor.Options.EnableHyperlinks = false;
+        ResponseEditor.Options.EnableEmailHyperlinks = false;
+    }
+
     private void UpdateEditorPositions()
     {
-        ResponseEditor.Visibility = _isResponseEditor ? Visibility.Visible : Visibility.Collapsed;
-        JsonTextBox.Visibility = _isResponseEditor ? Visibility.Collapsed : Visibility.Visible;
+        UpdateEditorVisibility();
 
         if (_isResponseEditor)
         {
@@ -70,10 +86,22 @@ public partial class JsonInput : UserControl
             Grid.SetColumn(ResponseEditor, 0);
         }
         else
-        { 
+        {
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);
         }
+    }
+
+    private void UpdateEditorVisibility(bool showAll = false)
+    {
+        if (showAll)
+        {
+            JsonTextBox.Visibility = Visibility.Visible;
+            ResponseEditor.Visibility = Visibility.Visible;
+            return;
+        }
+        ResponseEditor.Visibility = _isResponseEditor ? Visibility.Visible : Visibility.Collapsed;
+        JsonTextBox.Visibility = _isResponseEditor ? Visibility.Collapsed : Visibility.Visible;
     }
 
     private void UpdateEditorLayouts(double width)
@@ -83,12 +111,14 @@ public partial class JsonInput : UserControl
         // Single view
         if (isNarrow)
         {
-            _isSplitMode = false;
-            UpdateEditorPositions();
             ModeButtonPanel.Visibility = Visibility.Visible;
 
-            ResponseEditor.Visibility = _isResponseEditor ? Visibility.Visible : Visibility.Collapsed;
-            JsonTextBox.Visibility = _isResponseEditor ? Visibility.Collapsed : Visibility.Visible;
+            UpdateEditorPositions();
+            UpdateEditorVisibility();
+
+            // Save widths before swaping layout
+            _lastLeftWidth = MainGrid.ColumnDefinitions[0].Width;
+            _lastRightWidth = MainGrid.ColumnDefinitions[2].Width;
 
             MainGrid.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
             MainGrid.ColumnDefinitions[1].Width = new GridLength(0);
@@ -96,18 +126,33 @@ public partial class JsonInput : UserControl
         }
         else // Split view
         {
-            _isSplitMode = true;
+            ModeButtonPanel.Visibility = Visibility.Collapsed;
+
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);
-            ModeButtonPanel.Visibility = Visibility.Hidden;
+            UpdateEditorVisibility(true);
 
-            JsonTextBox.Visibility = Visibility.Visible;
-            ResponseEditor.Visibility = Visibility.Visible;
-
-            MainGrid.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
+            // Restore last split widths
+            MainGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
             MainGrid.ColumnDefinitions[1].Width = new GridLength(10);
-            MainGrid.ColumnDefinitions[2].Width = new GridLength(1, GridUnitType.Star);
+            MainGrid.ColumnDefinitions[2].Width = _lastRightWidth;
 
         }
+    }
+
+    public void Reset()
+    {
+        _isResponseEditor = false;
+        JsonRequestBody = string.Empty;
+        JsonResponseBody = string.Empty;
+
+        // Layout and grid
+        _lastLeftWidth = new GridLength(1, GridUnitType.Star);
+        _lastRightWidth = new GridLength(1, GridUnitType.Star);
+        MainGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
+        MainGrid.ColumnDefinitions[2].Width = _lastRightWidth;
+        
+        Window parentWindow = Window.GetWindow(this);
+        UpdateEditorLayouts(parentWindow.ActualWidth);
     }
 }

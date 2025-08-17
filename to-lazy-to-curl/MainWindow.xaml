@@ -12,7 +12,6 @@
     Height="670"
     MinWidth="400"
     MinHeight="480"
-    MaxWidth="1400"
     Background="{StaticResource WindowBackground}"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/AppIcon.ico"
@@ -48,7 +47,7 @@
         <!--  HTTP Action Buttons  -->
         <StackPanel
             Grid.Row="4"
-            MaxWidth="900"
+            MaxWidth="1000"
             Orientation="Vertical">
             <TextBlock
                 Margin="0,0,0,6"
@@ -103,7 +102,7 @@
         <!--  Bottom Buttons  -->
         <Grid
             Grid.Row="5"
-            MaxWidth="900"
+            MaxWidth="1000"
             Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

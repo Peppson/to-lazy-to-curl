@@ -14,6 +14,8 @@ namespace to_lazy_to_curl.Services;
 static public class UiService
 {
     public static TextBlock MessageTextBlock { get; set; } = null!;
+    public static Border JsonEditorBorder { get; set; } = null!;
+    public static Border UrlInputBorder { get; set; } = null!;
     private static CancellationTokenSource? _messageCts;
         
     public static async Task ShowMessageAsync(string msg, string colorName, int durationMs)
@@ -71,6 +73,14 @@ static public class UiService
         SubmitButton.Background = Brushes.Red;
         SubmitButton.RenderTransform = new TranslateTransform();
         SubmitButton.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
+
+
+        // todo
+        //JsonEditorBorder.BorderBrush = new SolidColorBrush(Colors.Red);
+        //UrlInputBorder.BorderBrush = new SolidColorBrush(Colors.Red);
+
+
+
 
         // Fields
         if (formState == FormState.UrlEmpty || formState == FormState.BothEmpty)

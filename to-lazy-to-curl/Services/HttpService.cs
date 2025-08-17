@@ -1,6 +1,7 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.State;
 
@@ -8,7 +9,7 @@ namespace to_lazy_to_curl.Services;
 
 public static class HttpService
 {
-    public static ICSharpCode.AvalonEdit.TextEditor? JsonInputEditor { get; set; }
+    public static ICSharpCode.AvalonEdit.TextEditor? JsonResponseBody { get; set; }
     private const long _connectionTimeout = Config.ConnectionTimeout;
     private const int _messageDuration = Config.MessageDuration;
 
@@ -61,10 +62,10 @@ public static class HttpService
 
 
         // todo update response ??
-        if (JsonInputEditor != null)
+        if (JsonResponseBody != null)
         {
             var responseText = await response.Content.ReadAsStringAsync();
-            JsonInputEditor.Text = responseText;
+            JsonResponseBody.Text = responseText;
         }
 
     }

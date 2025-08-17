@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows;
+using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.State;
 
@@ -36,11 +37,11 @@ public partial class MainWindow : Window
 
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
-        string url = UrlInputControl.UrlText;
-        string json = JsonInputControl.JsonText;
+        string url = UrlInputControl.UrlInputText;
+        string body = JsonInputControl.JsonRequestBody;
 
         SubmitButton.IsEnabled = false;
-        await HttpService.SubmitRequestAsync(url, json);
+        await HttpService.SubmitRequestAsync(url, body);
         SubmitButton.IsEnabled = true;
     }
 
@@ -49,12 +50,7 @@ public partial class MainWindow : Window
         States.SelectedHttpAction = Models.HttpAction.NONE;
         MessageTextBlock.Opacity = 0;
         MessageTextBlock.Text = "";
-        UrlInputControl.UrlText = string.Empty;
-        JsonInputControl.JsonText = string.Empty;
-        /*
-        todo
-        UrlTextBox.BorderBrush = Brushes.Gray;
-        JsonTextBox.BorderBrush = Brushes.Gray;
-        */
+        UrlInputControl.Reset();
+        JsonInputControl.Reset();
     }
 }
