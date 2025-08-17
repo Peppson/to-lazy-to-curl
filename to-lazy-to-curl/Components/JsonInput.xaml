@@ -193,9 +193,13 @@
                 Width="164"
                 HorizontalAlignment="Left"
                 Content="Response"
+                Cursor="SizeWE"
                 Focusable="False"
                 FontSize="{StaticResource FontSizeTabs}"
-                FontWeight="Bold">
+                FontWeight="Bold"
+                PreviewMouseLeftButtonDown="ResponseButton2_PreviewMouseLeftButtonDown"
+                PreviewMouseLeftButtonUp="ResponseButton2_PreviewMouseLeftButtonUp"
+                PreviewMouseMove="ResponseButton2_PreviewMouseMove">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border
@@ -215,6 +219,9 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="outerBorder4" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
                                 <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                             </Trigger>
                             <DataTrigger Binding="{Binding IsMouseOver, ElementName=JsonEditorsBorder}" Value="True">
@@ -243,6 +250,7 @@
                     <Setter Property="BorderBrush" Value="{StaticResource Border}" />
                     <Style.Triggers>
 
+                        <!--  Let's hardcode some more triggers...  -->
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="BorderBrush" Value="{StaticResource BorderHover}" />
                         </Trigger>
@@ -301,7 +309,7 @@
                     Width="1"
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Stretch"
-                    Background="{StaticResource BorderHover}"
+                    Background="{StaticResource Border}"
                     DragIncrement="1"
                     Focusable="False"
                     ResizeBehavior="PreviousAndNext"

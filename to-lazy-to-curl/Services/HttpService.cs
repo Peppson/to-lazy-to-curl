@@ -1,6 +1,7 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.State;
@@ -59,15 +60,7 @@ public static class HttpService
         // Send it!
         var response = await SendHttpRequestAsync(client, httpAction, url, body);
         ShowHttpResponseMessage(response);
-
-
-        // todo update response ??
-        if (JsonResponseBody != null)
-        {
-            var responseText = await response.Content.ReadAsStringAsync();
-            JsonResponseBody.Text = responseText;
-        }
-
+        SetJsonResponseText(response);
     }
 
     private static async Task<HttpResponseMessage> SendHttpRequestAsync(HttpClient client, HttpAction action, string url, HttpContent? body = null)
@@ -81,6 +74,23 @@ public static class HttpService
             HttpAction.DELETE => await client.DeleteAsync(url),
             _ => throw new InvalidOperationException("No valid HTTP action selected.")
         };
+    }
+
+    private static async void SetJsonResponseText(HttpResponseMessage? response)
+    {
+        if (response == null || JsonResponseBody == null) return;
+        
+        var responseText = await response.Content.ReadAsStringAsync();
+        if (string.IsNullOrWhiteSpace(responseText))
+        {
+            JsonResponseBody.Text = "{}";
+        }
+        else
+        {
+            var jsonObject = JsonSerializer.Deserialize<object>(responseText);
+            var jsonString = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
+            JsonResponseBody.Text = jsonString;
+        }
     }
 
     private static (bool IsUrlValid, bool IsJsonValid) ValidateInputs(string url, string json)
