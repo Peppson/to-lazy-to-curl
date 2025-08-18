@@ -370,7 +370,7 @@
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
-                    SyntaxHighlighting="Json"
+                    SyntaxHighlighting="{Binding PayloadEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     VerticalScrollBarVisibility="Auto" />
 
                 <GridSplitter
@@ -395,7 +395,7 @@
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
-                    SyntaxHighlighting="Json"
+                    SyntaxHighlighting="{Binding ResponseEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
                     VerticalScrollBarVisibility="Auto" />
             </Grid>
         </Border>

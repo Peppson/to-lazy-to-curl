@@ -13,6 +13,9 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <OutputType>WinExe</OutputType>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' != 'Release'">
     <OutputType>Exe</OutputType>
@@ -24,10 +27,6 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <DebugType>None</DebugType>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <DefineConstants>TRACE;RELEASE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

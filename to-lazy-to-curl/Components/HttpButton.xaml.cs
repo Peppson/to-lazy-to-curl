@@ -2,7 +2,6 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using to_lazy_to_curl.Models;
-using to_lazy_to_curl.Services;
 using to_lazy_to_curl.State;
 
 namespace to_lazy_to_curl.Components;
@@ -10,22 +9,6 @@ namespace to_lazy_to_curl.Components;
 public partial class HttpButton : UserControl
 {
     public HttpAction ActionType { get; set; } = HttpAction.NONE;
-
-    public HttpButton()
-    {
-        InitializeComponent();
-        EventHandler handler = (_, __) => { IsSelected = States.SelectedHttpAction == this.ActionType; };
-        MainButton.Click += MainButton_Click;
-        States.SelectedActionChanged += handler;
-        this.Unloaded += (_, __) => States.SelectedActionChanged -= handler;
-    }
-
-    private void MainButton_Click(object sender, RoutedEventArgs e)
-    {
-        States.SelectedHttpAction = (States.SelectedHttpAction == this.ActionType)
-            ? HttpAction.NONE
-            : this.ActionType;
-    }
 
     public bool IsSelected
     {
@@ -44,7 +27,28 @@ public partial class HttpButton : UserControl
         get => (Brush)GetValue(ButtonColorProperty);
         set => SetValue(ButtonColorProperty, value);
     }
-    
+
+    public HttpButton()
+    {
+        InitializeComponent();
+        MainButton.Click += MainButton_Click;
+
+        EventHandler handler = (_, __) =>
+        {
+            IsSelected = AppState.SelectedHttpAction == this.ActionType;
+        };
+        AppState.SelectedHttpButtonEvent += handler;
+
+        Unloaded += (_, __) => AppState.SelectedHttpButtonEvent -= handler;
+    }
+
+    private void MainButton_Click(object sender, RoutedEventArgs e)
+    {
+        AppState.SelectedHttpAction = (AppState.SelectedHttpAction == this.ActionType)
+            ? HttpAction.NONE
+            : this.ActionType;
+    }
+
     public static readonly DependencyProperty IsSelectedProperty =
     DependencyProperty.Register(
         nameof(IsSelected),

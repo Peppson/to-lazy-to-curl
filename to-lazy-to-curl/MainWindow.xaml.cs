@@ -49,7 +49,7 @@ public partial class MainWindow : Window
 
     private void ClearButton_Click(object sender, RoutedEventArgs e)
     {
-        States.SelectedHttpAction = Models.HttpAction.NONE;
+        AppState.SelectedHttpAction = Models.HttpAction.NONE;
         MessageTextBlock.Opacity = 0;
         MessageTextBlock.Text = "";
         UrlInputControl.Reset();

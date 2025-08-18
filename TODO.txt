@@ -1,21 +1,22 @@
-Riktiga:
+
 dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 
 
+
 Darktheme
-exeption till /post med trasig json antagligen tillbaka meddelandet
 ctrl z editors after reset
 drag indicator right bot corner
 splitter color
 splitter of screen
-valid json object for sending?
-if not json response in response change to plain or html?
+add auth? box
 
-ico:
+
+https://httpbin.org/#/
+
+Ico:
 https://icon-icons.com/search/icons/?filtro=send+internet&sort=popular&page=4
 
-
-WPFIcons:
+WpfIcons:
 https://github.com/charri/Font-Awesome-WPF/blob/master/README-WPF.md
 
 

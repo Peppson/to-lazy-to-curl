@@ -4,15 +4,9 @@ namespace to_lazy_to_curl.State;
 
 static public class Config
 {
-    public const int MessageDuration = 5000; // Show status message for x ms
-    public const long ConnectionTimeout = 5; // Http timout in Seconds
+    public const int MessageDuration = 8000; // Show status message for x ms
+    public const long ConnectionTimeout = 6; // Http timout in Seconds
     public const double SplitEditorThreshold = 900; // App width in px to switch layout
-
-#if RELEASE
-    public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
-#else
-    public const string UrlStartupData = "https://localhost:7291/snus";
-#endif
 
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(
         JsonConvert.DeserializeObject(@"
@@ -29,7 +23,7 @@ static public class Config
         }"),
         Formatting.Indented
     );
-    
+
     public static readonly string JsonSampleResponse = JsonConvert.SerializeObject(
         JsonConvert.DeserializeObject(@"
         {
@@ -43,4 +37,10 @@ static public class Config
         }"),
         Formatting.Indented
     );
+    
+    #if RELEASE
+        public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
+    #else
+        public const string UrlStartupData = "https://localhost:7291/snus";
+    #endif
 }
