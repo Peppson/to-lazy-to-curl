@@ -79,18 +79,38 @@ public static class HttpService
     private static async void SetJsonResponseText(HttpResponseMessage? response)
     {
         if (response == null || JsonResponseBody == null) return;
+
+
+        var contentType = response.Content?.Headers.ContentType?.MediaType;
+
+
+// todo
+
+
+        if (contentType != null && contentType.Contains("json"))
+        {
+            var responseText = await response.Content!.ReadAsStringAsync();
+
+            if (string.IsNullOrWhiteSpace(responseText))
+            {
+                JsonResponseBody.Text = "{}";
+            }
+            else
+            {
+                var jsonObject = JsonSerializer.Deserialize<object>(responseText);
+                var jsonString = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
+                JsonResponseBody.Text = jsonString;
+            }
+
+            return;
+        }
         
-        var responseText = await response.Content.ReadAsStringAsync();
-        if (string.IsNullOrWhiteSpace(responseText))
-        {
-            JsonResponseBody.Text = "{}";
-        }
-        else
-        {
-            var jsonObject = JsonSerializer.Deserialize<object>(responseText);
-            var jsonString = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions { WriteIndented = true });
-            JsonResponseBody.Text = jsonString;
-        }
+        string text = await response.Content!.ReadAsStringAsync();
+        JsonResponseBody.Text = text;
+
+
+
+
     }
 
     private static (bool IsUrlValid, bool IsJsonValid) ValidateInputs(string url, string json)

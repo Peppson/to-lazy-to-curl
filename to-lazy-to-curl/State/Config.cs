@@ -8,11 +8,12 @@ static public class Config
     public const long ConnectionTimeout = 5; // Http timout in Seconds
     public const double SplitEditorThreshold = 900; // App width in px to switch layout
 
-#if Release
-        public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
+#if RELEASE
+    public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
 #else
     public const string UrlStartupData = "https://localhost:7291/snus";
 #endif
+
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(
         JsonConvert.DeserializeObject(@"
         {
