@@ -12,105 +12,235 @@
     Width="620"
     Height="683"
     MinWidth="400"
-    MinHeight="500"
+    MinHeight="520"
+    AllowsTransparency="True"
     Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/AppIcon.ico"
+    WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid Margin="24,10,24,24">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
 
-        <!--  URL  -->
-        <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
-        <!--  JSON  -->
-        <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
 
-        <!--  Status Message  -->
-        <components:HttpMessageBox Grid.Row="3" />
 
-        <!--  HTTP Action Buttons  -->
-        <StackPanel
-            Grid.Row="4"
-            MaxWidth="900"
-            Orientation="Vertical">
+    <Border Style="{StaticResource WindowMainPanelStyle}">
 
-            <TextBlock
-                Margin="0,0,0,6"
-                VerticalAlignment="Center"
-                FontSize="{StaticResource FontSizeH1}"
-                FontWeight="Bold"
-                Foreground="{DynamicResource PrimaryText}"
-                Text="Actions" />
 
-            <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+
+
+
+            <Grid Grid.Row="0" Background="{DynamicResource TitleBarBackground}">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <components:HttpButton
+                <Image
                     Grid.Column="0"
-                    ActionType="Get"
-                    ButtonColor="{DynamicResource GetButton}"
-                    ButtonContent="GET" />
+                    Width="{StaticResource IconSizeTitleBar}"
+                    Height="{StaticResource IconSizeTitleBar}"
+                    Margin="8,0,3,0"
+                    Source="/Assets/AppIcon.ico" />
 
-                <components:HttpButton
+                <TextBlock
+                    Grid.Column="1"
+                    Margin="4,0,0,0"
+                    VerticalAlignment="Center"
+                    FontSize="{StaticResource FontSizeTitleBar}"
+                    Foreground="{DynamicResource PrimaryText}"
+                    Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" />
+
+
+
+
+                <Button
                     Grid.Column="2"
-                    ActionType="Post"
-                    ButtonColor="{DynamicResource PostButton}"
-                    ButtonContent="POST" />
+                    Click="ToggleTheme_Click"
+                    RenderOptions.EdgeMode="Aliased"
+                    Style="{StaticResource TitleBarButtonStyle}">
 
-                <components:HttpButton
+
+
+
+                    <Path
+                        Width="46"
+                        Height="32"
+                        Data="M 18,11 27,20 M 18,20 27,11"
+                        Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                        StrokeThickness="1" />
+
+                </Button>
+
+
+
+
+
+                <Button
+                    Grid.Column="3"
+                    Click="OnMinimizeButtonClick"
+                    RenderOptions.EdgeMode="Aliased"
+                    Style="{StaticResource TitleBarButtonStyle}">
+                    <Path
+                        Width="46"
+                        Height="32"
+                        Data="M 18,15 H 28"
+                        Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                        StrokeThickness="1" />
+                </Button>
+
+
+
+
+                <Button
+                    Name="maximizeButton"
                     Grid.Column="4"
-                    ActionType="Patch"
-                    ButtonColor="{DynamicResource PatchButton}"
-                    ButtonContent="PATCH" />
+                    Click="OnMaximizeRestoreButtonClick"
+                    Style="{StaticResource TitleBarButtonStyle}">
+                    <Path
+                        Width="46"
+                        Height="32"
+                        Data="M 18.5,10.5 H 27.5 V 19.5 H 18.5 Z"
+                        Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                        StrokeThickness="1" />
+                </Button>
 
-                <components:HttpButton
-                    Grid.Column="6"
-                    ActionType="Put"
-                    ButtonColor="{DynamicResource PutButton}"
-                    ButtonContent="PUT" />
 
-                <components:HttpButton
-                    Grid.Column="8"
-                    ActionType="Delete"
-                    ButtonColor="{DynamicResource DeleteButton}"
-                    ButtonContent="DELETE" />
+
+                <Button
+                    Name="restoreButton"
+                    Grid.Column="4"
+                    Click="OnMaximizeRestoreButtonClick"
+                    Style="{StaticResource TitleBarButtonStyle}">
+                    <Path
+                        Width="46"
+                        Height="32"
+                        Data="M 18.5,12.5 H 25.5 V 19.5 H 18.5 Z M 20.5,12.5 V 10.5 H 27.5 V 17.5 H 25.5"
+                        Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                        StrokeThickness="1" />
+                </Button>
+
+                <Button
+                    Grid.Column="5"
+                    Click="OnCloseButtonClick"
+                    Style="{StaticResource TitleBarCloseButtonStyle}">
+                    <Path
+                        Width="46"
+                        Height="32"
+                        Data="M 18,11 27,20 M 18,20 27,11"
+                        Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                        StrokeThickness="1" />
+                </Button>
             </Grid>
-        </StackPanel>
-
-        <!--  Bottom Buttons  -->
-        <components:BottomButtons Grid.Row="5" MaxWidth="900" />
-
-        <!--  Bottom Rezise  -->
-        <components:ResizeHandle Grid.Row="6" />
 
 
-        <!--  todo  -->
-        <Button
-            Grid.Row="0"
-            Width="120"
-            Height="30"
-            Margin="10"
-            Click="ToggleTheme_Click"
-            Content="Toggle Theme" />
-    </Grid>
+
+
+
+
+
+
+
+
+            <Grid Grid.Row="1" Margin="24,10,24,24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--  URL  -->
+                <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
+
+                <!--  JSON  -->
+                <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
+
+                <!--  Status Message  -->
+                <components:HttpMessageBox Grid.Row="3" />
+
+                <!--  HTTP Action Buttons  -->
+                <StackPanel
+                    Grid.Row="4"
+                    MaxWidth="900"
+                    Orientation="Vertical">
+
+                    <TextBlock
+                        Margin="0,0,0,6"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeH1}"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource PrimaryText}"
+                        Text="Actions" />
+
+                    <Grid Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <components:HttpButton
+                            Grid.Column="0"
+                            ActionType="Get"
+                            ButtonColor="{DynamicResource GetButton}"
+                            ButtonContent="GET" />
+
+                        <components:HttpButton
+                            Grid.Column="2"
+                            ActionType="Post"
+                            ButtonColor="{DynamicResource PostButton}"
+                            ButtonContent="POST" />
+
+                        <components:HttpButton
+                            Grid.Column="4"
+                            ActionType="Patch"
+                            ButtonColor="{DynamicResource PatchButton}"
+                            ButtonContent="PATCH" />
+
+                        <components:HttpButton
+                            Grid.Column="6"
+                            ActionType="Put"
+                            ButtonColor="{DynamicResource PutButton}"
+                            ButtonContent="PUT" />
+
+                        <components:HttpButton
+                            Grid.Column="8"
+                            ActionType="Delete"
+                            ButtonColor="{DynamicResource DeleteButton}"
+                            ButtonContent="DELETE" />
+                    </Grid>
+                </StackPanel>
+
+                <!--  Bottom Buttons  -->
+                <components:BottomButtons Grid.Row="5" MaxWidth="900" />
+
+                <!--  Bottom Rezise  -->
+                <components:ResizeHandle Grid.Row="6" />
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

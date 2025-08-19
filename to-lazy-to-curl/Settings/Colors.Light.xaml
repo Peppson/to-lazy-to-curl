@@ -1,5 +1,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Light Them -->
+
     <SolidColorBrush x:Key="WindowBackground" Color="#fdfdfd" />
     <SolidColorBrush x:Key="InputBackground" Color="#ffffff" />
     <SolidColorBrush x:Key="ButtonBackground" Color="#fefefe" />
@@ -9,6 +11,10 @@
 
     <SolidColorBrush x:Key="Border" Color="#d4d4d4" />
     <SolidColorBrush x:Key="BorderHover" Color="#999999" />
+
+    <SolidColorBrush x:Key="TitleBarBackground" Color="#fdfdfd" />
+    <SolidColorBrush x:Key="TitleBarButtonHover" Color="#e5e5e5" />
+    <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />

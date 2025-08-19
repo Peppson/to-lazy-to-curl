@@ -31,6 +31,7 @@
 
   <PropertyGroup>
     <NoWarn>$(NoWarn);NU1701</NoWarn>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -70,7 +71,6 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Logs\" />
-    <Folder Include="Settings\" />
   </ItemGroup>
 
 </Project>
