@@ -25,7 +25,7 @@
             Height="42"
             Click="SubmitButton_Click"
             Cursor="Hand"
-            FontSize="{DynamicResource FontSizeBottomButtons}"
+            FontSize="{StaticResource FontSizeBottomButtons}"
             FontWeight="Bold">
 
             <StackPanel
@@ -38,7 +38,7 @@
                     Height="16"
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource PrimaryText}"
+                    Foreground="{DynamicResource PrimaryText}"
                     Icon="PaperPlaneOutline" />
                 <fa:ImageAwesome
                     x:Name="SendButtonSpinnerIcon"
@@ -46,14 +46,14 @@
                     Height="16"
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource PrimaryText}"
+                    Foreground="{DynamicResource PrimaryText}"
                     Icon="Spinner"
                     Spin="True"
                     SpinDuration="2"
                     Visibility="Collapsed" />
                 <TextBlock
                     VerticalAlignment="Center"
-                    FontSize="{DynamicResource FontSizeBottomButtons}"
+                    FontSize="{StaticResource FontSizeBottomButtons}"
                     Text="Submit" />
             </StackPanel>
 
@@ -61,8 +61,8 @@
                 <ControlTemplate TargetType="Button">
                     <Border
                         x:Name="outer"
-                        Background="{StaticResource ButtonBackground}"
-                        BorderBrush="{StaticResource Border}"
+                        Background="{DynamicResource ButtonBackground}"
+                        BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
                         CornerRadius="4">
                         <ContentPresenter
@@ -73,11 +73,11 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            <Setter TargetName="outer" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="outer" Property="Background" Value="{StaticResource BorderHover}" />
-                            <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            <Setter TargetName="outer" Property="Background" Value="{DynamicResource BorderHover}" />
+                            <Setter TargetName="outer" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -90,7 +90,7 @@
             Height="42"
             Click="ClearButton_Click"
             Cursor="Hand"
-            FontSize="{DynamicResource FontSizeBottomButtons}"
+            FontSize="{StaticResource FontSizeBottomButtons}"
             FontWeight="Bold">
 
             <StackPanel
@@ -103,7 +103,7 @@
                     Height="15"
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
-                    Foreground="{StaticResource PrimaryText}"
+                    Foreground="{DynamicResource PrimaryText}"
                     Icon="Refresh">
                     <fa:ImageAwesome.RenderTransform>
                         <RotateTransform x:Name="ClearButtonRotate" CenterX="7.5" CenterY="7.5" />
@@ -111,7 +111,7 @@
                 </fa:ImageAwesome>
                 <TextBlock
                     VerticalAlignment="Center"
-                    FontSize="{DynamicResource FontSizeBottomButtons}"
+                    FontSize="{StaticResource FontSizeBottomButtons}"
                     Text="Reset" />
             </StackPanel>
 
@@ -119,8 +119,8 @@
                 <ControlTemplate TargetType="Button">
                     <Border
                         x:Name="outer"
-                        Background="{StaticResource ButtonBackground}"
-                        BorderBrush="{StaticResource Border}"
+                        Background="{DynamicResource ButtonBackground}"
+                        BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
                         CornerRadius="4">
                         <ContentPresenter
@@ -131,11 +131,11 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            <Setter TargetName="outer" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="outer" Property="Background" Value="{StaticResource BorderHover}" />
-                            <Setter TargetName="outer" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                            <Setter TargetName="outer" Property="Background" Value="{DynamicResource BorderHover}" />
+                            <Setter TargetName="outer" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

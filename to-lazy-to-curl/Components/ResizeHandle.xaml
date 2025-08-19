@@ -18,7 +18,7 @@
             Width="20"
             Height="20"
             Cursor="SizeNWSE"
-            Foreground="{StaticResource PrimaryText}"
+            Foreground="{DynamicResource PrimaryText}"
             Icon="CaretRight"
             MouseLeftButtonDown="DragHandle_MouseLeftButtonDown"
             Opacity="0.4"

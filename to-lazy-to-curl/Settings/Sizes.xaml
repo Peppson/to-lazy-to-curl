@@ -5,7 +5,7 @@
 
     <!--  Font Sizes  -->
     <sys:Double x:Key="FontSizeH1">15</sys:Double>
-    <sys:Double x:Key="FontSizeTabs">13</sys:Double>
+    <sys:Double x:Key="FontSizeTabs">13</sys:Double> 
     <sys:Double x:Key="FontSizeHttpButtons">13</sys:Double>
     <sys:Double x:Key="FontSizeBottomButtons">13</sys:Double>
     <sys:Double x:Key="FontSizeUrlInput">15</sys:Double>

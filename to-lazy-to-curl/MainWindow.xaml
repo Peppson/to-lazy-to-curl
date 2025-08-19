@@ -49,7 +49,7 @@
                 VerticalAlignment="Center"
                 FontSize="{StaticResource FontSizeH1}"
                 FontWeight="Bold"
-                Foreground="{StaticResource PrimaryText}"
+                Foreground="{DynamicResource PrimaryText}"
                 Text="Actions" />
 
             <Grid>
@@ -68,31 +68,31 @@
                 <components:HttpButton
                     Grid.Column="0"
                     ActionType="Get"
-                    ButtonColor="{StaticResource GetButton}"
+                    ButtonColor="{DynamicResource GetButton}"
                     ButtonContent="GET" />
 
                 <components:HttpButton
                     Grid.Column="2"
                     ActionType="Post"
-                    ButtonColor="{StaticResource PostButton}"
+                    ButtonColor="{DynamicResource PostButton}"
                     ButtonContent="POST" />
 
                 <components:HttpButton
                     Grid.Column="4"
                     ActionType="Patch"
-                    ButtonColor="{StaticResource PatchButton}"
+                    ButtonColor="{DynamicResource PatchButton}"
                     ButtonContent="PATCH" />
 
                 <components:HttpButton
                     Grid.Column="6"
                     ActionType="Put"
-                    ButtonColor="{StaticResource PutButton}"
+                    ButtonColor="{DynamicResource PutButton}"
                     ButtonContent="PUT" />
 
                 <components:HttpButton
                     Grid.Column="8"
                     ActionType="Delete"
-                    ButtonColor="{StaticResource DeleteButton}"
+                    ButtonColor="{DynamicResource DeleteButton}"
                     ButtonContent="DELETE" />
             </Grid>
         </StackPanel>
@@ -102,5 +102,15 @@
 
         <!--  Bottom Rezise  -->
         <components:ResizeHandle Grid.Row="6" />
+
+
+        <!--  todo  -->
+        <Button
+            Grid.Row="0"
+            Width="120"
+            Height="30"
+            Margin="10"
+            Click="ToggleTheme_Click"
+            Content="Toggle Theme" />
     </Grid>
 </Window>

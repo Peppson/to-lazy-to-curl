@@ -13,14 +13,14 @@
         Height="36"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
-        FontSize="{DynamicResource FontSizeHttpButtons}"
+        FontSize="{StaticResource FontSizeHttpButtons}"
         FontWeight="Bold">
         <Button.Template>
             <ControlTemplate TargetType="Button">
                 <Border
                     x:Name="outerBorder"
-                    Background="{StaticResource ButtonBackground}"
-                    BorderBrush="{StaticResource Border}"
+                    Background="{DynamicResource ButtonBackground}"
+                    BorderBrush="{DynamicResource Border}"
                     BorderThickness="1"
                     CornerRadius="4">
                     <Grid x:Name="innerArea" Background="Transparent">
@@ -40,11 +40,11 @@
 
                 <ControlTemplate.Triggers>
                     <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                     </Trigger>
 
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                     </DataTrigger>
 
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
