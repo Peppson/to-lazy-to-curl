@@ -1,6 +1,7 @@
+using to_lazy_to_curl.Components;
 using to_lazy_to_curl.Models;
 
-namespace to_lazy_to_curl.State;
+namespace to_lazy_to_curl.Services;
 
 static public class AppState
 {
@@ -11,6 +12,10 @@ static public class AppState
     private static HttpAction _selectedAction = HttpAction.NONE;
     private static string _payloadEditorSyntax = SyntaxHighlighting.Json;
     private static string _responseEditorSyntax = SyntaxHighlighting.Json;
+
+    public static UrlInput UrlInput { get; set; } = null!;
+    public static JsonInput JsonInput { get; set; } = null!;
+    public static HttpMessageBox MessageBox { get; set; } = null!;
 
     public static HttpAction SelectedHttpAction
     {

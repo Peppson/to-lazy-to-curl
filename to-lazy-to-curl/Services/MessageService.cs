@@ -1,21 +1,12 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Net.Http;
-using System.Text;
 using System.Windows.Controls;
-using ICSharpCode.AvalonEdit.Highlighting;
-using Newtonsoft.Json;
-using to_lazy_to_curl.Components;
-using to_lazy_to_curl.Services;
 
 namespace to_lazy_to_curl.Services;
 
-static public class UiService
+static public class MessageService
 {
-    public static TextBlock MessageTextBlock { get; set; } = null!;
-    public static Border JsonEditorBorder { get; set; } = null!;
-    public static Border UrlInputBorder { get; set; } = null!;
     private static CancellationTokenSource? _messageCts;
         
     public static async Task ShowTextMessageAsync(string msg, string colorName, int durationMs)
@@ -26,12 +17,11 @@ static public class UiService
         var token = _messageCts.Token;
         var color = (SolidColorBrush)Application.Current.FindResource(colorName);
 
-        MessageTextBlock.Text = msg;
-        MessageTextBlock.Foreground = color;
-
+        AppState.MessageBox.MessageTextBlock.Text = msg;
+        AppState.MessageBox.Foreground = color;
         // Fade in
         var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
-        MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+        AppState.MessageBox.MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
 
         // Fade out
         try
@@ -39,7 +29,7 @@ static public class UiService
             await Task.Delay(durationMs, token);
 
             var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(300));
-            MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            AppState.MessageBox.MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
         catch (TaskCanceledException)
         {

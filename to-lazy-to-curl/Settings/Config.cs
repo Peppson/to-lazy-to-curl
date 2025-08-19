@@ -1,11 +1,11 @@
 using Newtonsoft.Json;
 
-namespace to_lazy_to_curl.State;
+namespace to_lazy_to_curl.Settings;
 
 static public class Config
 {
     public const int MessageDuration = 8000; // Show status message for x ms
-    public const long ConnectionTimeout = 6; // Http timout in Seconds
+    public const long ConnectionTimeout = 6; // Http timeout in Seconds
     public const double SplitEditorThreshold = 800; // App width in px to switch layout
 
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(

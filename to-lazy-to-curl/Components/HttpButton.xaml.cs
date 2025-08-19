@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using to_lazy_to_curl.Models;
-using to_lazy_to_curl.State;
+using to_lazy_to_curl.Services;
 
 namespace to_lazy_to_curl.Components;
 

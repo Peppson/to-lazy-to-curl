@@ -2,20 +2,18 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using to_lazy_to_curl.Models;
-using to_lazy_to_curl.State;
+using to_lazy_to_curl.Settings;
 
 namespace to_lazy_to_curl.Services;
 
 public static class HttpService
 {
-    public static ICSharpCode.AvalonEdit.TextEditor? JsonResponseBody { get; set; }
-
     public static async Task SubmitRequestAsync(string url, string body)
     {
         var httpAction = AppState.SelectedHttpAction;
         if (!CanSubmitRequest(url, httpAction)) return;
 
-        _ = UiService.ShowTextMessageAsync("Sending...", "PrimaryText", 10000);
+        _ = MessageService.ShowTextMessageAsync("Sending...", "PrimaryText", 10000);
 
         await TrySendRequestAsync(url, body, httpAction);
     }
@@ -30,17 +28,17 @@ public static class HttpService
         }
         catch (HttpRequestException ex)
         {
-            _ = UiService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
-            UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
         catch (TaskCanceledException)
         {
-            _ = UiService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.MessageDuration);
         }
         catch (Exception ex)
         {
-            _ = UiService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
-            UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
     }
 
@@ -71,7 +69,7 @@ public static class HttpService
 
         // No headers
         if (headers == null)
-            return await client.SendAsync(request);
+            return await client.SendAsync(request); // todo
 
         // Headers
         foreach (var header in headers)
@@ -122,7 +120,7 @@ public static class HttpService
 
     private static async Task SetHttpResponseText(HttpResponseMessage? response)
     {
-        if (response == null || JsonResponseBody == null)
+        if (response == null || AppState.JsonInput == null)
             return;
 
         var contentType = response.Content?.Headers.ContentType?.MediaType;
@@ -131,7 +129,7 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("json", StringComparison.OrdinalIgnoreCase))
         {
-            JsonResponseBody.Text = await GetResponseAsJsonAsync(response);
+            AppState.JsonInput.ResponseEditor.Text = await GetResponseAsJsonAsync(response); 
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
             return;
         }
@@ -140,7 +138,7 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("html", StringComparison.OrdinalIgnoreCase))
         {
-            JsonResponseBody.Text = await response.Content!.ReadAsStringAsync();
+            AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Html;
             return;
         }
@@ -149,14 +147,14 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("xml", StringComparison.OrdinalIgnoreCase))
         {
-            JsonResponseBody.Text = await response.Content!.ReadAsStringAsync();
+            AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Xml;
             return;
         }
 
         // Fallback
         AppState.ResponseEditorSyntax = SyntaxHighlighting.PlainText;
-        JsonResponseBody.Text = await response.Content!.ReadAsStringAsync();
+        AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
     }
 
     private static async Task<string> GetResponseAsJsonAsync(HttpResponseMessage response)
@@ -184,13 +182,13 @@ public static class HttpService
 
         if (!IsUrlValid)
         {
-            _ = UiService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.MessageDuration);
             return false;
         }
 
         if (httpAction == HttpAction.NONE)
         {
-            _ = UiService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.MessageDuration);
             return false;
         }
 
@@ -200,7 +198,7 @@ public static class HttpService
     private static void ShowHttpResponseMessage(HttpResponseMessage response)
     {
         string color = response.IsSuccessStatusCode ? "Success" : "Failure";
-        _ = UiService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.MessageDuration);
+        _ = MessageService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.MessageDuration);
     }
 
     private static string GetBodyRequiredMessage()

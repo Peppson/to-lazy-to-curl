@@ -1,73 +1,14 @@
-﻿using System.ComponentModel;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using to_lazy_to_curl.Services;
-using to_lazy_to_curl.State;
 using to_lazy_to_curl.Models;
+using to_lazy_to_curl.Settings;
 
 namespace to_lazy_to_curl.Components;
 
 public partial class JsonInput : UserControl
 {
-
-
-
-
-
-
-
-    // todo
-
-    private bool _isDragging = false;
-    private Point _startPoint;
-
-    private void ResponseButton2_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-    {
-        _isDragging = true;
-        _startPoint = e.GetPosition(JsonEditorGrid); // relative to the editor grid
-        ResponseButton2.CaptureMouse();
-    }
-
-    private void ResponseButton2_PreviewMouseMove(object sender, MouseEventArgs e)
-    {
-        if (!_isDragging) return;
-
-        Point current = e.GetPosition(JsonEditorGrid);
-        double deltaX = current.X - _startPoint.X;
-
-        // Move the splitter
-        double newLeftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth + deltaX;
-
-        // respect min width
-        newLeftWidth = Math.Max(newLeftWidth, 170);
-        newLeftWidth = Math.Min(newLeftWidth, JsonEditorGrid.ActualWidth - 170 - Splitter.Width);
-
-        JsonEditorGrid.ColumnDefinitions[0].Width = new GridLength(newLeftWidth, GridUnitType.Pixel);
-        JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(JsonEditorGrid.ActualWidth - newLeftWidth - Splitter.Width, GridUnitType.Pixel);
-
-        _startPoint = current; // reset start for smooth dragging
-    }
-
-    private void ResponseButton2_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-    {
-        if (_isDragging)
-        {
-            _isDragging = false;
-            ResponseButton2.ReleaseMouseCapture();
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -165,6 +106,7 @@ public partial class JsonInput : UserControl
     public JsonInput()
     {
         InitializeComponent();
+        AppState.JsonInput = this;
         SetupEditors();
 
         // Track window width for split or single view
@@ -304,18 +246,16 @@ public partial class JsonInput : UserControl
         IsResponseEditor = false;
 
         PayloadEditorSyntax = AppState.ResponseEditorSyntax;
-        JsonTextBox.Text = Config.JsonSampleData;
-        JsonTextBox.Options.EnableHyperlinks = false;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
+        JsonTextBox.Options.EnableHyperlinks = false;
+        JsonTextBox.Text = Config.JsonSampleData;
 
         ResponseEditorSyntax = AppState.ResponseEditorSyntax;
-        ResponseEditor.Text = Config.JsonSampleResponse;
-        ResponseEditor.Options.EnableHyperlinks = false;
         ResponseEditor.Options.EnableEmailHyperlinks = false;
+        ResponseEditor.Options.EnableHyperlinks = false;
+        ResponseEditor.Text = Config.JsonSampleResponse;
 
-        // todo
-        HttpService.JsonResponseBody = ResponseEditor;
-        UiService.JsonEditorBorder = JsonEditorsBorder;
+        AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
     }
 
     public void Reset()
@@ -324,12 +264,12 @@ public partial class JsonInput : UserControl
 
         // Payload
         AppState.PayloadEditorSyntax = SyntaxHighlighting.Json;
-        PayloadEditorSyntax = AppState.PayloadEditorSyntax;
-        JsonRequestBody = string.Empty; // todo add to state?
+        PayloadEditorSyntax = SyntaxHighlighting.Json;
+        JsonRequestBody = string.Empty;
 
         // Response
         AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
-        ResponseEditorSyntax = AppState.ResponseEditorSyntax;
+        ResponseEditorSyntax = SyntaxHighlighting.Json;
         JsonResponseBody = string.Empty;
 
         // Layout and grid
@@ -342,4 +282,57 @@ public partial class JsonInput : UserControl
         UpdateEditorLayouts(parentWindow.ActualWidth);
         SetResponseButtonPositionSplitView();
     }
+    
+
+
+
+
+
+
+
+
+
+    // todo
+
+    private bool _isDragging = false;
+    private Point _startPoint;
+
+    private void ResponseButton2_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        _isDragging = true;
+        _startPoint = e.GetPosition(JsonEditorGrid); // relative to the editor grid
+        ResponseButton2.CaptureMouse();
+    }
+
+    private void ResponseButton2_PreviewMouseMove(object sender, MouseEventArgs e)
+    {
+        if (!_isDragging) return;
+
+        Point current = e.GetPosition(JsonEditorGrid);
+        double deltaX = current.X - _startPoint.X;
+
+        // Move the splitter
+        double newLeftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth + deltaX;
+
+        // respect min width
+        newLeftWidth = Math.Max(newLeftWidth, 170);
+        newLeftWidth = Math.Min(newLeftWidth, JsonEditorGrid.ActualWidth - 170 - Splitter.Width);
+
+        JsonEditorGrid.ColumnDefinitions[0].Width = new GridLength(newLeftWidth, GridUnitType.Pixel);
+        JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(JsonEditorGrid.ActualWidth - newLeftWidth - Splitter.Width, GridUnitType.Pixel);
+
+        _startPoint = current; // reset start for smooth dragging
+    }
+
+    private void ResponseButton2_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        if (_isDragging)
+        {
+            _isDragging = false;
+            ResponseButton2.ReleaseMouseCapture();
+        }
+    }
+
+
+
 }
