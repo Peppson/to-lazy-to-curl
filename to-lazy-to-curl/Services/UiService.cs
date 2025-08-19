@@ -18,7 +18,7 @@ static public class UiService
     public static Border UrlInputBorder { get; set; } = null!;
     private static CancellationTokenSource? _messageCts;
         
-    public static async Task ShowMessageAsync(string msg, string colorName, int durationMs)
+    public static async Task ShowTextMessageAsync(string msg, string colorName, int durationMs)
     {
         // Cancel any previous messages
         _messageCts?.Cancel();

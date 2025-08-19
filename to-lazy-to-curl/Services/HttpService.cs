@@ -12,11 +12,11 @@ public static class HttpService
 
     public static async Task SubmitRequestAsync(string url, string body)
     {
-        if (!CanSubmitRequest(url, body)) return;
-
-        _ = UiService.ShowMessageAsync("Sending...", "PrimaryText", 10000);
-
         var httpAction = AppState.SelectedHttpAction;
+        if (!CanSubmitRequest(url, httpAction)) return;
+
+        _ = UiService.ShowTextMessageAsync("Sending...", "PrimaryText", 10000);
+
         await TrySendRequestAsync(url, body, httpAction);
     }
 
@@ -30,16 +30,16 @@ public static class HttpService
         }
         catch (HttpRequestException ex)
         {
-            _ = UiService.ShowMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            _ = UiService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
             UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
         catch (TaskCanceledException)
         {
-            _ = UiService.ShowMessageAsync(GetTimeoutMessage(), "Failure", Config.MessageDuration);
+            _ = UiService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.MessageDuration);
         }
         catch (Exception ex)
         {
-            _ = UiService.ShowMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            _ = UiService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
             UiService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
     }
@@ -51,43 +51,72 @@ public static class HttpService
             Timeout = TimeSpan.FromSeconds(Config.ConnectionTimeout)
         };
 
-        // Set header and body
-        var contentTypeHeader = AppState.PayloadEditorSyntax;
-        var content = new StringContent(body, Encoding.UTF8, GetContentTypeHeader(contentTypeHeader));
-        //var content = new StringContent(body, Encoding.UTF8, "application/json"); // todo add headers
+        var headers = GetHeaders(); // todo headers?
+        var response = await SendHttpRequestAsync(url, body, client, httpAction, headers);
 
-        // Send it!
-        var response = await SendHttpRequestAsync(client, httpAction, url, content);
         ShowHttpResponseMessage(response);
         await SetHttpResponseText(response);
     }
 
-    private static async Task<HttpResponseMessage> SendHttpRequestAsync( // todo add headers
-        HttpClient client,
-        HttpAction action,
-        string url,
-        HttpContent?
-        body = null) 
+    private static async Task<HttpResponseMessage> SendHttpRequestAsync(string url, string body, HttpClient client, HttpAction httpAction, Dictionary<string, string>? headers = null)
+    {
+        var contentType = AppState.PayloadEditorSyntax ?? "application/json";
+
+        var request = new HttpRequestMessage
+        {
+            Method = GetHttpAction(httpAction),
+            RequestUri = new Uri(url),
+            Content = new StringContent(body, Encoding.UTF8, GetContentType(contentType))
+        };
+
+        // No headers
+        if (headers == null)
+            return await client.SendAsync(request);
+
+        // Headers
+        foreach (var header in headers)
+        {   
+            if (!request.Headers.TryAddWithoutValidation(header.Key, header.Value))
+            {
+                request.Content?.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            }
+        }
+        
+        return await client.SendAsync(request);
+    }
+    
+    private static HttpMethod GetHttpAction(HttpAction action)
     {
         return action switch
         {
-            HttpAction.GET => await client.GetAsync(url),
-            HttpAction.POST => await client.PostAsync(url, body),
-            HttpAction.PUT => await client.PutAsync(url, body),
-            HttpAction.PATCH => await client.SendAsync(new HttpRequestMessage(new HttpMethod("PATCH"), url) { Content = body }),
-            HttpAction.DELETE => await client.DeleteAsync(url),
-            _ => throw new InvalidOperationException("No valid HTTP action selected.")
+            HttpAction.GET => HttpMethod.Get,
+            HttpAction.POST => HttpMethod.Post,
+            HttpAction.PUT => HttpMethod.Put,
+            HttpAction.DELETE => HttpMethod.Delete,
+            HttpAction.PATCH => HttpMethod.Patch,
+            _ => throw new InvalidOperationException("No valid HTTP method selected.")
         };
     }
     
-    private static string GetContentTypeHeader(string contentTypeHeader)
+    private static string GetContentType(string contentTypeHeader)
     {
         return contentTypeHeader switch
         {
             SyntaxHighlighting.Json => "application/json",
             SyntaxHighlighting.Html => "text/html",
-            SyntaxHighlighting.Xml  => "application/xml",
+            SyntaxHighlighting.Xml => "application/xml",
             _ => "text/plain"
+        };
+    }
+
+    private static Dictionary<string, string>? GetHeaders(bool headers = false)
+    {
+        if (!headers) return null;
+
+        return new Dictionary<string, string>
+        {
+            { "Authorization", "Bearer XYZ" }, // todo dynamic
+            { "Cache-Control", "no-cache" },
         };
     }
 
@@ -144,67 +173,34 @@ public static class HttpService
             new JsonSerializerOptions { WriteIndented = true });
     }
 
-    private static (bool IsUrlValid, bool IsPayloadValid) ValidateInputs(string url, string body)
+    private static bool ValidateInput(string url)
     {
-        bool isUrlValid = !string.IsNullOrWhiteSpace(url) && Uri.IsWellFormedUriString(url, UriKind.Absolute);
-        bool IsPayloadValid = true;
-        //bool IsPayloadValid = !string.IsNullOrWhiteSpace(body);
-
-        return (isUrlValid, IsPayloadValid);
+        return !string.IsNullOrWhiteSpace(url) && Uri.IsWellFormedUriString(url, UriKind.Absolute);
     }
 
-    private static bool GetIsBodyRequired(HttpAction action)
+    private static bool CanSubmitRequest(string url, HttpAction httpAction)
     {
-        return action switch
-        {
-            HttpAction.GET => false,
-            HttpAction.POST => true,
-            HttpAction.PUT => true,
-            HttpAction.PATCH => true,
-            HttpAction.DELETE => false,
-            _ => false
-        };
-    }
-
-    private static bool CanSubmitRequest(string url, string body)
-    {
-        var (IsUrlValid, IsBodyValid) = ValidateInputs(url, body);
+        var IsUrlValid = ValidateInput(url);
 
         if (!IsUrlValid)
         {
-            _ = UiService.ShowMessageAsync("Please enter a valid URL!", "Failure", Config.MessageDuration);
+            _ = UiService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.MessageDuration);
             return false;
         }
 
-        if (AppState.SelectedHttpAction == HttpAction.NONE)
+        if (httpAction == HttpAction.NONE)
         {
-            _ = UiService.ShowMessageAsync("Please choose an HTTP action!", "Failure", Config.MessageDuration);
+            _ = UiService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.MessageDuration);
             return false;
         }
 
-        var isBodyRequired = GetIsBodyRequired(AppState.SelectedHttpAction);
-
-        if (isBodyRequired && !IsBodyValid)
-        {
-            _ = UiService.ShowMessageAsync(GetBodyRequiredMessage(), "Failure", Config.MessageDuration);
-            return false;
-        }
-
-        // Let GET and DELETE pass through without content body
-        if ((isBodyRequired && IsBodyValid) ||
-            AppState.SelectedHttpAction == HttpAction.GET ||
-            AppState.SelectedHttpAction == HttpAction.DELETE)
-        {
-            return true;
-        }
-
-        return false; // Should never get here
+        return true;
     }
 
     private static void ShowHttpResponseMessage(HttpResponseMessage response)
     {
         string color = response.IsSuccessStatusCode ? "Success" : "Failure";
-        _ = UiService.ShowMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.MessageDuration);
+        _ = UiService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.MessageDuration);
     }
 
     private static string GetBodyRequiredMessage()
