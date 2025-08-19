@@ -9,7 +9,7 @@
 
             <!--  Colors  -->
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Settings/Colors.xaml" />
+                <ResourceDictionary Source="Settings/Colors.Light.xaml" />
                 <ResourceDictionary Source="Settings/Sizes.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
@@ -35,7 +35,7 @@
 
             <!--  Buttons  -->
             <Style TargetType="Button">
-                <Setter Property="Foreground" Value="{StaticResource PrimaryText}" />
+                <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
             </Style>
 
             <!--  PlaceholderText helper  -->

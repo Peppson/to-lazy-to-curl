@@ -29,4 +29,16 @@ public partial class MainWindow : Window
         Properties.Settings.Default.WindowLeft = Left;
         Properties.Settings.Default.Save();
     }
+
+    public static void SwitchTheme(bool dark)
+    {
+        var dict = new ResourceDictionary
+        {
+            Source = new Uri(
+                dark ? "Settings/Colors.Dark.xaml" : "Settings/Colors.xaml",
+                UriKind.Relative)
+        };
+        
+        Application.Current.Resources.MergedDictionaries[0] = dict;
+    }
 }
