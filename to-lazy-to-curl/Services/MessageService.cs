@@ -1,24 +1,24 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Controls;
 
 namespace to_lazy_to_curl.Services;
 
 static public class MessageService
 {
     private static CancellationTokenSource? _messageCts;
-        
+
     public static async Task ShowTextMessageAsync(string msg, string colorName, int durationMs)
     {
         // Cancel any previous messages
         _messageCts?.Cancel();
         _messageCts = new CancellationTokenSource();
+
         var token = _messageCts.Token;
         var color = (SolidColorBrush)Application.Current.FindResource(colorName);
-
         AppState.MessageBox.MessageTextBlock.Text = msg;
         AppState.MessageBox.Foreground = color;
+
         // Fade in
         var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
         AppState.MessageBox.MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeIn);
@@ -31,10 +31,7 @@ static public class MessageService
             var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(300));
             AppState.MessageBox.MessageTextBlock.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
-        catch (TaskCanceledException)
-        {
-            // Do nothing :)
-        }
+        catch (TaskCanceledException) { }
     }
 
     public static void ShowMessageBox(string msg)
@@ -48,7 +45,7 @@ static public class MessageService
     }
 
    
-
+    // todo
     /* private static async Task InvalidInputAnimationAsync(FormState formState)
     {
         const int durationMs = 450;
@@ -65,7 +62,7 @@ static public class MessageService
         SubmitButton.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
 
 
-        // todo
+        
         //JsonEditorBorder.BorderBrush = new SolidColorBrush(Colors.Red);
         //UrlInputBorder.BorderBrush = new SolidColorBrush(Colors.Red);
 

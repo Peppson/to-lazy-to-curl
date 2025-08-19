@@ -69,7 +69,7 @@ public static class HttpService
 
         // No headers
         if (headers == null)
-            return await client.SendAsync(request); // todo
+            return await client.SendAsync(request);
 
         // Headers
         foreach (var header in headers)

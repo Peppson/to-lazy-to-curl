@@ -70,7 +70,6 @@
                     FontSize="{StaticResource FontSizeUrlInput}"
                     Foreground="{StaticResource PrimaryText}"
                     Style="{StaticResource NoHoverFocusTextBoxStyle}"
-                    TextChanged="UrlTextBox_TextChanged"
                     TextWrapping="NoWrap" />
 
                 <TextBlock

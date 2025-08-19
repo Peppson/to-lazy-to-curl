@@ -13,11 +13,6 @@ public partial class UrlInput : UserControl
         UrlTextBox.Text = Config.UrlStartupData;
     }
 
-    private void UrlTextBox_TextChanged(object sender, TextChangedEventArgs e)
-    {
-        // Todo border colors?
-    }
-
     public void Reset()
     {
         UrlTextBox.Text = string.Empty;

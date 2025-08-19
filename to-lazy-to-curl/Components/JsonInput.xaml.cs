@@ -11,6 +11,7 @@ public partial class JsonInput : UserControl
 {
 
 
+    string API_KEY = "njksdhjkdfhkjd87jkhsdkjhfsdjkh#####";
 
     private bool _wasNarrow = false;
     private GridLength _lastLeftWidth = new(1, GridUnitType.Star);
