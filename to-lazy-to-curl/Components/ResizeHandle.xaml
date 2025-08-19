@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="to_lazy_to_curl.Components.ResizeHandle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:to_lazy_to_curl.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel
+        Grid.Row="6"
+        Margin="0,0,-24,-25"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Bottom"
+        Orientation="Horizontal">
+        <fa:ImageAwesome
+            Width="20"
+            Height="20"
+            Cursor="SizeNWSE"
+            Foreground="{StaticResource PrimaryText}"
+            Icon="CaretRight"
+            MouseLeftButtonDown="DragHandle_MouseLeftButtonDown"
+            Opacity="0.4"
+            Rotation="45" />
+    </StackPanel>
+</UserControl>

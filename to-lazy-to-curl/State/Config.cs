@@ -6,7 +6,7 @@ static public class Config
 {
     public const int MessageDuration = 8000; // Show status message for x ms
     public const long ConnectionTimeout = 6; // Http timout in Seconds
-    public const double SplitEditorThreshold = 900; // App width in px to switch layout
+    public const double SplitEditorThreshold = 800; // App width in px to switch layout
 
     public static readonly string JsonSampleData = JsonConvert.SerializeObject(
         JsonConvert.DeserializeObject(@"
@@ -39,7 +39,7 @@ static public class Config
     );
     
     #if RELEASE
-        public const string UrlStartupData = "https://jsonplaceholder.typicode.com/posts"; 
+        public const string UrlStartupData = "https://httpbin.org/#/"; 
     #else
         public const string UrlStartupData = "https://localhost:7291/snus";
     #endif

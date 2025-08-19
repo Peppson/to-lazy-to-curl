@@ -147,6 +147,7 @@
                                     TextElement.Foreground="{TemplateBinding Foreground}" />
                             </Grid>
                         </Border>
+
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="outerBorder2" Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outerBorder2" Property="BorderBrush" Value="{StaticResource BorderHover}" />
@@ -222,6 +223,7 @@
                                     TextElement.Foreground="{TemplateBinding Foreground}" />
                             </Grid>
                         </Border>
+
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="outerBorder3" Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outerBorder3" Property="BorderBrush" Value="{StaticResource BorderHover}" />
@@ -287,6 +289,7 @@
                                     TextElement.Foreground="{TemplateBinding Foreground}" />
                             </Grid>
                         </Border>
+
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="outerBorder4" Property="IsMouseOver" Value="True">
                                 <Setter TargetName="outerBorder4" Property="BorderBrush" Value="{StaticResource BorderHover}" />

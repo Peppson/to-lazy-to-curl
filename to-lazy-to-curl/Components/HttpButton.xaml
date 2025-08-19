@@ -25,7 +25,7 @@
                     CornerRadius="4">
                     <Grid x:Name="innerArea" Background="Transparent">
                         <Border
-                            x:Name="leftStripe"
+                            x:Name="bottomBorder"
                             Height="1"
                             VerticalAlignment="bottom"
                             Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
@@ -37,13 +37,47 @@
                             TextElement.Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </Border>
+
                 <ControlTemplate.Triggers>
                     <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
                         <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
                     </Trigger>
+
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
-                        <Setter TargetName="outerBorder" Property="Background" Value="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}" />
                         <Setter TargetName="outerBorder" Property="BorderBrush" Value="{StaticResource BorderHover}" />
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                        <DataTrigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="bottomBorder"
+                                        Storyboard.TargetProperty="Height"
+                                        To="40"
+                                        Duration="0:0:0.2">
+                                        <DoubleAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.EnterActions>
+                        <DataTrigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="bottomBorder"
+                                        Storyboard.TargetProperty="Height"
+                                        To="1"
+                                        Duration="0:0:0.2">
+                                        <DoubleAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.ExitActions>
                     </DataTrigger>
                 </ControlTemplate.Triggers>
             </ControlTemplate>

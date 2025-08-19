@@ -12,7 +12,7 @@
     Width="620"
     Height="683"
     MinWidth="400"
-    MinHeight="480"
+    MinHeight="500"
     Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/AppIcon.ico"
@@ -22,6 +22,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -130,16 +131,28 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
                     <fa:ImageAwesome
+                        x:Name="SendButtonStaticIcon"
                         Width="16"
                         Height="16"
                         Margin="0,0,6,0"
                         VerticalAlignment="Center"
                         Foreground="{StaticResource PrimaryText}"
                         Icon="PaperPlaneOutline" />
+                    <fa:ImageAwesome
+                        x:Name="SendButtonSpinnerIcon"
+                        Width="16"
+                        Height="16"
+                        Margin="0,0,6,0"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource PrimaryText}"
+                        Icon="Spinner"
+                        Spin="True"
+                        SpinDuration="2"
+                        Visibility="Collapsed" />
                     <TextBlock
                         VerticalAlignment="Center"
                         FontSize="{DynamicResource FontSizeBottomButtons}"
-                        Text="Send" />
+                        Text="Submit" />
                 </StackPanel>
 
                 <Button.Template>
@@ -183,12 +196,17 @@
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
                     <fa:ImageAwesome
+                        x:Name="ClearButtonIcon"
                         Width="15"
                         Height="15"
                         Margin="0,0,6,0"
                         VerticalAlignment="Center"
                         Foreground="{StaticResource PrimaryText}"
-                        Icon="Refresh" />
+                        Icon="Refresh">
+                        <fa:ImageAwesome.RenderTransform>
+                            <RotateTransform x:Name="ClearButtonRotate" CenterX="7.5" CenterY="7.5" />
+                        </fa:ImageAwesome.RenderTransform>
+                    </fa:ImageAwesome>
                     <TextBlock
                         VerticalAlignment="Center"
                         FontSize="{DynamicResource FontSizeBottomButtons}"
@@ -222,5 +240,8 @@
                 </Button.Template>
             </Button>
         </Grid>
+
+        <!--  Bottom Rezise  -->
+        <components:ResizeHandle Grid.Row="5" />
     </Grid>
 </Window>

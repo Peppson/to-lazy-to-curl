@@ -78,7 +78,7 @@ public partial class JsonInput : UserControl
 
 
 
-    public static readonly DependencyProperty RandomNameProperty = //todo
+    public static readonly DependencyProperty IsResponseEditorProperty =
         DependencyProperty.Register(
             nameof(IsResponseEditor),
             typeof(bool),
@@ -99,9 +99,6 @@ public partial class JsonInput : UserControl
             typeof(JsonInput),
             new PropertyMetadata(SyntaxHighlighting.Json));
 
-
-
-
     public string PayloadEditorSyntax
     {
         get => (string)GetValue(PayloadEditorSyntaxProperty);
@@ -109,8 +106,7 @@ public partial class JsonInput : UserControl
         {
             SetValue(PayloadEditorSyntaxProperty, value);
             var definition =
-                ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance
-                .GetDefinition(value);
+                ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
             JsonTextBox.SyntaxHighlighting = definition;
         }
     }
@@ -122,31 +118,46 @@ public partial class JsonInput : UserControl
         {
             SetValue(ResponseEditorSyntaxProperty, value);
             var definition =
-                ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance
-                .GetDefinition(value);
+                ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
             ResponseEditor.SyntaxHighlighting = definition;
         }
     }
 
-
-
-
     public bool IsResponseEditor
     {
-        get => (bool)GetValue(RandomNameProperty);
-        private set => SetValue(RandomNameProperty, value);
+        get => (bool)GetValue(IsResponseEditorProperty);
+        private set => SetValue(IsResponseEditorProperty, value);
     }
+
+
+
 
     public string JsonRequestBody
     {
         get => JsonTextBox.Text;
-        set => JsonTextBox.Text = value;
+        set
+        {
+            if (JsonTextBox.Document.Text != value)
+            {
+                JsonTextBox.Document.UndoStack.StartUndoGroup();
+                JsonTextBox.Document.Text = value ?? string.Empty;
+                JsonTextBox.Document.UndoStack.EndUndoGroup();
+            }
+        }
     }
 
     public string JsonResponseBody
     {
         get => ResponseEditor.Text;
-        set => ResponseEditor.Text = value;
+        set
+        {
+            if (ResponseEditor.Document.Text != value)
+            {
+                ResponseEditor.Document.UndoStack.StartUndoGroup();
+                ResponseEditor.Document.Text = value ?? string.Empty;
+                ResponseEditor.Document.UndoStack.EndUndoGroup();
+            }
+        }
     }
 
 
@@ -307,19 +318,19 @@ public partial class JsonInput : UserControl
         UiService.JsonEditorBorder = JsonEditorsBorder;
     }
 
-    public void Reset() // TODO
+    public void Reset()
     {
         IsResponseEditor = false;
 
         // Payload
         AppState.PayloadEditorSyntax = SyntaxHighlighting.Json;
         PayloadEditorSyntax = AppState.PayloadEditorSyntax;
-        //JsonRequestBody = string.Empty; // todo state?
+        JsonRequestBody = string.Empty; // todo add to state?
 
         // Response
         AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
         ResponseEditorSyntax = AppState.ResponseEditorSyntax;
-        //JsonResponseBody = string.Empty;
+        JsonResponseBody = string.Empty;
 
         // Layout and grid
         _lastLeftWidth = new GridLength(1, GridUnitType.Star);

@@ -2,13 +2,10 @@
 dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 
 
-
 Darktheme
-ctrl z editors after reset
-drag indicator right bot corner
 splitter color
 splitter of screen
-add auth? box
+add header and auth? button
 
 
 https://httpbin.org/#/
