@@ -21,7 +21,7 @@
             Foreground="{DynamicResource PrimaryText}"
             Icon="CaretRight"
             MouseLeftButtonDown="DragHandle_MouseLeftButtonDown"
-            Opacity="0.4"
+            Opacity="0.3"
             Rotation="45" />
     </StackPanel>
 </UserControl>

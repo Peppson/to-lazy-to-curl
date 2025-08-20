@@ -10,7 +10,7 @@
 
     <Button
         x:Name="MainButton"
-        Height="34"
+        Height="36"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
         FontSize="{StaticResource FontSizeHttpButtons}"
@@ -20,16 +20,15 @@
                 <Border
                     x:Name="outerBorder"
                     Background="{DynamicResource ButtonBackground}"
-                    BorderBrush="Transparent"
-                    BorderThickness="0,0,0,0">
+                    BorderThickness="1">
                     <Grid x:Name="innerArea" Background="Transparent">
                         <Border
                             x:Name="bottomBorder"
                             Height="2"
                             VerticalAlignment="bottom"
-                            Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                            Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CornerRadius="0,0,0,0" />
                         <ContentPresenter
-                            x:Name="contentPresenter"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             RecognizesAccessKey="True"
@@ -38,30 +37,17 @@
                 </Border>
 
                 <ControlTemplate.Triggers>
-
-
-                    <!--  Hover shadow  -->
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter TargetName="outerBorder" Property="Effect">
-                            <Setter.Value>
-                                <DropShadowEffect
-                                    BlurRadius="5"
-                                    Opacity="0.1"
-                                    ShadowDepth="5"
-                                    Color="{DynamicResource PrimaryTextColor}" />
-                            </Setter.Value>
-                        </Setter>
+                    <!--
+                    <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
                     </Trigger>
 
-                    <!--  Reset when not hovering  -->
-                    <Trigger Property="IsMouseOver" Value="False">
-                        <Setter TargetName="outerBorder" Property="Effect" Value="{x:Null}" />
-                    </Trigger>
+                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
+                    </DataTrigger>
+                    -->
 
-
-
-
-                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="true">
+                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
                         <DataTrigger.EnterActions>
                             <BeginStoryboard>
                                 <Storyboard>

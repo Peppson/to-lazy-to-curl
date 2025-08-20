@@ -1,8 +1,10 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!-- Light Them -->
+    <!--  Light Them  -->
 
+    <!--  App  -->
     <SolidColorBrush x:Key="WindowBackground" Color="#fdfdfd" />
+    <SolidColorBrush x:Key="WindowBorder" Color="#757575" />
     <SolidColorBrush x:Key="InputBackground" Color="#ffffff" />
     <SolidColorBrush x:Key="ButtonBackground" Color="#fefefe" />
 
@@ -16,6 +18,15 @@
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#e5e5e5" />
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
+    <!--  Editor Syntax  TODO LIGHT THEME  -->
+    <SolidColorBrush x:Key="String" Color="Red" />
+    <SolidColorBrush x:Key="FieldName" Color="#e06c75" />
+    <SolidColorBrush x:Key="Bool" Color="#56b6c2" />
+    <SolidColorBrush x:Key="Number" Color="#e78f84" />
+    <SolidColorBrush x:Key="Null" Color="#56b6c2" />
+    <SolidColorBrush x:Key="Punctuation" Color="Red" />
+
+    <!--  Http Buttons  -->
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
     <SolidColorBrush x:Key="PatchButton" Color="#50e3c1" />
@@ -24,6 +35,7 @@
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
 
+    <!--  Misc  -->
     <SolidColorBrush x:Key="Success" Color="Green" />
     <SolidColorBrush x:Key="Failure" Color="Red" />
     <SolidColorBrush x:Key="Test" Color="Red" />

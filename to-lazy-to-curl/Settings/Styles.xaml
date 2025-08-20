@@ -1,4 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--  Titlebar Buttons  -->
     <Style x:Key="TitleBarButtonStyle" TargetType="Button">
@@ -78,7 +81,7 @@
 
     <!--  Window border  -->
     <Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
-        <Setter Property="BorderBrush" Value="{DynamicResource WindowBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource WindowBorder}" />
         <Setter Property="BorderThickness" Value="1" />
         <Style.Triggers>
             <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
