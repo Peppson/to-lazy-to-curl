@@ -26,7 +26,6 @@ public partial class MainWindow : Window
 	{
 		base.OnClosing(e);
 		LogService.Shutdown();
-
 		Properties.Settings.Default.IsDarkTheme = ThemeService.GetIsDarkTheme();
 		Properties.Settings.Default.WindowWidth = Width;
 		Properties.Settings.Default.WindowHeight = Height;
@@ -132,7 +131,7 @@ public partial class MainWindow : Window
 		{
 			// We need to tell the system what our size should be when maximized. Otherwise it will cover the whole screen,
 			// including the task bar.
-			MINMAXINFO mmi = (MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
+			MINMAXINFO mmi = Marshal.PtrToStructure<MINMAXINFO>(lParam);
 
 			// Adjust the maximized size and position to fit the work area of the correct monitor
 			IntPtr monitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);

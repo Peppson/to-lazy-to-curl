@@ -246,12 +246,12 @@ public partial class JsonInput : UserControl
         PayloadEditorSyntax = AppState.ResponseEditorSyntax;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
         JsonTextBox.Options.EnableHyperlinks = false;
-        JsonTextBox.Text = Config.JsonSampleData;
+        JsonTextBox.Text = Config.PayloadSampleData;
 
         ResponseEditorSyntax = AppState.ResponseEditorSyntax;
         ResponseEditor.Options.EnableEmailHyperlinks = false;
         ResponseEditor.Options.EnableHyperlinks = false;
-        ResponseEditor.Text = Config.JsonSampleResponse;
+        ResponseEditor.Text = Config.ResponseSampleData;
 
         AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
     }

@@ -13,6 +13,6 @@
     <sys:Double x:Key="FontSizeTitleBar">13</sys:Double>
 
     <!--  Icons  -->
-    <sys:Double x:Key="IconSizeTitleBar">17</sys:Double>
+    <sys:Double x:Key="IconSizeTitleBar">18</sys:Double>
 
 </ResourceDictionary>
