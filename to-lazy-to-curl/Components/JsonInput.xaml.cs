@@ -4,7 +4,6 @@ using System.Windows.Input;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
-using System.Windows.Media;
 
 namespace to_lazy_to_curl.Components;
 
@@ -38,6 +37,10 @@ public partial class JsonInput : UserControl
             typeof(JsonInput),
             new PropertyMetadata(SyntaxHighlighting.Json));
 
+
+
+
+
     public string PayloadEditorSyntax
     {
         get => (string)GetValue(PayloadEditorSyntaxProperty);
@@ -67,9 +70,6 @@ public partial class JsonInput : UserControl
         get => (bool)GetValue(IsResponseEditorProperty);
         private set => SetValue(IsResponseEditorProperty, value);
     }
-
-
-
 
     public string JsonRequestBody
     {
