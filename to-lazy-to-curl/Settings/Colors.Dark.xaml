@@ -18,7 +18,13 @@
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#e5e5e5" />
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
+    <!--  Editor Scrollbar  -->
+    <SolidColorBrush x:Key="ScrollbarBackground" Color="Transparent" />
+    <SolidColorBrush x:Key="ScrollbarForeground" Color="#282b30" />
+    <SolidColorBrush x:Key="ScrollbarHover" Color="Black" />
+
     <!--  Editor Syntax  -->
+    <SolidColorBrush x:Key="EditorCaretColor" Color="White" />
     <SolidColorBrush x:Key="String" Color="#98c379" />
     <SolidColorBrush x:Key="FieldName" Color="#e06c75" />
     <SolidColorBrush x:Key="Bool" Color="#56b6c2" />

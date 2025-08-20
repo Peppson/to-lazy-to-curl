@@ -114,4 +114,61 @@
     <Style TargetType="Button">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
     </Style>
+
+    <!-- Scroll Bar-->
+    <Style TargetType="{x:Type ScrollBar}">
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Track
+                                Name="PART_Track"
+                                Grid.Row="0"
+                                Width="5"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Stretch"
+                                IsDirectionReversed="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Background="{DynamicResource ScrollbarBackground}">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Rectangle Width="{TemplateBinding ActualWidth}" Fill="{DynamicResource ScrollbarBackground}" />
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.DecreaseRepeatButton>
+
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Rectangle x:Name="ThumbRectangle" Fill="{DynamicResource ScrollbarForeground}" />
+
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="ThumbRectangle" Property="Fill" Value="{DynamicResource ScrollbarHover}" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Background="{DynamicResource ScrollbarBackground}">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Rectangle Height="{TemplateBinding ActualHeight}" Fill="{DynamicResource ScrollbarBackground}" />
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

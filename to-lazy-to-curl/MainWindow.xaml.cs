@@ -5,6 +5,7 @@ using Serilog;
 using to_lazy_to_curl.Services;
 using ICSharpCode.AvalonEdit.Highlighting;
 using System.Windows.Media;
+using System.Windows.Controls;
 
 namespace to_lazy_to_curl;
 

@@ -4,6 +4,7 @@ using System.Windows.Input;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
+using System.Windows.Media;
 
 namespace to_lazy_to_curl.Components;
 

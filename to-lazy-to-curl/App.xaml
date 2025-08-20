@@ -3,12 +3,10 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:to_lazy_to_curl"
-    xmlns:system="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-
-            <!--  Themes  -->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Settings/Colors.Light.xaml" />
                 <ResourceDictionary Source="Settings/Sizes.xaml" />

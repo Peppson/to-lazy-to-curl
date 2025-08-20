@@ -7,22 +7,9 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:to_lazy_to_curl.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     mc:Ignorable="d">
 
 
-    <UserControl.Resources>
-        <sys:Double x:Key="ScrollBarWidth">14</sys:Double>
-
-        <sys:Double x:Key="ScrollCornerRadius">4</sys:Double>
-        <sys:Double x:Key="ScrollWidth">4</sys:Double>
-        <sys:Double x:Key="ScrollHeight">6</sys:Double>
-
-
-        <SolidColorBrush x:Key="ScrollBarButtonBackgroundBrush" Color="red" />
-        <SolidColorBrush x:Key="ScrollBarButtonHighlightBackgroundBrush" Color="green" />
-        <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="Gray" />
-    </UserControl.Resources>
 
 
 
@@ -336,8 +323,7 @@
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
             Background="{DynamicResource InputBackground}"
-            BorderThickness="1"
-            CornerRadius="0, 4, 4, 4">
+            BorderThickness="1">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
@@ -390,161 +376,13 @@
                     Grid.Column="0"
                     Background="Transparent"
                     FontSize="{StaticResource FontSizeJsonEditor}"
+                    Foreground="{DynamicResource EditorCaretColor}"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
                     SyntaxHighlighting="{Binding PayloadEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    VerticalScrollBarVisibility="Auto">
-
-
-                    <avalonEdit:TextEditor.Resources>
-
-
-
-
-
-
-
-                        <Style TargetType="{x:Type ScrollBar}">
-                            <Style.Triggers>
-                                <Trigger Property="Orientation" Value="Vertical">
-
-
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type ScrollBar}">
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                        <RowDefinition Height="*" />
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
-
-                                                    <Track
-                                                        Name="PART_Track"
-                                                        Grid.Row="1"
-                                                        VerticalAlignment="Stretch"
-                                                        IsDirectionReversed="True">
-                                                        <Track.DecreaseRepeatButton>
-                                                            <RepeatButton Background="{StaticResource ScrollBarTrackBrush}" Command="ScrollBar.PageUpCommand">
-                                                                <RepeatButton.Template>
-                                                                    <ControlTemplate TargetType="RepeatButton">
-                                                                        <Rectangle
-                                                                            Width="{TemplateBinding ActualWidth}"
-                                                                            Height="{TemplateBinding ActualHeight}"
-                                                                            Fill="{TemplateBinding Background}" />
-                                                                    </ControlTemplate>
-                                                                </RepeatButton.Template>
-                                                            </RepeatButton>
-                                                        </Track.DecreaseRepeatButton>
-
-                                                        <Track.Thumb>
-                                                            <Thumb>
-                                                                <Thumb.Template>
-
-                                                                    <ControlTemplate TargetType="Thumb">
-                                                                        <Rectangle x:Name="ThumbRectangle" Fill="{StaticResource ScrollBarButtonBackgroundBrush}" />
-
-                                                                        <ControlTemplate.Triggers>
-                                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                                <Setter TargetName="ThumbRectangle" Property="Fill" Value="{StaticResource ScrollBarButtonHighlightBackgroundBrush}" />
-                                                                            </Trigger>
-                                                                        </ControlTemplate.Triggers>
-                                                                    </ControlTemplate>
-                                                                </Thumb.Template>
-                                                            </Thumb>
-                                                        </Track.Thumb>
-
-                                                        <Track.IncreaseRepeatButton>
-                                                            <RepeatButton Background="{StaticResource ScrollBarTrackBrush}" Command="ScrollBar.PageDownCommand">
-                                                                <RepeatButton.Template>
-                                                                    <ControlTemplate TargetType="RepeatButton">
-                                                                        <Rectangle
-                                                                            Width="{TemplateBinding ActualWidth}"
-                                                                            Height="{TemplateBinding ActualHeight}"
-                                                                            Fill="{TemplateBinding Background}" />
-                                                                    </ControlTemplate>
-                                                                </RepeatButton.Template>
-                                                            </RepeatButton>
-                                                        </Track.IncreaseRepeatButton>
-                                                    </Track>
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-
-
-
-
-                                <Trigger Property="Orientation" Value="Horizontal">
-                                    <Setter Property="Height" Value="{StaticResource ScrollBarWidth}" />
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type ScrollBar}">
-                                                <Grid>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="*" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                    </Grid.ColumnDefinitions>
-
-                                                    <Track
-                                                        Name="PART_Track"
-                                                        Grid.Column="1"
-                                                        Height="6"
-                                                        Margin="0,10,0,0"
-                                                        HorizontalAlignment="Stretch"
-                                                        IsDirectionReversed="False">
-                                                        <Track.DecreaseRepeatButton>
-                                                            <RepeatButton Background="{StaticResource ScrollBarTrackBrush}" Command="ScrollBar.PageLeftCommand">
-                                                                <RepeatButton.Template>
-                                                                    <ControlTemplate TargetType="RepeatButton">
-                                                                        <Rectangle Width="{TemplateBinding ActualWidth}" Fill="PaleVioletRed" />
-                                                                    </ControlTemplate>
-                                                                </RepeatButton.Template>
-                                                            </RepeatButton>
-                                                        </Track.DecreaseRepeatButton>
-
-                                                        <Track.Thumb>
-                                                            <Thumb>
-                                                                <Thumb.Template>
-                                                                    <ControlTemplate TargetType="Thumb">
-                                                                        <Rectangle
-                                                                            x:Name="ThumbRectangle"
-                                                                            Width="{TemplateBinding ActualWidth}"
-                                                                            Fill="{StaticResource ScrollBarButtonBackgroundBrush}" />
-                                                                        <ControlTemplate.Triggers>
-                                                                            <Trigger Property="IsMouseOver" Value="True">
-                                                                                <Setter TargetName="ThumbRectangle" Property="Fill" Value="{StaticResource ScrollBarButtonHighlightBackgroundBrush}" />
-                                                                            </Trigger>
-                                                                        </ControlTemplate.Triggers>
-                                                                    </ControlTemplate>
-                                                                </Thumb.Template>
-                                                            </Thumb>
-                                                        </Track.Thumb>
-
-                                                        <Track.IncreaseRepeatButton>
-                                                            <RepeatButton Background="{StaticResource ScrollBarTrackBrush}" Command="ScrollBar.PageRightCommand">
-                                                                <RepeatButton.Template>
-                                                                    <ControlTemplate TargetType="RepeatButton">
-                                                                        <Rectangle Width="{TemplateBinding ActualWidth}" Fill="PaleVioletRed" />
-                                                                    </ControlTemplate>
-                                                                </RepeatButton.Template>
-                                                            </RepeatButton>
-                                                        </Track.IncreaseRepeatButton>
-                                                    </Track>
-                                                </Grid>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-
-                    </avalonEdit:TextEditor.Resources>
-                </avalonEdit:TextEditor>
-
+                    VerticalScrollBarVisibility="Auto"
+                    WordWrap="True" />
 
                 <GridSplitter
                     x:Name="Splitter"
@@ -560,18 +398,18 @@
                     ShowsPreview="False"
                     SnapsToDevicePixels="True" />
 
-
-
                 <avalonEdit:TextEditor
                     Name="ResponseEditor"
                     Grid.Column="2"
                     Background="Transparent"
                     FontSize="{StaticResource FontSizeJsonEditor}"
+                    Foreground="{DynamicResource EditorCaretColor}"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
                     SyntaxHighlighting="{Binding ResponseEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    VerticalScrollBarVisibility="Auto" />
+                    VerticalScrollBarVisibility="Auto"
+                    WordWrap="True" />
             </Grid>
         </Border>
     </Grid>

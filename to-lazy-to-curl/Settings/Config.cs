@@ -13,7 +13,7 @@ static public class Config
         {
             ""id"": 42,
             ""name"": ""Peppson"",
-            ""email"": ""Peppson@hottestmail.com"",
+            ""email"": ""Peppson@hottestmail.comPeppson@hottestmail.comPeppson@hottestmail.comPeppson@hottestmail.com"",
             ""isActive"": true,
             ""roles"": [""admin"", ""programmer""],
             ""projects"": [
