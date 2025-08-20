@@ -19,7 +19,7 @@
             <ControlTemplate TargetType="Button">
                 <Border
                     x:Name="outerBorder"
-                    Background="{DynamicResource ButtonBackground}"
+                    Background="{DynamicResource HttpButtonBackground}"
                     BorderThickness="1">
                     <Grid x:Name="innerArea" Background="Transparent">
                         <Border

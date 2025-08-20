@@ -115,7 +115,7 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
     </Style>
 
-    <!-- Scroll Bar-->
+    <!--  Scroll Bar  -->
     <Style TargetType="{x:Type ScrollBar}">
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Vertical">
