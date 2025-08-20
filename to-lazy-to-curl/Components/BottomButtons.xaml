@@ -64,7 +64,7 @@
                         Background="{DynamicResource BigButtonBackground}"
                         BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
-                        CornerRadius="4">
+                        CornerRadius="{DynamicResource CornerRadius}">
                         <ContentPresenter
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
@@ -122,7 +122,7 @@
                         Background="{DynamicResource BigButtonBackground}"
                         BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
-                        CornerRadius="4">
+                        CornerRadius="{DynamicResource CornerRadius}">
                         <ContentPresenter
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"

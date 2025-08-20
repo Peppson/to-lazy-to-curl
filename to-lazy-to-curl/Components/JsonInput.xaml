@@ -9,8 +9,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -76,7 +74,7 @@
                             Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
-                            CornerRadius="4,4,0,0">
+                            CornerRadius="6,6,0,0">
                             <Grid x:Name="innerArea" Background="Transparent">
                                 <ContentPresenter
                                     x:Name="contentPresenter"
@@ -139,7 +137,7 @@
                             Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
-                            CornerRadius="4, 4, 0, 0">
+                            CornerRadius="6, 6, 0, 0">
                             <Grid x:Name="innerArea" Background="Transparent">
                                 <ContentPresenter
                                     x:Name="contentPresenter"
@@ -215,7 +213,7 @@
                             Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
-                            CornerRadius="4, 4, 0, 0">
+                            CornerRadius="6, 6, 0, 0">
                             <Grid x:Name="innerArea" Background="Transparent">
                                 <ContentPresenter
                                     x:Name="contentPresenter"
@@ -281,7 +279,7 @@
                             Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
-                            CornerRadius="4, 4, 0, 0">
+                            CornerRadius="6, 6, 0, 0">
                             <Grid x:Name="innerArea" Background="Transparent">
                                 <ContentPresenter
                                     x:Name="contentPresenter"
@@ -318,7 +316,8 @@
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
             Background="{DynamicResource InputBackground}"
-            BorderThickness="1">
+            BorderThickness="1"
+            CornerRadius="0,6,6,6">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="{DynamicResource Border}" />

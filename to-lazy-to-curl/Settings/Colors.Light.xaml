@@ -11,6 +11,8 @@
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
     <SolidColorBrush x:Key="PrimaryText" Color="#333333" />
+    <Color x:Key="PrimaryTextColor">#333333</Color>
+    <Color x:Key="PrimaryTextInverseColor">#f7fbfe</Color>
     <SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
 
     <SolidColorBrush x:Key="Border" Color="#d4d4d4" />

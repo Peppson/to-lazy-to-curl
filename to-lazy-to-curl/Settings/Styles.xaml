@@ -143,11 +143,13 @@
                                     <Thumb>
                                         <Thumb.Template>
                                             <ControlTemplate TargetType="Thumb">
-                                                <Rectangle x:Name="ThumbRectangle" Fill="{DynamicResource ScrollbarForeground}" />
-
+                                                <Border
+                                                    x:Name="ThumbRectangle"
+                                                    Background="{DynamicResource ScrollbarForeground}"
+                                                    CornerRadius="2" />
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
-                                                        <Setter TargetName="ThumbRectangle" Property="Fill" Value="{DynamicResource ScrollbarHover}" />
+                                                        <Setter TargetName="ThumbRectangle" Property="Background" Value="{DynamicResource ScrollbarHover}" />
                                                     </Trigger>
                                                 </ControlTemplate.Triggers>
                                             </ControlTemplate>

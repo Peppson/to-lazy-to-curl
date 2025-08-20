@@ -8,6 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
+
     <Button
         x:Name="MainButton"
         Height="36"
@@ -27,12 +29,14 @@
                             Height="2"
                             VerticalAlignment="bottom"
                             Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                            CornerRadius="0,0,0,0" />
+                            CornerRadius="6" />
                         <ContentPresenter
+                            x:Name="buttonContentPresenter"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             RecognizesAccessKey="True"
                             TextElement.Foreground="{TemplateBinding Foreground}" />
+
                     </Grid>
                 </Border>
 
@@ -54,12 +58,22 @@
                                     <DoubleAnimation
                                         Storyboard.TargetName="bottomBorder"
                                         Storyboard.TargetProperty="Height"
-                                        To="40"
+                                        To="34"
                                         Duration="0:0:0.2">
                                         <DoubleAnimation.EasingFunction>
                                             <QuadraticEase EasingMode="EaseInOut" />
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
+
+                                    <ColorAnimation
+                                        Storyboard.TargetName="buttonContentPresenter"
+                                        Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                        To="{StaticResource PrimaryTextInverseColor}"
+                                        Duration="0:0:0.2">
+                                        <ColorAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </ColorAnimation.EasingFunction>
+                                    </ColorAnimation>
                                 </Storyboard>
                             </BeginStoryboard>
                         </DataTrigger.EnterActions>
@@ -75,10 +89,21 @@
                                             <QuadraticEase EasingMode="EaseInOut" />
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
+
+                                    <ColorAnimation
+                                        Storyboard.TargetName="buttonContentPresenter"
+                                        Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+                                        To="{StaticResource PrimaryTextColor}"
+                                        Duration="0:0:0.2">
+                                        <ColorAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </ColorAnimation.EasingFunction>
+                                    </ColorAnimation>
                                 </Storyboard>
                             </BeginStoryboard>
                         </DataTrigger.ExitActions>
                     </DataTrigger>
+
                 </ControlTemplate.Triggers>
             </ControlTemplate>
         </Button.Template>

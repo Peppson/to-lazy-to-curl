@@ -28,16 +28,16 @@ public static class HttpService
         }
         catch (HttpRequestException ex)
         {
-            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
         catch (TaskCanceledException)
         {
-            _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.StatusMessageDuration);
         }
         catch (Exception ex)
         {
-            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
         }
     }
@@ -46,7 +46,7 @@ public static class HttpService
     {
         using var client = new HttpClient
         {
-            Timeout = TimeSpan.FromSeconds(Config.ConnectionTimeout)
+            Timeout = TimeSpan.FromSeconds(Config.HttpConnectionTimeout)
         };
 
         var headers = GetHeaders(); // todo headers?
@@ -182,13 +182,13 @@ public static class HttpService
 
         if (!IsUrlValid)
         {
-            _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.StatusMessageDuration);
             return false;
         }
 
         if (httpAction == HttpAction.NONE)
         {
-            _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.MessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.StatusMessageDuration);
             return false;
         }
 
@@ -198,7 +198,7 @@ public static class HttpService
     private static void ShowHttpResponseMessage(HttpResponseMessage response)
     {
         string color = response.IsSuccessStatusCode ? "Success" : "Failure";
-        _ = MessageService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.MessageDuration);
+        _ = MessageService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.StatusMessageDuration);
     }
 
     private static string GetBodyRequiredMessage()
@@ -216,7 +216,7 @@ public static class HttpService
     private static string GetTimeoutMessage()
     {
         var httpAction = AppState.SelectedHttpAction.ToString();
-        return $"{httpAction} request timed out after {Config.ConnectionTimeout} seconds!";
+        return $"{httpAction} request timed out after {Config.HttpConnectionTimeout} seconds!";
     }
     
     private static string GetSuccessMessage()
