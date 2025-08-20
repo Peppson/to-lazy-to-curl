@@ -59,7 +59,7 @@
                 <!--  HTTP Action Buttons  -->
                 <StackPanel
                     Grid.Row="4"
-                    MaxWidth="900"
+                    MaxWidth="{StaticResource WindowSplitViewThreshold}"
                     Orientation="Vertical">
 
                     <TextBlock

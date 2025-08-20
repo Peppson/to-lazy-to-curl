@@ -15,4 +15,6 @@
     <!--  Icons  -->
     <sys:Double x:Key="IconSizeTitleBar">18</sys:Double>
 
+    <!--  Misc  -->
+    <sys:Double x:Key="WindowSplitViewThreshold">900</sys:Double>
 </ResourceDictionary>
