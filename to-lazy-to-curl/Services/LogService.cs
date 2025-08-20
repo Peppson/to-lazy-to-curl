@@ -9,9 +9,11 @@ public static class LogService
     private static string _logFilePath = string.Empty;
 
     public static void Init()
-    {
-        SetupDebugLogger();
-        Log.Debug("-- Started --");
+    {   
+        #if !RELEASE    
+            SetupDebugLogger();
+            Log.Debug("-- Started --");
+        #endif
     }
 
     private static void SetupDebugLogger()

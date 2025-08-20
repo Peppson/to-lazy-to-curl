@@ -8,109 +8,114 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:to_lazy_to_curl"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="To Lazy to Curl"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="ToLazyToCurl"
     Width="620"
     Height="683"
     MinWidth="400"
-    MinHeight="500"
+    MinHeight="520"
+    AllowsTransparency="True"
     Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
     Icon="pack://application:,,,/Assets/AppIcon.ico"
+    WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid Margin="24,10,24,24">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
 
-        <!--  URL  -->
-        <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
+    <Border Style="{StaticResource WindowMainPanelStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <!--  JSON  -->
-        <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
+            <!--  Title Bar  -->
+            <components:WindowTitleBar x:Name="TopTitleBar" Grid.Row="0" />
 
-        <!--  Status Message  -->
-        <components:HttpMessageBox Grid.Row="3" />
+            <!--  App  -->
+            <Grid Grid.Row="1" Margin="24,10,24,24">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-        <!--  HTTP Action Buttons  -->
-        <StackPanel
-            Grid.Row="4"
-            MaxWidth="900"
-            Orientation="Vertical">
+                <!--  URL Input  -->
+                <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
-            <TextBlock
-                Margin="0,0,0,6"
-                VerticalAlignment="Center"
-                FontSize="{StaticResource FontSizeH1}"
-                FontWeight="Bold"
-                Foreground="{DynamicResource PrimaryText}"
-                Text="Actions" />
+                <!--  Editors  -->
+                <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="4" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+                <!--  Status Message  -->
+                <components:HttpMessageBox Grid.Row="3" />
 
-                <components:HttpButton
-                    Grid.Column="0"
-                    ActionType="Get"
-                    ButtonColor="{DynamicResource GetButton}"
-                    ButtonContent="GET" />
+                <!--  HTTP Action Buttons  -->
+                <StackPanel
+                    Grid.Row="4"
+                    MaxWidth="900"
+                    Orientation="Vertical">
 
-                <components:HttpButton
-                    Grid.Column="2"
-                    ActionType="Post"
-                    ButtonColor="{DynamicResource PostButton}"
-                    ButtonContent="POST" />
+                    <TextBlock
+                        Margin="0,0,0,6"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeH1}"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource PrimaryText}"
+                        Text="Actions" />
 
-                <components:HttpButton
-                    Grid.Column="4"
-                    ActionType="Patch"
-                    ButtonColor="{DynamicResource PatchButton}"
-                    ButtonContent="PATCH" />
+                    <Grid Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="4" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <components:HttpButton
+                            Grid.Column="0"
+                            ActionType="Get"
+                            ButtonColor="{DynamicResource GetButton}"
+                            ButtonContent="GET" />
+                        <components:HttpButton
+                            Grid.Column="2"
+                            ActionType="Post"
+                            ButtonColor="{DynamicResource PostButton}"
+                            ButtonContent="POST" />
+                        <components:HttpButton
+                            Grid.Column="4"
+                            ActionType="Patch"
+                            ButtonColor="{DynamicResource PatchButton}"
+                            ButtonContent="PATCH" />
+                        <components:HttpButton
+                            Grid.Column="6"
+                            ActionType="Put"
+                            ButtonColor="{DynamicResource PutButton}"
+                            ButtonContent="PUT" />
+                        <components:HttpButton
+                            Grid.Column="8"
+                            ActionType="Delete"
+                            ButtonColor="{DynamicResource DeleteButton}"
+                            ButtonContent="DELETE" />
+                    </Grid>
+                </StackPanel>
 
-                <components:HttpButton
-                    Grid.Column="6"
-                    ActionType="Put"
-                    ButtonColor="{DynamicResource PutButton}"
-                    ButtonContent="PUT" />
+                <!--  Submit/Reset Buttons  -->
+                <components:BottomButtons Grid.Row="5" MaxWidth="900" />
 
-                <components:HttpButton
-                    Grid.Column="8"
-                    ActionType="Delete"
-                    ButtonColor="{DynamicResource DeleteButton}"
-                    ButtonContent="DELETE" />
+                <!--  Corner Rezise  -->
+                <components:ResizeHandle Grid.Row="6" />
             </Grid>
-        </StackPanel>
-
-        <!--  Bottom Buttons  -->
-        <components:BottomButtons Grid.Row="5" MaxWidth="900" />
-
-        <!--  Bottom Rezise  -->
-        <components:ResizeHandle Grid.Row="6" />
-
-
-        <!--  todo  -->
-        <Button
-            Grid.Row="0"
-            Width="120"
-            Height="30"
-            Margin="10"
-            Click="ToggleTheme_Click"
-            Content="Toggle Theme" />
-    </Grid>
+        </Grid>
+    </Border>
 </Window>

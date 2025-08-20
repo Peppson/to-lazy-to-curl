@@ -67,6 +67,7 @@
                     Height="32"
                     Padding="21,0"
                     VerticalContentAlignment="Center"
+                    CaretBrush="{DynamicResource EditorCaretColor}"
                     FontSize="{StaticResource FontSizeUrlInput}"
                     Foreground="{DynamicResource PrimaryText}"
                     Style="{DynamicResource NoHoverFocusTextBoxStyle}"

@@ -1,0 +1,174 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--  Titlebar Buttons  -->
+    <Style x:Key="TitleBarButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="border"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Focusable="False"
+                            RecognizesAccessKey="True" />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonHover}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonHover}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Titlebar Button Close  -->
+    <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="border"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        SnapsToDevicePixels="true">
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Focusable="False"
+                            RecognizesAccessKey="True" />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonCloseHover}" />
+                            <Setter Property="Foreground" Value="{DynamicResource WindowBackground}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonCloseHover}" />
+                            <Setter Property="Foreground" Value="{DynamicResource WindowBackground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Window border  -->
+    <Style x:Key="WindowMainPanelStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{DynamicResource WindowBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
+                <Setter Property="BorderThickness" Value="0" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  No hover/focus on inputs  -->
+    <Style x:Key="NoHoverFocusTextBoxStyle" TargetType="TextBox">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border
+                        x:Name="Bd"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  Buttons  -->
+    <Style TargetType="Button">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
+    </Style>
+
+    <!-- Scroll Bar-->
+    <Style TargetType="{x:Type ScrollBar}">
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Track
+                                Name="PART_Track"
+                                Grid.Row="0"
+                                Width="5"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Stretch"
+                                IsDirectionReversed="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Background="{DynamicResource ScrollbarBackground}">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Rectangle Width="{TemplateBinding ActualWidth}" Fill="{DynamicResource ScrollbarBackground}" />
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.DecreaseRepeatButton>
+
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Rectangle x:Name="ThumbRectangle" Fill="{DynamicResource ScrollbarForeground}" />
+
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="ThumbRectangle" Property="Fill" Value="{DynamicResource ScrollbarHover}" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Background="{DynamicResource ScrollbarBackground}">
+                                        <RepeatButton.Template>
+                                            <ControlTemplate TargetType="RepeatButton">
+                                                <Rectangle Height="{TemplateBinding ActualHeight}" Fill="{DynamicResource ScrollbarBackground}" />
+                                            </ControlTemplate>
+                                        </RepeatButton.Template>
+                                    </RepeatButton>
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

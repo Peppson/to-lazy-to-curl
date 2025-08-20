@@ -37,6 +37,10 @@ public partial class JsonInput : UserControl
             typeof(JsonInput),
             new PropertyMetadata(SyntaxHighlighting.Json));
 
+
+
+
+
     public string PayloadEditorSyntax
     {
         get => (string)GetValue(PayloadEditorSyntaxProperty);
@@ -66,9 +70,6 @@ public partial class JsonInput : UserControl
         get => (bool)GetValue(IsResponseEditorProperty);
         private set => SetValue(IsResponseEditorProperty, value);
     }
-
-
-
 
     public string JsonRequestBody
     {
@@ -245,12 +246,12 @@ public partial class JsonInput : UserControl
         PayloadEditorSyntax = AppState.ResponseEditorSyntax;
         JsonTextBox.Options.EnableEmailHyperlinks = false;
         JsonTextBox.Options.EnableHyperlinks = false;
-        JsonTextBox.Text = Config.JsonSampleData;
+        JsonTextBox.Text = Config.PayloadSampleData;
 
         ResponseEditorSyntax = AppState.ResponseEditorSyntax;
         ResponseEditor.Options.EnableEmailHyperlinks = false;
         ResponseEditor.Options.EnableHyperlinks = false;
-        ResponseEditor.Text = Config.JsonSampleResponse;
+        ResponseEditor.Text = Config.ResponseSampleData;
 
         AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
     }

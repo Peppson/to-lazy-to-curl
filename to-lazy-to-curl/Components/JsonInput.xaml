@@ -9,6 +9,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -71,7 +73,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder"
-                            Background="{DynamicResource WindowBackground}"
+                            Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="4,4,0,0">
@@ -134,7 +136,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder2"
-                            Background="{DynamicResource WindowBackground}"
+                            Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="4, 4, 0, 0">
@@ -210,7 +212,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder3"
-                            Background="{DynamicResource WindowBackground}"
+                            Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="4, 4, 0, 0">
@@ -276,7 +278,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder4"
-                            Background="{DynamicResource WindowBackground}"
+                            Background="{DynamicResource InputBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="4, 4, 0, 0">
@@ -315,9 +317,8 @@
         <Border
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
-            Background="{DynamicResource WindowBackground}"
-            BorderThickness="1"
-            CornerRadius="0, 4, 4, 4">
+            Background="{DynamicResource InputBackground}"
+            BorderThickness="1">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
@@ -370,11 +371,13 @@
                     Grid.Column="0"
                     Background="Transparent"
                     FontSize="{StaticResource FontSizeJsonEditor}"
+                    Foreground="{DynamicResource EditorCaretColor}"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
                     SyntaxHighlighting="{Binding PayloadEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    VerticalScrollBarVisibility="Auto" />
+                    VerticalScrollBarVisibility="Auto"
+                    WordWrap="True" />
 
                 <GridSplitter
                     x:Name="Splitter"
@@ -395,11 +398,13 @@
                     Grid.Column="2"
                     Background="Transparent"
                     FontSize="{StaticResource FontSizeJsonEditor}"
+                    Foreground="{DynamicResource EditorCaretColor}"
                     HorizontalScrollBarVisibility="Auto"
                     IsReadOnly="false"
                     ShowLineNumbers="True"
                     SyntaxHighlighting="{Binding ResponseEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                    VerticalScrollBarVisibility="Auto" />
+                    VerticalScrollBarVisibility="Auto"
+                    WordWrap="True" />
             </Grid>
         </Border>
     </Grid>

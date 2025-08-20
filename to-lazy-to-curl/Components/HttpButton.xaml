@@ -20,16 +20,14 @@
                 <Border
                     x:Name="outerBorder"
                     Background="{DynamicResource ButtonBackground}"
-                    BorderBrush="{DynamicResource Border}"
-                    BorderThickness="1"
-                    CornerRadius="4">
+                    BorderThickness="1">
                     <Grid x:Name="innerArea" Background="Transparent">
                         <Border
                             x:Name="bottomBorder"
-                            Height="1"
+                            Height="2"
                             VerticalAlignment="bottom"
                             Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                            CornerRadius="0,0,0,4" />
+                            CornerRadius="0,0,0,0" />
                         <ContentPresenter
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -39,13 +37,15 @@
                 </Border>
 
                 <ControlTemplate.Triggers>
+                    <!--
                     <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
                     </Trigger>
 
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
                     </DataTrigger>
+                    -->
 
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
                         <DataTrigger.EnterActions>
@@ -69,7 +69,7 @@
                                     <DoubleAnimation
                                         Storyboard.TargetName="bottomBorder"
                                         Storyboard.TargetProperty="Height"
-                                        To="1"
+                                        To="2"
                                         Duration="0:0:0.2">
                                         <DoubleAnimation.EasingFunction>
                                             <QuadraticEase EasingMode="EaseInOut" />
