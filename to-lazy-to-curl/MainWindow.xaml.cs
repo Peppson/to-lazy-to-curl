@@ -1,32 +1,25 @@
 ﻿using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
-using Serilog;
 using to_lazy_to_curl.Services;
-using ICSharpCode.AvalonEdit.Highlighting;
-using System.Windows.Media;
-using System.Windows.Controls;
 
 namespace to_lazy_to_curl;
 
 public partial class MainWindow : Window
 {
-	private static bool _isDarkTheme;
-
 	public MainWindow()
 	{
 		InitializeComponent();
 		InitWindowSizeAndPosition();
-		InitColorTheme();
 		LogService.Init();
+		ThemeService.Init();
+
 		RefreshMaximizeRestoreButton(); // todo
 	}
 
 	private void ToggleTheme_Click(object sender, RoutedEventArgs e)
 	{
-		_isDarkTheme = !_isDarkTheme;
-		SetColorTheme(_isDarkTheme);
-		SetSyntaxColorTheme(_isDarkTheme);
+		ThemeService.ToggleTheme();
 	}
 
 	protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
@@ -34,7 +27,7 @@ public partial class MainWindow : Window
 		base.OnClosing(e);
 		LogService.Shutdown();
 
-		Properties.Settings.Default.IsDarkTheme = _isDarkTheme;
+		Properties.Settings.Default.IsDarkTheme = ThemeService.GetIsDarkTheme();
 		Properties.Settings.Default.WindowWidth = Width;
 		Properties.Settings.Default.WindowHeight = Height;
 		Properties.Settings.Default.WindowTop = Top;
@@ -52,43 +45,7 @@ public partial class MainWindow : Window
 		Left = Properties.Settings.Default.WindowLeft;
 	}
 
-	private static void InitColorTheme()
-	{
-		_isDarkTheme = Properties.Settings.Default.IsDarkTheme;
-		SetColorTheme(_isDarkTheme);
-		SetSyntaxColorTheme(_isDarkTheme);
-	}
-
-	private static void SetColorTheme(bool darkTheme)
-	{
-		Log.Debug($"Theme: {(darkTheme ? "Dark" : "Light")}");
-
-		var dict = new ResourceDictionary
-		{
-			Source = new Uri(
-				darkTheme ? "Settings/Colors.Dark.xaml" : "Settings/Colors.Light.xaml",
-				UriKind.Relative)
-		};
-
-		Application.Current.Resources.MergedDictionaries[0].Clear();
-		Application.Current.Resources.MergedDictionaries.Add(dict);
-	}
 	
-	private static void SetSyntaxColorTheme(bool darkTheme)
-    {	
-		Log.Debug($"Syntax theme: {(darkTheme ? "Dark" : "Light")}");
-
-		// Set syntax colors
-		var syntaxColor = AppState.JsonInput.JsonTextBox.SyntaxHighlighting;
-		foreach (var color in syntaxColor.NamedHighlightingColors)
-		{
-			if (Application.Current.FindResource(color.Name) is SolidColorBrush brush)
-				color.Foreground = new SimpleHighlightingBrush(brush.Color);
-		}
-
-		AppState.JsonInput.JsonTextBox.TextArea.TextView.Redraw();
-		AppState.JsonInput.ResponseEditor.TextArea.TextView.Redraw();
-    }
 
 
 
