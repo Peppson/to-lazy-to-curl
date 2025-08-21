@@ -16,6 +16,7 @@
     <sys:Double x:Key="IconSizeTitleBar">18</sys:Double>
 
     <!--  Misc  -->
-    <CornerRadius x:Key="CornerRadius">6</CornerRadius>
+    <CornerRadius x:Key="InnerCornerRadius">4</CornerRadius>
+    <CornerRadius x:Key="OuterCornerRadius">6</CornerRadius>
     <sys:Double x:Key="WindowSplitViewThreshold">900</sys:Double>
 </ResourceDictionary>

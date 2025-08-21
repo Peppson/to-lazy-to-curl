@@ -9,6 +9,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -16,14 +18,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock
-            Grid.Row="0"
-            Margin="0,16,0,6"
-            VerticalAlignment="Center"
-            FontSize="{StaticResource FontSizeH1}"
-            FontWeight="Bold"
-            Foreground="{DynamicResource PrimaryText}"
-            Text="Body" />
+
+
+
 
         <Grid
             x:Name="SingleViewButtonPanel"
@@ -71,7 +68,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder"
-                            Background="{DynamicResource InputBackground}"
+                            Background="{DynamicResource BigButtonBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="6,6,0,0">
@@ -134,7 +131,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder2"
-                            Background="{DynamicResource InputBackground}"
+                            Background="{DynamicResource BigButtonBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="6, 6, 0, 0">
@@ -210,7 +207,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder3"
-                            Background="{DynamicResource InputBackground}"
+                            Background="{DynamicResource BigButtonBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="6, 6, 0, 0">
@@ -276,7 +273,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border
                             x:Name="outerBorder4"
-                            Background="{DynamicResource InputBackground}"
+                            Background="{DynamicResource BigButtonBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1,1,1,0"
                             CornerRadius="6, 6, 0, 0">
@@ -315,7 +312,7 @@
         <Border
             x:Name="JsonEditorsBorder"
             Grid.Row="2"
-            Background="{DynamicResource InputBackground}"
+            Background="{DynamicResource BigButtonBackground}"
             BorderThickness="1"
             CornerRadius="0,6,6,6">
             <Border.Style>

@@ -27,7 +27,6 @@
             Cursor="Hand"
             FontSize="{StaticResource FontSizeBottomButtons}"
             FontWeight="Bold">
-
             <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -64,7 +63,7 @@
                         Background="{DynamicResource BigButtonBackground}"
                         BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
-                        CornerRadius="{DynamicResource CornerRadius}">
+                        CornerRadius="{StaticResource InnerCornerRadius}">
                         <ContentPresenter
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
@@ -92,7 +91,6 @@
             Cursor="Hand"
             FontSize="{StaticResource FontSizeBottomButtons}"
             FontWeight="Bold">
-
             <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -122,7 +120,7 @@
                         Background="{DynamicResource BigButtonBackground}"
                         BorderBrush="{DynamicResource Border}"
                         BorderThickness="1"
-                        CornerRadius="{DynamicResource CornerRadius}">
+                        CornerRadius="{StaticResource InnerCornerRadius}">
                         <ContentPresenter
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"

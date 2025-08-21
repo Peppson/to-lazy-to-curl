@@ -67,11 +67,9 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonCloseHover}" />
-                            <Setter Property="Foreground" Value="{DynamicResource WindowBackground}" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="border" Property="Background" Value="{DynamicResource TitleBarButtonCloseHover}" />
-                            <Setter Property="Foreground" Value="{DynamicResource WindowBackground}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

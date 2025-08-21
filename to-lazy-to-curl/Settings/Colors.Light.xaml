@@ -3,20 +3,22 @@
     <!--  Light Them  -->
     <SolidColorBrush x:Key="WindowBackground" Color="#fdfdfd" />
     <SolidColorBrush x:Key="WindowBorder" Color="#757575" />
+    <SolidColorBrush x:Key="CardBackground" Color="#323232" />
     <SolidColorBrush x:Key="InputBackground" Color="#ffffff" />
     <SolidColorBrush x:Key="BigButtonBackground" Color="#fefefe" />
+    <SolidColorBrush x:Key="HttpButtonBackground" Color="Transparent" />
 
     <SolidColorBrush x:Key="TitleBarBackground" Color="#fdfdfd" />
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#e5e5e5" />
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
-    <SolidColorBrush x:Key="PrimaryText" Color="#333333" />
-    <Color x:Key="PrimaryTextColor">#333333</Color>
-    <Color x:Key="PrimaryTextInverseColor">#f7fbfe</Color>
-    <SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
-
     <SolidColorBrush x:Key="Border" Color="#d4d4d4" />
     <SolidColorBrush x:Key="BorderHover" Color="#999999" />
+
+    <SolidColorBrush x:Key="PrimaryText" Color="#333333" />
+    <Color x:Key="PrimaryTextColor">#333333</Color>
+    <Color x:Key="PrimaryTextInverseColor">#333333</Color>
+    <SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
 
     <!--  Editor Scrollbar  -->
     <SolidColorBrush x:Key="ScrollbarBackground" Color="Gray" />
@@ -33,17 +35,16 @@
     <SolidColorBrush x:Key="Punctuation" Color="#333333" />
 
     <!--  Http Buttons  -->
-    <SolidColorBrush x:Key="HttpButtonBackground" Color="Transparent" />
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
     <SolidColorBrush x:Key="PatchButton" Color="#50e3c1" />
     <SolidColorBrush x:Key="PutButton" Color="#fca131" />
-    <SolidColorBrush x:Key="DeleteButton" Color="#ff5d5c" />
+    <SolidColorBrush x:Key="DeleteButton" Color="#E95378" />
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
 
     <!--  Misc  -->
     <SolidColorBrush x:Key="Success" Color="Green" />
-    <SolidColorBrush x:Key="Failure" Color="Red" />
-    <SolidColorBrush x:Key="Test" Color="Red" />
+    <SolidColorBrush x:Key="Failure" Color="#E95378" />
+    <SolidColorBrush x:Key="Test" Color="#E95378" />
 </ResourceDictionary>

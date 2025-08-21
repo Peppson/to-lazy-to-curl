@@ -17,71 +17,79 @@
             Foreground="{DynamicResource PrimaryText}"
             Text="URL" />
 
+
         <Border
-            x:Name="UrlBorder"
-            VerticalAlignment="Center"
-            Background="{DynamicResource InputBackground}"
-            BorderThickness="1"
-            CornerRadius="{DynamicResource CornerRadius}">
-            <Border.Style>
-                <Style TargetType="Border">
-                    <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                            <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Border.Style>
+            Grid.Row="5"
+            Padding="8,10,8,10"
+            Background="{DynamicResource CardBackground}"
+            CornerRadius="{DynamicResource OuterCornerRadius}">
 
-            <Grid Margin="10,0,0,0">
-                <StackPanel
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-                    <fa:ImageAwesome
-                        Width="14"
-                        Height="14"
-                        Margin="0,1,6,0"
+            <Border
+                x:Name="UrlBorder"
+                VerticalAlignment="Center"
+                Background="{DynamicResource InputBackground}"
+                BorderThickness="1"
+                CornerRadius="{StaticResource InnerCornerRadius}">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Grid Margin="10,0,0,0">
+                    <StackPanel
+                        HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Icon="Globe">
+                        Orientation="Horizontal">
+                        <fa:ImageAwesome
+                            Width="14"
+                            Height="14"
+                            Margin="0,1,6,0"
+                            VerticalAlignment="Center"
+                            Icon="Globe">
 
-                        <fa:ImageAwesome.Style>
-                            <Style TargetType="fa:ImageAwesome">
-                                <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Text.IsEmpty, ElementName=UrlTextBox}" Value="True">
-                                        <Setter Property="Foreground" Value="{DynamicResource PlaceHolderText}" />
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </fa:ImageAwesome.Style>
-                    </fa:ImageAwesome>
-                </StackPanel>
+                            <fa:ImageAwesome.Style>
+                                <Style TargetType="fa:ImageAwesome">
+                                    <Setter Property="Foreground" Value="{DynamicResource PrimaryText}" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text.IsEmpty, ElementName=UrlTextBox}" Value="True">
+                                            <Setter Property="Foreground" Value="{DynamicResource PlaceHolderText}" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </fa:ImageAwesome.Style>
+                        </fa:ImageAwesome>
+                    </StackPanel>
 
-                <TextBox
-                    x:Name="UrlTextBox"
-                    Height="32"
-                    Padding="21,0"
-                    VerticalContentAlignment="Center"
-                    CaretBrush="{DynamicResource EditorCaretColor}"
-                    FontSize="{StaticResource FontSizeUrlInput}"
-                    Foreground="{DynamicResource PrimaryText}"
-                    Style="{DynamicResource NoHoverFocusTextBoxStyle}"
-                    TextWrapping="NoWrap" />
+                    <TextBox
+                        x:Name="UrlTextBox"
+                        Height="32"
+                        Padding="21,0"
+                        VerticalContentAlignment="Center"
+                        CaretBrush="{DynamicResource EditorCaretColor}"
+                        FontSize="{StaticResource FontSizeUrlInput}"
+                        Foreground="{DynamicResource PrimaryText}"
+                        Style="{DynamicResource NoHoverFocusTextBoxStyle}"
+                        TextWrapping="NoWrap" />
 
-                <TextBlock
-                    Padding="23,0"
-                    VerticalAlignment="Center"
-                    FontSize="{StaticResource FontSizeUrlInput}"
-                    Foreground="{DynamicResource PlaceHolderText}"
-                    IsHitTestVisible="False"
-                    Text="Enter a URL..."
-                    Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
-            </Grid>
+                    <TextBlock
+                        Padding="23,0"
+                        VerticalAlignment="Center"
+                        FontSize="{StaticResource FontSizeUrlInput}"
+                        Foreground="{DynamicResource PlaceHolderText}"
+                        IsHitTestVisible="False"
+                        Text="Enter a URL..."
+                        Visibility="{Binding Text.IsEmpty, ElementName=UrlTextBox, Converter={StaticResource BoolToVisibilityConverter}}" />
+                </Grid>
+            </Border>
         </Border>
     </StackPanel>
 </UserControl>
