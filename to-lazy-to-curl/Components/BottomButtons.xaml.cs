@@ -27,7 +27,6 @@ public partial class BottomButtons : UserControl
     {
         AnimateResetButton(sender, e);
         AppState.SelectedHttpAction = Models.HttpAction.NONE;
-        AppState.UrlInput.Reset();
         AppState.JsonInput.Reset();
         AppState.MessageBox.Reset();
     }

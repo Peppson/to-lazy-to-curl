@@ -1,5 +1,4 @@
 using System.Windows;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace to_lazy_to_curl.Services;
@@ -15,9 +14,11 @@ static public class MessageService
         _messageCts = new CancellationTokenSource();
 
         var token = _messageCts.Token;
-        var color = (SolidColorBrush)Application.Current.FindResource(colorName);
+        AppState.MessageBox.MessageTextBlock.SetResourceReference(
+            System.Windows.Controls.TextBlock.ForegroundProperty, colorName
+        );
+
         AppState.MessageBox.MessageTextBlock.Text = msg;
-        AppState.MessageBox.Foreground = color;
 
         // Fade in
         var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(1));
@@ -43,54 +44,6 @@ static public class MessageService
             MessageBoxImage.Error
         );
     }
-
-   
-    // todo
-    /* private static async Task InvalidInputAnimationAsync(FormState formState)
-    {
-        const int durationMs = 450;
-        const double shakeOffset = 3;
-        var animation = GetAnimation(shakeOffset, durationMs);
-
-        var urlTextBoxColor = UrlTextBox.BorderBrush;
-        var jsonTextBoxColor = JsonTextBox.BorderBrush;
-        var submitButtonColor = SubmitButton.Background;
-
-        // Button
-        SubmitButton.Background = Brushes.Red;
-        SubmitButton.RenderTransform = new TranslateTransform();
-        SubmitButton.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
-
-
-        
-        //JsonEditorBorder.BorderBrush = new SolidColorBrush(Colors.Red);
-        //UrlInputBorder.BorderBrush = new SolidColorBrush(Colors.Red);
-
-
-
-
-        // Fields
-        if (formState == FormState.UrlEmpty || formState == FormState.BothEmpty)
-        {
-            UrlTextBox.BorderBrush = Brushes.Red;
-            UrlTextBox.RenderTransform = new TranslateTransform();
-            UrlTextBox.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
-        }
-
-        if (formState == FormState.JsonEmpty || formState == FormState.BothEmpty)
-        {
-            JsonTextBox.BorderBrush = Brushes.Red;
-            JsonTextBox.RenderTransform = new TranslateTransform();
-            JsonTextBox.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
-        }
-
-        await Task.Delay(durationMs);
-        SubmitButton.Background = submitButtonColor;
-        UrlTextBox.BorderBrush = urlTextBoxColor;
-        JsonTextBox.BorderBrush = jsonTextBoxColor;
-
-        SubmitButton.IsEnabled = true;
-    } */
 
     private static DoubleAnimationUsingKeyFrames GetAnimation(double offset, int durationMs)
     {

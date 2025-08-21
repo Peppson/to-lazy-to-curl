@@ -4,7 +4,7 @@ namespace to_lazy_to_curl.Settings;
 
 static public class Config
 {
-    public const int StatusMessageDuration = 8000;          // Show status message for x ms
+    public const int StatusMessageDuration = 10000;          // Show status message for x ms
     public const long HttpConnectionTimeout = 6;            // Http timeout in Seconds
     public const double SplitEditorThreshold = 800;         // App width in px to switch editor layout
 
@@ -14,9 +14,8 @@ static public class Config
             {
                 ""id"": 42,
                 ""name"": ""Peppson"",
-                ""email"": ""Peppson@hottestmail.com"",
+                ""email"": ""Peppson@hottestMail.com"",
                 ""isActive"": true,
-                ""roles"": [""admin"", ""programmer""],
                 ""projects"": [
                     { ""id"": 1, ""name"": ""Worst WPF App in History"", ""status"": ""Done-in-a-day-maybe"" },
                     { ""id"": 2, ""name"": ""ESP32 Shenanigans"", ""status"": ""Completed"" }
@@ -25,11 +24,23 @@ static public class Config
             Formatting.Indented
     );
 
+    public static readonly string PayloadStartupData =
+        JsonConvert.SerializeObject(
+            new
+            {
+                id = 42,
+                foo = "bar",
+                isActive = true,
+            },
+            Formatting.Indented
+        );
+
     public static readonly string ResponseSampleData = "{}";
+    public static readonly string ResponseStartupData = "{}";
     
     #if RELEASE
-        public const string UrlStartupData = "https://httpbin.org/#/"; 
+        public const string UrlSampleData = "https://httpbin.org/#/"; 
     #else
-        public const string UrlStartupData = "https://localhost:7291/snus";
+        public const string UrlSampleData = "https://localhost:7291/snus";
     #endif
 }

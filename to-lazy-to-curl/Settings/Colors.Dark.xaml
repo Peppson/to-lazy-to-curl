@@ -44,7 +44,7 @@
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
 
     <!--  Misc  -->
-    <SolidColorBrush x:Key="Success" Color="Green" />
+    <SolidColorBrush x:Key="Success" Color="#87e37d" />
     <SolidColorBrush x:Key="Failure" Color="#E95378" />
     <SolidColorBrush x:Key="Test" Color="#E95378" />
 </ResourceDictionary>

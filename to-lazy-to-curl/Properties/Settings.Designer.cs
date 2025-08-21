@@ -73,13 +73,61 @@ namespace to_lazy_to_curl.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool IsDarkTheme {
             get {
                 return ((bool)(this["IsDarkTheme"]));
             }
             set {
                 this["IsDarkTheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UrlInputText {
+            get {
+                return ((string)(this["UrlInputText"]));
+            }
+            set {
+                this["UrlInputText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PayloadText {
+            get {
+                return ((string)(this["PayloadText"]));
+            }
+            set {
+                this["PayloadText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ResponseText {
+            get {
+                return ((string)(this["ResponseText"]));
+            }
+            set {
+                this["ResponseText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsFirstBoot {
+            get {
+                return ((bool)(this["IsFirstBoot"]));
+            }
+            set {
+                this["IsFirstBoot"] = value;
             }
         }
     }
