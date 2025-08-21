@@ -10,11 +10,25 @@ public partial class UrlInput : UserControl
     {
         InitializeComponent();
         AppState.UrlInput = this;
-        UrlTextBox.Text = Config.UrlStartupData;
+
+        // Init URL with sample data or saved text
+        this.UrlTextBox.Text = AppState.IsFirstBoot
+            ? Config.UrlSampleData
+            : Properties.Settings.Default.UrlInputText ?? string.Empty;
+
+        // Debug override
+        #if !RELEASE
+            this.UrlTextBox.Text = Config.UrlSampleData;
+        #endif
+    }
+
+    public string GetUrlText()
+    {
+        return this.UrlTextBox.Text;
     }
 
     public void Reset()
     {
-        UrlTextBox.Text = string.Empty;
+        this.UrlTextBox.Text = string.Empty;
     }
 }

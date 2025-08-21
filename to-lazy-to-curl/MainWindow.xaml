@@ -39,7 +39,9 @@
             <Grid Grid.Row="1" Margin="24,10,24,24">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -51,70 +53,89 @@
                 <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
                 <!--  Editors  -->
-                <components:JsonInput x:Name="JsonInputControl" Grid.Row="1" />
+                <TextBlock
+                    Grid.Row="1"
+                    Margin="0,16,0,6"
+                    VerticalAlignment="Center"
+                    FontSize="{StaticResource FontSizeH1}"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource PrimaryText}"
+                    Text="Body" />
+
+                <components:JsonInput x:Name="JsonInputControl" Grid.Row="2" />
+
 
                 <!--  Status Message  -->
                 <components:HttpMessageBox Grid.Row="3" />
 
-                <!--  HTTP Action Buttons  -->
-                <StackPanel
+                <!--  Bottom Card  -->
+                <TextBlock
                     Grid.Row="4"
-                    MaxWidth="{StaticResource WindowSplitViewThreshold}"
-                    Orientation="Vertical">
+                    MaxWidth="900"
+                    Margin="0,0,0,6"
+                    VerticalAlignment="Center"
+                    FontSize="{StaticResource FontSizeH1}"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource PrimaryText}"
+                    Text="Actions" />
+                <Border
+                    Grid.Row="5"
+                    MaxWidth="900"
+                    Padding="8"
+                    Background="{DynamicResource CardBackground}"
+                    CornerRadius="{DynamicResource OuterCornerRadius}">
+                    <StackPanel>
 
-                    <TextBlock
-                        Margin="0,0,0,6"
-                        VerticalAlignment="Center"
-                        FontSize="{StaticResource FontSizeH1}"
-                        FontWeight="Bold"
-                        Foreground="{DynamicResource PrimaryText}"
-                        Text="Actions" />
+                        <!--  Action Buttons  -->
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="4" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
 
-                    <Grid Margin="0,0,0,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="4" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="4" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="4" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="4" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <components:HttpButton
-                            Grid.Column="0"
-                            ActionType="Get"
-                            ButtonColor="{DynamicResource GetButton}"
-                            ButtonContent="GET" />
-                        <components:HttpButton
-                            Grid.Column="2"
-                            ActionType="Post"
-                            ButtonColor="{DynamicResource PostButton}"
-                            ButtonContent="POST" />
-                        <components:HttpButton
-                            Grid.Column="4"
-                            ActionType="Patch"
-                            ButtonColor="{DynamicResource PatchButton}"
-                            ButtonContent="PATCH" />
-                        <components:HttpButton
-                            Grid.Column="6"
-                            ActionType="Put"
-                            ButtonColor="{DynamicResource PutButton}"
-                            ButtonContent="PUT" />
-                        <components:HttpButton
-                            Grid.Column="8"
-                            ActionType="Delete"
-                            ButtonColor="{DynamicResource DeleteButton}"
-                            ButtonContent="DELETE" />
-                    </Grid>
-                </StackPanel>
+                                <components:HttpButton
+                                    Grid.Column="0"
+                                    ActionType="Get"
+                                    ButtonColor="{DynamicResource GetButton}"
+                                    ButtonContent="GET" />
+                                <components:HttpButton
+                                    Grid.Column="2"
+                                    ActionType="Post"
+                                    ButtonColor="{DynamicResource PostButton}"
+                                    ButtonContent="POST" />
+                                <components:HttpButton
+                                    Grid.Column="4"
+                                    ActionType="Patch"
+                                    ButtonColor="{DynamicResource PatchButton}"
+                                    ButtonContent="PATCH" />
+                                <components:HttpButton
+                                    Grid.Column="6"
+                                    ActionType="Put"
+                                    ButtonColor="{DynamicResource PutButton}"
+                                    ButtonContent="PUT" />
+                                <components:HttpButton
+                                    Grid.Column="8"
+                                    ActionType="Delete"
+                                    ButtonColor="{DynamicResource DeleteButton}"
+                                    ButtonContent="DELETE" />
+                            </Grid>
+                        </StackPanel>
 
-                <!--  Submit/Reset Buttons  -->
-                <components:BottomButtons Grid.Row="5" MaxWidth="900" />
+                        <!--  Bottom Buttons  -->
+                        <components:BottomButtons />
+                    </StackPanel>
+                </Border>
 
                 <!--  Corner Rezise  -->
-                <components:ResizeHandle Grid.Row="6" />
+                <components:ResizeHandle Grid.Row="7" />
             </Grid>
         </Grid>
     </Border>

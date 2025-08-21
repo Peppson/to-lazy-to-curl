@@ -15,37 +15,53 @@
         Cursor="Hand"
         FontSize="{StaticResource FontSizeHttpButtons}"
         FontWeight="Bold">
+
+        <Button.Resources>
+            <SolidColorBrush x:Key="PrimaryTextBrush" Color="{DynamicResource PrimaryTextColor}" />
+            <SolidColorBrush x:Key="PrimaryTextInverseBrush" Color="{DynamicResource PrimaryTextInverseColor}" />
+        </Button.Resources>
+
         <Button.Template>
             <ControlTemplate TargetType="Button">
                 <Border
                     x:Name="outerBorder"
                     Background="{DynamicResource HttpButtonBackground}"
-                    BorderThickness="1">
-                    <Grid x:Name="innerArea" Background="Transparent">
+                    BorderBrush="{DynamicResource Border}"
+                    BorderThickness="1"
+                    ClipToBounds="True"
+                    CornerRadius="{StaticResource InnerCornerRadius}">
+                    <Grid x:Name="innerGrid">
                         <Border
                             x:Name="bottomBorder"
                             Height="2"
-                            VerticalAlignment="bottom"
+                            VerticalAlignment="Bottom"
                             Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                            CornerRadius="0,0,0,0" />
-                        <ContentPresenter
+                            CornerRadius="6" />
+                        <TextBlock
+                            x:Name="baseText"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            RecognizesAccessKey="True"
-                            TextElement.Foreground="{TemplateBinding Foreground}" />
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}"
+                            Foreground="{StaticResource PrimaryTextBrush}"
+                            Text="{TemplateBinding Content}" />
+                        <TextBlock
+                            x:Name="selectedText"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}"
+                            Foreground="{StaticResource PrimaryTextInverseBrush}"
+                            IsHitTestVisible="False"
+                            Opacity="0"
+                            Text="{TemplateBinding Content}" />
                     </Grid>
                 </Border>
 
                 <ControlTemplate.Triggers>
-                    <!--
-                    <Trigger SourceName="outerBorder" Property="IsMouseOver" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
                     </Trigger>
-
-                    <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
-                        <Setter TargetName="outerBorder" Property="BorderBrush" Value="{DynamicResource Border}" />
-                    </DataTrigger>
-                    -->
 
                     <DataTrigger Binding="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="True">
                         <DataTrigger.EnterActions>
@@ -54,7 +70,17 @@
                                     <DoubleAnimation
                                         Storyboard.TargetName="bottomBorder"
                                         Storyboard.TargetProperty="Height"
-                                        To="40"
+                                        To="34"
+                                        Duration="0:0:0.2">
+                                        <DoubleAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="selectedText"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="1"
                                         Duration="0:0:0.2">
                                         <DoubleAnimation.EasingFunction>
                                             <QuadraticEase EasingMode="EaseInOut" />
@@ -63,6 +89,7 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </DataTrigger.EnterActions>
+
                         <DataTrigger.ExitActions>
                             <BeginStoryboard>
                                 <Storyboard>
@@ -70,6 +97,16 @@
                                         Storyboard.TargetName="bottomBorder"
                                         Storyboard.TargetProperty="Height"
                                         To="2"
+                                        Duration="0:0:0.2">
+                                        <DoubleAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="selectedText"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0"
                                         Duration="0:0:0.2">
                                         <DoubleAnimation.EasingFunction>
                                             <QuadraticEase EasingMode="EaseInOut" />

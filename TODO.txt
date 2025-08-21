@@ -6,6 +6,7 @@ refactor json ugh
 splitter color
 splitter of screen
 add header and auth? button
+startup json
 
 
 https://httpbin.org/#/

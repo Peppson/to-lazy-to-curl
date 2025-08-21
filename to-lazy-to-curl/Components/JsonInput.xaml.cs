@@ -106,6 +106,7 @@ public partial class JsonInput : UserControl
         InitializeComponent();
         AppState.JsonInput = this;
         SetupEditors();
+        SetStartupText();
 
         // Track window width for split or single view
         Loaded += (_, __) =>
@@ -130,7 +131,46 @@ public partial class JsonInput : UserControl
         };
     }
 
+    private void SetStartupText()
+    {
+        #if !RELEASE
+            this.JsonTextBox.Text = Config.PayloadSampleData;
+            this.ResponseEditor.Text = Config.ResponseSampleData;
+            return;
+        #endif
 
+        #pragma warning disable CS0162
+
+        if (AppState.IsFirstBoot)
+        {
+            this.JsonTextBox.Text = Config.PayloadSampleData;
+            this.ResponseEditor.Text = Config.ResponseSampleData;
+            return;
+        }
+
+        var payload = Properties.Settings.Default.PayloadText ?? string.Empty;
+        var response = Properties.Settings.Default.ResponseText ?? string.Empty;
+
+        this.JsonTextBox.Text = payload == string.Empty
+            ? Config.PayloadStartupData
+            : payload;
+
+        this.ResponseEditor.Text = response == string.Empty
+            ? Config.ResponseStartupData
+            : response;  
+                  
+        #pragma warning restore CS0162
+    }
+
+    public string GetPayloadText()
+    {
+        return this.JsonTextBox.Text;
+    }
+
+    public string GetResponseText()
+    {
+        return this.ResponseEditor.Text;
+    }
 
 
 
@@ -253,7 +293,8 @@ public partial class JsonInput : UserControl
         ResponseEditor.Options.EnableHyperlinks = false;
         ResponseEditor.Text = Config.ResponseSampleData;
 
-        AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
+        //AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
+// todo
     }
 
     public void Reset()

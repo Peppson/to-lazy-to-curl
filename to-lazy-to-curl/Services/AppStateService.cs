@@ -16,6 +16,7 @@ static public class AppState
     public static UrlInput UrlInput { get; set; } = null!;
     public static JsonInput JsonInput { get; set; } = null!;
     public static HttpMessageBox MessageBox { get; set; } = null!;
+    public static bool IsFirstBoot { get; set; } = false;
 
     public static HttpAction SelectedHttpAction
     {
