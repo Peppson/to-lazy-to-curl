@@ -25,15 +25,6 @@
     <SolidColorBrush x:Key="ScrollbarForeground" Color="Blue" />
     <SolidColorBrush x:Key="ScrollbarHover" Color="LightBlue" />
 
-    <!--  Editor Syntax  -->
-    <SolidColorBrush x:Key="EditorCaretColor" Color="Black" />
-    <SolidColorBrush x:Key="String" Color="#088408" />
-    <SolidColorBrush x:Key="FieldName" Color="#8b008b" />
-    <SolidColorBrush x:Key="Bool" Color="#0000ff" />
-    <SolidColorBrush x:Key="Number" Color="#ff3939" />
-    <SolidColorBrush x:Key="Null" Color="#0000ff" />
-    <SolidColorBrush x:Key="Punctuation" Color="#333333" />
-
     <!--  Http Buttons  -->
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
@@ -42,6 +33,15 @@
     <SolidColorBrush x:Key="DeleteButton" Color="#E95378" />
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
+
+    <!--  Editor Syntax  -->
+    <SolidColorBrush x:Key="EditorCaretColor" Color="Black" />
+    <SolidColorBrush x:Key="String" Color="#088408" />
+    <SolidColorBrush x:Key="FieldName" Color="#8b008b" />
+    <SolidColorBrush x:Key="Bool" Color="#0000ff" />
+    <SolidColorBrush x:Key="Number" Color="#ff3939" />
+    <SolidColorBrush x:Key="Null" Color="#0000ff" />
+    <SolidColorBrush x:Key="Punctuation" Color="#333333" />
 
     <!--  Misc  -->
     <SolidColorBrush x:Key="Success" Color="Green" />

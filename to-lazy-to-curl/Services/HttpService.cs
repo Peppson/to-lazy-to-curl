@@ -1,5 +1,6 @@
 using System.Net.Http;
 using System.Text;
+using Serilog;
 using System.Text.Json;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
@@ -129,6 +130,7 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("json", StringComparison.OrdinalIgnoreCase))
         {
+            Log.Debug("Response is JSON");
             AppState.JsonInput.ResponseEditor.Text = await GetResponseAsJsonAsync(response); 
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
             return;
@@ -138,6 +140,7 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("html", StringComparison.OrdinalIgnoreCase))
         {
+            Log.Debug("Response is HTML");
             AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Html;
             return;
@@ -147,12 +150,14 @@ public static class HttpService
         if (!string.IsNullOrWhiteSpace(contentType) &&
             contentType.Contains("xml", StringComparison.OrdinalIgnoreCase))
         {
+            Log.Debug("Response is XML");
             AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Xml;
             return;
         }
 
         // Fallback
+        Log.Debug("Response fallback: Plain Text");
         AppState.ResponseEditorSyntax = SyntaxHighlighting.PlainText;
         AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
     }

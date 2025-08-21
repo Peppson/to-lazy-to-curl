@@ -25,15 +25,6 @@
     <SolidColorBrush x:Key="ScrollbarForeground" Color="#434343" />
     <SolidColorBrush x:Key="ScrollbarHover" Color="#535557" />
 
-    <!--  Editor Syntax  -->
-    <SolidColorBrush x:Key="EditorCaretColor" Color="White" />
-    <SolidColorBrush x:Key="String" Color="#98c379" />
-    <SolidColorBrush x:Key="FieldName" Color="#e06c75" />
-    <SolidColorBrush x:Key="Bool" Color="#56b6c2" />
-    <SolidColorBrush x:Key="Number" Color="#e78f84" />
-    <SolidColorBrush x:Key="Null" Color="#56b6c2" />
-    <SolidColorBrush x:Key="Punctuation" Color="#bfc7d5" />
-
     <!--  Http Buttons  -->
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
@@ -43,94 +34,7 @@
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />
     <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
 
-    <!--  Misc  -->
-    <SolidColorBrush x:Key="Success" Color="#87e37d" />
-    <SolidColorBrush x:Key="Failure" Color="#E95378" />
-    <SolidColorBrush x:Key="Test" Color="#E95378" />
-</ResourceDictionary>
-
-
-
-
-<!--
-    Green/Blue isch
-
-    <SolidColorBrush x:Key="WindowBackground" Color="#2d3134" />
-<SolidColorBrush x:Key="WindowBorder" Color="Transparent" />
-<SolidColorBrush x:Key="InputBackground" Color="#34393b" />
-<SolidColorBrush x:Key="BigButtonBackground" Color="#36393e" />
-
-<SolidColorBrush x:Key="TitleBarBackground" Color="Transparent" />
-<SolidColorBrush x:Key="TitleBarButtonHover" Color="#4d5154" />
-<SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
-
-<SolidColorBrush x:Key="PrimaryText" Color="#f7fbfe" />
-<SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
-
-<SolidColorBrush x:Key="Border" Color="#4d5154" />
-<SolidColorBrush x:Key="BorderHover" Color="#6a6f75" />
-
-
-<SolidColorBrush x:Key="ScrollbarBackground" Color="Transparent" />
-<SolidColorBrush x:Key="ScrollbarForeground" Color="#6a6f75" />
-<SolidColorBrush x:Key="ScrollbarHover" Color="#999999" />
-
-
-<SolidColorBrush x:Key="EditorCaretColor" Color="White" />
-<SolidColorBrush x:Key="String" Color="#98c379" />
-<SolidColorBrush x:Key="FieldName" Color="#e06c75" />
-<SolidColorBrush x:Key="Bool" Color="#56b6c2" />
-<SolidColorBrush x:Key="Number" Color="#e78f84" />
-<SolidColorBrush x:Key="Null" Color="#56b6c2" />
-<SolidColorBrush x:Key="Punctuation" Color="#bfc7d5" />
-
-
-<SolidColorBrush x:Key="HttpButtonBackground" Color="Transparent" />
-<SolidColorBrush x:Key="GetButton" Color="#60affe" />
-<SolidColorBrush x:Key="PostButton" Color="#87e37d" />
-<SolidColorBrush x:Key="PatchButton" Color="#50e3c1" />
-<SolidColorBrush x:Key="PutButton" Color="#fca131" />
-<SolidColorBrush x:Key="DeleteButton" Color="#ff5d5c" />
-<SolidColorBrush x:Key="SendButton" Color="#60affe" />
-<SolidColorBrush x:Key="ClearButton" Color="#60affe" />
-
-
-<SolidColorBrush x:Key="Success" Color="Green" />
-<SolidColorBrush x:Key="Failure" Color="Red" />
-<SolidColorBrush x:Key="Test" Color="Red" />-->
-
-
-
-
-
-
-
-
-
-
-<!--
-    OLD
-
-    <SolidColorBrush x:Key="WindowBackground" Color="#282b30" />
-    <SolidColorBrush x:Key="WindowBorder" Color="Transparent" />
-    <SolidColorBrush x:Key="InputBackground" Color="#424549" />
-    <SolidColorBrush x:Key="BigButtonBackground" Color="#36393e" />
-
-    <SolidColorBrush x:Key="TitleBarBackground" Color="#36393e" />
-    <SolidColorBrush x:Key="TitleBarButtonHover" Color="#e5e5e5" />
-    <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
-
-    <SolidColorBrush x:Key="PrimaryText" Color="#eeefff" />
-    <SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
-
-    <SolidColorBrush x:Key="Border" Color="#666771" />
-    <SolidColorBrush x:Key="BorderHover" Color="#999999" />
-
-
-    <SolidColorBrush x:Key="ScrollbarBackground" Color="Transparent" />
-    <SolidColorBrush x:Key="ScrollbarForeground" Color="#282b30" />
-    <SolidColorBrush x:Key="ScrollbarHover" Color="Black" />
-
+    <!--  Editor Syntax  -->
     <SolidColorBrush x:Key="EditorCaretColor" Color="White" />
     <SolidColorBrush x:Key="String" Color="#98c379" />
     <SolidColorBrush x:Key="FieldName" Color="#e06c75" />
@@ -139,17 +43,8 @@
     <SolidColorBrush x:Key="Null" Color="#56b6c2" />
     <SolidColorBrush x:Key="Punctuation" Color="#bfc7d5" />
 
-
-    <SolidColorBrush x:Key="HttpButtonBackground" Color="Transparent" />
-    <SolidColorBrush x:Key="GetButton" Color="#60affe" />
-    <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
-    <SolidColorBrush x:Key="PatchButton" Color="#50e3c1" />
-    <SolidColorBrush x:Key="PutButton" Color="#fca131" />
-    <SolidColorBrush x:Key="DeleteButton" Color="#ff5d5c" />
-    <SolidColorBrush x:Key="SendButton" Color="#60affe" />
-    <SolidColorBrush x:Key="ClearButton" Color="#60affe" />
-
-
-    <SolidColorBrush x:Key="Success" Color="Green" />
-    <SolidColorBrush x:Key="Failure" Color="Red" />
-    <SolidColorBrush x:Key="Test" Color="Red" />-->
+    <!--  Misc  -->
+    <SolidColorBrush x:Key="Success" Color="#87e37d" />
+    <SolidColorBrush x:Key="Failure" Color="#E95378" />
+    <SolidColorBrush x:Key="Test" Color="#E95378" />
+</ResourceDictionary>

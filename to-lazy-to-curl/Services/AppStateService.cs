@@ -17,6 +17,7 @@ static public class AppState
     public static JsonInput JsonInput { get; set; } = null!;
     public static HttpMessageBox MessageBox { get; set; } = null!;
     public static bool IsFirstBoot { get; set; } = false;
+    public static bool IsDarkTheme { get; set; } = true;
 
     public static HttpAction SelectedHttpAction
     {

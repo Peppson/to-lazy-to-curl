@@ -41,6 +41,6 @@ static public class Config
     #if RELEASE
         public const string UrlSampleData = "https://httpbin.org/#/"; 
     #else
-        public const string UrlSampleData = "https://localhost:7291/snus";
+        public const string UrlSampleData = "https://localhost:7291/test";
     #endif
 }

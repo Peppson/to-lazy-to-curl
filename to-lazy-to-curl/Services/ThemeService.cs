@@ -30,6 +30,7 @@ public static class ThemeService
 	private static void SetColorTheme()
     {
         Log.Debug($"ColorTheme: {(_isDarkTheme ? "Dark" : "Light")}");
+        AppState.IsDarkTheme = _isDarkTheme;
 
         var dict = new ResourceDictionary
         {
@@ -41,20 +42,23 @@ public static class ThemeService
         Application.Current.Resources.MergedDictionaries[0].Clear();
         Application.Current.Resources.MergedDictionaries.Add(dict);
     }
-	
-	private static void SetSyntaxColorTheme()
-    {	
-		Log.Debug($"SyntaxTheme: {(_isDarkTheme ? "Dark" : "Light")}");
 
-		// Set syntax colors
-		var syntaxColor = AppState.JsonInput.JsonTextBox.SyntaxHighlighting;
-		foreach (var color in syntaxColor.NamedHighlightingColors)
-		{
-			if (Application.Current.FindResource(color.Name) is SolidColorBrush brush)
-				color.Foreground = new SimpleHighlightingBrush(brush.Color);
-		}
+    public static void SetSyntaxColorTheme()
+    {
+        Log.Debug($"SyntaxTheme: {(_isDarkTheme ? "Dark" : "Light")}");
 
-		AppState.JsonInput.JsonTextBox.TextArea.TextView.Redraw();
-		AppState.JsonInput.ResponseEditor.TextArea.TextView.Redraw();
+        // Set syntax colors in both editors
+        var editors = new[] { AppState.JsonInput.JsonTextBox, AppState.JsonInput.ResponseEditor };
+
+        foreach (var editor in editors)
+        {
+            var syntaxColor = editor.SyntaxHighlighting;
+            foreach (var color in syntaxColor.NamedHighlightingColors)
+            {
+                if (Application.Current.TryFindResource(color.Name) is SolidColorBrush brush)
+                    color.Foreground = new SimpleHighlightingBrush(brush.Color);
+            }       
+            editor.TextArea.TextView.Redraw();
+        }
     }
 }

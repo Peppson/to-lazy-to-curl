@@ -8,6 +8,4 @@
   "search.exclude": {
     "**/MyProject/**": true
   },
-  
-  "workspaceKeybindings.dotnetRun.enabled": true
 }

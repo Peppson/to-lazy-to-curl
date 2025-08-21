@@ -17,7 +17,6 @@
             Foreground="{DynamicResource PrimaryText}"
             Text="URL" />
 
-
         <Border
             Grid.Row="5"
             Padding="8,10,8,10"
