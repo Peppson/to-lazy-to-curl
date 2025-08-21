@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
+using FontAwesome.WPF;
 using to_lazy_to_curl.Services;
 
 namespace to_lazy_to_curl.Components;
@@ -60,8 +61,12 @@ public partial class WindowTitleBar : UserControl
         InitializeComponent();
         Loaded += OnLoaded;
     }
-    
-    private void ToggleTheme_Click(object sender, RoutedEventArgs e) => ThemeService.ToggleTheme();
+
+    private void ToggleTheme_Click(object sender, RoutedEventArgs e)
+    {
+        ThemeService.ToggleTheme();
+        SetThemeIcon(); 
+    }
     
     private void OnMinimizeButton_Click(object sender, RoutedEventArgs e) =>
         _parentWindow.WindowState = WindowState.Minimized;
@@ -78,13 +83,28 @@ public partial class WindowTitleBar : UserControl
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
+        SetThemeIcon();    
         _parentWindow = Window.GetWindow(this);
         _parentWindow.StateChanged += (_, __) => RefreshMaximizeRestoreButton();
         RefreshMaximizeRestoreButton();
     }
 
+    private void SetThemeIcon()
+    {
+        if (AppState.IsDarkTheme)
+        {
+            ThemeIcon.Icon = FontAwesomeIcon.SunOutline;
+            ThemeIcon.Margin = new Thickness(0, -3, 0, 0);
+        }
+        else
+        {
+            ThemeIcon.Icon = FontAwesomeIcon.MoonOutline;
+            ThemeIcon.Margin = new Thickness(0, -2, 0, 0);
+        }
+    }
+
 	private void RefreshMaximizeRestoreButton()
-    {   
+    {
         if (_parentWindow.WindowState == WindowState.Maximized)
         {
             this.maximizeButton.Visibility = Visibility.Collapsed;

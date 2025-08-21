@@ -13,7 +13,7 @@
     Width="620"
     Height="683"
     MinWidth="400"
-    MinHeight="520"
+    MinHeight="570"
     AllowsTransparency="True"
     Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
@@ -71,7 +71,6 @@
                 <!--  Bottom Card  -->
                 <TextBlock
                     Grid.Row="4"
-                    MaxWidth="900"
                     Margin="0,0,0,6"
                     VerticalAlignment="Center"
                     FontSize="{StaticResource FontSizeH1}"
@@ -80,11 +79,10 @@
                     Text="Actions" />
                 <Border
                     Grid.Row="5"
-                    MaxWidth="900"
                     Padding="8"
                     Background="{DynamicResource CardBackground}"
                     CornerRadius="{DynamicResource OuterCornerRadius}">
-                    <StackPanel>
+                    <StackPanel MaxWidth="{StaticResource WindowSplitViewThreshold}">
 
                         <!--  Action Buttons  -->
                         <StackPanel>
