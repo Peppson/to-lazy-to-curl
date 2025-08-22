@@ -16,7 +16,7 @@ public partial class BottomButtons : UserControl
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
         string url = AppState.UrlInput.UrlTextBox.Text;
-        string body = AppState.JsonInput.PayloadEditorText;
+        string body = AppState.EditorInput.PayloadEditorText;
 
         AnimateSendButton(true);
         await HttpService.SubmitRequestAsync(url, body);
@@ -27,7 +27,7 @@ public partial class BottomButtons : UserControl
     {
         AnimateResetButton(sender, e);
         AppState.SelectedHttpAction = Models.HttpAction.NONE;
-        AppState.JsonInput.Reset();
+        AppState.EditorInput.Reset();
         AppState.MessageBox.Reset();
     }
 

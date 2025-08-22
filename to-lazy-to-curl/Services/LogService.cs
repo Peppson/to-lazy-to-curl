@@ -20,7 +20,7 @@ public static class LogService
     {
         string logDirectory = "Logs";
         _logFilePath = Path.Combine(logDirectory, "Log.txt");
-        
+
         if (!Directory.Exists(logDirectory))
             Directory.CreateDirectory(logDirectory);
 

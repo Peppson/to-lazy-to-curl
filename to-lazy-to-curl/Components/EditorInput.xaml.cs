@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace to_lazy_to_curl.Components;
 
-public partial class JsonInput : UserControl
+public partial class EditorInput : UserControl
 {
     private bool _wasNarrow = false;
     private TabType _lastTab = TabType.Payload;
@@ -103,10 +103,10 @@ public partial class JsonInput : UserControl
         }
     }
 
-    public JsonInput()
+    public EditorInput()
     {
         InitializeComponent();
-        AppState.JsonInput = this;
+        AppState.EditorInput = this;
         SetupEditors();
         SetStartupText();
 
@@ -134,21 +134,21 @@ public partial class JsonInput : UserControl
     private void PayloadButton_Click(object sender, RoutedEventArgs e)
     {
         _lastTab = TabType.Payload;
-        UpdateEditorPosition();
+        UpdateEditorPositionAndColor();
         this.PayloadEditor1.Focus();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
     {   
         _lastTab = TabType.Response;
-        UpdateEditorPosition();
+        UpdateEditorPositionAndColor();
         this.ResponseEditor1.Focus();
     }
     
     private void HeaderButton_Click(object sender, RoutedEventArgs e)
     {
         _lastTab = TabType.Header;
-        UpdateEditorPosition();
+        UpdateEditorPositionAndColor();
         this.HeaderEditor1.Focus();
     }
 
@@ -205,7 +205,7 @@ public partial class JsonInput : UserControl
             this.SingleView.Visibility = Visibility.Visible;
             this.SplitView.Visibility = Visibility.Collapsed;
 
-            UpdateEditorPosition();
+            UpdateEditorPositionAndColor();
         }
         else
         {
@@ -222,7 +222,7 @@ public partial class JsonInput : UserControl
         }
     }
 
-    private void UpdateEditorPosition()
+    public void UpdateEditorPositionAndColor()
     {
         // Reset All tabs colors
         var selectedColor = (Brush)FindResource("EditorsBackground");
@@ -353,18 +353,18 @@ public partial class JsonInput : UserControl
         SplitView.ColumnDefinitions[3].Width = new GridLength(0);                       // Splitter2
         SplitView.ColumnDefinitions[4].Width = new GridLength(1, GridUnitType.Star);    // Header
     }
-    
+
     public static readonly DependencyProperty PayloadEditorSyntaxProperty =
         DependencyProperty.Register(
             nameof(PayloadEditorSyntax),
             typeof(string),
-            typeof(JsonInput),
+            typeof(EditorInput),
             new PropertyMetadata(SyntaxHighlighting.Json));
 
     public static readonly DependencyProperty ResponseEditorSyntaxProperty =
         DependencyProperty.Register(
             nameof(ResponseEditorSyntax),
             typeof(string),
-            typeof(JsonInput),
+            typeof(EditorInput),
             new PropertyMetadata(SyntaxHighlighting.Json));
 }

@@ -61,7 +61,7 @@
                     FontWeight="Bold"
                     Foreground="{DynamicResource PrimaryText}"
                     Text="Body" />
-                <components:JsonInput x:Name="JsonInputControl" Grid.Row="2" />
+                <components:EditorInput x:Name="JsonInputControl" Grid.Row="2" />
 
                 <!--  Status Message  -->
                 <components:HttpMessageBox Grid.Row="3" />

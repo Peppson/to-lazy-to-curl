@@ -55,9 +55,9 @@ public partial class MainWindow : Window
 		Properties.Settings.Default.WindowLeft = Left;
 
 		Properties.Settings.Default.UrlInputText = AppState.UrlInput.GetUrlText();
-		Properties.Settings.Default.PayloadText = AppState.JsonInput.GetPayloadText();
-		Properties.Settings.Default.ResponseText = AppState.JsonInput.GetResponseText();
-		Properties.Settings.Default.HeaderText = AppState.JsonInput.GetHeaderText();
+		Properties.Settings.Default.PayloadText = AppState.EditorInput.GetPayloadText();
+		Properties.Settings.Default.ResponseText = AppState.EditorInput.GetResponseText();
+		Properties.Settings.Default.HeaderText = AppState.EditorInput.GetHeaderText();
 		Properties.Settings.Default.IsDarkTheme = ThemeService.GetIsDarkTheme();
 
 		Properties.Settings.Default.Save();

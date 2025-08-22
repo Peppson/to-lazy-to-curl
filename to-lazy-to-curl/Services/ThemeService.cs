@@ -25,6 +25,7 @@ public static class ThemeService
         _isDarkTheme = !_isDarkTheme;
         SetColorTheme();
         SetSyntaxColorTheme();
+        AppState.EditorInput.UpdateEditorPositionAndColor();
     }
 
 	private static void SetColorTheme()
@@ -49,10 +50,10 @@ public static class ThemeService
 
         // Set syntax colors in both editors
         var editors = new[] {
-            AppState.JsonInput.PayloadEditor1,
-            AppState.JsonInput.PayloadEditor2,
-            AppState.JsonInput.ResponseEditor1,
-            AppState.JsonInput.ResponseEditor2,
+            AppState.EditorInput.PayloadEditor1,
+            AppState.EditorInput.PayloadEditor2,
+            AppState.EditorInput.ResponseEditor1,
+            AppState.EditorInput.ResponseEditor2,
         };
 
         foreach (var editor in editors)
