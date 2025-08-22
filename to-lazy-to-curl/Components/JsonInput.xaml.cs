@@ -4,41 +4,20 @@ using System.Windows.Input;
 using to_lazy_to_curl.Services;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
+using Serilog;
 
 namespace to_lazy_to_curl.Components;
 
 public partial class JsonInput : UserControl
 {
     private bool _wasNarrow = false;
-    private GridLength _lastLeftWidth = new(1, GridUnitType.Star);
-    private GridLength _lastRightWidth = new(1, GridUnitType.Star);
 
 
 
-
-    public static readonly DependencyProperty IsResponseEditorProperty =
-        DependencyProperty.Register(
-            nameof(IsResponseEditor),
-            typeof(bool),
-            typeof(JsonInput),
-            new PropertyMetadata(false));
-
-    public static readonly DependencyProperty PayloadEditorSyntaxProperty =
-        DependencyProperty.Register(
-            nameof(PayloadEditorSyntax),
-            typeof(string),
-            typeof(JsonInput),
-            new PropertyMetadata(SyntaxHighlighting.Json));
-
-    public static readonly DependencyProperty ResponseEditorSyntaxProperty =
-        DependencyProperty.Register(
-            nameof(ResponseEditorSyntax),
-            typeof(string),
-            typeof(JsonInput),
-            new PropertyMetadata(SyntaxHighlighting.Json));
-
-
-
+    /* 
+     private GridLength _lastLeftWidth = new(1, GridUnitType.Star);
+     private GridLength _lastRightWidth = new(1, GridUnitType.Star);
+    */
 
 
     public string PayloadEditorSyntax
@@ -49,7 +28,7 @@ public partial class JsonInput : UserControl
             SetValue(PayloadEditorSyntaxProperty, value);
             var definition =
                 ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
-            JsonTextBox.SyntaxHighlighting = definition;
+            this.JsonTextBox.SyntaxHighlighting = definition;
         }
     }
 
@@ -61,7 +40,7 @@ public partial class JsonInput : UserControl
             SetValue(ResponseEditorSyntaxProperty, value);
             var definition =
                 ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
-            ResponseEditor.SyntaxHighlighting = definition;
+            this.ResponseEditor.SyntaxHighlighting = definition;
         }
     }
 
@@ -101,6 +80,11 @@ public partial class JsonInput : UserControl
 
 
 
+
+
+
+
+
     public JsonInput()
     {
         InitializeComponent();
@@ -117,9 +101,9 @@ public partial class JsonInput : UserControl
             _wasNarrow = window.ActualWidth < Config.SplitEditorThreshold;
         };
 
-        Splitter.LayoutUpdated += (s, e) => SetResponseButtonPositionSplitView();
+        //Splitter.LayoutUpdated += (s, e) => SetResponseButtonPositionSplitView();
 
-        EventHandler payloadHandler = (_, __) => PayloadEditorSyntax = AppState.PayloadEditorSyntax;
+        /*EventHandler payloadHandler = (_, __) => PayloadEditorSyntax = AppState.PayloadEditorSyntax;
         EventHandler responseHandler = (_, __) => ResponseEditorSyntax = AppState.ResponseEditorSyntax;
         AppState.PayloadEditorSyntaxEvent += payloadHandler;
         AppState.ResponseEditorSyntaxEvent += responseHandler;
@@ -128,83 +112,40 @@ public partial class JsonInput : UserControl
         {
             AppState.PayloadEditorSyntaxEvent -= payloadHandler;
             AppState.ResponseEditorSyntaxEvent -= responseHandler;
-        };
-    }
+        };*/
 
-    private void SetStartupText()
-    {
-        #if !RELEASE
-            this.JsonTextBox.Text = Config.PayloadSampleData;
-            this.ResponseEditor.Text = Config.ResponseSampleData;
-            return;
-        #endif
 
-        #pragma warning disable CS0162
-
-        if (AppState.IsFirstBoot)
-        {
-            this.JsonTextBox.Text = Config.PayloadSampleData;
-            this.ResponseEditor.Text = Config.ResponseSampleData;
-            return;
-        }
-
-        var payload = Properties.Settings.Default.PayloadText ?? string.Empty;
-        var response = Properties.Settings.Default.ResponseText ?? string.Empty;
-
-        this.JsonTextBox.Text = payload == string.Empty
-            ? Config.PayloadStartupData
-            : payload;
-
-        this.ResponseEditor.Text = response == string.Empty
-            ? Config.ResponseStartupData
-            : response;  
-                  
-        #pragma warning restore CS0162
-    }
-
-    public string GetPayloadText()
-    {
-        return this.JsonTextBox.Text;
-    }
-
-    public string GetResponseText()
-    {
-        return this.ResponseEditor.Text;
     }
 
 
 
 
 
-    private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
-    {
-        double width = e.NewSize.Width;
-        bool isNarrow = width < Config.SplitEditorThreshold;
 
-        if (isNarrow != _wasNarrow)
-        {
-            _wasNarrow = isNarrow;
-            UpdateEditorLayouts(width);
-        }
-    }
 
-    private void RequestButton_Click(object sender, RoutedEventArgs e)
-    {
-        IsResponseEditor = false;
-        UpdateEditorPositions();
-        JsonTextBox.Focus();
+
+    private void PayloadButton_Click(object sender, RoutedEventArgs e)
+    {   
+        Console.WriteLine("payload");
+        //IsResponseEditor = false;
+        //UpdateEditorPositions();
+        //JsonTextBox.Focus();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
-    {
-        IsResponseEditor = true;
-        UpdateEditorPositions();
-        ResponseEditor.Focus();
+    {   
+        Console.WriteLine("Response");
+        //IsResponseEditor = true;
+        //UpdateEditorPositions();
+        //ResponseEditor.Focus();
     }
+
+
+
 
     private void UpdateEditorPositions()
     {
-        UpdateEditorVisibility();
+        /*UpdateEditorVisibility();
 
         if (IsResponseEditor)
         {
@@ -215,29 +156,33 @@ public partial class JsonInput : UserControl
         {
             Grid.SetColumn(JsonTextBox, 0);
             Grid.SetColumn(ResponseEditor, 2);
-        }
+        }*/
     }
 
     private void UpdateEditorVisibility(bool showAll = false)
     {
-        if (showAll)
+        /*if (showAll)
         {
             JsonTextBox.Visibility = Visibility.Visible;
             ResponseEditor.Visibility = Visibility.Visible;
             return;
         }
         ResponseEditor.Visibility = IsResponseEditor ? Visibility.Visible : Visibility.Collapsed;
-        JsonTextBox.Visibility = IsResponseEditor ? Visibility.Collapsed : Visibility.Visible;
+        JsonTextBox.Visibility = IsResponseEditor ? Visibility.Collapsed : Visibility.Visible;*/
     }
 
     private void UpdateEditorLayouts(double width)
     {
         bool isNarrow = width < Config.SplitEditorThreshold;
 
-        // Single view
         if (isNarrow)
         {
-            SingleViewButtonPanel.Visibility = Visibility.Visible;
+            Log.Debug("SingleView");
+
+            this.SingleView.Visibility = Visibility.Visible;
+            this.SplitView.Visibility = Visibility.Collapsed;
+
+            /* SingleViewButtonPanel.Visibility = Visibility.Visible;
             SplitViewButtonPanel.Visibility = Visibility.Collapsed;
 
             UpdateEditorPositions();
@@ -251,11 +196,16 @@ public partial class JsonInput : UserControl
             JsonEditorGrid.ColumnDefinitions[1].Width = new GridLength(0);
             JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(0);
             JsonEditorGrid.ColumnDefinitions[0].MinWidth = 0;
-            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 0;
+            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 0; */
         }
-        else // Split view
+        else
         {
-            SingleViewButtonPanel.Visibility = Visibility.Collapsed;
+            Log.Debug("SplitView");
+            this.SingleView.Visibility = Visibility.Collapsed;
+            this.SplitView.Visibility = Visibility.Visible;
+
+
+            /* SingleViewButtonPanel.Visibility = Visibility.Collapsed;
             SplitViewButtonPanel.Visibility = Visibility.Visible;
 
             Grid.SetColumn(JsonTextBox, 0);
@@ -269,37 +219,21 @@ public partial class JsonInput : UserControl
             JsonEditorGrid.ColumnDefinitions[0].MinWidth = 157;
             JsonEditorGrid.ColumnDefinitions[2].MinWidth = 170;
 
-            SetResponseButtonPositionSplitView();
+            SetResponseButtonPositionSplitView(); */
         }
     }
 
     private void SetResponseButtonPositionSplitView()
     {
-        double leftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth;
-        ResponseButton2.Margin = new Thickness(leftWidth + 6f, 0, 0, -1f);
+        /*double leftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth;
+        ResponseButton2.Margin = new Thickness(leftWidth + 6f, 0, 0, -1f);*/
     }
 
-    private void SetupEditors()
-    {
-        IsResponseEditor = false;
 
-        PayloadEditorSyntax = AppState.ResponseEditorSyntax;
-        JsonTextBox.Options.EnableEmailHyperlinks = false;
-        JsonTextBox.Options.EnableHyperlinks = false;
-        JsonTextBox.Text = Config.PayloadSampleData;
-
-        ResponseEditorSyntax = AppState.ResponseEditorSyntax;
-        ResponseEditor.Options.EnableEmailHyperlinks = false;
-        ResponseEditor.Options.EnableHyperlinks = false;
-        ResponseEditor.Text = Config.ResponseSampleData;
-
-        //AppState.JsonInput.JsonTextBox.Text = JsonTextBox.Text;
-// todo
-    }
 
     public void Reset()
     {
-        IsResponseEditor = false;
+        /*IsResponseEditor = false;
 
         // Payload
         AppState.PayloadEditorSyntax = SyntaxHighlighting.Json;
@@ -319,59 +253,147 @@ public partial class JsonInput : UserControl
 
         Window parentWindow = Window.GetWindow(this);
         UpdateEditorLayouts(parentWindow.ActualWidth);
-        SetResponseButtonPositionSplitView();
-    }
-    
-
-
-
-
-
-
-
-
-
-    // todo
-
-    private bool _isDragging = false;
-    private Point _startPoint;
-
-    private void ResponseButton2_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-    {
-        _isDragging = true;
-        _startPoint = e.GetPosition(JsonEditorGrid); // relative to the editor grid
-        ResponseButton2.CaptureMouse();
+        SetResponseButtonPositionSplitView();*/
     }
 
-    private void ResponseButton2_PreviewMouseMove(object sender, MouseEventArgs e)
+
+
+
+
+
+
+
+
+
+    // ############ new ""########
+
+
+
+
+    private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
     {
-        if (!_isDragging) return;
+        double width = e.NewSize.Width;
+        bool isNarrow = width < Config.SplitEditorThreshold;
 
-        Point current = e.GetPosition(JsonEditorGrid);
-        double deltaX = current.X - _startPoint.X;
-
-        // Move the splitter
-        double newLeftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth + deltaX;
-
-        // respect min width
-        newLeftWidth = Math.Max(newLeftWidth, 170);
-        newLeftWidth = Math.Min(newLeftWidth, JsonEditorGrid.ActualWidth - 170 - Splitter.Width);
-
-        JsonEditorGrid.ColumnDefinitions[0].Width = new GridLength(newLeftWidth, GridUnitType.Pixel);
-        JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(JsonEditorGrid.ActualWidth - newLeftWidth - Splitter.Width, GridUnitType.Pixel);
-
-        _startPoint = current; // reset start for smooth dragging
-    }
-
-    private void ResponseButton2_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-    {
-        if (_isDragging)
+        if (isNarrow != _wasNarrow)
         {
-            _isDragging = false;
-            ResponseButton2.ReleaseMouseCapture();
+            _wasNarrow = isNarrow;
+            UpdateEditorLayouts(width);
         }
     }
 
+    private void SetupEditors()
+    {
+        // Payload
+        PayloadEditorSyntax = AppState.ResponseEditorSyntax;
+        this.JsonTextBox.Options.EnableEmailHyperlinks = false;
+        this.JsonTextBox.Options.EnableHyperlinks = false;
 
+        // Response
+        ResponseEditorSyntax = AppState.ResponseEditorSyntax;
+        this.ResponseEditor.Options.EnableEmailHyperlinks = false;
+        this.ResponseEditor.Options.EnableHyperlinks = false;
 
+        // Header
+        this.ResponseEditor.Options.EnableEmailHyperlinks = false;
+        this.ResponseEditor.Options.EnableHyperlinks = false;
+    }
+
+    private void SetStartupText()
+    {
+#if !RELEASE
+        this.JsonTextBox.Text = Config.PayloadSampleData;
+        this.ResponseEditor.Text = Config.ResponseSampleData;
+        this.HeaderEditor.Text = Config.ResponseSampleData;
+        return;
+#endif
+
+#pragma warning disable CS0162
+
+        if (AppState.IsFirstBoot)
+        {
+            this.JsonTextBox.Text = Config.PayloadSampleData;
+            this.ResponseEditor.Text = Config.ResponseSampleData;
+            this.HeaderEditor.Text = Config.ResponseSampleData;
+            return;
+        }
+
+        var payload = Properties.Settings.Default.PayloadText ?? string.Empty;
+        var response = Properties.Settings.Default.ResponseText ?? string.Empty;
+        var header = Properties.Settings.Default.HeaderText ?? string.Empty;
+
+        this.JsonTextBox.Text = payload == string.Empty
+            ? Config.PayloadStartupData
+            : payload;
+
+        this.ResponseEditor.Text = response == string.Empty
+            ? Config.ResponseStartupData
+            : response;
+
+        this.HeaderEditor.Text = header == string.Empty
+            ? Config.ResponseStartupData
+            : header;
+
+#pragma warning restore CS0162
+    }
+
+    public string GetPayloadText()
+    {
+        return this.JsonTextBox.Text;
+    }
+
+    public string GetResponseText()
+    {
+        return this.ResponseEditor.Text;
+    }
+
+    public string GetHeaderText()
+    {
+        return this.HeaderEditor.Text;
+    }
+
+    private void SplitResponseButton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        this.Splitter1.RaiseEvent(
+            new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, e.ChangedButton)
+            {
+                RoutedEvent = UIElement.MouseLeftButtonDownEvent,
+                Source = e.Source
+            });
+
+        e.Handled = true;
+    }
+
+    private void SplitHeaderButton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        this.Splitter2.RaiseEvent(
+            new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, e.ChangedButton)
+            {
+                RoutedEvent = UIElement.MouseLeftButtonDownEvent,
+                Source = e.Source
+            });
+
+        e.Handled = true;
+    }
+    
+    public static readonly DependencyProperty IsResponseEditorProperty =
+        DependencyProperty.Register(
+            nameof(IsResponseEditor),
+            typeof(bool),
+            typeof(JsonInput),
+            new PropertyMetadata(false));
+
+    public static readonly DependencyProperty PayloadEditorSyntaxProperty =
+        DependencyProperty.Register(
+            nameof(PayloadEditorSyntax),
+            typeof(string),
+            typeof(JsonInput),
+            new PropertyMetadata(SyntaxHighlighting.Json));
+
+    public static readonly DependencyProperty ResponseEditorSyntaxProperty =
+        DependencyProperty.Register(
+            nameof(ResponseEditorSyntax),
+            typeof(string),
+            typeof(JsonInput),
+            new PropertyMetadata(SyntaxHighlighting.Json));
 }

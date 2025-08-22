@@ -51,5 +51,4 @@ static public class AppState
             ResponseEditorSyntaxEvent?.Invoke(null, EventArgs.Empty);
         }
     }
-
 }

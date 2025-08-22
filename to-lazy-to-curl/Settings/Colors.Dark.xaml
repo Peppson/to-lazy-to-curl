@@ -4,7 +4,8 @@
     <SolidColorBrush x:Key="WindowBackground" Color="#272727" />
     <SolidColorBrush x:Key="WindowBorder" Color="Transparent" />
     <SolidColorBrush x:Key="CardBackground" Color="#323232" />
-    <SolidColorBrush x:Key="InputBackground" Color="#434343" />
+    <SolidColorBrush x:Key="UrlInputBackground" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="EditorsBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="BigButtonBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="HttpButtonBackground" Color="#3C3C3C" />
 
@@ -14,6 +15,7 @@
 
     <SolidColorBrush x:Key="Border" Color="#434343" />
     <SolidColorBrush x:Key="BorderHover" Color="#535557" />
+    <SolidColorBrush x:Key="EditorBorder" Color="#434343" />
 
     <SolidColorBrush x:Key="PrimaryText" Color="#f7fbfe" />
     <Color x:Key="PrimaryTextColor">#f7fbfe</Color>

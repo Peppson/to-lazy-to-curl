@@ -130,5 +130,17 @@ namespace to_lazy_to_curl.Properties {
                 this["IsFirstBoot"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HeaderText {
+            get {
+                return ((string)(this["HeaderText"]));
+            }
+            set {
+                this["HeaderText"] = value;
+            }
+        }
     }
 }

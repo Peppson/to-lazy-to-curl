@@ -61,9 +61,14 @@
                     FontWeight="Bold"
                     Foreground="{DynamicResource PrimaryText}"
                     Text="Body" />
-
-                <components:JsonInput x:Name="JsonInputControl" Grid.Row="2" />
-
+                <Border
+                    Grid.Row="2"
+                    Background="{DynamicResource CardBackground}"
+                    BorderBrush="{DynamicResource EditorBorder}"
+                    BorderThickness="1,0,0,1"
+                    CornerRadius="{DynamicResource OuterCornerRadius}">
+                    <components:JsonInput x:Name="JsonInputControl" />
+                </Border>
 
                 <!--  Status Message  -->
                 <components:HttpMessageBox Grid.Row="3" />
