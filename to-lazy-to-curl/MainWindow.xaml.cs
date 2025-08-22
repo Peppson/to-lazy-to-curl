@@ -32,7 +32,6 @@ public partial class MainWindow : Window
 	
 	private void InitIsFirstBoot()
 	{	
-		//AppState.IsFirstBoot = true; return;
 		if (Properties.Settings.Default.IsFirstBoot)
 		{
 			Properties.Settings.Default.IsFirstBoot = false;
@@ -56,8 +55,9 @@ public partial class MainWindow : Window
 		Properties.Settings.Default.WindowLeft = Left;
 
 		Properties.Settings.Default.UrlInputText = AppState.UrlInput.GetUrlText();
-		Properties.Settings.Default.PayloadText = AppState.JsonInput.GetPayloadText();
-		Properties.Settings.Default.ResponseText = AppState.JsonInput.GetResponseText();
+		Properties.Settings.Default.PayloadText = AppState.EditorInput.GetPayloadText();
+		Properties.Settings.Default.ResponseText = AppState.EditorInput.GetResponseText();
+		Properties.Settings.Default.HeaderText = AppState.EditorInput.GetHeaderText();
 		Properties.Settings.Default.IsDarkTheme = ThemeService.GetIsDarkTheme();
 
 		Properties.Settings.Default.Save();

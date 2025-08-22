@@ -121,7 +121,7 @@ public static class HttpService
 
     private static async Task SetHttpResponseText(HttpResponseMessage? response)
     {
-        if (response == null || AppState.JsonInput == null)
+        if (response == null || AppState.EditorInput == null)
             return;
 
         var contentType = response.Content?.Headers.ContentType?.MediaType;
@@ -131,7 +131,7 @@ public static class HttpService
             contentType.Contains("json", StringComparison.OrdinalIgnoreCase))
         {
             Log.Debug("Response is JSON");
-            AppState.JsonInput.ResponseEditor.Text = await GetResponseAsJsonAsync(response); 
+            AppState.EditorInput.ResponseEditorText = await GetResponseAsJsonAsync(response); 
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
             return;
         }
@@ -141,7 +141,7 @@ public static class HttpService
             contentType.Contains("html", StringComparison.OrdinalIgnoreCase))
         {
             Log.Debug("Response is HTML");
-            AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
+            AppState.EditorInput.ResponseEditorText = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Html;
             return;
         }
@@ -151,7 +151,7 @@ public static class HttpService
             contentType.Contains("xml", StringComparison.OrdinalIgnoreCase))
         {
             Log.Debug("Response is XML");
-            AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
+            AppState.EditorInput.ResponseEditorText = await response.Content!.ReadAsStringAsync();
             AppState.ResponseEditorSyntax = SyntaxHighlighting.Xml;
             return;
         }
@@ -159,7 +159,7 @@ public static class HttpService
         // Fallback
         Log.Debug("Response fallback: Plain Text");
         AppState.ResponseEditorSyntax = SyntaxHighlighting.PlainText;
-        AppState.JsonInput.ResponseEditor.Text = await response.Content!.ReadAsStringAsync();
+        AppState.EditorInput.ResponseEditorText = await response.Content!.ReadAsStringAsync();
     }
 
     private static async Task<string> GetResponseAsJsonAsync(HttpResponseMessage response)

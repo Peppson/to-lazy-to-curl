@@ -2,40 +2,13 @@
 dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 
 
-refactor json ugh
-splitter color
-splitter of screen
-add header and auth? button
-startup json
+auth header
+White color
 
 
 https://httpbin.org/#/
+https://jsonplaceholder.typicode.com/posts
 
 Ico:
 https://icon-icons.com/search/icons/?filtro=send+internet&sort=popular&page=4
 
-WpfIcons:
-https://github.com/charri/Font-Awesome-WPF/blob/master/README-WPF.md
-
-
-
-FA Props:
-Icon
-Spin
-SpinDuration
-Rotation
-FlipOrientation
-
-icon helper:
-        var icons = Enum.GetValues(typeof(FontAwesomeIcon))
-                        .Cast<FontAwesomeIcon>()
-                        .Where(t => t != FontAwesomeIcon.None)
-                        .Where(icon => typeof(FontAwesomeIcon)
-                                        .GetMember(icon.ToString())
-                                        .FirstOrDefault() != null);
-
-        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-        string filePath = Path.Combine(desktopPath, "FontAwesomeIcons.txt");
-        File.WriteAllLines(filePath, icons.Select(i => i.ToString()));
-
-        Console.WriteLine($"Saved {icons.Count()} icons to {filePath}");
