@@ -11,10 +11,7 @@
 
     <Grid>
 
-
-
-
-
+        <!--  Single View  -->
         <Grid x:Name="SingleView" SnapsToDevicePixels="True">
             <Grid>
                 <Grid.RowDefinitions>
@@ -22,18 +19,18 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-
-
                 <!--  Buttons  -->
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition MaxWidth="160" />
+                        <ColumnDefinition MaxWidth="160" />
+                        <ColumnDefinition MaxWidth="160" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
                     <!--  Payload  -->
-
                     <Button
+                        x:Name="PayloadButton"
                         Grid.Column="0"
                         Margin="0,0,0,-1"
                         Click="PayloadButton_Click"
@@ -58,89 +55,157 @@
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border
-                                    x:Name="outerBorder"
-                                    Background="{DynamicResource EditorsBackground}"
+                                    x:Name="border"
+                                    Background="{DynamicResource UrlInputBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,1,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
-                                    <Grid x:Name="innerArea" Background="Transparent">
-                                        <ContentPresenter
-                                            x:Name="contentPresenter"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            RecognizesAccessKey="True"
-                                            TextElement.Foreground="{TemplateBinding Foreground}" />
-                                    </Grid>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!--  Response  -->
+                    <Button
+                        x:Name="ResponseButton"
+                        Grid.Column="1"
+                        Margin="0,0,0,-1"
+                        Click="ResponseButton_Click"
+                        Cursor="Hand"
+                        FontSize="{StaticResource FontSizeTabs}"
+                        FontWeight="Bold">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome
+                                Width="14"
+                                Height="14"
+                                Margin="0,0,6,0"
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource PrimaryText}"
+                                Icon="Download" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="{StaticResource FontSizeTabs}"
+                                Text="Response" />
+                        </StackPanel>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    x:Name="border"
+                                    Background="{DynamicResource UrlInputBackground}"
+                                    BorderBrush="{DynamicResource EditorBorder}"
+                                    BorderThickness="1,1,1,0"
+                                    CornerRadius="6,6,0,0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!--  Header  -->
+                    <Button
+                        x:Name="HeaderButton"
+                        Grid.Column="2"
+                        Margin="0,0,0,-1"
+                        Click="HeaderButton_Click"
+                        Cursor="Hand"
+                        FontSize="{StaticResource FontSizeTabs}"
+                        FontWeight="Bold">
+
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome
+                                Width="14"
+                                Height="14"
+                                Margin="0,0,6,0"
+                                VerticalAlignment="Center"
+                                Foreground="{DynamicResource PrimaryText}"
+                                Icon="FileTextOutline" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="{StaticResource FontSizeTabs}"
+                                Text="Header" />
+                        </StackPanel>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    x:Name="border"
+                                    Background="{DynamicResource UrlInputBackground}"
+                                    BorderBrush="{DynamicResource EditorBorder}"
+                                    BorderThickness="1,1,1,0"
+                                    CornerRadius="6,6,0,0">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
                 </Grid>
 
+                <!--  Editors  -->
+                <Border
+                    Grid.Row="1"
+                    Background="{DynamicResource EditorsBackground}"
+                    BorderBrush="{DynamicResource EditorBorder}"
+                    BorderThickness="1"
+                    CornerRadius="0,6,6,6">
+                    <Grid>
+                        <avalonEdit:TextEditor
+                            Name="PayloadEditor1"
+                            Panel.ZIndex="0"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource EditorBorder}"
+                            FontSize="{StaticResource FontSizeJsonEditor}"
+                            Foreground="{DynamicResource EditorCaretColor}"
+                            ShowLineNumbers="True"
+                            SyntaxHighlighting="{Binding PayloadEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            VerticalScrollBarVisibility="Auto"
+                            WordWrap="True" />
 
-                <!--  Response  -->
+                        <avalonEdit:TextEditor
+                            Name="ResponseEditor1"
+                            Panel.ZIndex="0"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource EditorBorder}"
+                            FontSize="{StaticResource FontSizeJsonEditor}"
+                            Foreground="{DynamicResource EditorCaretColor}"
+                            ShowLineNumbers="True"
+                            SyntaxHighlighting="{Binding ResponseEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            VerticalScrollBarVisibility="Auto"
+                            WordWrap="True" />
 
-                <Button
-                    Grid.Column="1"
-                    Margin="0,0,0,-1"
-                    Click="ResponseButton_Click"
-                    Cursor="SizeWE"
-                    FontSize="{StaticResource FontSizeTabs}"
-                    FontWeight="Bold">
-
-                    <StackPanel Orientation="Horizontal">
-                        <fa:ImageAwesome
-                            Width="14"
-                            Height="14"
-                            Margin="0,0,6,0"
-                            VerticalAlignment="Center"
-                            Foreground="{DynamicResource PrimaryText}"
-                            Icon="Download" />
-                        <TextBlock
-                            VerticalAlignment="Center"
-                            FontSize="{StaticResource FontSizeTabs}"
-                            Text="Response" />
-                    </StackPanel>
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border
-                                x:Name="outerBorder"
-                                Background="{DynamicResource EditorsBackground}"
-                                BorderBrush="{DynamicResource EditorBorder}"
-                                BorderThickness="1,1,1,0"
-                                CornerRadius="6,6,0,0">
-                                <Grid x:Name="innerArea" Background="Transparent">
-                                    <ContentPresenter
-                                        x:Name="contentPresenter"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        RecognizesAccessKey="True"
-                                        TextElement.Foreground="{TemplateBinding Foreground}" />
-                                </Grid>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-
-
-
-                <Grid Grid.Row="1" Background="Gray" />
-
+                        <avalonEdit:TextEditor
+                            Name="HeaderEditor1"
+                            Panel.ZIndex="0"
+                            Background="Transparent"
+                            FontSize="{StaticResource FontSizeJsonEditor}"
+                            Foreground="{DynamicResource EditorCaretColor}"
+                            ShowLineNumbers="True"
+                            SyntaxHighlighting="Json"
+                            VerticalScrollBarVisibility="Auto"
+                            WordWrap="True" />
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
 
-
-
-
-
-
-
-
-
-
-
+        <!--  Split View  -->
         <Grid x:Name="SplitView" SnapsToDevicePixels="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" MinWidth="160" />
@@ -216,7 +281,7 @@
                     Background="{DynamicResource EditorsBackground}"
                     CornerRadius="0,0,0,6">
                     <avalonEdit:TextEditor
-                        Name="JsonTextBox"
+                        Name="PayloadEditor2"
                         Background="Transparent"
                         BorderBrush="{DynamicResource EditorBorder}"
                         BorderThickness="0,1,0,0"
@@ -250,7 +315,7 @@
                 <!--  Button  -->
                 <Grid
                     Grid.Row="0"
-                    Margin="17,0,0,-1"
+                    Margin="18,0,0,-1"
                     Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="160" />
@@ -308,7 +373,7 @@
                     Background="{DynamicResource EditorsBackground}">
 
                     <avalonEdit:TextEditor
-                        Name="ResponseEditor"
+                        Name="ResponseEditor2"
                         Background="Transparent"
                         BorderBrush="{DynamicResource EditorBorder}"
                         BorderThickness="0,1,0,0"
@@ -342,7 +407,7 @@
                 <!--  Button  -->
                 <Grid
                     Grid.Row="0"
-                    Margin="17,0,0,-1"
+                    Margin="18,0,0,-1"
                     Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="160" />
@@ -403,7 +468,7 @@
                     CornerRadius="0,0,6,0">
 
                     <avalonEdit:TextEditor
-                        Name="HeaderEditor"
+                        Name="HeaderEditor2"
                         Background="Transparent"
                         FontSize="{StaticResource FontSizeJsonEditor}"
                         Foreground="{DynamicResource EditorCaretColor}"

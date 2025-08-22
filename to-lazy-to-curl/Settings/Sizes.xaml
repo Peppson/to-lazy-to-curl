@@ -18,5 +18,5 @@
     <!--  Misc  -->
     <CornerRadius x:Key="InnerCornerRadius">4</CornerRadius>
     <CornerRadius x:Key="OuterCornerRadius">6</CornerRadius>
-    <sys:Double x:Key="WindowSplitViewThreshold">900</sys:Double>
+    <sys:Double x:Key="WindowSplitViewThreshold">1000</sys:Double>
 </ResourceDictionary>

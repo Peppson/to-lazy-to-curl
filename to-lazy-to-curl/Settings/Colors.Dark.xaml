@@ -5,7 +5,7 @@
     <SolidColorBrush x:Key="WindowBorder" Color="Transparent" />
     <SolidColorBrush x:Key="CardBackground" Color="#323232" />
     <SolidColorBrush x:Key="UrlInputBackground" Color="#3C3C3C" />
-    <SolidColorBrush x:Key="EditorsBackground" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="EditorsBackground" Color="#323232" />
     <SolidColorBrush x:Key="BigButtonBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="HttpButtonBackground" Color="#3C3C3C" />
 
@@ -24,8 +24,8 @@
 
     <!--  Editor Scrollbar  -->
     <SolidColorBrush x:Key="ScrollbarBackground" Color="Transparent" />
-    <SolidColorBrush x:Key="ScrollbarForeground" Color="#434343" />
-    <SolidColorBrush x:Key="ScrollbarHover" Color="#535557" />
+    <SolidColorBrush x:Key="ScrollbarForeground" Color="#767676" />
+    <SolidColorBrush x:Key="ScrollbarHover" Color="#9F9F9F" />
 
     <!--  Http Buttons  -->
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />

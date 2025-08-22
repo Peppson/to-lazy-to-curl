@@ -5,20 +5,14 @@ using to_lazy_to_curl.Services;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
 using Serilog;
+using System.Windows.Media;
 
 namespace to_lazy_to_curl.Components;
 
 public partial class JsonInput : UserControl
 {
     private bool _wasNarrow = false;
-
-
-
-    /* 
-     private GridLength _lastLeftWidth = new(1, GridUnitType.Star);
-     private GridLength _lastRightWidth = new(1, GridUnitType.Star);
-    */
-
+    private TabType _lastTab = TabType.Payload;
 
     public string PayloadEditorSyntax
     {
@@ -28,7 +22,8 @@ public partial class JsonInput : UserControl
             SetValue(PayloadEditorSyntaxProperty, value);
             var definition =
                 ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
-            this.JsonTextBox.SyntaxHighlighting = definition;
+            this.PayloadEditor1.SyntaxHighlighting = definition;
+            this.PayloadEditor2.SyntaxHighlighting = definition;
         }
     }
 
@@ -40,50 +35,73 @@ public partial class JsonInput : UserControl
             SetValue(ResponseEditorSyntaxProperty, value);
             var definition =
                 ICSharpCode.AvalonEdit.Highlighting.HighlightingManager.Instance.GetDefinition(value);
-            this.ResponseEditor.SyntaxHighlighting = definition;
+            this.ResponseEditor1.SyntaxHighlighting = definition;
+            this.ResponseEditor2.SyntaxHighlighting = definition;
         }
     }
 
-    public bool IsResponseEditor
+    public string PayloadEditorText
     {
-        get => (bool)GetValue(IsResponseEditorProperty);
-        private set => SetValue(IsResponseEditorProperty, value);
-    }
-
-    public string JsonRequestBody
-    {
-        get => JsonTextBox.Text;
+        get => PayloadEditor1.Text;
         set
         {
-            if (JsonTextBox.Document.Text != value)
+            if (PayloadEditor1.Document.Text != value)
             {
-                JsonTextBox.Document.UndoStack.StartUndoGroup();
-                JsonTextBox.Document.Text = value ?? string.Empty;
-                JsonTextBox.Document.UndoStack.EndUndoGroup();
+                PayloadEditor1.Document.UndoStack.StartUndoGroup();
+                PayloadEditor1.Document.Text = value ?? string.Empty;
+                PayloadEditor1.Document.UndoStack.EndUndoGroup();
+            }
+
+            if (PayloadEditor2.Document.Text != value)
+            {
+                PayloadEditor2.Document.UndoStack.StartUndoGroup();
+                PayloadEditor2.Document.Text = value ?? string.Empty;
+                PayloadEditor2.Document.UndoStack.EndUndoGroup();
             }
         }
     }
 
-    public string JsonResponseBody
+    public string ResponseEditorText
     {
-        get => ResponseEditor.Text;
+        get => ResponseEditor1.Text;
         set
         {
-            if (ResponseEditor.Document.Text != value)
+            if (ResponseEditor1.Document.Text != value)
             {
-                ResponseEditor.Document.UndoStack.StartUndoGroup();
-                ResponseEditor.Document.Text = value ?? string.Empty;
-                ResponseEditor.Document.UndoStack.EndUndoGroup();
+                ResponseEditor1.Document.UndoStack.StartUndoGroup();
+                ResponseEditor1.Document.Text = value ?? string.Empty;
+                ResponseEditor1.Document.UndoStack.EndUndoGroup();
+            }
+
+            if (ResponseEditor2.Document.Text != value)
+            {
+                ResponseEditor2.Document.UndoStack.StartUndoGroup();
+                ResponseEditor2.Document.Text = value ?? string.Empty;
+                ResponseEditor2.Document.UndoStack.EndUndoGroup();
             }
         }
     }
 
+    public string HeaderEditorText
+    {
+        get => HeaderEditor1.Text;
+        set
+        {
+            if (HeaderEditor1.Document.Text != value)
+            {
+                HeaderEditor1.Document.UndoStack.StartUndoGroup();
+                HeaderEditor1.Document.Text = value ?? string.Empty;
+                HeaderEditor1.Document.UndoStack.EndUndoGroup();
+            }
 
-
-
-
-
-
+            if (HeaderEditor2.Document.Text != value)
+            {
+                HeaderEditor2.Document.UndoStack.StartUndoGroup();
+                HeaderEditor2.Document.Text = value ?? string.Empty;
+                HeaderEditor2.Document.UndoStack.EndUndoGroup();
+            }
+        }
+    }
 
     public JsonInput()
     {
@@ -101,9 +119,7 @@ public partial class JsonInput : UserControl
             _wasNarrow = window.ActualWidth < Config.SplitEditorThreshold;
         };
 
-        //Splitter.LayoutUpdated += (s, e) => SetResponseButtonPositionSplitView();
-
-        /*EventHandler payloadHandler = (_, __) => PayloadEditorSyntax = AppState.PayloadEditorSyntax;
+        EventHandler payloadHandler = (_, __) => PayloadEditorSyntax = AppState.PayloadEditorSyntax;
         EventHandler responseHandler = (_, __) => ResponseEditorSyntax = AppState.ResponseEditorSyntax;
         AppState.PayloadEditorSyntaxEvent += payloadHandler;
         AppState.ResponseEditorSyntaxEvent += responseHandler;
@@ -112,244 +128,28 @@ public partial class JsonInput : UserControl
         {
             AppState.PayloadEditorSyntaxEvent -= payloadHandler;
             AppState.ResponseEditorSyntaxEvent -= responseHandler;
-        };*/
-
-
+        };
     }
 
-
-
-
-
-
-
-
     private void PayloadButton_Click(object sender, RoutedEventArgs e)
-    {   
-        Console.WriteLine("payload");
-        //IsResponseEditor = false;
-        //UpdateEditorPositions();
-        //JsonTextBox.Focus();
+    {
+        _lastTab = TabType.Payload;
+        UpdateEditorPosition();
+        this.PayloadEditor1.Focus();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
     {   
-        Console.WriteLine("Response");
-        //IsResponseEditor = true;
-        //UpdateEditorPositions();
-        //ResponseEditor.Focus();
+        _lastTab = TabType.Response;
+        UpdateEditorPosition();
+        this.ResponseEditor1.Focus();
     }
-
-
-
-
-    private void UpdateEditorPositions()
+    
+    private void HeaderButton_Click(object sender, RoutedEventArgs e)
     {
-        /*UpdateEditorVisibility();
-
-        if (IsResponseEditor)
-        {
-            Grid.SetColumn(JsonTextBox, 2);
-            Grid.SetColumn(ResponseEditor, 0);
-        }
-        else
-        {
-            Grid.SetColumn(JsonTextBox, 0);
-            Grid.SetColumn(ResponseEditor, 2);
-        }*/
-    }
-
-    private void UpdateEditorVisibility(bool showAll = false)
-    {
-        /*if (showAll)
-        {
-            JsonTextBox.Visibility = Visibility.Visible;
-            ResponseEditor.Visibility = Visibility.Visible;
-            return;
-        }
-        ResponseEditor.Visibility = IsResponseEditor ? Visibility.Visible : Visibility.Collapsed;
-        JsonTextBox.Visibility = IsResponseEditor ? Visibility.Collapsed : Visibility.Visible;*/
-    }
-
-    private void UpdateEditorLayouts(double width)
-    {
-        bool isNarrow = width < Config.SplitEditorThreshold;
-
-        if (isNarrow)
-        {
-            Log.Debug("SingleView");
-
-            this.SingleView.Visibility = Visibility.Visible;
-            this.SplitView.Visibility = Visibility.Collapsed;
-
-            /* SingleViewButtonPanel.Visibility = Visibility.Visible;
-            SplitViewButtonPanel.Visibility = Visibility.Collapsed;
-
-            UpdateEditorPositions();
-            UpdateEditorVisibility();
-
-            // Save widths before swaping layout
-            _lastLeftWidth = JsonEditorGrid.ColumnDefinitions[0].Width;
-            _lastRightWidth = JsonEditorGrid.ColumnDefinitions[2].Width;
-
-            JsonEditorGrid.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);
-            JsonEditorGrid.ColumnDefinitions[1].Width = new GridLength(0);
-            JsonEditorGrid.ColumnDefinitions[2].Width = new GridLength(0);
-            JsonEditorGrid.ColumnDefinitions[0].MinWidth = 0;
-            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 0; */
-        }
-        else
-        {
-            Log.Debug("SplitView");
-            this.SingleView.Visibility = Visibility.Collapsed;
-            this.SplitView.Visibility = Visibility.Visible;
-
-
-            /* SingleViewButtonPanel.Visibility = Visibility.Collapsed;
-            SplitViewButtonPanel.Visibility = Visibility.Visible;
-
-            Grid.SetColumn(JsonTextBox, 0);
-            Grid.SetColumn(ResponseEditor, 2);
-            UpdateEditorVisibility(true);
-
-            // Restore last split widths
-            JsonEditorGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
-            JsonEditorGrid.ColumnDefinitions[1].Width = new GridLength(10);
-            JsonEditorGrid.ColumnDefinitions[2].Width = _lastRightWidth;
-            JsonEditorGrid.ColumnDefinitions[0].MinWidth = 157;
-            JsonEditorGrid.ColumnDefinitions[2].MinWidth = 170;
-
-            SetResponseButtonPositionSplitView(); */
-        }
-    }
-
-    private void SetResponseButtonPositionSplitView()
-    {
-        /*double leftWidth = JsonEditorGrid.ColumnDefinitions[0].ActualWidth;
-        ResponseButton2.Margin = new Thickness(leftWidth + 6f, 0, 0, -1f);*/
-    }
-
-
-
-    public void Reset()
-    {
-        /*IsResponseEditor = false;
-
-        // Payload
-        AppState.PayloadEditorSyntax = SyntaxHighlighting.Json;
-        PayloadEditorSyntax = SyntaxHighlighting.Json;
-        JsonRequestBody = string.Empty;
-
-        // Response
-        AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
-        ResponseEditorSyntax = SyntaxHighlighting.Json;
-        JsonResponseBody = string.Empty;
-
-        // Layout and grid
-        _lastLeftWidth = new GridLength(1, GridUnitType.Star);
-        _lastRightWidth = new GridLength(1, GridUnitType.Star);
-        JsonEditorGrid.ColumnDefinitions[0].Width = _lastLeftWidth;
-        JsonEditorGrid.ColumnDefinitions[2].Width = _lastRightWidth;
-
-        Window parentWindow = Window.GetWindow(this);
-        UpdateEditorLayouts(parentWindow.ActualWidth);
-        SetResponseButtonPositionSplitView();*/
-    }
-
-
-
-
-
-
-
-
-
-
-    // ############ new ""########
-
-
-
-
-    private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
-    {
-        double width = e.NewSize.Width;
-        bool isNarrow = width < Config.SplitEditorThreshold;
-
-        if (isNarrow != _wasNarrow)
-        {
-            _wasNarrow = isNarrow;
-            UpdateEditorLayouts(width);
-        }
-    }
-
-    private void SetupEditors()
-    {
-        // Payload
-        PayloadEditorSyntax = AppState.ResponseEditorSyntax;
-        this.JsonTextBox.Options.EnableEmailHyperlinks = false;
-        this.JsonTextBox.Options.EnableHyperlinks = false;
-
-        // Response
-        ResponseEditorSyntax = AppState.ResponseEditorSyntax;
-        this.ResponseEditor.Options.EnableEmailHyperlinks = false;
-        this.ResponseEditor.Options.EnableHyperlinks = false;
-
-        // Header
-        this.ResponseEditor.Options.EnableEmailHyperlinks = false;
-        this.ResponseEditor.Options.EnableHyperlinks = false;
-    }
-
-    private void SetStartupText()
-    {
-#if !RELEASE
-        this.JsonTextBox.Text = Config.PayloadSampleData;
-        this.ResponseEditor.Text = Config.ResponseSampleData;
-        this.HeaderEditor.Text = Config.ResponseSampleData;
-        return;
-#endif
-
-#pragma warning disable CS0162
-
-        if (AppState.IsFirstBoot)
-        {
-            this.JsonTextBox.Text = Config.PayloadSampleData;
-            this.ResponseEditor.Text = Config.ResponseSampleData;
-            this.HeaderEditor.Text = Config.ResponseSampleData;
-            return;
-        }
-
-        var payload = Properties.Settings.Default.PayloadText ?? string.Empty;
-        var response = Properties.Settings.Default.ResponseText ?? string.Empty;
-        var header = Properties.Settings.Default.HeaderText ?? string.Empty;
-
-        this.JsonTextBox.Text = payload == string.Empty
-            ? Config.PayloadStartupData
-            : payload;
-
-        this.ResponseEditor.Text = response == string.Empty
-            ? Config.ResponseStartupData
-            : response;
-
-        this.HeaderEditor.Text = header == string.Empty
-            ? Config.ResponseStartupData
-            : header;
-
-#pragma warning restore CS0162
-    }
-
-    public string GetPayloadText()
-    {
-        return this.JsonTextBox.Text;
-    }
-
-    public string GetResponseText()
-    {
-        return this.ResponseEditor.Text;
-    }
-
-    public string GetHeaderText()
-    {
-        return this.HeaderEditor.Text;
+        _lastTab = TabType.Header;
+        UpdateEditorPosition();
+        this.HeaderEditor1.Focus();
     }
 
     private void SplitResponseButton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -375,14 +175,185 @@ public partial class JsonInput : UserControl
 
         e.Handled = true;
     }
-    
-    public static readonly DependencyProperty IsResponseEditorProperty =
-        DependencyProperty.Register(
-            nameof(IsResponseEditor),
-            typeof(bool),
-            typeof(JsonInput),
-            new PropertyMetadata(false));
 
+    private void Window_SizeChanged(object? sender, SizeChangedEventArgs e)
+    {
+        double width = e.NewSize.Width;
+        bool isNarrow = width < Config.SplitEditorThreshold;
+
+        if (isNarrow != _wasNarrow)
+        {
+            _wasNarrow = isNarrow;
+            UpdateEditorLayouts(width);
+        }
+    }
+
+    private void UpdateEditorLayouts(double width)
+    {
+        bool isNarrow = width < Config.SplitEditorThreshold;
+
+        if (isNarrow)
+        {
+            Log.Debug("SingleView");
+
+            // Sync editors
+            PayloadEditorText = PayloadEditor2.Text;
+            ResponseEditorText = ResponseEditor2.Text;
+            HeaderEditorText = HeaderEditor2.Text;
+
+            // Change View
+            this.SingleView.Visibility = Visibility.Visible;
+            this.SplitView.Visibility = Visibility.Collapsed;
+
+            UpdateEditorPosition();
+        }
+        else
+        {
+            Log.Debug("SplitView");
+
+            // Change View
+            this.SingleView.Visibility = Visibility.Collapsed;
+            this.SplitView.Visibility = Visibility.Visible;
+
+            // Sync editors
+            PayloadEditorText = PayloadEditor1.Text;
+            ResponseEditorText = ResponseEditor1.Text;
+            HeaderEditorText = HeaderEditor1.Text;
+        }
+    }
+
+    private void UpdateEditorPosition()
+    {
+        // Reset All tabs colors
+        var selectedColor = (Brush)FindResource("EditorsBackground");
+        var defaultColor = (Brush)FindResource("UrlInputBackground");
+
+        ((Border)PayloadButton.Template.FindName("border", PayloadButton)).Background = defaultColor;
+        ((Border)ResponseButton.Template.FindName("border", ResponseButton)).Background = defaultColor;
+        ((Border)HeaderButton.Template.FindName("border", HeaderButton)).Background = defaultColor;
+
+        if (_lastTab == TabType.Payload)
+        {
+            PayloadEditor1.Visibility = Visibility.Visible;
+            ResponseEditor1.Visibility = Visibility.Collapsed;
+            HeaderEditor1.Visibility = Visibility.Collapsed;
+
+            ((Border)PayloadButton.Template.FindName("border", PayloadButton)).Background = selectedColor;
+        }
+        else if (_lastTab == TabType.Response)
+        {
+            PayloadEditor1.Visibility = Visibility.Collapsed;
+            ResponseEditor1.Visibility = Visibility.Visible;
+            HeaderEditor1.Visibility = Visibility.Collapsed;
+
+            ((Border)ResponseButton.Template.FindName("border", ResponseButton)).Background = selectedColor;
+        }
+        else if (_lastTab == TabType.Header)
+        {
+            PayloadEditor1.Visibility = Visibility.Collapsed;
+            ResponseEditor1.Visibility = Visibility.Collapsed;
+            HeaderEditor1.Visibility = Visibility.Visible;
+
+            ((Border)HeaderButton.Template.FindName("border", HeaderButton)).Background = selectedColor;
+        }
+    }
+
+    private void SetupEditors()
+    {
+        var editors = new[] {
+            this.PayloadEditor1,
+            this.PayloadEditor2,
+            this.ResponseEditor1,
+            this.ResponseEditor2,
+            this.HeaderEditor1,
+            this.HeaderEditor2
+        };
+
+        foreach (var editor in editors)
+        {
+            editor.Options.EnableEmailHyperlinks = false;
+            editor.Options.EnableHyperlinks = false;
+        }
+        
+        PayloadEditorSyntax = AppState.ResponseEditorSyntax;
+        ResponseEditorSyntax = AppState.ResponseEditorSyntax;
+    }
+
+    private void SetStartupText()
+    {
+        #if !RELEASE
+            PayloadEditorText = Config.PayloadIsFirstBootData;
+            ResponseEditorText = Config.ResponseStartupData;
+            HeaderEditorText = Config.HeaderStartupData;
+            return;
+        #endif
+
+        #pragma warning disable CS0162
+
+       if (AppState.IsFirstBoot)
+        {
+            PayloadEditorText = Config.PayloadIsFirstBootData;
+            ResponseEditorText = Config.ResponseStartupData;
+            HeaderEditorText = Config.HeaderStartupData;
+            return;
+        }
+
+        var payload = Properties.Settings.Default.PayloadText ?? string.Empty;
+        var response = Properties.Settings.Default.ResponseText ?? string.Empty;
+        var header = Properties.Settings.Default.HeaderText ?? string.Empty;
+
+        PayloadEditorText = payload == string.Empty
+            ? Config.PayloadStartupData
+            : payload;
+
+        ResponseEditorText = response == string.Empty
+            ? Config.ResponseStartupData
+            : response;
+
+        HeaderEditorText = header == string.Empty
+            ? Config.HeaderStartupData
+            : header;
+
+        #pragma warning restore CS0162
+    }
+
+    public string GetPayloadText() => this.PayloadEditorText;
+
+    public string GetResponseText() => this.ResponseEditorText;
+
+    public string GetHeaderText() => this.HeaderEditorText;
+
+    public void Reset()
+    {
+        // Payload
+        AppState.PayloadEditorSyntax = SyntaxHighlighting.Json;
+        PayloadEditorSyntax = SyntaxHighlighting.Json;
+        PayloadEditorText = string.Empty;
+
+        // Response
+        AppState.ResponseEditorSyntax = SyntaxHighlighting.Json;
+        ResponseEditorSyntax = SyntaxHighlighting.Json;
+        ResponseEditorText = string.Empty;
+
+        // Header
+        HeaderEditorText = Config.HeaderStartupData;
+
+        // Reset Grid Splitters in Split View
+        ResetGridSplitterPositions();
+
+        Window parentWindow = Window.GetWindow(this);
+        UpdateEditorLayouts(parentWindow.ActualWidth);        
+    }
+
+    private void ResetGridSplitterPositions()
+    {
+        SplitView.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);    // Payload
+        SplitView.ColumnDefinitions[1].Width = new GridLength(0);                       // Splitter1
+        SplitView.ColumnDefinitions[2].Width = new GridLength(1, GridUnitType.Star);    // Response
+        SplitView.ColumnDefinitions[3].Width = new GridLength(0);                       // Splitter2
+        SplitView.ColumnDefinitions[4].Width = new GridLength(1, GridUnitType.Star);    // Header
+    }
+    
     public static readonly DependencyProperty PayloadEditorSyntaxProperty =
         DependencyProperty.Register(
             nameof(PayloadEditorSyntax),

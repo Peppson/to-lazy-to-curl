@@ -48,7 +48,12 @@ public static class ThemeService
         Log.Debug($"SyntaxTheme: {(_isDarkTheme ? "Dark" : "Light")}");
 
         // Set syntax colors in both editors
-        var editors = new[] { AppState.JsonInput.JsonTextBox, AppState.JsonInput.ResponseEditor };
+        var editors = new[] {
+            AppState.JsonInput.PayloadEditor1,
+            AppState.JsonInput.PayloadEditor2,
+            AppState.JsonInput.ResponseEditor1,
+            AppState.JsonInput.ResponseEditor2,
+        };
 
         foreach (var editor in editors)
         {

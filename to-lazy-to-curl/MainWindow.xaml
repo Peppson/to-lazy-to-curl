@@ -61,14 +61,7 @@
                     FontWeight="Bold"
                     Foreground="{DynamicResource PrimaryText}"
                     Text="Body" />
-                <Border
-                    Grid.Row="2"
-                    Background="{DynamicResource CardBackground}"
-                    BorderBrush="{DynamicResource EditorBorder}"
-                    BorderThickness="1,0,0,1"
-                    CornerRadius="{DynamicResource OuterCornerRadius}">
-                    <components:JsonInput x:Name="JsonInputControl" />
-                </Border>
+                <components:JsonInput x:Name="JsonInputControl" Grid.Row="2" />
 
                 <!--  Status Message  -->
                 <components:HttpMessageBox Grid.Row="3" />
@@ -77,6 +70,7 @@
                 <TextBlock
                     Grid.Row="4"
                     Margin="0,0,0,6"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Center"
                     FontSize="{StaticResource FontSizeH1}"
                     FontWeight="Bold"
@@ -87,7 +81,7 @@
                     Padding="8"
                     Background="{DynamicResource CardBackground}"
                     CornerRadius="{DynamicResource OuterCornerRadius}">
-                    <StackPanel MaxWidth="{StaticResource WindowSplitViewThreshold}">
+                    <StackPanel>
 
                         <!--  Action Buttons  -->
                         <StackPanel>

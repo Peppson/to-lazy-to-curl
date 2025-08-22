@@ -16,7 +16,7 @@ public partial class BottomButtons : UserControl
     private async void SubmitButton_Click(object sender, RoutedEventArgs e)
     {
         string url = AppState.UrlInput.UrlTextBox.Text;
-        string body = AppState.JsonInput.JsonTextBox.Text;
+        string body = AppState.JsonInput.PayloadEditorText;
 
         AnimateSendButton(true);
         await HttpService.SubmitRequestAsync(url, body);
