@@ -11,8 +11,8 @@ namespace to_lazy_to_curl.Components;
 
 public partial class EditorInput : UserControl
 {
+    private TabType _lastEditorTab = TabType.Payload;
     private bool _wasNarrow = false;
-    private TabType _lastTab = TabType.Payload;
 
     public string PayloadEditorSyntax
     {
@@ -42,7 +42,12 @@ public partial class EditorInput : UserControl
 
     public string PayloadEditorText
     {
-        get => PayloadEditor1.Text;
+        get
+        {
+            return AppState.IsNarrow
+                ? PayloadEditor1.Text
+                : PayloadEditor2.Text;
+        }
         set
         {
             if (PayloadEditor1.Document.Text != value)
@@ -63,7 +68,12 @@ public partial class EditorInput : UserControl
 
     public string ResponseEditorText
     {
-        get => ResponseEditor1.Text;
+        get
+        {
+            return AppState.IsNarrow
+                ? ResponseEditor1.Text
+                : ResponseEditor2.Text;
+        }
         set
         {
             if (ResponseEditor1.Document.Text != value)
@@ -84,7 +94,12 @@ public partial class EditorInput : UserControl
 
     public string HeaderEditorText
     {
-        get => HeaderEditor1.Text;
+        get
+        {
+            return AppState.IsNarrow
+                ? HeaderEditor1.Text
+                : HeaderEditor2.Text;
+        }
         set
         {
             if (HeaderEditor1.Document.Text != value)
@@ -115,8 +130,8 @@ public partial class EditorInput : UserControl
         {
             Window window = Window.GetWindow(this)!;
             window.SizeChanged += Window_SizeChanged;
-            UpdateEditorLayouts(window.ActualWidth);
             _wasNarrow = window.ActualWidth < Config.SplitEditorThreshold;
+            UpdateEditorLayouts(_wasNarrow);
         };
 
         EventHandler payloadHandler = (_, __) => PayloadEditorSyntax = AppState.PayloadEditorSyntax;
@@ -133,27 +148,50 @@ public partial class EditorInput : UserControl
 
     private void PayloadButton_Click(object sender, RoutedEventArgs e)
     {
-        _lastTab = TabType.Payload;
-        UpdateEditorPositionAndColor();
+        _lastEditorTab = TabType.Payload;
+        UpdateSingleViewPositionAndColor();
         this.PayloadEditor1.Focus();
     }
 
     private void ResponseButton_Click(object sender, RoutedEventArgs e)
-    {   
-        _lastTab = TabType.Response;
-        UpdateEditorPositionAndColor();
+    {
+        _lastEditorTab = TabType.Response;
+        UpdateSingleViewPositionAndColor();
         this.ResponseEditor1.Focus();
     }
-    
+
     private void HeaderButton_Click(object sender, RoutedEventArgs e)
     {
-        _lastTab = TabType.Header;
-        UpdateEditorPositionAndColor();
+        _lastEditorTab = TabType.Header;
+        UpdateSingleViewPositionAndColor();
         this.HeaderEditor1.Focus();
     }
-
-    private void SplitResponseButton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    
+    private void PayloadButtonSplit_Click(object sender, RoutedEventArgs e)
     {
+        _lastEditorTab = TabType.Payload;
+        UpdateSplitViewPositionAndColor();
+        this.PayloadEditor2.Focus();
+    }
+
+    private void PayloadButtonSplit_GotKeyboardFocus(object sender, RoutedEventArgs e)
+    {   
+        _lastEditorTab = TabType.Payload;
+        UpdateSplitViewPositionAndColor();
+    }
+
+    private void ResponseButtonSplit_GotKeyboardFocus(object sender, RoutedEventArgs e)
+    {   
+        _lastEditorTab = TabType.Response;
+        UpdateSplitViewPositionAndColor();
+    }
+
+    private void ResponseButtonSplit_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        _lastEditorTab = TabType.Response;
+        UpdateSplitViewPositionAndColor();
+        this.ResponseEditor2.Focus();
+
         this.Splitter1.RaiseEvent(
             new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, e.ChangedButton)
             {
@@ -163,9 +201,19 @@ public partial class EditorInput : UserControl
 
         e.Handled = true;
     }
+    
+    private void HeaderButtonSplit_GotKeyboardFocus(object sender, RoutedEventArgs e)
+    {   
+        _lastEditorTab = TabType.Header;
+        UpdateSplitViewPositionAndColor();
+    }
 
-    private void SplitHeaderButton_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    private void HeaderButtonSplit_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
+        _lastEditorTab = TabType.Header;
+        UpdateSplitViewPositionAndColor();
+        this.HeaderEditor2.Focus();
+
         this.Splitter2.RaiseEvent(
             new MouseButtonEventArgs(e.MouseDevice, e.Timestamp, e.ChangedButton)
             {
@@ -183,18 +231,19 @@ public partial class EditorInput : UserControl
 
         if (isNarrow != _wasNarrow)
         {
+            AppState.IsNarrow = isNarrow;
             _wasNarrow = isNarrow;
-            UpdateEditorLayouts(width);
+            UpdateEditorLayouts(isNarrow);
         }
     }
 
-    private void UpdateEditorLayouts(double width)
+    private void UpdateEditorLayouts(bool isNarrow)
     {
-        bool isNarrow = width < Config.SplitEditorThreshold;
+        AppState.IsNarrow = isNarrow;
 
         if (isNarrow)
         {
-            Log.Debug("SingleView");
+            Log.Debug("Window: SingleView");
 
             // Sync editors
             PayloadEditorText = PayloadEditor2.Text;
@@ -205,11 +254,11 @@ public partial class EditorInput : UserControl
             this.SingleView.Visibility = Visibility.Visible;
             this.SplitView.Visibility = Visibility.Collapsed;
 
-            UpdateEditorPositionAndColor();
+            UpdateSingleViewPositionAndColor();
         }
         else
         {
-            Log.Debug("SplitView");
+            Log.Debug("Window: SplitView");
 
             // Change View
             this.SingleView.Visibility = Visibility.Collapsed;
@@ -219,12 +268,14 @@ public partial class EditorInput : UserControl
             PayloadEditorText = PayloadEditor1.Text;
             ResponseEditorText = ResponseEditor1.Text;
             HeaderEditorText = HeaderEditor1.Text;
+
+            UpdateSplitViewPositionAndColor();
         }
     }
 
-    public void UpdateEditorPositionAndColor()
+    public void UpdateSingleViewPositionAndColor()
     {
-        // Reset All tabs colors
+        // Reset all tabs colors
         var selectedColor = (Brush)FindResource("EditorsBackground");
         var defaultColor = (Brush)FindResource("UrlInputBackground");
 
@@ -232,7 +283,7 @@ public partial class EditorInput : UserControl
         ((Border)ResponseButton.Template.FindName("border", ResponseButton)).Background = defaultColor;
         ((Border)HeaderButton.Template.FindName("border", HeaderButton)).Background = defaultColor;
 
-        if (_lastTab == TabType.Payload)
+        if (_lastEditorTab == TabType.Payload)
         {
             PayloadEditor1.Visibility = Visibility.Visible;
             ResponseEditor1.Visibility = Visibility.Collapsed;
@@ -240,7 +291,7 @@ public partial class EditorInput : UserControl
 
             ((Border)PayloadButton.Template.FindName("border", PayloadButton)).Background = selectedColor;
         }
-        else if (_lastTab == TabType.Response)
+        else if (_lastEditorTab == TabType.Response)
         {
             PayloadEditor1.Visibility = Visibility.Collapsed;
             ResponseEditor1.Visibility = Visibility.Visible;
@@ -248,13 +299,37 @@ public partial class EditorInput : UserControl
 
             ((Border)ResponseButton.Template.FindName("border", ResponseButton)).Background = selectedColor;
         }
-        else if (_lastTab == TabType.Header)
+        else if (_lastEditorTab == TabType.Header)
         {
             PayloadEditor1.Visibility = Visibility.Collapsed;
             ResponseEditor1.Visibility = Visibility.Collapsed;
             HeaderEditor1.Visibility = Visibility.Visible;
 
             ((Border)HeaderButton.Template.FindName("border", HeaderButton)).Background = selectedColor;
+        }
+    }
+
+    public void UpdateSplitViewPositionAndColor()
+    {
+        // Reset All tabs colors
+        var selectedColor = (Brush)FindResource("EditorsBackground");
+        var defaultColor = (Brush)FindResource("UrlInputBackground");
+
+        ((Border)SplitPayloadButton.Template.FindName("border", SplitPayloadButton)).Background = defaultColor;
+        ((Border)SplitResponseButton.Template.FindName("border", SplitResponseButton)).Background = defaultColor;
+        ((Border)SplitHeaderButton.Template.FindName("border", SplitHeaderButton)).Background = defaultColor;
+
+        if (_lastEditorTab == TabType.Payload)
+        {
+            ((Border)SplitPayloadButton.Template.FindName("border", SplitPayloadButton)).Background = selectedColor;
+        }
+        else if (_lastEditorTab == TabType.Response)
+        {
+            ((Border)SplitResponseButton.Template.FindName("border", SplitResponseButton)).Background = selectedColor;
+        }
+        else if (_lastEditorTab == TabType.Header)
+        {
+            ((Border)SplitHeaderButton.Template.FindName("border", SplitHeaderButton)).Background = selectedColor;
         }
     }
 
@@ -274,23 +349,23 @@ public partial class EditorInput : UserControl
             editor.Options.EnableEmailHyperlinks = false;
             editor.Options.EnableHyperlinks = false;
         }
-        
+
         PayloadEditorSyntax = AppState.ResponseEditorSyntax;
         ResponseEditorSyntax = AppState.ResponseEditorSyntax;
     }
 
     private void SetStartupText()
     {
-        #if !RELEASE
-            PayloadEditorText = Config.PayloadIsFirstBootData;
-            ResponseEditorText = Config.ResponseStartupData;
-            HeaderEditorText = Config.HeaderStartupData;
-            return;
-        #endif
+#if !RELEASE
+        PayloadEditorText = Config.PayloadIsFirstBootData;
+        ResponseEditorText = Config.ResponseStartupData;
+        HeaderEditorText = Config.HeaderStartupData;
+        return;
+#endif
 
-        #pragma warning disable CS0162
+#pragma warning disable CS0162
 
-       if (AppState.IsFirstBoot)
+        if (AppState.IsFirstBoot)
         {
             PayloadEditorText = Config.PayloadIsFirstBootData;
             ResponseEditorText = Config.ResponseStartupData;
@@ -314,7 +389,7 @@ public partial class EditorInput : UserControl
             ? Config.HeaderStartupData
             : header;
 
-        #pragma warning restore CS0162
+#pragma warning restore CS0162
     }
 
     public string GetPayloadText() => this.PayloadEditorText;
@@ -338,14 +413,17 @@ public partial class EditorInput : UserControl
         // Header
         HeaderEditorText = Config.HeaderStartupData;
 
-        // Reset Grid Splitters in Split View
-        ResetGridSplitterPositions();
+        // Reset Tabs
+        _lastEditorTab = TabType.Payload;
+        ResetSplitViewGridSplitterPositions();
 
-        Window parentWindow = Window.GetWindow(this);
-        UpdateEditorLayouts(parentWindow.ActualWidth);        
+        UpdateEditorLayouts(
+            Window.GetWindow(this).
+            ActualWidth < Config.SplitEditorThreshold
+        );
     }
 
-    private void ResetGridSplitterPositions()
+    private void ResetSplitViewGridSplitterPositions()
     {
         SplitView.ColumnDefinitions[0].Width = new GridLength(1, GridUnitType.Star);    // Payload
         SplitView.ColumnDefinitions[1].Width = new GridLength(0);                       // Splitter1

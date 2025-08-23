@@ -16,19 +16,12 @@ public partial class UrlInput : UserControl
             ? Config.UrlSampleData
             : Properties.Settings.Default.UrlInputText ?? string.Empty;
 
-        // Debug override
         #if !RELEASE
             this.UrlTextBox.Text = Config.UrlSampleData;
         #endif
     }
 
-    public string GetUrlText()
-    {
-        return this.UrlTextBox.Text;
-    }
+    public string GetUrlText() => this.UrlTextBox.Text;
 
-    public void Reset()
-    {
-        this.UrlTextBox.Text = string.Empty;
-    }
+    public void Reset() => this.UrlTextBox.Text = string.Empty;
 }

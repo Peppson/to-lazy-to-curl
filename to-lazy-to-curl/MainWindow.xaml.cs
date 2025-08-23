@@ -10,6 +10,7 @@ public partial class MainWindow : Window
 		InitIsFirstBoot();
 		InitializeComponent();
 		InitWindowSizeAndPosition();
+		AppState.MainWindow = this;
 		LogService.Init();
 		ThemeService.Init();
 	}
@@ -29,9 +30,9 @@ public partial class MainWindow : Window
 		Top = Properties.Settings.Default.WindowTop;
 		Left = Properties.Settings.Default.WindowLeft;
 	}
-	
+
 	private void InitIsFirstBoot()
-	{	
+	{
 		if (Properties.Settings.Default.IsFirstBoot)
 		{
 			Properties.Settings.Default.IsFirstBoot = false;

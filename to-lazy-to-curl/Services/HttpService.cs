@@ -4,6 +4,7 @@ using Serilog;
 using System.Text.Json;
 using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Settings;
+using Newtonsoft.Json;
 
 namespace to_lazy_to_curl.Services;
 
@@ -27,19 +28,28 @@ public static class HttpService
         {
             await SendRequestAsync(url, body, httpAction);
         }
+        catch (Newtonsoft.Json.JsonException ex)
+        {
+            _ = MessageService.ShowTextMessageAsync("Failed to parse headers", "Failure", Config.StatusMessageDuration);
+            _ = AnimationService.InvalidHeaderAnimationAsync(AppState.EditorInput);
+            Log.Error($"Failed to parse headers", ex);
+        }
         catch (HttpRequestException ex)
         {
             _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
+            Log.Error($"HTTP request failed", ex);
         }
         catch (TaskCanceledException)
         {
             _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.StatusMessageDuration);
+            Log.Warning(GetTimeoutMessage());
         }
         catch (Exception ex)
         {
             _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
+            Log.Error($"An unexpected error occurred", ex);
         }
     }
 
@@ -50,7 +60,7 @@ public static class HttpService
             Timeout = TimeSpan.FromSeconds(Config.HttpConnectionTimeout)
         };
 
-        var headers = GetHeaders(); // todo headers?
+        var headers = GetHeaders();
         var response = await SendHttpRequestAsync(url, body, client, httpAction, headers);
 
         ShowHttpResponseMessage(response);
@@ -68,19 +78,23 @@ public static class HttpService
             Content = new StringContent(body, Encoding.UTF8, GetContentType(contentType))
         };
 
-        // No headers
-        if (headers == null)
-            return await client.SendAsync(request);
-
         // Headers
-        foreach (var header in headers)
-        {   
-            if (!request.Headers.TryAddWithoutValidation(header.Key, header.Value))
+        if (headers != null)
+        {
+            Log.Debug("Adding headers:");
+            foreach (var header in headers)
             {
-                request.Content?.Headers.TryAddWithoutValidation(header.Key, header.Value);
+                if (request.Headers.TryAddWithoutValidation(header.Key, header.Value))
+                {
+                    Log.Debug($"> {header.Key} = {header.Value}");
+                }
             }
         }
-        
+        else
+        {
+            Log.Debug("No headers provided");
+        }
+
         return await client.SendAsync(request);
     }
     
@@ -108,15 +122,17 @@ public static class HttpService
         };
     }
 
-    private static Dictionary<string, string>? GetHeaders(bool headers = false)
+    private static Dictionary<string, string>? GetHeaders()
     {
-        if (!headers) return null;
+        if (string.IsNullOrWhiteSpace(AppState.EditorInput.HeaderEditorText)) 
+            return null;
 
-        return new Dictionary<string, string>
-        {
-            { "Authorization", "Bearer XYZ" }, // todo dynamic
-            { "Cache-Control", "no-cache" },
-        };
+        // Parse headers       
+        var headers = JsonConvert.DeserializeObject<Dictionary<string, string>>(AppState.EditorInput.HeaderEditorText)
+                    ?.Where(kvp => !string.IsNullOrWhiteSpace(kvp.Value))
+                    .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+        return headers?.Count > 0 ? headers : null;
     }
 
     private static async Task SetHttpResponseText(HttpResponseMessage? response)
@@ -166,12 +182,11 @@ public static class HttpService
     {
         var responseText = await response.Content.ReadAsStringAsync();
 
-        if (string.IsNullOrWhiteSpace(responseText))
-            return "";
+        if (string.IsNullOrWhiteSpace(responseText)) return "";
         
         using var jsonDoc = JsonDocument.Parse(responseText);
         
-        return JsonSerializer.Serialize(
+        return System.Text.Json.JsonSerializer.Serialize(
             jsonDoc.RootElement,
             new JsonSerializerOptions { WriteIndented = true });
     }
@@ -186,7 +201,8 @@ public static class HttpService
         var IsUrlValid = ValidateInput(url);
 
         if (!IsUrlValid)
-        {
+        {   
+            _ = AnimationService.InvalidBorderAnimationAsync(AppState.UrlInput.UrlBorder);
             _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.StatusMessageDuration);
             return false;
         }
@@ -194,6 +210,7 @@ public static class HttpService
         if (httpAction == HttpAction.NONE)
         {
             _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.StatusMessageDuration);
+            _ = AnimationService.InvalidBorderAnimationAsync(AppState.MainWindow.HttpActionButtonsBorder);
             return false;
         }
 

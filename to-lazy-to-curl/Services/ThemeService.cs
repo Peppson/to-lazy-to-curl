@@ -7,36 +7,33 @@ namespace to_lazy_to_curl.Services;
 
 public static class ThemeService
 {
-    private static bool _isDarkTheme = false;
-
     public static void Init()
 	{
-		_isDarkTheme = Properties.Settings.Default.IsDarkTheme;
-        Log.Debug($"Loaded theme: {(_isDarkTheme ? "Dark" : "Light")}");
+        AppState.IsDarkTheme = Properties.Settings.Default.IsDarkTheme;
+        Log.Information($"Loaded Theme: {(AppState.IsDarkTheme ? "Dark" : "Light")}");
 
 		SetColorTheme();
 		SetSyntaxColorTheme();
 	}
 
-    public static bool GetIsDarkTheme() => _isDarkTheme;
+    public static bool GetIsDarkTheme() => AppState.IsDarkTheme;
 
     public static void ToggleTheme()
     {
-        _isDarkTheme = !_isDarkTheme;
+        AppState.IsDarkTheme = !AppState.IsDarkTheme;
         SetColorTheme();
         SetSyntaxColorTheme();
-        AppState.EditorInput.UpdateEditorPositionAndColor();
+        AppState.EditorInput.UpdateSingleViewPositionAndColor();
     }
 
 	private static void SetColorTheme()
     {
-        Log.Debug($"ColorTheme: {(_isDarkTheme ? "Dark" : "Light")}");
-        AppState.IsDarkTheme = _isDarkTheme;
+        Log.Information($"Color: {(AppState.IsDarkTheme ? "Dark" : "Light")}");
 
         var dict = new ResourceDictionary
         {
             Source = new Uri(
-                _isDarkTheme ? "Settings/Colors.Dark.xaml" : "Settings/Colors.Light.xaml",
+                AppState.IsDarkTheme ? "Settings/Colors.Dark.xaml" : "Settings/Colors.Light.xaml",
                 UriKind.Relative)
         };
 
@@ -46,7 +43,7 @@ public static class ThemeService
 
     public static void SetSyntaxColorTheme()
     {
-        Log.Debug($"SyntaxTheme: {(_isDarkTheme ? "Dark" : "Light")}");
+        Log.Information($"Syntax: {(AppState.IsDarkTheme ? "Dark" : "Light")}");
 
         // Set syntax colors in both editors
         var editors = new[] {
