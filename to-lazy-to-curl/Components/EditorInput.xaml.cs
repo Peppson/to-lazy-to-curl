@@ -275,7 +275,7 @@ public partial class EditorInput : UserControl
 
     public void UpdateSingleViewPositionAndColor()
     {
-        // Reset All tabs colors
+        // Reset all tabs colors
         var selectedColor = (Brush)FindResource("EditorsBackground");
         var defaultColor = (Brush)FindResource("UrlInputBackground");
 

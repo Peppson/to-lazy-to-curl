@@ -10,8 +10,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     Title="ToLazyToCurl"
-    Width="600"
-    Height="683"
+    Width="590"
+    Height="673"
     MinWidth="400"
     MinHeight="570"
     AllowsTransparency="True"
@@ -35,7 +35,7 @@
             <!--  Title Bar  -->
             <components:WindowTitleBar x:Name="TopTitleBar" Grid.Row="0" />
 
-            <!--  App  -->
+            <!--  Main Grid  -->
             <Grid Grid.Row="1" Margin="24,10,24,24">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -49,7 +49,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <!--  URL Input  -->
+                <!--  URL Input todo  -->
                 <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
                 <!--  Editors  -->
@@ -83,7 +83,7 @@
                     CornerRadius="{DynamicResource OuterCornerRadius}">
                     <StackPanel>
 
-                        <!--  Action Buttons  -->
+                        <!--  Http Action Buttons  -->
                         <StackPanel>
                             <Border
                                 x:Name="HttpActionButtonsBorder"
@@ -134,7 +134,7 @@
                             </Border>
                         </StackPanel>
 
-                        <!--  Bottom Buttons  -->
+                        <!--  Submit/Reset Buttons  -->
                         <components:BottomButtons />
                     </StackPanel>
                 </Border>
@@ -142,6 +142,8 @@
                 <!--  Corner Rezise  -->
                 <components:ResizeHandle Grid.Row="7" />
             </Grid>
+
+            <!--  Settings Popup  -->
             <components:PopupMenu x:Name="PopupMenu" />
         </Grid>
     </Border>

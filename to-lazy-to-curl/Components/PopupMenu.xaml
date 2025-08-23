@@ -6,55 +6,147 @@
     xmlns:fa="http://schemas.fontawesome.io/icons/"
     xmlns:local="clr-namespace:to_lazy_to_curl.Components"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:services="clr-namespace:to_lazy_to_curl.Services"
     mc:Ignorable="d">
 
-    <Grid>
+    <UserControl.Resources>
+        <Style x:Key="ModernToggleSwitchStyle" TargetType="CheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid Width="40" Height="20">
 
-        <Popup
-            x:Name="PopupMenuWindow"
-            AllowsTransparency="True"
-            HorizontalOffset="-150"
-            Placement="Bottom"
-            PlacementTarget="{Binding ElementName=ThemeIcon}"
-            PopupAnimation="Fade"
-            StaysOpen="True"
-            VerticalOffset="6">
+                            <!--  Track  -->
+                            <Border
+                                x:Name="SwitchTrack"
+                                Width="40"
+                                Height="20"
+                                Background="{DynamicResource BorderHover}"
+                                CornerRadius="10" />
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="10" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                            <!--  Thumb  -->
+                            <Ellipse
+                                x:Name="SwitchThumb"
+                                Width="17"
+                                Height="17"
+                                Margin="2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Fill="White"
+                                StrokeThickness="1" />
+                        </Grid>
 
-                <!--  Arrow  -->
-                <Polygon
-                    Grid.Row="0"
-                    Margin="0,0,16,0"
-                    HorizontalAlignment="Right"
-                    Panel.ZIndex="1"
-                    Fill="{DynamicResource UrlInputBackground}"
-                    Points="0,10 10,0 20,10"
-                    Stroke="{DynamicResource UrlInputBackground}"
-                    StrokeThickness="1" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="SwitchTrack" Property="Background" Value="{DynamicResource PatchButton}" />
+                                <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Right" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="SwitchTrack" Property="Background" Value="{DynamicResource BorderHover}" />
+                                <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Left" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
-                <!--  Box  -->
-                <Border
-                    Grid.Row="1"
-                    Width="200"
-                    Height="100"
-                    Padding="10"
-                    Panel.ZIndex="0"
-                    Background="{DynamicResource UrlInputBackground}"
-                    CornerRadius="6">
-                    <StackPanel>
-                        <TextBlock Margin="0,4" Text="Light Theme" />
-                        <TextBlock Margin="0,4" Text="Dark Theme" />
-                        <TextBlock Margin="0,4" Text="System Default" />
-                    </StackPanel>
-                </Border>
-            </Grid>
-        </Popup>
+    <Popup
+        x:Name="PopupMenuWindow"
+        AllowsTransparency="True"
+        HorizontalOffset="-150"
+        Placement="Bottom"
+        PopupAnimation="Fade"
+        StaysOpen="False"
+        VerticalOffset="-4">
 
-    </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
+            <Polygon
+                x:Name="PopupPolygon"
+                Grid.Row="0"
+                Margin="0,1,16,0"
+                HorizontalAlignment="Right"
+                Fill="{DynamicResource UrlInputBackground}"
+                Points="0,10 10,0 20,10"
+                Stroke="{Binding BorderBrush, ElementName=PopupBox}"
+                StrokeThickness="1" />
+
+            <!--  Content  -->
+            <Border
+                x:Name="PopupBox"
+                Grid.Row="1"
+                Width="200"
+                Background="{DynamicResource UrlInputBackground}"
+                BorderThickness="1"
+                CornerRadius="6">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Grid>
+                    <Grid ClipToBounds="True">
+                        <fa:ImageAwesome
+                            Width="100"
+                            Height="100"
+                            Margin="-40,-30,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Panel.ZIndex="0"
+                            Foreground="{DynamicResource PrimaryText}"
+                            Icon="Cog"
+                            Opacity="0.08" />
+                    </Grid>
+
+                    <Grid Panel.ZIndex="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel
+                            Grid.Row="0"
+                            Margin="14,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="{StaticResource FontSizeJsonEditor}"
+                                FontWeight="Bold"
+                                Foreground="{DynamicResource PrimaryText}"
+                                Text="DarkMode" />
+                            <CheckBox
+                                x:Name="ThemeToggleCheckBox"
+                                Margin="39,0,0,0"
+                                Checked="CheckBox_Checked"
+                                Cursor="Hand"
+                                Style="{StaticResource ModernToggleSwitchStyle}"
+                                Unchecked="CheckBox_Unchecked" />
+                        </StackPanel>
+
+                        <TextBlock
+                            Grid.Row="1"
+                            Margin="14,10,0,10"
+                            VerticalAlignment="Center"
+                            FontSize="{StaticResource FontSizeJsonEditor}"
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource PrimaryText}"
+                            Text="Version      1.0.1" />
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Popup>
 </UserControl>

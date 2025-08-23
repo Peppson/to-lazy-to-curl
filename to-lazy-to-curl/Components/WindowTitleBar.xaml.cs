@@ -62,11 +62,10 @@ public partial class WindowTitleBar : UserControl
         Loaded += OnLoaded;
     }
 
-    private void ToggleTheme_Click(object sender, RoutedEventArgs e)
+    private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
-        AppState.PopupMenu.IsOpen = !AppState.PopupMenu.IsOpen;
-        //ThemeService.ToggleTheme(); // todo
-        //SetThemeIcon(); 
+        var position = this.SettingsButton;
+        AppState.PopupMenu.ToggleAtPosition(position);
     }
    
     private void OnMinimizeButton_Click(object sender, RoutedEventArgs e) =>
@@ -84,24 +83,9 @@ public partial class WindowTitleBar : UserControl
 
     private void OnLoaded(object sender, RoutedEventArgs e)
     {
-        SetThemeIcon();    
         _parentWindow = Window.GetWindow(this);
         _parentWindow.StateChanged += (_, __) => RefreshMaximizeRestoreButton();
         RefreshMaximizeRestoreButton();
-    }
-
-    private void SetThemeIcon()
-    {
-        if (AppState.IsDarkTheme)
-        {
-            ThemeIcon.Icon = FontAwesomeIcon.SunOutline;
-            ThemeIcon.Margin = new Thickness(0, -3, 0, 0);
-        }
-        else
-        {
-            ThemeIcon.Icon = FontAwesomeIcon.MoonOutline;
-            ThemeIcon.Margin = new Thickness(0, -2, 0, 0);
-        }
     }
 
 	private void RefreshMaximizeRestoreButton()

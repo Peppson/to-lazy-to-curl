@@ -33,50 +33,31 @@
             Foreground="{DynamicResource PrimaryText}"
             Text="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Title}" />
 
-
-        <!--  testing popup todo  -->
         <Button
+            x:Name="SettingsButton"
             Grid.Column="2"
             Width="46"
             Height="32"
             Margin="0,0,0,0"
-            Click="ToggleTheme_Click"
+            Click="SettingsButton_Click"
             RenderOptions.EdgeMode="Aliased"
             Style="{StaticResource TitleBarButtonStyle}">
 
             <fa:ImageAwesome
-                x:Name="ThemeIcon"
                 Width="12"
                 Height="12"
+                Margin="0,-2,0,0"
                 VerticalAlignment="Center"
-                Foreground="{DynamicResource PrimaryText}" />
+                Foreground="{DynamicResource PrimaryText}"
+                Icon="Cog" />
         </Button>
-
-
-        <!--
-        <Button
-            Grid.Column="2"
-            Width="46"
-            Height="32"
-            Margin="0,0,0,0"
-            Click="ToggleTheme_Click"
-            RenderOptions.EdgeMode="Aliased"
-            Style="{StaticResource TitleBarButtonStyle}">
-
-            <fa:ImageAwesome
-                x:Name="ThemeIcon"
-                Width="12"
-                Height="12"
-                VerticalAlignment="Center"
-                Foreground="{DynamicResource PrimaryText}" />
-        </Button>
-        -->
 
         <Button
             Grid.Column="3"
             Click="OnMinimizeButton_Click"
             RenderOptions.EdgeMode="Aliased"
             Style="{StaticResource TitleBarButtonStyle}">
+
             <Path
                 Width="46"
                 Height="32"
