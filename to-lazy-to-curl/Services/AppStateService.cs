@@ -13,11 +13,14 @@ static public class AppState
     private static string _payloadEditorSyntax = SyntaxHighlighting.Json;
     private static string _responseEditorSyntax = SyntaxHighlighting.Json;
 
+    public static MainWindow MainWindow { get; set; } = null!;
     public static UrlInput UrlInput { get; set; } = null!;
     public static EditorInput EditorInput { get; set; } = null!;
     public static HttpMessageBox MessageBox { get; set; } = null!;
+    public static PopupMenu PopupMenu { get; set; } = null!;
     public static bool IsFirstBoot { get; set; } = false;
     public static bool IsDarkTheme { get; set; } = true;
+    public static bool IsNarrow { get; set; } = false;
 
     public static HttpAction SelectedHttpAction
     {

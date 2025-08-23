@@ -6,8 +6,9 @@
     <SolidColorBrush x:Key="CardBackground" Color="#323232" />
     <SolidColorBrush x:Key="UrlInputBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="EditorsBackground" Color="#323232" />
-    <SolidColorBrush x:Key="BigButtonBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="HttpButtonBackground" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="BigButtonBackground" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="Icons" Color="#f7fbfe" />
 
     <SolidColorBrush x:Key="TitleBarBackground" Color="Transparent" />
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#434343" />
@@ -15,7 +16,7 @@
 
     <SolidColorBrush x:Key="Border" Color="#434343" />
     <SolidColorBrush x:Key="BorderHover" Color="#535557" />
-    <SolidColorBrush x:Key="EditorBorder" Color="#434343" />
+    <SolidColorBrush x:Key="EditorBorder" Color="Transparent" />
 
     <SolidColorBrush x:Key="PrimaryText" Color="#f7fbfe" />
     <Color x:Key="PrimaryTextColor">#f7fbfe</Color>
@@ -27,10 +28,10 @@
     <SolidColorBrush x:Key="ScrollbarForeground" Color="#767676" />
     <SolidColorBrush x:Key="ScrollbarHover" Color="#9F9F9F" />
 
-    <!--  Http Buttons  -->
+    <!--  Buttons  -->
     <SolidColorBrush x:Key="GetButton" Color="#60affe" />
     <SolidColorBrush x:Key="PostButton" Color="#87e37d" />
-    <SolidColorBrush x:Key="PatchButton" Color="#50e3c1" />
+    <SolidColorBrush x:Key="PatchButton" Color="#34B297" />
     <SolidColorBrush x:Key="PutButton" Color="#fca131" />
     <SolidColorBrush x:Key="DeleteButton" Color="#E95378" />
     <SolidColorBrush x:Key="SendButton" Color="#60affe" />

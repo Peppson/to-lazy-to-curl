@@ -64,10 +64,11 @@ public partial class WindowTitleBar : UserControl
 
     private void ToggleTheme_Click(object sender, RoutedEventArgs e)
     {
-        ThemeService.ToggleTheme();
-        SetThemeIcon(); 
+        AppState.PopupMenu.IsOpen = !AppState.PopupMenu.IsOpen;
+        //ThemeService.ToggleTheme(); // todo
+        //SetThemeIcon(); 
     }
-    
+   
     private void OnMinimizeButton_Click(object sender, RoutedEventArgs e) =>
         _parentWindow.WindowState = WindowState.Minimized;
 	

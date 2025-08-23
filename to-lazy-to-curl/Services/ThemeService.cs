@@ -12,7 +12,7 @@ public static class ThemeService
     public static void Init()
 	{
 		_isDarkTheme = Properties.Settings.Default.IsDarkTheme;
-        Log.Debug($"Loaded theme: {(_isDarkTheme ? "Dark" : "Light")}");
+        Log.Information($"Loaded Theme: {(_isDarkTheme ? "Dark" : "Light")}");
 
 		SetColorTheme();
 		SetSyntaxColorTheme();
@@ -25,12 +25,12 @@ public static class ThemeService
         _isDarkTheme = !_isDarkTheme;
         SetColorTheme();
         SetSyntaxColorTheme();
-        AppState.EditorInput.UpdateEditorPositionAndColor();
+        AppState.EditorInput.UpdateSingleViewPositionAndColor();
     }
 
 	private static void SetColorTheme()
     {
-        Log.Debug($"ColorTheme: {(_isDarkTheme ? "Dark" : "Light")}");
+        Log.Information($"Color: {(_isDarkTheme ? "Dark" : "Light")}");
         AppState.IsDarkTheme = _isDarkTheme;
 
         var dict = new ResourceDictionary
@@ -46,7 +46,7 @@ public static class ThemeService
 
     public static void SetSyntaxColorTheme()
     {
-        Log.Debug($"SyntaxTheme: {(_isDarkTheme ? "Dark" : "Light")}");
+        Log.Information($"Syntax: {(_isDarkTheme ? "Dark" : "Light")}");
 
         // Set syntax colors in both editors
         var editors = new[] {

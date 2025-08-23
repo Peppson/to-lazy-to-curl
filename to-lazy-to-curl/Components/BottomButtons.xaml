@@ -34,8 +34,8 @@
                     Height="16"
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
-                    Foreground="{DynamicResource PrimaryText}"
-                    Icon="PaperPlaneOutline" />
+                    Foreground="{DynamicResource Icons}"
+                    Icon="PaperPlane" />
                 <fa:ImageAwesome
                     x:Name="SendButtonSpinnerIcon"
                     Width="16"
@@ -98,7 +98,7 @@
                     Height="15"
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
-                    Foreground="{DynamicResource PrimaryText}"
+                    Foreground="{DynamicResource Icons}"
                     Icon="Refresh">
                     <fa:ImageAwesome.RenderTransform>
                         <RotateTransform x:Name="ClearButtonRotate" CenterX="7.5" CenterY="7.5" />

@@ -10,6 +10,7 @@ public partial class MainWindow : Window
 		InitIsFirstBoot();
 		InitializeComponent();
 		InitWindowSizeAndPosition();
+		AppState.MainWindow = this;
 		LogService.Init();
 		ThemeService.Init();
 	}
