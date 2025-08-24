@@ -57,7 +57,10 @@ static public class AnimationService
 
         var animation = GetAnimation(_invalidInputKeyFrames, _invalidInputDurationMs);
 
-        border.BorderBrush = (Brush)Application.Current.Resources["Failure"];
+        // Skip border color on HttpButtons 
+        if (border != AppState.MainWindow.HttpActionButtonsBorder)
+            border.BorderBrush = (Brush)Application.Current.Resources["Failure"];
+
         border.RenderTransform = new TranslateTransform();
         border.RenderTransform.BeginAnimation(TranslateTransform.XProperty, animation);
 

@@ -16,20 +16,19 @@
             ClipToBounds="True"
             IsHitTestVisible="False">
             <fa:ImageAwesome
-                Width="24"
-                Height="24"
+                Width="28"
+                Height="28"
                 Margin="10"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Foreground="{DynamicResource IconBackground}"
                 Icon="Terminal"
-                Opacity="0.14" />
+                Opacity="0.3" />
         </Grid>
 
         <!--  Single View  -->
         <Grid
             x:Name="SingleView"
-            Margin="-1,0,-1,0"
             Panel.ZIndex="0"
             SnapsToDevicePixels="True">
             <Grid>
@@ -39,9 +38,9 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MaxWidth="161" />
                         <ColumnDefinition MaxWidth="160" />
-                        <ColumnDefinition MaxWidth="160" />
+                        <ColumnDefinition MaxWidth="159" />
+                        <ColumnDefinition MaxWidth="159" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
@@ -49,11 +48,10 @@
                     <Button
                         x:Name="PayloadButton"
                         Grid.Column="0"
-                        Margin="1,0,1,-1"
+                        Margin="0,0,0,-1"
                         Click="PayloadButton_Click"
                         Cursor="Hand"
-                        FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold">
+                        FontSize="{StaticResource FontSizeTabs}">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome
@@ -75,7 +73,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Border>
@@ -92,11 +90,10 @@
                     <Button
                         x:Name="ResponseButton"
                         Grid.Column="1"
-                        Margin="0,0,1,-1"
+                        Margin="-1,0,0,-1"
                         Click="ResponseButton_Click"
                         Cursor="Hand"
-                        FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold">
+                        FontSize="{StaticResource FontSizeTabs}">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome
@@ -118,7 +115,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Border>
@@ -135,11 +132,10 @@
                     <Button
                         x:Name="HeaderButton"
                         Grid.Column="2"
-                        Margin="0,0,1,-1"
+                        Margin="-1,0,0,-1"
                         Click="HeaderButton_Click"
                         Cursor="Hand"
-                        FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold">
+                        FontSize="{StaticResource FontSizeTabs}">
 
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome
@@ -161,7 +157,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Border>
@@ -185,7 +181,6 @@
                     <Grid>
                         <avalonEdit:TextEditor
                             Name="PayloadEditor1"
-                            Panel.ZIndex="0"
                             Background="Transparent"
                             BorderBrush="{DynamicResource EditorBorder}"
                             FontSize="{StaticResource FontSizeJsonEditor}"
@@ -197,7 +192,6 @@
 
                         <avalonEdit:TextEditor
                             Name="ResponseEditor1"
-                            Panel.ZIndex="0"
                             Background="Transparent"
                             BorderBrush="{DynamicResource EditorBorder}"
                             FontSize="{StaticResource FontSizeJsonEditor}"
@@ -209,7 +203,6 @@
 
                         <avalonEdit:TextEditor
                             Name="HeaderEditor1"
-                            Panel.ZIndex="0"
                             Background="Transparent"
                             FontSize="{StaticResource FontSizeJsonEditor}"
                             Foreground="{DynamicResource EditorCaretColor}"
@@ -240,9 +233,12 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,0,0,-1"
+                    Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="159" />
+                        <ColumnDefinition Width="160" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
@@ -251,13 +247,13 @@
                         Grid.Column="0"
                         Click="PayloadButtonSplit_Click"
                         Cursor="Hand"
-                        FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold">
+                        FontSize="{StaticResource FontSizeTabs}">
+
                         <StackPanel Orientation="Horizontal">
                             <fa:ImageAwesome
                                 Width="14"
                                 Height="14"
-                                Margin="0,1,6,0"
+                                Margin="0,0,6,0"
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource Icons}"
                                 Icon="Upload" />
@@ -273,7 +269,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource EditorsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <Grid x:Name="innerArea" Background="Transparent">
                                         <ContentPresenter
@@ -299,19 +295,20 @@
                 <!--  Editor  -->
                 <Border
                     Grid.Row="1"
+                    Panel.ZIndex="0"
                     Background="{DynamicResource EditorsBackground}"
+                    BorderBrush="{DynamicResource EditorBorder}"
+                    BorderThickness="1,1,0,1"
+                    ClipToBounds="True"
                     CornerRadius="0,0,0,6">
 
                     <avalonEdit:TextEditor
                         Name="PayloadEditor2"
                         Background="Transparent"
-                        BorderBrush="{DynamicResource EditorBorder}"
-                        BorderThickness="0,1,0,0"
                         FontSize="{StaticResource FontSizeJsonEditor}"
                         Foreground="{DynamicResource EditorCaretColor}"
                         GotKeyboardFocus="PayloadButtonSplit_GotKeyboardFocus"
                         ShowLineNumbers="True"
-                        SnapsToDevicePixels="True"
                         SyntaxHighlighting="{Binding PayloadEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
                         VerticalScrollBarVisibility="Visible"
                         WordWrap="True" />
@@ -326,8 +323,7 @@
                 DragIncrement="1"
                 Focusable="False"
                 ResizeDirection="Columns"
-                ShowsPreview="False"
-                SnapsToDevicePixels="True" />
+                ShowsPreview="False" />
 
             <!--  Response Container  -->
             <Grid Grid.Column="2">
@@ -336,9 +332,12 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Margin="17,0,0,0">
+                <Grid
+                    Grid.Row="0"
+                    Margin="18,0,0,-1"
+                    Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="159" />
+                        <ColumnDefinition Width="160" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
@@ -347,7 +346,6 @@
                         Grid.Column="0"
                         Cursor="SizeWE"
                         FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold"
                         PreviewMouseLeftButtonDown="ResponseButtonSplit_PreviewMouseLeftButtonDown">
 
                         <StackPanel Orientation="Horizontal">
@@ -370,7 +368,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource EditorsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <Grid x:Name="innerArea" Background="Transparent">
                                         <ContentPresenter
@@ -396,18 +394,20 @@
                 </Grid>
 
                 <!--  Editor  -->
-                <Border Grid.Row="1" Background="{DynamicResource EditorsBackground}">
+                <Border
+                    Grid.Row="1"
+                    Panel.ZIndex="0"
+                    Background="{DynamicResource EditorsBackground}">
 
                     <avalonEdit:TextEditor
                         Name="ResponseEditor2"
                         Background="Transparent"
                         BorderBrush="{DynamicResource EditorBorder}"
-                        BorderThickness="0,1,0,0"
+                        BorderThickness="0,1,0,1"
                         FontSize="{StaticResource FontSizeJsonEditor}"
                         Foreground="{DynamicResource EditorCaretColor}"
                         GotKeyboardFocus="ResponseButtonSplit_GotKeyboardFocus"
                         ShowLineNumbers="True"
-                        SnapsToDevicePixels="True"
                         SyntaxHighlighting="{Binding ResponseEditorSyntax, RelativeSource={RelativeSource AncestorType=UserControl}}"
                         VerticalScrollBarVisibility="Visible"
                         WordWrap="True" />
@@ -422,8 +422,7 @@
                 DragIncrement="1"
                 Focusable="False"
                 ResizeDirection="Columns"
-                ShowsPreview="False"
-                SnapsToDevicePixels="True" />
+                ShowsPreview="False" />
 
             <!--  Header Container  -->
             <Grid Grid.Column="4">
@@ -432,9 +431,12 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Margin="17,0,0,0">
+                <Grid
+                    Grid.Row="0"
+                    Margin="17,0,0,-1"
+                    Panel.ZIndex="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="159" />
+                        <ColumnDefinition Width="160" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
@@ -443,7 +445,6 @@
                         Grid.Column="0"
                         Cursor="SizeWE"
                         FontSize="{StaticResource FontSizeTabs}"
-                        FontWeight="Bold"
                         PreviewMouseLeftButtonDown="HeaderButtonSplit_PreviewMouseLeftButtonDown">
 
                         <StackPanel Orientation="Horizontal">
@@ -466,7 +467,7 @@
                                     x:Name="border"
                                     Background="{DynamicResource EditorsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
-                                    BorderThickness="0,1,0,0"
+                                    BorderThickness="1,1,1,0"
                                     CornerRadius="6,6,0,0">
                                     <Grid x:Name="innerArea" Background="Transparent">
                                         <ContentPresenter
@@ -495,20 +496,20 @@
                 <!--  Editor  -->
                 <Border
                     Grid.Row="1"
+                    Panel.ZIndex="0"
                     Background="{DynamicResource EditorsBackground}"
-                    BorderThickness="0,0,1,0"
+                    BorderBrush="{DynamicResource EditorBorder}"
+                    BorderThickness="0,1,1,1"
+                    ClipToBounds="True"
                     CornerRadius="0,6,6,0">
 
                     <avalonEdit:TextEditor
                         Name="HeaderEditor2"
                         Background="Transparent"
-                        BorderBrush="{DynamicResource EditorBorder}"
-                        BorderThickness="0,1,0,0"
                         FontSize="{StaticResource FontSizeJsonEditor}"
                         Foreground="{DynamicResource EditorCaretColor}"
                         GotKeyboardFocus="HeaderButtonSplit_GotKeyboardFocus"
                         ShowLineNumbers="True"
-                        SnapsToDevicePixels="True"
                         SyntaxHighlighting="Json"
                         VerticalScrollBarVisibility="Visible"
                         WordWrap="True" />

@@ -49,7 +49,6 @@
             x:Name="MessageTextBlock"
             HorizontalAlignment="Center"
             FontSize="14"
-            FontWeight="Bold"
             Text=""
             TextAlignment="Center" />
     </StackPanel>

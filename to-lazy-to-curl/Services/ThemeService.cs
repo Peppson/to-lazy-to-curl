@@ -23,7 +23,12 @@ public static class ThemeService
         AppState.IsDarkTheme = !AppState.IsDarkTheme;
         SetColorTheme();
         SetSyntaxColorTheme();
-        AppState.EditorInput.UpdateSingleViewPositionAndColor();
+
+        // Update selected editor tab colors
+        if (AppState.IsNarrow)
+            AppState.EditorInput.UpdateSingleViewPositionAndColor();
+        else
+            AppState.EditorInput.UpdateSplitViewPositionAndColor();
     }
 
 	private static void SetColorTheme()

@@ -4,26 +4,28 @@
     <SolidColorBrush x:Key="WindowBackground" Color="#272727" />
     <SolidColorBrush x:Key="WindowBorder" Color="Transparent" />
     <SolidColorBrush x:Key="CardBackground" Color="#323232" />
-    <SolidColorBrush x:Key="ButtonTabsBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="UrlInputBackground" Color="#323232" />
     <SolidColorBrush x:Key="EditorsBackground" Color="#323232" />
     <SolidColorBrush x:Key="HttpButtonBackground" Color="#3C3C3C" />
     <SolidColorBrush x:Key="BigButtonBackground" Color="#3C3C3C" />
+    <SolidColorBrush x:Key="ButtonTabsBackground" Color="#3C3C3C" />
 
     <SolidColorBrush x:Key="Icons" Color="#f7fbfe" />
     <SolidColorBrush x:Key="IconBackground" Color="#f7fbfe" />
+    <SolidColorBrush x:Key="ThemeToggle" Color="#f7fbfe" />
 
     <SolidColorBrush x:Key="TitleBarBackground" Color="Transparent" />
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#434343" />
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
     <SolidColorBrush x:Key="Border" Color="#434343" />
+    <SolidColorBrush x:Key="EditorBorder" Color="#434343" />
     <SolidColorBrush x:Key="BorderHover" Color="#535557" />
-    <SolidColorBrush x:Key="EditorBorder" Color="Transparent" />
-    <SolidColorBrush x:Key="ThemeToggle" Color="#f7fbfe" />
+    <SolidColorBrush x:Key="PopupBorder" Color="#4c4d4f" />
+    <SolidColorBrush x:Key="BottomButtonsBorder" Color="#434343" />
 
     <SolidColorBrush x:Key="PrimaryText" Color="#f7fbfe" />
-    <Color x:Key="PrimaryTextColor">#f7fbfe</Color>   
+    <Color x:Key="PrimaryTextColor">#f7fbfe</Color>
     <Color x:Key="PrimaryTextInverseColor">#333333</Color>
     <SolidColorBrush x:Key="PlaceHolderText" Color="#999999" />
 

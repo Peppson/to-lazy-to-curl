@@ -356,14 +356,14 @@ public partial class EditorInput : UserControl
 
     private void SetStartupText()
     {
-#if !RELEASE
-        PayloadEditorText = Config.PayloadIsFirstBootData;
-        ResponseEditorText = Config.ResponseStartupData;
-        HeaderEditorText = Config.HeaderStartupData;
-        return;
-#endif
+        #if !RELEASE
+            PayloadEditorText = Config.PayloadIsFirstBootData;
+            ResponseEditorText = Config.ResponseStartupData;
+            HeaderEditorText = Config.HeaderStartupData;
+            return;
+        #endif
 
-#pragma warning disable CS0162
+        #pragma warning disable CS0162
 
         if (AppState.IsFirstBoot)
         {
@@ -389,7 +389,7 @@ public partial class EditorInput : UserControl
             ? Config.HeaderStartupData
             : header;
 
-#pragma warning restore CS0162
+        #pragma warning restore CS0162
     }
 
     public string GetPayloadText() => this.PayloadEditorText;

@@ -16,7 +16,6 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="CheckBox">
                         <Grid Width="44" Height="21">
-
                             <!--  Track  -->
                             <Border
                                 x:Name="SwitchTrack"
@@ -85,7 +84,7 @@
                 CornerRadius="6">
                 <Border.Style>
                     <Style TargetType="Border">
-                        <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+                        <Setter Property="BorderBrush" Value="{DynamicResource PopupBorder}" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="BorderBrush" Value="{DynamicResource BorderHover}" />
@@ -94,32 +93,32 @@
                     </Style>
                 </Border.Style>
                 <Grid>
-                    <!--  Background Icon  -->
-                    <Grid ClipToBounds="True">
-                        <fa:ImageAwesome
-                            Width="100"
-                            Height="100"
-                            Margin="-50,-50,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Panel.ZIndex="0"
-                            Foreground="{DynamicResource IconBackground}"
-                            Icon="Cog"
-                            Opacity="0.08" />
-                    </Grid>
-
                     <StackPanel>
+
                         <!--  Settings  -->
                         <StackPanel>
                             <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock
-                                    Margin="0,10,0,10"
+                                <StackPanel
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    FontSize="{StaticResource FontSizeJsonEditor}"
-                                    FontWeight="Bold"
-                                    Foreground="{DynamicResource PrimaryText}"
-                                    Text="Settings" />
+                                    Orientation="Horizontal">
+                                    <fa:ImageAwesome
+                                        Width="16"
+                                        Height="16"
+                                        Margin="0,0,6,0"
+                                        VerticalAlignment="Center"
+                                        Foreground="{DynamicResource Icons}"
+                                        Icon="Cog" />
+                                    <TextBlock
+                                        Margin="0,10,0,10"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontSize="{StaticResource FontSizeJsonEditor}"
+                                        FontWeight="Bold"
+                                        Foreground="{DynamicResource PrimaryText}"
+                                        Text="Settings" />
+                                </StackPanel>
+
                                 <Button
                                     Width="32"
                                     Height="32"
@@ -153,7 +152,7 @@
                             <Rectangle
                                 Height="1"
                                 HorizontalAlignment="Stretch"
-                                Fill="{DynamicResource BorderHover}" />
+                                Fill="{DynamicResource Border}" />
                         </StackPanel>
 
                         <!--  Content  -->
@@ -172,15 +171,14 @@
                                 <TextBlock
                                     VerticalAlignment="Center"
                                     FontSize="{StaticResource FontSizeJsonEditor}"
-                                    FontWeight="Bold"
                                     Foreground="{DynamicResource PrimaryText}"
                                     Text="Dark Mode" />
                                 <Border
-                                    Margin="48,0,0,0" 
-                                    BorderThickness="1" 
-                                    CornerRadius="10" 
-                                    VerticalAlignment="Center" 
-                                    BorderBrush="{DynamicResource Border}">
+                                    Margin="48,0,0,0"
+                                    VerticalAlignment="Center"
+                                    BorderBrush="{DynamicResource Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="10">
                                     <CheckBox
                                         x:Name="ThemeToggleCheckBox"
                                         Checked="CheckBox_Checked"
@@ -194,17 +192,15 @@
                                 <TextBlock
                                     VerticalAlignment="Center"
                                     FontSize="{StaticResource FontSizeJsonEditor}"
-                                    FontWeight="Bold"
                                     Foreground="{DynamicResource PrimaryText}"
                                     Text="Logs" />
                                 <Button
-                                    Width="46"
+                                    Width="49"
                                     Height="23"
-                                    Margin="86,0,0,0"
+                                    Margin="85,0,0,0"
                                     Click="OpenLogs_Click"
                                     Cursor="Hand"
-                                    FontSize="{StaticResource FontSizeTabs}"
-                                    FontWeight="Bold">
+                                    FontSize="{StaticResource FontSizeTabs}">
                                     <TextBlock
                                         Margin="0,0,0,2"
                                         VerticalAlignment="Center"
@@ -237,14 +233,12 @@
                                 <TextBlock
                                     VerticalAlignment="Center"
                                     FontSize="{StaticResource FontSizeJsonEditor}"
-                                    FontWeight="Bold"
                                     Foreground="{DynamicResource PrimaryText}"
                                     Text="Version" />
                                 <TextBlock
-                                    Margin="66,0,0,0"
+                                    Margin="67,0,0,0"
                                     VerticalAlignment="Center"
                                     FontSize="{StaticResource FontSizeJsonEditor}"
-                                    FontWeight="Bold"
                                     Foreground="{DynamicResource PrimaryText}"
                                     Text="{Binding Source={x:Static config:Config.AppVersionNumber}}" />
                             </StackPanel>

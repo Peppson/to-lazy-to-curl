@@ -22,8 +22,7 @@
             Height="42"
             Click="SubmitButton_Click"
             Cursor="Hand"
-            FontSize="{StaticResource FontSizeBottomButtons}"
-            FontWeight="Bold">
+            FontSize="{StaticResource FontSizeBottomButtons}">
             <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -75,8 +74,7 @@
             Height="42"
             Click="ClearButton_Click"
             Cursor="Hand"
-            FontSize="{StaticResource FontSizeBottomButtons}"
-            FontWeight="Bold">
+            FontSize="{StaticResource FontSizeBottomButtons}">
             <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"

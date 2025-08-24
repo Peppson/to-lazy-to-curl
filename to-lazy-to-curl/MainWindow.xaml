@@ -80,6 +80,8 @@
                     Grid.Row="5"
                     Padding="8"
                     Background="{DynamicResource CardBackground}"
+                    BorderBrush="{DynamicResource BottomButtonsBorder}"
+                    BorderThickness="1"
                     CornerRadius="{DynamicResource OuterCornerRadius}">
                     <StackPanel>
 

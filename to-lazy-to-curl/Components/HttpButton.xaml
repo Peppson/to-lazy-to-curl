@@ -14,8 +14,7 @@
         Height="36"
         Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}"
         Cursor="Hand"
-        FontSize="{StaticResource FontSizeHttpButtons}"
-        FontWeight="Bold">
+        FontSize="{StaticResource FontSizeHttpButtons}">
 
         <Button.Resources>
             <SolidColorBrush x:Key="PrimaryTextBrush" Color="{DynamicResource PrimaryTextColor}" />
