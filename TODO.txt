@@ -1,11 +1,2 @@
 
-dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
-
-
 White color theme
-
-
-
-https://httpbin.org/#/
-https://jsonplaceholder.typicode.com/posts
-

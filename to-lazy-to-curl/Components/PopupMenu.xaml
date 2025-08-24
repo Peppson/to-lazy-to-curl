@@ -59,7 +59,7 @@
         HorizontalOffset="-160"
         Placement="Bottom"
         PopupAnimation="Fade"
-        StaysOpen="True"
+        StaysOpen="False"
         VerticalOffset="-4">
         <Grid>
             <Grid.RowDefinitions>

@@ -39,7 +39,7 @@
             x:Name="MessageTextBlockFailure"
             Width="14"
             Height="14"
-            Margin="0,0,5,0"
+            Margin="0,-1,5,0"
             VerticalAlignment="Center"
             Foreground="{DynamicResource Failure}"
             Icon="Warning"
