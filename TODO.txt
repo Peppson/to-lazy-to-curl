@@ -1,7 +1,10 @@
 
 dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 
+
 White color theme
+popup
+icons success and failure needs 2
 
 
 https://httpbin.org/#/
