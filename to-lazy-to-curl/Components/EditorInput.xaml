@@ -21,7 +21,7 @@
                 Margin="10"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Foreground="{DynamicResource PrimaryText}"
+                Foreground="{DynamicResource IconBackground}"
                 Icon="Terminal"
                 Opacity="0.14" />
         </Grid>
@@ -73,7 +73,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Border
                                     x:Name="border"
-                                    Background="{DynamicResource UrlInputBackground}"
+                                    Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
                                     BorderThickness="0,1,0,0"
                                     CornerRadius="6,6,0,0">
@@ -116,7 +116,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Border
                                     x:Name="border"
-                                    Background="{DynamicResource UrlInputBackground}"
+                                    Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
                                     BorderThickness="0,1,0,0"
                                     CornerRadius="6,6,0,0">
@@ -159,7 +159,7 @@
                             <ControlTemplate TargetType="Button">
                                 <Border
                                     x:Name="border"
-                                    Background="{DynamicResource UrlInputBackground}"
+                                    Background="{DynamicResource ButtonTabsBackground}"
                                     BorderBrush="{DynamicResource EditorBorder}"
                                     BorderThickness="0,1,0,0"
                                     CornerRadius="6,6,0,0">

@@ -20,7 +20,7 @@
         <Border
             x:Name="UrlBorder"
             VerticalAlignment="Center"
-            Background="{DynamicResource CardBackground}"
+            Background="{DynamicResource UrlInputBackground}"
             BorderThickness="1"
             CornerRadius="{StaticResource InnerCornerRadius}">
             <Border.Style>

@@ -37,7 +37,7 @@
                             Height="2"
                             VerticalAlignment="Bottom"
                             Background="{Binding ButtonColor, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                            CornerRadius="6" />
+                            CornerRadius="{StaticResource InnerCornerRadius}" />
                         <TextBlock
                             x:Name="baseText"
                             HorizontalAlignment="Center"

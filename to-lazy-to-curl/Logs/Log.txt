@@ -1750,3 +1750,4438 @@ C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Logs
 2025-08-24 14:38:24.782 +02:00 [INF] Color: Dark
 2025-08-24 14:38:24.788 +02:00 [INF] Syntax: Dark
 2025-08-24 14:38:25.090 +02:00 [DBG] Window: SingleView
+2025-08-24 14:40:17.291 +02:00 [INF] ---- Starting App ----
+2025-08-24 14:40:17.317 +02:00 [INF] Width: 663px
+2025-08-24 14:40:17.326 +02:00 [INF] Height: 743px
+2025-08-24 14:40:17.326 +02:00 [INF] Top: 117px
+2025-08-24 14:40:17.326 +02:00 [INF] Left: -1074px
+2025-08-24 14:40:17.326 +02:00 [INF] IsFirstBoot: false
+2025-08-24 14:40:17.327 +02:00 [INF] IsDarkTheme: true
+2025-08-24 14:40:17.327 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 14:40:17.327 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 14:40:17.327 +02:00 [INF] Response: 
+{}
+2025-08-24 14:40:17.327 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 14:40:17.328 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 14:40:17.328 +02:00 [INF] Color: Dark
+2025-08-24 14:40:17.333 +02:00 [INF] Syntax: Dark
+2025-08-24 14:40:17.890 +02:00 [DBG] Window: SingleView
+2025-08-24 16:12:48.219 +02:00 [INF] ---- Starting App ----
+2025-08-24 16:12:48.245 +02:00 [INF] Width: 663px
+2025-08-24 16:12:48.256 +02:00 [INF] Height: 743px
+2025-08-24 16:12:48.256 +02:00 [INF] Top: 117px
+2025-08-24 16:12:48.257 +02:00 [INF] Left: -1074px
+2025-08-24 16:12:48.258 +02:00 [INF] IsFirstBoot: false
+2025-08-24 16:12:48.258 +02:00 [INF] IsDarkTheme: true
+2025-08-24 16:12:48.259 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 16:12:48.259 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 16:12:48.259 +02:00 [INF] Response: 
+{}
+2025-08-24 16:12:48.260 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 16:12:48.261 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 16:12:48.262 +02:00 [INF] Color: Dark
+2025-08-24 16:12:48.273 +02:00 [INF] Syntax: Dark
+2025-08-24 16:12:49.403 +02:00 [DBG] Window: SingleView
+2025-08-24 16:13:38.835 +02:00 [INF] Color: Light
+2025-08-24 16:13:38.865 +02:00 [INF] Syntax: Light
+2025-08-24 16:13:39.663 +02:00 [INF] Color: Dark
+2025-08-24 16:13:39.666 +02:00 [INF] Syntax: Dark
+2025-08-24 16:13:46.016 +02:00 [DBG] Window: SplitView
+2025-08-24 16:13:47.424 +02:00 [DBG] Window: SingleView
+2025-08-24 16:14:29.025 +02:00 [INF] Color: Light
+2025-08-24 16:14:29.027 +02:00 [INF] Syntax: Light
+2025-08-24 16:14:30.991 +02:00 [INF] Color: Dark
+2025-08-24 16:14:30.993 +02:00 [INF] Syntax: Dark
+2025-08-24 16:14:31.677 +02:00 [INF] Color: Light
+2025-08-24 16:14:31.679 +02:00 [INF] Syntax: Light
+2025-08-24 16:14:32.592 +02:00 [INF] Color: Dark
+2025-08-24 16:14:32.602 +02:00 [INF] Syntax: Dark
+2025-08-24 16:14:42.571 +02:00 [DBG] Window: SplitView
+2025-08-24 16:15:02.926 +02:00 [DBG] No headers provided
+2025-08-24 16:15:03.043 +02:00 [DBG] Response is HTML
+2025-08-24 16:15:06.674 +02:00 [INF] Color: Light
+2025-08-24 16:15:06.676 +02:00 [INF] Syntax: Light
+2025-08-24 16:15:08.615 +02:00 [INF] Color: Dark
+2025-08-24 16:15:08.625 +02:00 [INF] Syntax: Dark
+2025-08-24 16:17:41.847 +02:00 [INF] ---- Starting App ----
+2025-08-24 16:17:41.868 +02:00 [INF] Width: 663px
+2025-08-24 16:17:41.877 +02:00 [INF] Height: 743px
+2025-08-24 16:17:41.877 +02:00 [INF] Top: 117px
+2025-08-24 16:17:41.877 +02:00 [INF] Left: -1074px
+2025-08-24 16:17:41.878 +02:00 [INF] IsFirstBoot: false
+2025-08-24 16:17:41.878 +02:00 [INF] IsDarkTheme: true
+2025-08-24 16:17:41.878 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 16:17:41.878 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 16:17:41.879 +02:00 [INF] Response: 
+{}
+2025-08-24 16:17:41.879 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 16:17:41.880 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 16:17:41.880 +02:00 [INF] Color: Dark
+2025-08-24 16:17:41.885 +02:00 [INF] Syntax: Dark
+2025-08-24 16:17:42.285 +02:00 [DBG] Window: SingleView
+2025-08-24 16:17:46.766 +02:00 [DBG] Window: SplitView
+2025-08-24 16:17:58.898 +02:00 [DBG] Adding headers:
+2025-08-24 16:17:58.899 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:17:58.899 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:17:59.028 +02:00 [DBG] Response is HTML
+2025-08-24 16:18:30.843 +02:00 [DBG] Window: SplitView
+2025-08-24 16:18:39.345 +02:00 [DBG] No headers provided
+2025-08-24 16:18:39.359 +02:00 [DBG] Response is HTML
+2025-08-24 16:19:01.325 +02:00 [DBG] No headers provided
+2025-08-24 16:19:01.329 +02:00 [DBG] Response is HTML
+2025-08-24 16:19:56.787 +02:00 [DBG] Adding headers:
+2025-08-24 16:19:56.787 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:19:56.787 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:19:56.805 +02:00 [DBG] Response is JSON
+2025-08-24 16:20:14.644 +02:00 [DBG] Adding headers:
+2025-08-24 16:20:14.644 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:20:14.645 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:20:14.647 +02:00 [DBG] Response is HTML
+2025-08-24 16:20:18.494 +02:00 [DBG] Adding headers:
+2025-08-24 16:20:18.494 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:20:18.494 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:20:18.503 +02:00 [DBG] Response is HTML
+2025-08-24 16:20:34.773 +02:00 [INF] Color: Light
+2025-08-24 16:20:34.776 +02:00 [INF] Syntax: Light
+2025-08-24 16:20:38.909 +02:00 [INF] Color: Dark
+2025-08-24 16:20:38.912 +02:00 [INF] Syntax: Dark
+2025-08-24 16:20:53.460 +02:00 [DBG] Adding headers:
+2025-08-24 16:20:53.460 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:20:53.460 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:20:53.463 +02:00 [DBG] Response is HTML
+2025-08-24 16:21:23.270 +02:00 [DBG] Window: SingleView
+2025-08-24 16:24:05.923 +02:00 [ERR] Failed to parse headers:
+Newtonsoft.Json.JsonSerializationException: Unexpected end when deserializing object. Path 'UserAgent', line 8, position 0.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ThrowUnexpectedEndException(JsonReader reader, JsonContract contract, Object currentObject, String message)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at to_lazy_to_curl.Services.HttpService.GetHeaders() in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 139
+   at to_lazy_to_curl.Services.HttpService.SendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 71
+   at to_lazy_to_curl.Services.HttpService.TrySendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 37
+2025-08-24 16:24:14.171 +02:00 [ERR] Failed to parse headers:
+Newtonsoft.Json.JsonSerializationException: Unexpected end when deserializing object. Path 'UserAgent', line 8, position 0.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ThrowUnexpectedEndException(JsonReader reader, JsonContract contract, Object currentObject, String message)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at to_lazy_to_curl.Services.HttpService.GetHeaders() in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 139
+   at to_lazy_to_curl.Services.HttpService.SendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 71
+   at to_lazy_to_curl.Services.HttpService.TrySendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 37
+2025-08-24 16:24:17.004 +02:00 [DBG] Adding headers:
+2025-08-24 16:24:17.004 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:24:17.004 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:24:17.040 +02:00 [DBG] Response is XML
+2025-08-24 16:24:17.953 +02:00 [DBG] Adding headers:
+2025-08-24 16:24:17.954 +02:00 [DBG] > Accept = application/json, text/html
+2025-08-24 16:24:17.955 +02:00 [DBG] > CacheControl = no-cache
+2025-08-24 16:24:22.957 +02:00 [WRN] Request timed out after 5 seconds!
+2025-08-24 16:24:55.917 +02:00 [DBG] Window: SingleView
+2025-08-24 16:25:00.756 +02:00 [INF] ---- Starting App ----
+2025-08-24 16:25:00.878 +02:00 [INF] Width: 663px
+2025-08-24 16:25:00.926 +02:00 [INF] Height: 743px
+2025-08-24 16:25:00.927 +02:00 [INF] Top: 117px
+2025-08-24 16:25:00.928 +02:00 [INF] Left: -1074px
+2025-08-24 16:25:00.930 +02:00 [INF] IsFirstBoot: false
+2025-08-24 16:25:00.931 +02:00 [INF] IsDarkTheme: true
+2025-08-24 16:25:00.933 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 16:25:00.934 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 16:25:00.937 +02:00 [INF] Response: 
+{}
+2025-08-24 16:25:00.939 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 16:25:00.941 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 16:25:00.943 +02:00 [INF] Color: Dark
+2025-08-24 16:25:00.977 +02:00 [INF] Syntax: Dark
+2025-08-24 16:25:01.490 +02:00 [DBG] Window: SingleView
+2025-08-24 16:25:07.856 +02:00 [DBG] Window: SplitView
+2025-08-24 16:25:08.440 +02:00 [DBG] Window: SingleView
+2025-08-24 16:26:24.624 +02:00 [DBG] Window: SplitView
+2025-08-24 16:26:25.301 +02:00 [DBG] Window: SingleView
+2025-08-24 18:14:39.423 +02:00 [INF] ---- Starting App ----
+2025-08-24 18:14:39.451 +02:00 [INF] Width: 663px
+2025-08-24 18:14:39.460 +02:00 [INF] Height: 743px
+2025-08-24 18:14:39.461 +02:00 [INF] Top: 117px
+2025-08-24 18:14:39.461 +02:00 [INF] Left: -1074px
+2025-08-24 18:14:39.461 +02:00 [INF] IsFirstBoot: false
+2025-08-24 18:14:39.461 +02:00 [INF] IsDarkTheme: true
+2025-08-24 18:14:39.462 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 18:14:39.462 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 18:14:39.462 +02:00 [INF] Response: 
+{}
+2025-08-24 18:14:39.462 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 18:14:39.463 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 18:14:39.463 +02:00 [INF] Color: Dark
+2025-08-24 18:14:39.469 +02:00 [INF] Syntax: Dark
+2025-08-24 18:14:40.101 +02:00 [DBG] Window: SingleView
+2025-08-24 18:14:45.712 +02:00 [INF] Color: Light
+2025-08-24 18:14:45.734 +02:00 [INF] Syntax: Light
+2025-08-24 18:14:49.041 +02:00 [DBG] Window: SplitView
+2025-08-24 18:16:39.408 +02:00 [INF] Color: Dark
+2025-08-24 18:16:39.428 +02:00 [INF] Syntax: Dark
+2025-08-24 18:16:40.491 +02:00 [INF] Color: Light
+2025-08-24 18:16:40.494 +02:00 [INF] Syntax: Light
+2025-08-24 18:19:08.274 +02:00 [INF] ---- Starting App ----
+2025-08-24 18:19:08.300 +02:00 [INF] Width: 663px
+2025-08-24 18:19:08.309 +02:00 [INF] Height: 743px
+2025-08-24 18:19:08.309 +02:00 [INF] Top: 117px
+2025-08-24 18:19:08.309 +02:00 [INF] Left: -1074px
+2025-08-24 18:19:08.309 +02:00 [INF] IsFirstBoot: false
+2025-08-24 18:19:08.310 +02:00 [INF] IsDarkTheme: true
+2025-08-24 18:19:08.310 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 18:19:08.310 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 18:19:08.310 +02:00 [INF] Response: 
+{}
+2025-08-24 18:19:08.310 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 18:19:08.311 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 18:19:08.311 +02:00 [INF] Color: Dark
+2025-08-24 18:19:08.320 +02:00 [INF] Syntax: Dark
+2025-08-24 18:19:09.050 +02:00 [DBG] Window: SingleView
+2025-08-24 18:19:11.429 +02:00 [INF] Color: Light
+2025-08-24 18:19:11.465 +02:00 [INF] Syntax: Light
+2025-08-24 18:19:38.042 +02:00 [INF] Color: Dark
+2025-08-24 18:19:38.065 +02:00 [INF] Syntax: Dark
+2025-08-24 18:19:38.685 +02:00 [INF] Color: Light
+2025-08-24 18:19:38.698 +02:00 [INF] Syntax: Light
+2025-08-24 18:22:16.383 +02:00 [INF] ---- Starting App ----
+2025-08-24 18:22:16.409 +02:00 [INF] Width: 663px
+2025-08-24 18:22:16.419 +02:00 [INF] Height: 743px
+2025-08-24 18:22:16.419 +02:00 [INF] Top: 117px
+2025-08-24 18:22:16.419 +02:00 [INF] Left: -1074px
+2025-08-24 18:22:16.419 +02:00 [INF] IsFirstBoot: false
+2025-08-24 18:22:16.419 +02:00 [INF] IsDarkTheme: true
+2025-08-24 18:22:16.419 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 18:22:16.420 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 18:22:16.420 +02:00 [INF] Response: 
+{}
+2025-08-24 18:22:16.420 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 18:22:16.420 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 18:22:16.421 +02:00 [INF] Color: Dark
+2025-08-24 18:22:16.426 +02:00 [INF] Syntax: Dark
+2025-08-24 18:22:16.835 +02:00 [DBG] Window: SingleView
+2025-08-24 18:22:19.197 +02:00 [INF] Color: Light
+2025-08-24 18:22:19.202 +02:00 [INF] Syntax: Light
+2025-08-24 18:25:29.019 +02:00 [INF] ---- Starting App ----
+2025-08-24 18:25:29.163 +02:00 [INF] Width: 663px
+2025-08-24 18:25:29.216 +02:00 [INF] Height: 743px
+2025-08-24 18:25:29.217 +02:00 [INF] Top: 117px
+2025-08-24 18:25:29.218 +02:00 [INF] Left: -1074px
+2025-08-24 18:25:29.221 +02:00 [INF] IsFirstBoot: false
+2025-08-24 18:25:29.223 +02:00 [INF] IsDarkTheme: true
+2025-08-24 18:25:29.225 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 18:25:29.228 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 18:25:29.242 +02:00 [INF] Response: 
+{}
+2025-08-24 18:25:29.244 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 18:25:29.251 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 18:25:29.258 +02:00 [INF] Color: Dark
+2025-08-24 18:25:29.312 +02:00 [INF] Syntax: Dark
+2025-08-24 18:25:29.899 +02:00 [DBG] Window: SingleView
+2025-08-24 18:25:33.915 +02:00 [INF] Color: Light
+2025-08-24 18:25:33.942 +02:00 [INF] Syntax: Light
+2025-08-24 18:25:45.216 +02:00 [DBG] Window: SplitView
+2025-08-24 18:25:47.761 +02:00 [DBG] Window: SingleView
+2025-08-24 18:28:27.875 +02:00 [DBG] Window: SplitView
+2025-08-24 18:28:28.477 +02:00 [DBG] Window: SingleView
+2025-08-24 18:28:29.895 +02:00 [INF] Color: Dark
+2025-08-24 18:28:29.910 +02:00 [INF] Syntax: Dark
+2025-08-24 18:28:31.098 +02:00 [INF] Color: Light
+2025-08-24 18:28:31.112 +02:00 [INF] Syntax: Light
+2025-08-24 18:32:32.041 +02:00 [INF] Color: Dark
+2025-08-24 18:32:32.053 +02:00 [INF] Syntax: Dark
+2025-08-24 18:32:35.035 +02:00 [INF] Color: Light
+2025-08-24 18:32:35.047 +02:00 [INF] Syntax: Light
+2025-08-24 18:32:37.048 +02:00 [INF] Color: Dark
+2025-08-24 18:32:37.050 +02:00 [INF] Syntax: Dark
+2025-08-24 18:33:39.468 +02:00 [INF] Color: Light
+2025-08-24 18:33:39.470 +02:00 [INF] Syntax: Light
+2025-08-24 18:33:46.266 +02:00 [INF] Color: Dark
+2025-08-24 18:33:46.268 +02:00 [INF] Syntax: Dark
+2025-08-24 18:33:51.630 +02:00 [INF] Color: Light
+2025-08-24 18:33:51.632 +02:00 [INF] Syntax: Light
+2025-08-24 19:02:38.737 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:02:38.759 +02:00 [INF] Width: 663px
+2025-08-24 19:02:38.768 +02:00 [INF] Height: 743px
+2025-08-24 19:02:38.768 +02:00 [INF] Top: 117px
+2025-08-24 19:02:38.768 +02:00 [INF] Left: -1074px
+2025-08-24 19:02:38.768 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:02:38.769 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:02:38.769 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:02:38.769 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:02:38.770 +02:00 [INF] Response: 
+{}
+2025-08-24 19:02:38.770 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:02:38.771 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:02:38.771 +02:00 [INF] Color: Dark
+2025-08-24 19:02:38.777 +02:00 [INF] Syntax: Dark
+2025-08-24 19:02:39.305 +02:00 [DBG] Window: SingleView
+2025-08-24 19:02:44.775 +02:00 [INF] Color: Light
+2025-08-24 19:02:44.803 +02:00 [INF] Syntax: Light
+2025-08-24 19:04:32.462 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:04:32.484 +02:00 [INF] Width: 663px
+2025-08-24 19:04:32.493 +02:00 [INF] Height: 743px
+2025-08-24 19:04:32.493 +02:00 [INF] Top: 117px
+2025-08-24 19:04:32.493 +02:00 [INF] Left: -1074px
+2025-08-24 19:04:32.494 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:04:32.494 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:04:32.494 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:04:32.495 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:04:32.495 +02:00 [INF] Response: 
+{}
+2025-08-24 19:04:32.495 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:04:32.496 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:04:32.497 +02:00 [INF] Color: Dark
+2025-08-24 19:04:32.504 +02:00 [INF] Syntax: Dark
+2025-08-24 19:04:33.164 +02:00 [DBG] Window: SingleView
+2025-08-24 19:04:35.696 +02:00 [INF] Color: Light
+2025-08-24 19:04:35.729 +02:00 [INF] Syntax: Light
+2025-08-24 19:05:31.932 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:05:32.043 +02:00 [INF] Width: 663px
+2025-08-24 19:05:32.052 +02:00 [INF] Height: 743px
+2025-08-24 19:05:32.052 +02:00 [INF] Top: 117px
+2025-08-24 19:05:32.052 +02:00 [INF] Left: -1074px
+2025-08-24 19:05:32.052 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:05:32.053 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:05:32.053 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:05:32.053 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:05:32.054 +02:00 [INF] Response: 
+{}
+2025-08-24 19:05:32.054 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:05:32.055 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:05:32.055 +02:00 [INF] Color: Dark
+2025-08-24 19:05:32.062 +02:00 [INF] Syntax: Dark
+2025-08-24 19:05:32.242 +02:00 [DBG] Window: SingleView
+2025-08-24 19:05:36.593 +02:00 [INF] Color: Light
+2025-08-24 19:05:36.598 +02:00 [INF] Syntax: Light
+2025-08-24 19:06:31.659 +02:00 [INF] Color: Dark
+2025-08-24 19:06:31.662 +02:00 [INF] Syntax: Dark
+2025-08-24 19:06:32.834 +02:00 [INF] Color: Light
+2025-08-24 19:06:32.847 +02:00 [INF] Syntax: Light
+2025-08-24 19:06:34.932 +02:00 [INF] Color: Dark
+2025-08-24 19:06:34.934 +02:00 [INF] Syntax: Dark
+2025-08-24 19:06:37.737 +02:00 [INF] Color: Light
+2025-08-24 19:06:37.749 +02:00 [INF] Syntax: Light
+2025-08-24 19:06:48.628 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:06:48.650 +02:00 [INF] Width: 663px
+2025-08-24 19:06:48.658 +02:00 [INF] Height: 743px
+2025-08-24 19:06:48.658 +02:00 [INF] Top: 117px
+2025-08-24 19:06:48.659 +02:00 [INF] Left: -1074px
+2025-08-24 19:06:48.659 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:06:48.659 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:06:48.659 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:06:48.660 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:06:48.660 +02:00 [INF] Response: 
+{}
+2025-08-24 19:06:48.660 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:06:48.661 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:06:48.661 +02:00 [INF] Color: Dark
+2025-08-24 19:06:48.667 +02:00 [INF] Syntax: Dark
+2025-08-24 19:06:48.843 +02:00 [DBG] Window: SingleView
+2025-08-24 19:06:52.944 +02:00 [INF] Color: Light
+2025-08-24 19:06:52.949 +02:00 [INF] Syntax: Light
+2025-08-24 19:07:48.556 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:07:48.577 +02:00 [INF] Width: 663px
+2025-08-24 19:07:48.585 +02:00 [INF] Height: 743px
+2025-08-24 19:07:48.585 +02:00 [INF] Top: 117px
+2025-08-24 19:07:48.585 +02:00 [INF] Left: -1074px
+2025-08-24 19:07:48.586 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:07:48.586 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:07:48.586 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:07:48.587 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:07:48.587 +02:00 [INF] Response: 
+{}
+2025-08-24 19:07:48.587 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:07:48.588 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:07:48.588 +02:00 [INF] Color: Dark
+2025-08-24 19:07:48.595 +02:00 [INF] Syntax: Dark
+2025-08-24 19:07:48.969 +02:00 [DBG] Window: SingleView
+2025-08-24 19:07:51.049 +02:00 [INF] Color: Light
+2025-08-24 19:07:51.079 +02:00 [INF] Syntax: Light
+2025-08-24 19:08:58.343 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:08:58.365 +02:00 [INF] Width: 663px
+2025-08-24 19:08:58.373 +02:00 [INF] Height: 743px
+2025-08-24 19:08:58.373 +02:00 [INF] Top: 117px
+2025-08-24 19:08:58.373 +02:00 [INF] Left: -1074px
+2025-08-24 19:08:58.374 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:08:58.374 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:08:58.374 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:08:58.374 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:08:58.375 +02:00 [INF] Response: 
+{}
+2025-08-24 19:08:58.375 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:08:58.376 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:08:58.376 +02:00 [INF] Color: Dark
+2025-08-24 19:08:58.381 +02:00 [INF] Syntax: Dark
+2025-08-24 19:08:58.559 +02:00 [DBG] Window: SingleView
+2025-08-24 19:09:00.269 +02:00 [INF] Color: Light
+2025-08-24 19:09:00.298 +02:00 [INF] Syntax: Light
+2025-08-24 19:12:10.886 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:12:10.912 +02:00 [INF] Width: 663px
+2025-08-24 19:12:10.922 +02:00 [INF] Height: 743px
+2025-08-24 19:12:10.922 +02:00 [INF] Top: 117px
+2025-08-24 19:12:10.922 +02:00 [INF] Left: -1074px
+2025-08-24 19:12:10.922 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:12:10.922 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:12:10.923 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:12:10.923 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:12:10.923 +02:00 [INF] Response: 
+{}
+2025-08-24 19:12:10.923 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:12:10.924 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:12:10.924 +02:00 [INF] Color: Dark
+2025-08-24 19:12:10.930 +02:00 [INF] Syntax: Dark
+2025-08-24 19:12:11.738 +02:00 [DBG] Window: SingleView
+2025-08-24 19:12:17.460 +02:00 [INF] Color: Light
+2025-08-24 19:12:17.488 +02:00 [INF] Syntax: Light
+2025-08-24 19:13:01.174 +02:00 [INF] Color: Dark
+2025-08-24 19:13:01.199 +02:00 [INF] Syntax: Dark
+2025-08-24 19:16:32.604 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:16:32.756 +02:00 [INF] Width: 663px
+2025-08-24 19:16:32.765 +02:00 [INF] Height: 743px
+2025-08-24 19:16:32.765 +02:00 [INF] Top: 117px
+2025-08-24 19:16:32.765 +02:00 [INF] Left: -1074px
+2025-08-24 19:16:32.766 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:16:32.766 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:16:32.766 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:16:32.766 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:16:32.766 +02:00 [INF] Response: 
+{}
+2025-08-24 19:16:32.767 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:16:32.767 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:16:32.767 +02:00 [INF] Color: Dark
+2025-08-24 19:16:32.773 +02:00 [INF] Syntax: Dark
+2025-08-24 19:16:33.006 +02:00 [DBG] Window: SingleView
+2025-08-24 19:16:41.343 +02:00 [INF] Color: Light
+2025-08-24 19:16:41.370 +02:00 [INF] Syntax: Light
+2025-08-24 19:17:35.202 +02:00 [DBG] Window: SingleView
+2025-08-24 19:18:46.314 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:18:46.356 +02:00 [INF] Width: 663px
+2025-08-24 19:18:46.416 +02:00 [INF] Height: 743px
+2025-08-24 19:18:46.417 +02:00 [INF] Top: 117px
+2025-08-24 19:18:46.418 +02:00 [INF] Left: -1074px
+2025-08-24 19:18:46.420 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:18:46.421 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:18:46.423 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:18:46.424 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:18:46.426 +02:00 [INF] Response: 
+{}
+2025-08-24 19:18:46.427 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:18:46.430 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:18:46.431 +02:00 [INF] Color: Dark
+2025-08-24 19:18:46.530 +02:00 [INF] Syntax: Dark
+2025-08-24 19:18:47.229 +02:00 [DBG] Window: SingleView
+2025-08-24 19:18:52.844 +02:00 [INF] Color: Light
+2025-08-24 19:18:52.871 +02:00 [INF] Syntax: Light
+2025-08-24 19:20:45.157 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:20:45.178 +02:00 [INF] Width: 663px
+2025-08-24 19:20:45.186 +02:00 [INF] Height: 743px
+2025-08-24 19:20:45.187 +02:00 [INF] Top: 117px
+2025-08-24 19:20:45.187 +02:00 [INF] Left: -1074px
+2025-08-24 19:20:45.187 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:20:45.187 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:20:45.187 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:20:45.188 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:20:45.188 +02:00 [INF] Response: 
+{}
+2025-08-24 19:20:45.189 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:20:45.189 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:20:45.189 +02:00 [INF] Color: Dark
+2025-08-24 19:20:45.195 +02:00 [INF] Syntax: Dark
+2025-08-24 19:20:45.370 +02:00 [DBG] Window: SingleView
+2025-08-24 19:20:52.260 +02:00 [INF] Color: Light
+2025-08-24 19:20:52.265 +02:00 [INF] Syntax: Light
+2025-08-24 19:22:29.934 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:22:29.957 +02:00 [INF] Width: 663px
+2025-08-24 19:22:29.966 +02:00 [INF] Height: 743px
+2025-08-24 19:22:29.967 +02:00 [INF] Top: 117px
+2025-08-24 19:22:29.967 +02:00 [INF] Left: -1074px
+2025-08-24 19:22:29.967 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:22:29.967 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:22:29.968 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:22:29.968 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:22:29.968 +02:00 [INF] Response: 
+{}
+2025-08-24 19:22:29.969 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:22:29.969 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:22:29.969 +02:00 [INF] Color: Dark
+2025-08-24 19:22:29.975 +02:00 [INF] Syntax: Dark
+2025-08-24 19:22:30.155 +02:00 [DBG] Window: SingleView
+2025-08-24 19:22:31.946 +02:00 [INF] Color: Light
+2025-08-24 19:22:31.978 +02:00 [INF] Syntax: Light
+2025-08-24 19:23:23.952 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:23:24.070 +02:00 [INF] Width: 663px
+2025-08-24 19:23:24.079 +02:00 [INF] Height: 743px
+2025-08-24 19:23:24.079 +02:00 [INF] Top: 117px
+2025-08-24 19:23:24.079 +02:00 [INF] Left: -1074px
+2025-08-24 19:23:24.079 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:23:24.080 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:23:24.080 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:23:24.080 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:23:24.081 +02:00 [INF] Response: 
+{}
+2025-08-24 19:23:24.081 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:23:24.082 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:23:24.082 +02:00 [INF] Color: Dark
+2025-08-24 19:23:24.088 +02:00 [INF] Syntax: Dark
+2025-08-24 19:23:24.263 +02:00 [DBG] Window: SingleView
+2025-08-24 19:23:30.884 +02:00 [INF] Color: Light
+2025-08-24 19:23:30.908 +02:00 [INF] Syntax: Light
+2025-08-24 19:24:00.091 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:24:00.113 +02:00 [INF] Width: 663px
+2025-08-24 19:24:00.122 +02:00 [INF] Height: 743px
+2025-08-24 19:24:00.122 +02:00 [INF] Top: 117px
+2025-08-24 19:24:00.122 +02:00 [INF] Left: -1074px
+2025-08-24 19:24:00.122 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:24:00.123 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:24:00.123 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:24:00.123 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:24:00.124 +02:00 [INF] Response: 
+{}
+2025-08-24 19:24:00.125 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:24:00.125 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:24:00.125 +02:00 [INF] Color: Dark
+2025-08-24 19:24:00.131 +02:00 [INF] Syntax: Dark
+2025-08-24 19:24:00.300 +02:00 [DBG] Window: SingleView
+2025-08-24 19:24:34.092 +02:00 [INF] Color: Light
+2025-08-24 19:24:34.097 +02:00 [INF] Syntax: Light
+2025-08-24 19:26:13.104 +02:00 [INF] Color: Dark
+2025-08-24 19:26:13.108 +02:00 [INF] Syntax: Dark
+2025-08-24 19:26:18.429 +02:00 [INF] Color: Light
+2025-08-24 19:26:18.441 +02:00 [INF] Syntax: Light
+2025-08-24 19:26:51.597 +02:00 [INF] Color: Dark
+2025-08-24 19:26:51.599 +02:00 [INF] Syntax: Dark
+2025-08-24 19:26:52.795 +02:00 [INF] Color: Light
+2025-08-24 19:26:52.808 +02:00 [INF] Syntax: Light
+2025-08-24 19:26:56.268 +02:00 [INF] Color: Dark
+2025-08-24 19:26:56.270 +02:00 [INF] Syntax: Dark
+2025-08-24 19:26:57.028 +02:00 [INF] Color: Light
+2025-08-24 19:26:57.030 +02:00 [INF] Syntax: Light
+2025-08-24 19:27:20.594 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:27:20.616 +02:00 [INF] Width: 663px
+2025-08-24 19:27:20.624 +02:00 [INF] Height: 743px
+2025-08-24 19:27:20.625 +02:00 [INF] Top: 117px
+2025-08-24 19:27:20.625 +02:00 [INF] Left: -1074px
+2025-08-24 19:27:20.625 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:27:20.625 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:27:20.626 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:27:20.626 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:27:20.626 +02:00 [INF] Response: 
+{}
+2025-08-24 19:27:20.627 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:27:20.627 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:27:20.627 +02:00 [INF] Color: Dark
+2025-08-24 19:27:20.634 +02:00 [INF] Syntax: Dark
+2025-08-24 19:27:20.913 +02:00 [DBG] Window: SingleView
+2025-08-24 19:27:23.561 +02:00 [INF] Color: Light
+2025-08-24 19:27:23.591 +02:00 [INF] Syntax: Light
+2025-08-24 19:28:13.142 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:28:13.164 +02:00 [INF] Width: 663px
+2025-08-24 19:28:13.173 +02:00 [INF] Height: 743px
+2025-08-24 19:28:13.173 +02:00 [INF] Top: 117px
+2025-08-24 19:28:13.173 +02:00 [INF] Left: -1074px
+2025-08-24 19:28:13.173 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:28:13.174 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:28:13.174 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:28:13.174 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:28:13.175 +02:00 [INF] Response: 
+{}
+2025-08-24 19:28:13.175 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:28:13.176 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:28:13.176 +02:00 [INF] Color: Dark
+2025-08-24 19:28:13.181 +02:00 [INF] Syntax: Dark
+2025-08-24 19:28:13.355 +02:00 [DBG] Window: SingleView
+2025-08-24 19:28:15.229 +02:00 [INF] Color: Light
+2025-08-24 19:28:15.234 +02:00 [INF] Syntax: Light
+2025-08-24 19:28:21.780 +02:00 [INF] Color: Dark
+2025-08-24 19:28:21.783 +02:00 [INF] Syntax: Dark
+2025-08-24 19:28:22.516 +02:00 [INF] Color: Light
+2025-08-24 19:28:22.519 +02:00 [INF] Syntax: Light
+2025-08-24 19:28:50.981 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:28:51.003 +02:00 [INF] Width: 663px
+2025-08-24 19:28:51.011 +02:00 [INF] Height: 743px
+2025-08-24 19:28:51.011 +02:00 [INF] Top: 117px
+2025-08-24 19:28:51.011 +02:00 [INF] Left: -1074px
+2025-08-24 19:28:51.012 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:28:51.012 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:28:51.012 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:28:51.012 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:28:51.013 +02:00 [INF] Response: 
+{}
+2025-08-24 19:28:51.013 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:28:51.014 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:28:51.014 +02:00 [INF] Color: Dark
+2025-08-24 19:28:51.019 +02:00 [INF] Syntax: Dark
+2025-08-24 19:28:51.474 +02:00 [DBG] Window: SingleView
+2025-08-24 19:28:56.500 +02:00 [INF] Color: Light
+2025-08-24 19:28:56.527 +02:00 [INF] Syntax: Light
+2025-08-24 19:29:17.907 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:29:17.929 +02:00 [INF] Width: 663px
+2025-08-24 19:29:17.938 +02:00 [INF] Height: 743px
+2025-08-24 19:29:17.938 +02:00 [INF] Top: 117px
+2025-08-24 19:29:17.938 +02:00 [INF] Left: -1074px
+2025-08-24 19:29:17.939 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:29:17.939 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:29:17.939 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:29:17.939 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:29:17.940 +02:00 [INF] Response: 
+{}
+2025-08-24 19:29:17.940 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:29:17.941 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:29:17.941 +02:00 [INF] Color: Dark
+2025-08-24 19:29:17.947 +02:00 [INF] Syntax: Dark
+2025-08-24 19:29:18.502 +02:00 [DBG] Window: SingleView
+2025-08-24 19:29:21.052 +02:00 [INF] Color: Light
+2025-08-24 19:29:21.081 +02:00 [INF] Syntax: Light
+2025-08-24 19:30:02.068 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:30:02.091 +02:00 [INF] Width: 663px
+2025-08-24 19:30:02.100 +02:00 [INF] Height: 743px
+2025-08-24 19:30:02.101 +02:00 [INF] Top: 117px
+2025-08-24 19:30:02.101 +02:00 [INF] Left: -1074px
+2025-08-24 19:30:02.101 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:30:02.101 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:30:02.102 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:30:02.102 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:30:02.103 +02:00 [INF] Response: 
+{}
+2025-08-24 19:30:02.103 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:30:02.104 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:30:02.104 +02:00 [INF] Color: Dark
+2025-08-24 19:30:02.110 +02:00 [INF] Syntax: Dark
+2025-08-24 19:30:02.998 +02:00 [DBG] Window: SingleView
+2025-08-24 19:30:11.841 +02:00 [INF] Color: Light
+2025-08-24 19:30:11.863 +02:00 [INF] Syntax: Light
+2025-08-24 19:30:47.182 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:30:47.329 +02:00 [INF] Width: 663px
+2025-08-24 19:30:47.384 +02:00 [INF] Height: 743px
+2025-08-24 19:30:47.385 +02:00 [INF] Top: 117px
+2025-08-24 19:30:47.386 +02:00 [INF] Left: -1074px
+2025-08-24 19:30:47.388 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:30:47.389 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:30:47.391 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:30:47.392 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:30:47.399 +02:00 [INF] Response: 
+{}
+2025-08-24 19:30:47.401 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:30:47.405 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:30:47.407 +02:00 [INF] Color: Dark
+2025-08-24 19:30:47.450 +02:00 [INF] Syntax: Dark
+2025-08-24 19:30:47.819 +02:00 [DBG] Window: SingleView
+2025-08-24 19:30:52.898 +02:00 [INF] Color: Light
+2025-08-24 19:30:52.924 +02:00 [INF] Syntax: Light
+2025-08-24 19:31:48.759 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:31:48.782 +02:00 [INF] Width: 663px
+2025-08-24 19:31:48.792 +02:00 [INF] Height: 743px
+2025-08-24 19:31:48.792 +02:00 [INF] Top: 117px
+2025-08-24 19:31:48.792 +02:00 [INF] Left: -1074px
+2025-08-24 19:31:48.793 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:31:48.793 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:31:48.793 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:31:48.794 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:31:48.794 +02:00 [INF] Response: 
+{}
+2025-08-24 19:31:48.795 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:31:48.795 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:31:48.795 +02:00 [INF] Color: Dark
+2025-08-24 19:31:48.804 +02:00 [INF] Syntax: Dark
+2025-08-24 19:31:49.401 +02:00 [DBG] Window: SingleView
+2025-08-24 19:31:57.522 +02:00 [INF] Color: Light
+2025-08-24 19:31:57.526 +02:00 [INF] Syntax: Light
+2025-08-24 19:32:19.846 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:32:19.868 +02:00 [INF] Width: 663px
+2025-08-24 19:32:19.876 +02:00 [INF] Height: 743px
+2025-08-24 19:32:19.877 +02:00 [INF] Top: 117px
+2025-08-24 19:32:19.877 +02:00 [INF] Left: -1074px
+2025-08-24 19:32:19.877 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:32:19.877 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:32:19.878 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:32:19.878 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:32:19.879 +02:00 [INF] Response: 
+{}
+2025-08-24 19:32:19.879 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:32:19.879 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:32:19.880 +02:00 [INF] Color: Dark
+2025-08-24 19:32:19.885 +02:00 [INF] Syntax: Dark
+2025-08-24 19:32:20.052 +02:00 [DBG] Window: SingleView
+2025-08-24 19:32:27.301 +02:00 [INF] Color: Light
+2025-08-24 19:32:27.330 +02:00 [INF] Syntax: Light
+2025-08-24 19:33:28.781 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:33:28.916 +02:00 [INF] Width: 663px
+2025-08-24 19:33:28.965 +02:00 [INF] Height: 743px
+2025-08-24 19:33:28.966 +02:00 [INF] Top: 117px
+2025-08-24 19:33:28.967 +02:00 [INF] Left: -1074px
+2025-08-24 19:33:28.969 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:33:28.970 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:33:28.972 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:33:28.973 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:33:28.978 +02:00 [INF] Response: 
+{}
+2025-08-24 19:33:28.979 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:33:28.982 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:33:28.984 +02:00 [INF] Color: Dark
+2025-08-24 19:33:29.022 +02:00 [INF] Syntax: Dark
+2025-08-24 19:33:29.435 +02:00 [DBG] Window: SingleView
+2025-08-24 19:33:33.320 +02:00 [INF] Color: Light
+2025-08-24 19:33:33.345 +02:00 [INF] Syntax: Light
+2025-08-24 19:33:46.495 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:33:46.664 +02:00 [INF] Width: 663px
+2025-08-24 19:33:46.741 +02:00 [INF] Height: 743px
+2025-08-24 19:33:46.742 +02:00 [INF] Top: 117px
+2025-08-24 19:33:46.743 +02:00 [INF] Left: -1074px
+2025-08-24 19:33:46.745 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:33:46.747 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:33:46.751 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:33:46.752 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:33:46.764 +02:00 [INF] Response: 
+{}
+2025-08-24 19:33:46.772 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:33:46.786 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:33:46.791 +02:00 [INF] Color: Dark
+2025-08-24 19:33:46.861 +02:00 [INF] Syntax: Dark
+2025-08-24 19:33:47.297 +02:00 [DBG] Window: SingleView
+2025-08-24 19:33:49.325 +02:00 [INF] Color: Light
+2025-08-24 19:33:49.330 +02:00 [INF] Syntax: Light
+2025-08-24 19:37:49.576 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:37:49.598 +02:00 [INF] Width: 663px
+2025-08-24 19:37:49.606 +02:00 [INF] Height: 743px
+2025-08-24 19:37:49.607 +02:00 [INF] Top: 117px
+2025-08-24 19:37:49.607 +02:00 [INF] Left: -1074px
+2025-08-24 19:37:49.607 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:37:49.607 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:37:49.608 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:37:49.608 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:37:49.608 +02:00 [INF] Response: 
+{}
+2025-08-24 19:37:49.609 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:37:49.609 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:37:49.609 +02:00 [INF] Color: Dark
+2025-08-24 19:37:49.615 +02:00 [INF] Syntax: Dark
+2025-08-24 19:37:50.258 +02:00 [DBG] Window: SingleView
+2025-08-24 19:37:56.811 +02:00 [DBG] Window: SplitView
+2025-08-24 19:38:10.106 +02:00 [INF] Color: Light
+2025-08-24 19:38:10.110 +02:00 [INF] Syntax: Light
+2025-08-24 19:38:47.101 +02:00 [INF] Color: Dark
+2025-08-24 19:38:47.104 +02:00 [INF] Syntax: Dark
+2025-08-24 19:39:41.747 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:39:41.768 +02:00 [INF] Width: 663px
+2025-08-24 19:39:41.777 +02:00 [INF] Height: 743px
+2025-08-24 19:39:41.777 +02:00 [INF] Top: 117px
+2025-08-24 19:39:41.777 +02:00 [INF] Left: -1074px
+2025-08-24 19:39:41.777 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:39:41.777 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:39:41.778 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:39:41.778 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:39:41.779 +02:00 [INF] Response: 
+{}
+2025-08-24 19:39:41.779 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:39:41.779 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:39:41.780 +02:00 [INF] Color: Dark
+2025-08-24 19:39:41.785 +02:00 [INF] Syntax: Dark
+2025-08-24 19:39:41.960 +02:00 [DBG] Window: SingleView
+2025-08-24 19:39:54.316 +02:00 [INF] Color: Light
+2025-08-24 19:39:54.320 +02:00 [INF] Syntax: Light
+2025-08-24 19:40:39.408 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:40:39.538 +02:00 [INF] Width: 663px
+2025-08-24 19:40:39.587 +02:00 [INF] Height: 743px
+2025-08-24 19:40:39.588 +02:00 [INF] Top: 117px
+2025-08-24 19:40:39.588 +02:00 [INF] Left: -1074px
+2025-08-24 19:40:39.590 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:40:39.591 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:40:39.593 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:40:39.594 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:40:39.603 +02:00 [INF] Response: 
+{}
+2025-08-24 19:40:39.604 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:40:39.608 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:40:39.610 +02:00 [INF] Color: Dark
+2025-08-24 19:40:39.648 +02:00 [INF] Syntax: Dark
+2025-08-24 19:40:39.982 +02:00 [DBG] Window: SingleView
+2025-08-24 19:40:42.354 +02:00 [INF] Color: Light
+2025-08-24 19:40:42.385 +02:00 [INF] Syntax: Light
+2025-08-24 19:41:13.093 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:41:13.223 +02:00 [INF] Width: 663px
+2025-08-24 19:41:13.272 +02:00 [INF] Height: 743px
+2025-08-24 19:41:13.272 +02:00 [INF] Top: 117px
+2025-08-24 19:41:13.273 +02:00 [INF] Left: -1074px
+2025-08-24 19:41:13.275 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:41:13.276 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:41:13.278 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:41:13.279 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:41:13.285 +02:00 [INF] Response: 
+{}
+2025-08-24 19:41:13.286 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:41:13.290 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:41:13.291 +02:00 [INF] Color: Dark
+2025-08-24 19:41:13.328 +02:00 [INF] Syntax: Dark
+2025-08-24 19:41:13.620 +02:00 [DBG] Window: SingleView
+2025-08-24 19:41:16.750 +02:00 [INF] Color: Light
+2025-08-24 19:41:16.763 +02:00 [INF] Syntax: Light
+2025-08-24 19:41:45.190 +02:00 [INF] Color: Dark
+2025-08-24 19:41:45.193 +02:00 [INF] Syntax: Dark
+2025-08-24 19:41:48.492 +02:00 [INF] Color: Light
+2025-08-24 19:41:48.517 +02:00 [INF] Syntax: Light
+2025-08-24 19:41:57.157 +02:00 [INF] Color: Dark
+2025-08-24 19:41:57.159 +02:00 [INF] Syntax: Dark
+2025-08-24 19:41:58.742 +02:00 [INF] Color: Light
+2025-08-24 19:41:58.745 +02:00 [INF] Syntax: Light
+2025-08-24 19:42:35.064 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:42:35.087 +02:00 [INF] Width: 663px
+2025-08-24 19:42:35.098 +02:00 [INF] Height: 743px
+2025-08-24 19:42:35.099 +02:00 [INF] Top: 117px
+2025-08-24 19:42:35.099 +02:00 [INF] Left: -1074px
+2025-08-24 19:42:35.101 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:42:35.103 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:42:35.105 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:42:35.106 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:42:35.110 +02:00 [INF] Response: 
+{}
+2025-08-24 19:42:35.111 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:42:35.114 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:42:35.116 +02:00 [INF] Color: Dark
+2025-08-24 19:42:35.157 +02:00 [INF] Syntax: Dark
+2025-08-24 19:42:35.825 +02:00 [DBG] Window: SingleView
+2025-08-24 19:42:37.650 +02:00 [INF] Color: Light
+2025-08-24 19:42:37.678 +02:00 [INF] Syntax: Light
+2025-08-24 19:42:55.080 +02:00 [INF] Color: Dark
+2025-08-24 19:42:55.084 +02:00 [INF] Syntax: Dark
+2025-08-24 19:43:01.854 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:43:01.882 +02:00 [INF] Width: 663px
+2025-08-24 19:43:01.891 +02:00 [INF] Height: 743px
+2025-08-24 19:43:01.891 +02:00 [INF] Top: 117px
+2025-08-24 19:43:01.891 +02:00 [INF] Left: -1074px
+2025-08-24 19:43:01.891 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:43:01.891 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:43:01.892 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:43:01.892 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:43:01.893 +02:00 [INF] Response: 
+{}
+2025-08-24 19:43:01.893 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:43:01.894 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:43:01.894 +02:00 [INF] Color: Dark
+2025-08-24 19:43:01.899 +02:00 [INF] Syntax: Dark
+2025-08-24 19:43:02.070 +02:00 [DBG] Window: SingleView
+2025-08-24 19:43:08.404 +02:00 [INF] Color: Light
+2025-08-24 19:43:08.409 +02:00 [INF] Syntax: Light
+2025-08-24 19:43:44.843 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:43:44.865 +02:00 [INF] Width: 663px
+2025-08-24 19:43:44.874 +02:00 [INF] Height: 743px
+2025-08-24 19:43:44.874 +02:00 [INF] Top: 117px
+2025-08-24 19:43:44.874 +02:00 [INF] Left: -1074px
+2025-08-24 19:43:44.875 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:43:44.875 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:43:44.875 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:43:44.875 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:43:44.876 +02:00 [INF] Response: 
+{}
+2025-08-24 19:43:44.876 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:43:44.877 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:43:44.877 +02:00 [INF] Color: Dark
+2025-08-24 19:43:44.882 +02:00 [INF] Syntax: Dark
+2025-08-24 19:43:45.504 +02:00 [DBG] Window: SingleView
+2025-08-24 19:43:48.017 +02:00 [INF] Color: Light
+2025-08-24 19:43:48.045 +02:00 [INF] Syntax: Light
+2025-08-24 19:44:29.176 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:44:29.317 +02:00 [INF] Width: 663px
+2025-08-24 19:44:29.338 +02:00 [INF] Height: 743px
+2025-08-24 19:44:29.338 +02:00 [INF] Top: 117px
+2025-08-24 19:44:29.338 +02:00 [INF] Left: -1074px
+2025-08-24 19:44:29.339 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:44:29.339 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:44:29.339 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:44:29.340 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:44:29.340 +02:00 [INF] Response: 
+{}
+2025-08-24 19:44:29.340 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:44:29.341 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:44:29.341 +02:00 [INF] Color: Dark
+2025-08-24 19:44:29.346 +02:00 [INF] Syntax: Dark
+2025-08-24 19:44:29.518 +02:00 [DBG] Window: SingleView
+2025-08-24 19:44:31.301 +02:00 [INF] Color: Light
+2025-08-24 19:44:31.328 +02:00 [INF] Syntax: Light
+2025-08-24 19:44:49.958 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:44:49.980 +02:00 [INF] Width: 663px
+2025-08-24 19:44:49.988 +02:00 [INF] Height: 743px
+2025-08-24 19:44:49.988 +02:00 [INF] Top: 117px
+2025-08-24 19:44:49.988 +02:00 [INF] Left: -1074px
+2025-08-24 19:44:49.989 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:44:49.989 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:44:49.989 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:44:49.989 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:44:49.990 +02:00 [INF] Response: 
+{}
+2025-08-24 19:44:49.990 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:44:49.991 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:44:49.991 +02:00 [INF] Color: Dark
+2025-08-24 19:44:49.996 +02:00 [INF] Syntax: Dark
+2025-08-24 19:44:50.646 +02:00 [DBG] Window: SingleView
+2025-08-24 19:44:54.660 +02:00 [INF] Color: Light
+2025-08-24 19:44:54.664 +02:00 [INF] Syntax: Light
+2025-08-24 19:45:14.408 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:45:14.539 +02:00 [INF] Width: 663px
+2025-08-24 19:45:14.587 +02:00 [INF] Height: 743px
+2025-08-24 19:45:14.588 +02:00 [INF] Top: 117px
+2025-08-24 19:45:14.588 +02:00 [INF] Left: -1074px
+2025-08-24 19:45:14.590 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:45:14.591 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:45:14.593 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:45:14.594 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:45:14.599 +02:00 [INF] Response: 
+{}
+2025-08-24 19:45:14.600 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:45:14.604 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:45:14.606 +02:00 [INF] Color: Dark
+2025-08-24 19:45:14.642 +02:00 [INF] Syntax: Dark
+2025-08-24 19:45:15.139 +02:00 [DBG] Window: SingleView
+2025-08-24 19:45:16.982 +02:00 [INF] Color: Light
+2025-08-24 19:45:16.987 +02:00 [INF] Syntax: Light
+2025-08-24 19:45:19.994 +02:00 [INF] Color: Dark
+2025-08-24 19:45:20.016 +02:00 [INF] Syntax: Dark
+2025-08-24 19:45:22.191 +02:00 [INF] Color: Light
+2025-08-24 19:45:22.206 +02:00 [INF] Syntax: Light
+2025-08-24 19:45:37.020 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:45:37.041 +02:00 [INF] Width: 663px
+2025-08-24 19:45:37.065 +02:00 [INF] Height: 743px
+2025-08-24 19:45:37.065 +02:00 [INF] Top: 117px
+2025-08-24 19:45:37.065 +02:00 [INF] Left: -1074px
+2025-08-24 19:45:37.065 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:45:37.065 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:45:37.066 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:45:37.066 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:45:37.067 +02:00 [INF] Response: 
+{}
+2025-08-24 19:45:37.067 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:45:37.071 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:45:37.072 +02:00 [INF] Color: Dark
+2025-08-24 19:45:37.078 +02:00 [INF] Syntax: Dark
+2025-08-24 19:45:37.530 +02:00 [DBG] Window: SingleView
+2025-08-24 19:46:00.259 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:46:00.394 +02:00 [INF] Width: 663px
+2025-08-24 19:46:00.444 +02:00 [INF] Height: 743px
+2025-08-24 19:46:00.445 +02:00 [INF] Top: 117px
+2025-08-24 19:46:00.445 +02:00 [INF] Left: -1074px
+2025-08-24 19:46:00.447 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:46:00.449 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:46:00.451 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:46:00.452 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:46:00.457 +02:00 [INF] Response: 
+{}
+2025-08-24 19:46:00.459 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:46:00.464 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:46:00.465 +02:00 [INF] Color: Dark
+2025-08-24 19:46:00.501 +02:00 [INF] Syntax: Dark
+2025-08-24 19:46:00.816 +02:00 [DBG] Window: SingleView
+2025-08-24 19:46:20.757 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:46:20.779 +02:00 [INF] Width: 663px
+2025-08-24 19:46:20.788 +02:00 [INF] Height: 743px
+2025-08-24 19:46:20.788 +02:00 [INF] Top: 117px
+2025-08-24 19:46:20.788 +02:00 [INF] Left: -1074px
+2025-08-24 19:46:20.788 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:46:20.789 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:46:20.789 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:46:20.789 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:46:20.790 +02:00 [INF] Response: 
+{}
+2025-08-24 19:46:20.790 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:46:20.790 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:46:20.791 +02:00 [INF] Color: Dark
+2025-08-24 19:46:20.796 +02:00 [INF] Syntax: Dark
+2025-08-24 19:46:21.305 +02:00 [DBG] Window: SingleView
+2025-08-24 19:46:31.231 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:46:31.292 +02:00 [INF] Width: 663px
+2025-08-24 19:46:31.301 +02:00 [INF] Height: 743px
+2025-08-24 19:46:31.301 +02:00 [INF] Top: 117px
+2025-08-24 19:46:31.301 +02:00 [INF] Left: -1074px
+2025-08-24 19:46:31.301 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:46:31.302 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:46:31.302 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:46:31.302 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:46:31.303 +02:00 [INF] Response: 
+{}
+2025-08-24 19:46:31.303 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:46:31.304 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:46:31.304 +02:00 [INF] Color: Dark
+2025-08-24 19:46:31.309 +02:00 [INF] Syntax: Dark
+2025-08-24 19:46:31.486 +02:00 [DBG] Window: SingleView
+2025-08-24 19:46:41.781 +02:00 [DBG] Window: SplitView
+2025-08-24 19:46:44.825 +02:00 [INF] Color: Light
+2025-08-24 19:46:44.828 +02:00 [INF] Syntax: Light
+2025-08-24 19:46:45.233 +02:00 [INF] Color: Dark
+2025-08-24 19:46:45.252 +02:00 [INF] Syntax: Dark
+2025-08-24 19:46:51.210 +02:00 [DBG] Window: SingleView
+2025-08-24 19:46:58.832 +02:00 [INF] Color: Light
+2025-08-24 19:46:58.844 +02:00 [INF] Syntax: Light
+2025-08-24 19:47:37.691 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:47:37.828 +02:00 [INF] Width: 663px
+2025-08-24 19:47:37.877 +02:00 [INF] Height: 743px
+2025-08-24 19:47:37.878 +02:00 [INF] Top: 117px
+2025-08-24 19:47:37.878 +02:00 [INF] Left: -1074px
+2025-08-24 19:47:37.880 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:47:37.882 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:47:37.884 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:47:37.885 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:47:37.890 +02:00 [INF] Response: 
+{}
+2025-08-24 19:47:37.891 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:47:37.895 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:47:37.898 +02:00 [INF] Color: Dark
+2025-08-24 19:47:37.939 +02:00 [INF] Syntax: Dark
+2025-08-24 19:47:38.147 +02:00 [DBG] Window: SingleView
+2025-08-24 19:47:40.679 +02:00 [INF] Color: Light
+2025-08-24 19:47:40.709 +02:00 [INF] Syntax: Light
+2025-08-24 19:48:29.375 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:48:29.396 +02:00 [INF] Width: 663px
+2025-08-24 19:48:29.405 +02:00 [INF] Height: 743px
+2025-08-24 19:48:29.406 +02:00 [INF] Top: 117px
+2025-08-24 19:48:29.406 +02:00 [INF] Left: -1074px
+2025-08-24 19:48:29.406 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:48:29.406 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:48:29.407 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:48:29.407 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:48:29.407 +02:00 [INF] Response: 
+{}
+2025-08-24 19:48:29.408 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:48:29.408 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:48:29.408 +02:00 [INF] Color: Dark
+2025-08-24 19:48:29.414 +02:00 [INF] Syntax: Dark
+2025-08-24 19:48:29.602 +02:00 [DBG] Window: SingleView
+2025-08-24 19:48:31.854 +02:00 [INF] Color: Light
+2025-08-24 19:48:31.881 +02:00 [INF] Syntax: Light
+2025-08-24 19:49:05.552 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:49:05.613 +02:00 [INF] Width: 663px
+2025-08-24 19:49:05.622 +02:00 [INF] Height: 743px
+2025-08-24 19:49:05.622 +02:00 [INF] Top: 117px
+2025-08-24 19:49:05.622 +02:00 [INF] Left: -1074px
+2025-08-24 19:49:05.622 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:49:05.623 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:49:05.623 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:49:05.623 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:49:05.624 +02:00 [INF] Response: 
+{}
+2025-08-24 19:49:05.624 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:49:05.624 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:49:05.625 +02:00 [INF] Color: Dark
+2025-08-24 19:49:05.631 +02:00 [INF] Syntax: Dark
+2025-08-24 19:49:05.809 +02:00 [DBG] Window: SingleView
+2025-08-24 19:49:11.134 +02:00 [INF] Color: Light
+2025-08-24 19:49:11.139 +02:00 [INF] Syntax: Light
+2025-08-24 19:49:25.758 +02:00 [INF] Color: Dark
+2025-08-24 19:49:25.778 +02:00 [INF] Syntax: Dark
+2025-08-24 19:49:27.635 +02:00 [INF] Color: Light
+2025-08-24 19:49:27.648 +02:00 [INF] Syntax: Light
+2025-08-24 19:49:28.805 +02:00 [INF] Color: Dark
+2025-08-24 19:49:28.807 +02:00 [INF] Syntax: Dark
+2025-08-24 19:49:29.859 +02:00 [INF] Color: Light
+2025-08-24 19:49:29.871 +02:00 [INF] Syntax: Light
+2025-08-24 19:49:33.590 +02:00 [INF] Color: Dark
+2025-08-24 19:49:33.592 +02:00 [INF] Syntax: Dark
+2025-08-24 19:49:34.830 +02:00 [INF] Color: Light
+2025-08-24 19:49:34.840 +02:00 [INF] Syntax: Light
+2025-08-24 19:49:36.093 +02:00 [INF] Color: Dark
+2025-08-24 19:49:36.095 +02:00 [INF] Syntax: Dark
+2025-08-24 19:49:46.872 +02:00 [INF] Color: Light
+2025-08-24 19:49:46.873 +02:00 [INF] Syntax: Light
+2025-08-24 19:50:42.066 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:50:42.089 +02:00 [INF] Width: 663px
+2025-08-24 19:50:42.098 +02:00 [INF] Height: 743px
+2025-08-24 19:50:42.098 +02:00 [INF] Top: 117px
+2025-08-24 19:50:42.098 +02:00 [INF] Left: -1074px
+2025-08-24 19:50:42.099 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:50:42.099 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:50:42.099 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:50:42.099 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:50:42.100 +02:00 [INF] Response: 
+{}
+2025-08-24 19:50:42.100 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:50:42.101 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:50:42.101 +02:00 [INF] Color: Dark
+2025-08-24 19:50:42.107 +02:00 [INF] Syntax: Dark
+2025-08-24 19:50:42.877 +02:00 [DBG] Window: SingleView
+2025-08-24 19:50:48.885 +02:00 [INF] Color: Light
+2025-08-24 19:50:48.889 +02:00 [INF] Syntax: Light
+2025-08-24 19:51:16.788 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:51:16.848 +02:00 [INF] Width: 663px
+2025-08-24 19:51:16.857 +02:00 [INF] Height: 743px
+2025-08-24 19:51:16.857 +02:00 [INF] Top: 117px
+2025-08-24 19:51:16.857 +02:00 [INF] Left: -1074px
+2025-08-24 19:51:16.857 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:51:16.858 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:51:16.858 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:51:16.858 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:51:16.859 +02:00 [INF] Response: 
+{}
+2025-08-24 19:51:16.859 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:51:16.859 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:51:16.860 +02:00 [INF] Color: Dark
+2025-08-24 19:51:16.865 +02:00 [INF] Syntax: Dark
+2025-08-24 19:51:17.037 +02:00 [DBG] Window: SingleView
+2025-08-24 19:51:20.654 +02:00 [INF] Color: Light
+2025-08-24 19:51:20.659 +02:00 [INF] Syntax: Light
+2025-08-24 19:56:32.307 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:56:32.334 +02:00 [INF] Width: 663px
+2025-08-24 19:56:32.342 +02:00 [INF] Height: 743px
+2025-08-24 19:56:32.342 +02:00 [INF] Top: 117px
+2025-08-24 19:56:32.343 +02:00 [INF] Left: -1074px
+2025-08-24 19:56:32.343 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:56:32.343 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:56:32.343 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:56:32.343 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:56:32.344 +02:00 [INF] Response: 
+{}
+2025-08-24 19:56:32.344 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:56:32.344 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:56:32.344 +02:00 [INF] Color: Dark
+2025-08-24 19:56:32.350 +02:00 [INF] Syntax: Dark
+2025-08-24 19:56:33.042 +02:00 [DBG] Window: SingleView
+2025-08-24 19:56:39.638 +02:00 [INF] Color: Light
+2025-08-24 19:56:39.671 +02:00 [INF] Syntax: Light
+2025-08-24 19:57:01.457 +02:00 [INF] Color: Dark
+2025-08-24 19:57:01.460 +02:00 [INF] Syntax: Dark
+2025-08-24 19:57:02.720 +02:00 [INF] Color: Light
+2025-08-24 19:57:02.723 +02:00 [INF] Syntax: Light
+2025-08-24 19:58:37.691 +02:00 [INF] ---- Starting App ----
+2025-08-24 19:58:37.712 +02:00 [INF] Width: 663px
+2025-08-24 19:58:37.720 +02:00 [INF] Height: 743px
+2025-08-24 19:58:37.720 +02:00 [INF] Top: 117px
+2025-08-24 19:58:37.720 +02:00 [INF] Left: -1074px
+2025-08-24 19:58:37.720 +02:00 [INF] IsFirstBoot: false
+2025-08-24 19:58:37.721 +02:00 [INF] IsDarkTheme: true
+2025-08-24 19:58:37.721 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 19:58:37.721 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 19:58:37.722 +02:00 [INF] Response: 
+{}
+2025-08-24 19:58:37.722 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 19:58:37.723 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 19:58:37.723 +02:00 [INF] Color: Dark
+2025-08-24 19:58:37.728 +02:00 [INF] Syntax: Dark
+2025-08-24 19:58:37.897 +02:00 [DBG] Window: SingleView
+2025-08-24 19:58:42.664 +02:00 [INF] Color: Light
+2025-08-24 19:58:42.680 +02:00 [INF] Syntax: Light
+2025-08-24 19:59:31.541 +02:00 [INF] Color: Dark
+2025-08-24 19:59:31.561 +02:00 [INF] Syntax: Dark
+2025-08-24 19:59:35.725 +02:00 [INF] Color: Light
+2025-08-24 19:59:35.738 +02:00 [INF] Syntax: Light
+2025-08-24 19:59:38.922 +02:00 [INF] Color: Dark
+2025-08-24 19:59:38.924 +02:00 [INF] Syntax: Dark
+2025-08-24 19:59:39.875 +02:00 [INF] Color: Light
+2025-08-24 19:59:39.886 +02:00 [INF] Syntax: Light
+2025-08-24 20:00:35.247 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:00:35.270 +02:00 [INF] Width: 663px
+2025-08-24 20:00:35.279 +02:00 [INF] Height: 743px
+2025-08-24 20:00:35.279 +02:00 [INF] Top: 117px
+2025-08-24 20:00:35.279 +02:00 [INF] Left: -1074px
+2025-08-24 20:00:35.279 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:00:35.280 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:00:35.280 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:00:35.280 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:00:35.281 +02:00 [INF] Response: 
+{}
+2025-08-24 20:00:35.281 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:00:35.282 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:00:35.282 +02:00 [INF] Color: Dark
+2025-08-24 20:00:35.287 +02:00 [INF] Syntax: Dark
+2025-08-24 20:00:35.880 +02:00 [DBG] Window: SingleView
+2025-08-24 20:00:40.263 +02:00 [INF] Color: Light
+2025-08-24 20:00:40.268 +02:00 [INF] Syntax: Light
+2025-08-24 20:00:55.159 +02:00 [INF] Color: Dark
+2025-08-24 20:00:55.163 +02:00 [INF] Syntax: Dark
+2025-08-24 20:00:55.859 +02:00 [INF] Color: Light
+2025-08-24 20:00:55.862 +02:00 [INF] Syntax: Light
+2025-08-24 20:00:56.491 +02:00 [INF] Color: Dark
+2025-08-24 20:00:56.503 +02:00 [INF] Syntax: Dark
+2025-08-24 20:01:07.005 +02:00 [INF] Color: Light
+2025-08-24 20:01:07.007 +02:00 [INF] Syntax: Light
+2025-08-24 20:01:09.444 +02:00 [INF] Color: Dark
+2025-08-24 20:01:09.455 +02:00 [INF] Syntax: Dark
+2025-08-24 20:01:31.176 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:01:31.308 +02:00 [INF] Width: 663px
+2025-08-24 20:01:31.358 +02:00 [INF] Height: 743px
+2025-08-24 20:01:31.359 +02:00 [INF] Top: 117px
+2025-08-24 20:01:31.360 +02:00 [INF] Left: -1074px
+2025-08-24 20:01:31.362 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:01:31.363 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:01:31.365 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:01:31.366 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:01:31.370 +02:00 [INF] Response: 
+{}
+2025-08-24 20:01:31.371 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:01:31.377 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:01:31.380 +02:00 [INF] Color: Dark
+2025-08-24 20:01:31.415 +02:00 [INF] Syntax: Dark
+2025-08-24 20:01:31.786 +02:00 [DBG] Window: SingleView
+2025-08-24 20:01:35.347 +02:00 [INF] Color: Light
+2025-08-24 20:01:35.352 +02:00 [INF] Syntax: Light
+2025-08-24 20:01:40.441 +02:00 [INF] Color: Dark
+2025-08-24 20:01:40.445 +02:00 [INF] Syntax: Dark
+2025-08-24 20:01:43.358 +02:00 [INF] Color: Light
+2025-08-24 20:01:43.360 +02:00 [INF] Syntax: Light
+2025-08-24 20:01:49.029 +02:00 [INF] Color: Dark
+2025-08-24 20:01:49.031 +02:00 [INF] Syntax: Dark
+2025-08-24 20:01:53.488 +02:00 [INF] Color: Light
+2025-08-24 20:01:53.490 +02:00 [INF] Syntax: Light
+2025-08-24 20:02:24.787 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:02:24.916 +02:00 [INF] Width: 663px
+2025-08-24 20:02:24.942 +02:00 [INF] Height: 743px
+2025-08-24 20:02:24.942 +02:00 [INF] Top: 117px
+2025-08-24 20:02:24.942 +02:00 [INF] Left: -1074px
+2025-08-24 20:02:24.942 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:02:24.943 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:02:24.943 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:02:24.943 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:02:24.944 +02:00 [INF] Response: 
+{}
+2025-08-24 20:02:24.944 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:02:24.945 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:02:24.945 +02:00 [INF] Color: Dark
+2025-08-24 20:02:24.952 +02:00 [INF] Syntax: Dark
+2025-08-24 20:02:25.117 +02:00 [DBG] Window: SingleView
+2025-08-24 20:02:28.600 +02:00 [INF] Color: Light
+2025-08-24 20:02:28.605 +02:00 [INF] Syntax: Light
+2025-08-24 20:02:49.270 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:02:49.292 +02:00 [INF] Width: 663px
+2025-08-24 20:02:49.301 +02:00 [INF] Height: 743px
+2025-08-24 20:02:49.301 +02:00 [INF] Top: 117px
+2025-08-24 20:02:49.301 +02:00 [INF] Left: -1074px
+2025-08-24 20:02:49.302 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:02:49.302 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:02:49.302 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:02:49.302 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:02:49.303 +02:00 [INF] Response: 
+{}
+2025-08-24 20:02:49.303 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:02:49.304 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:02:49.304 +02:00 [INF] Color: Dark
+2025-08-24 20:02:49.309 +02:00 [INF] Syntax: Dark
+2025-08-24 20:02:50.077 +02:00 [DBG] Window: SingleView
+2025-08-24 20:02:51.817 +02:00 [INF] Color: Light
+2025-08-24 20:02:51.828 +02:00 [INF] Syntax: Light
+2025-08-24 20:02:56.114 +02:00 [INF] Color: Dark
+2025-08-24 20:02:56.118 +02:00 [INF] Syntax: Dark
+2025-08-24 20:02:57.267 +02:00 [INF] Color: Light
+2025-08-24 20:02:57.269 +02:00 [INF] Syntax: Light
+2025-08-24 20:03:01.807 +02:00 [INF] Color: Dark
+2025-08-24 20:03:01.809 +02:00 [INF] Syntax: Dark
+2025-08-24 20:03:03.614 +02:00 [INF] Color: Light
+2025-08-24 20:03:03.616 +02:00 [INF] Syntax: Light
+2025-08-24 20:03:05.197 +02:00 [INF] Color: Dark
+2025-08-24 20:03:05.199 +02:00 [INF] Syntax: Dark
+2025-08-24 20:03:43.090 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:03:43.245 +02:00 [INF] Width: 663px
+2025-08-24 20:03:43.306 +02:00 [INF] Height: 743px
+2025-08-24 20:03:43.307 +02:00 [INF] Top: 117px
+2025-08-24 20:03:43.308 +02:00 [INF] Left: -1074px
+2025-08-24 20:03:43.309 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:03:43.311 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:03:43.312 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:03:43.314 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:03:43.318 +02:00 [INF] Response: 
+{}
+2025-08-24 20:03:43.319 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:03:43.323 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:03:43.325 +02:00 [INF] Color: Dark
+2025-08-24 20:03:43.363 +02:00 [INF] Syntax: Dark
+2025-08-24 20:03:43.760 +02:00 [DBG] Window: SingleView
+2025-08-24 20:03:45.996 +02:00 [INF] Color: Light
+2025-08-24 20:03:46.001 +02:00 [INF] Syntax: Light
+2025-08-24 20:04:09.057 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:04:09.079 +02:00 [INF] Width: 663px
+2025-08-24 20:04:09.088 +02:00 [INF] Height: 743px
+2025-08-24 20:04:09.089 +02:00 [INF] Top: 117px
+2025-08-24 20:04:09.089 +02:00 [INF] Left: -1074px
+2025-08-24 20:04:09.089 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:04:09.089 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:04:09.090 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:04:09.090 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:04:09.090 +02:00 [INF] Response: 
+{}
+2025-08-24 20:04:09.091 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:04:09.091 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:04:09.091 +02:00 [INF] Color: Dark
+2025-08-24 20:04:09.097 +02:00 [INF] Syntax: Dark
+2025-08-24 20:04:09.957 +02:00 [DBG] Window: SingleView
+2025-08-24 20:04:13.179 +02:00 [INF] Color: Light
+2025-08-24 20:04:13.184 +02:00 [INF] Syntax: Light
+2025-08-24 20:04:43.579 +02:00 [INF] Color: Dark
+2025-08-24 20:04:43.582 +02:00 [INF] Syntax: Dark
+2025-08-24 20:04:44.362 +02:00 [INF] Color: Light
+2025-08-24 20:04:44.364 +02:00 [INF] Syntax: Light
+2025-08-24 20:04:54.981 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:04:55.003 +02:00 [INF] Width: 663px
+2025-08-24 20:04:55.011 +02:00 [INF] Height: 743px
+2025-08-24 20:04:55.011 +02:00 [INF] Top: 117px
+2025-08-24 20:04:55.011 +02:00 [INF] Left: -1074px
+2025-08-24 20:04:55.012 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:04:55.012 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:04:55.012 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:04:55.013 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:04:55.013 +02:00 [INF] Response: 
+{}
+2025-08-24 20:04:55.014 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:04:55.014 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:04:55.015 +02:00 [INF] Color: Dark
+2025-08-24 20:04:55.021 +02:00 [INF] Syntax: Dark
+2025-08-24 20:04:55.290 +02:00 [DBG] Window: SingleView
+2025-08-24 20:04:58.185 +02:00 [INF] Color: Light
+2025-08-24 20:04:58.216 +02:00 [INF] Syntax: Light
+2025-08-24 20:05:05.309 +02:00 [INF] Color: Dark
+2025-08-24 20:05:05.312 +02:00 [INF] Syntax: Dark
+2025-08-24 20:05:08.341 +02:00 [INF] Color: Light
+2025-08-24 20:05:08.343 +02:00 [INF] Syntax: Light
+2025-08-24 20:05:09.238 +02:00 [INF] Color: Dark
+2025-08-24 20:05:09.240 +02:00 [INF] Syntax: Dark
+2025-08-24 20:05:50.458 +02:00 [INF] Color: Light
+2025-08-24 20:05:50.469 +02:00 [INF] Syntax: Light
+2025-08-24 20:08:35.977 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:08:36.000 +02:00 [INF] Width: 663px
+2025-08-24 20:08:36.042 +02:00 [INF] Height: 743px
+2025-08-24 20:08:36.043 +02:00 [INF] Top: 117px
+2025-08-24 20:08:36.044 +02:00 [INF] Left: -1074px
+2025-08-24 20:08:36.045 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:08:36.047 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:08:36.050 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:08:36.051 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:08:36.057 +02:00 [INF] Response: 
+{}
+2025-08-24 20:08:36.058 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:08:36.062 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:08:36.064 +02:00 [INF] Color: Dark
+2025-08-24 20:08:36.100 +02:00 [INF] Syntax: Dark
+2025-08-24 20:08:36.831 +02:00 [DBG] Window: SingleView
+2025-08-24 20:08:41.054 +02:00 [INF] Color: Light
+2025-08-24 20:08:41.077 +02:00 [INF] Syntax: Light
+2025-08-24 20:09:00.267 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:09:00.288 +02:00 [INF] Width: 663px
+2025-08-24 20:09:00.297 +02:00 [INF] Height: 743px
+2025-08-24 20:09:00.297 +02:00 [INF] Top: 117px
+2025-08-24 20:09:00.297 +02:00 [INF] Left: -1074px
+2025-08-24 20:09:00.297 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:09:00.297 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:09:00.298 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:09:00.298 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:09:00.299 +02:00 [INF] Response: 
+{}
+2025-08-24 20:09:00.299 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:09:00.299 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:09:00.300 +02:00 [INF] Color: Dark
+2025-08-24 20:09:00.305 +02:00 [INF] Syntax: Dark
+2025-08-24 20:09:00.703 +02:00 [DBG] Window: SingleView
+2025-08-24 20:09:04.065 +02:00 [INF] Color: Light
+2025-08-24 20:09:04.070 +02:00 [INF] Syntax: Light
+2025-08-24 20:09:17.131 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:09:17.154 +02:00 [INF] Width: 663px
+2025-08-24 20:09:17.163 +02:00 [INF] Height: 743px
+2025-08-24 20:09:17.163 +02:00 [INF] Top: 117px
+2025-08-24 20:09:17.164 +02:00 [INF] Left: -1074px
+2025-08-24 20:09:17.164 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:09:17.164 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:09:17.165 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:09:17.165 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:09:17.165 +02:00 [INF] Response: 
+{}
+2025-08-24 20:09:17.166 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:09:17.166 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:09:17.166 +02:00 [INF] Color: Dark
+2025-08-24 20:09:17.172 +02:00 [INF] Syntax: Dark
+2025-08-24 20:09:17.822 +02:00 [DBG] Window: SingleView
+2025-08-24 20:09:21.766 +02:00 [INF] Color: Light
+2025-08-24 20:09:21.794 +02:00 [INF] Syntax: Light
+2025-08-24 20:09:23.870 +02:00 [INF] Color: Dark
+2025-08-24 20:09:23.873 +02:00 [INF] Syntax: Dark
+2025-08-24 20:09:25.425 +02:00 [INF] Color: Light
+2025-08-24 20:09:25.427 +02:00 [INF] Syntax: Light
+2025-08-24 20:09:40.471 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:09:40.493 +02:00 [INF] Width: 663px
+2025-08-24 20:09:40.502 +02:00 [INF] Height: 743px
+2025-08-24 20:09:40.502 +02:00 [INF] Top: 117px
+2025-08-24 20:09:40.502 +02:00 [INF] Left: -1074px
+2025-08-24 20:09:40.503 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:09:40.503 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:09:40.503 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:09:40.503 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:09:40.504 +02:00 [INF] Response: 
+{}
+2025-08-24 20:09:40.504 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:09:40.505 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:09:40.505 +02:00 [INF] Color: Dark
+2025-08-24 20:09:40.511 +02:00 [INF] Syntax: Dark
+2025-08-24 20:09:41.253 +02:00 [DBG] Window: SingleView
+2025-08-24 20:09:44.441 +02:00 [INF] Color: Light
+2025-08-24 20:09:44.472 +02:00 [INF] Syntax: Light
+2025-08-24 20:09:48.857 +02:00 [INF] Color: Dark
+2025-08-24 20:09:48.860 +02:00 [INF] Syntax: Dark
+2025-08-24 20:09:50.855 +02:00 [INF] Color: Light
+2025-08-24 20:09:50.868 +02:00 [INF] Syntax: Light
+2025-08-24 20:10:08.447 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:10:08.591 +02:00 [INF] Width: 663px
+2025-08-24 20:10:08.600 +02:00 [INF] Height: 743px
+2025-08-24 20:10:08.600 +02:00 [INF] Top: 117px
+2025-08-24 20:10:08.600 +02:00 [INF] Left: -1074px
+2025-08-24 20:10:08.601 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:10:08.601 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:10:08.601 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:10:08.601 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:10:08.602 +02:00 [INF] Response: 
+{}
+2025-08-24 20:10:08.602 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:10:08.603 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:10:08.603 +02:00 [INF] Color: Dark
+2025-08-24 20:10:08.609 +02:00 [INF] Syntax: Dark
+2025-08-24 20:10:08.777 +02:00 [DBG] Window: SingleView
+2025-08-24 20:10:10.580 +02:00 [INF] Color: Light
+2025-08-24 20:10:10.615 +02:00 [INF] Syntax: Light
+2025-08-24 20:10:11.862 +02:00 [INF] Color: Dark
+2025-08-24 20:10:11.866 +02:00 [INF] Syntax: Dark
+2025-08-24 20:10:17.965 +02:00 [INF] Color: Light
+2025-08-24 20:10:17.983 +02:00 [INF] Syntax: Light
+2025-08-24 20:10:54.352 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:10:54.384 +02:00 [INF] Width: 663px
+2025-08-24 20:10:54.435 +02:00 [INF] Height: 743px
+2025-08-24 20:10:54.436 +02:00 [INF] Top: 117px
+2025-08-24 20:10:54.437 +02:00 [INF] Left: -1074px
+2025-08-24 20:10:54.439 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:10:54.440 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:10:54.442 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:10:54.443 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:10:54.447 +02:00 [INF] Response: 
+{}
+2025-08-24 20:10:54.448 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:10:54.451 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:10:54.452 +02:00 [INF] Color: Dark
+2025-08-24 20:10:54.485 +02:00 [INF] Syntax: Dark
+2025-08-24 20:10:54.923 +02:00 [DBG] Window: SingleView
+2025-08-24 20:10:57.786 +02:00 [INF] Color: Light
+2025-08-24 20:10:57.814 +02:00 [INF] Syntax: Light
+2025-08-24 20:11:25.115 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:11:25.257 +02:00 [INF] Width: 663px
+2025-08-24 20:11:25.324 +02:00 [INF] Height: 743px
+2025-08-24 20:11:25.325 +02:00 [INF] Top: 117px
+2025-08-24 20:11:25.326 +02:00 [INF] Left: -1074px
+2025-08-24 20:11:25.328 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:11:25.329 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:11:25.332 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:11:25.334 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:11:25.339 +02:00 [INF] Response: 
+{}
+2025-08-24 20:11:25.342 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:11:25.349 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:11:25.350 +02:00 [INF] Color: Dark
+2025-08-24 20:11:25.384 +02:00 [INF] Syntax: Dark
+2025-08-24 20:11:25.940 +02:00 [DBG] Window: SingleView
+2025-08-24 20:11:28.293 +02:00 [INF] Color: Light
+2025-08-24 20:11:28.328 +02:00 [INF] Syntax: Light
+2025-08-24 20:11:36.575 +02:00 [INF] Color: Dark
+2025-08-24 20:11:36.590 +02:00 [INF] Syntax: Dark
+2025-08-24 20:11:37.822 +02:00 [INF] Color: Light
+2025-08-24 20:11:37.825 +02:00 [INF] Syntax: Light
+2025-08-24 20:11:50.483 +02:00 [DBG] Window: SplitView
+2025-08-24 20:11:52.820 +02:00 [INF] Color: Dark
+2025-08-24 20:11:52.822 +02:00 [INF] Syntax: Dark
+2025-08-24 20:12:25.938 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:12:26.124 +02:00 [INF] Width: 663px
+2025-08-24 20:12:26.186 +02:00 [INF] Height: 743px
+2025-08-24 20:12:26.188 +02:00 [INF] Top: 117px
+2025-08-24 20:12:26.189 +02:00 [INF] Left: -1074px
+2025-08-24 20:12:26.191 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:12:26.192 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:12:26.196 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:12:26.197 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:12:26.202 +02:00 [INF] Response: 
+{}
+2025-08-24 20:12:26.203 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:12:26.208 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:12:26.209 +02:00 [INF] Color: Dark
+2025-08-24 20:12:26.259 +02:00 [INF] Syntax: Dark
+2025-08-24 20:12:26.720 +02:00 [DBG] Window: SingleView
+2025-08-24 20:12:42.869 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:12:42.891 +02:00 [INF] Width: 663px
+2025-08-24 20:12:42.899 +02:00 [INF] Height: 743px
+2025-08-24 20:12:42.899 +02:00 [INF] Top: 117px
+2025-08-24 20:12:42.900 +02:00 [INF] Left: -1074px
+2025-08-24 20:12:42.900 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:12:42.900 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:12:42.900 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:12:42.901 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:12:42.901 +02:00 [INF] Response: 
+{}
+2025-08-24 20:12:42.902 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:12:42.902 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:12:42.902 +02:00 [INF] Color: Dark
+2025-08-24 20:12:42.908 +02:00 [INF] Syntax: Dark
+2025-08-24 20:12:43.531 +02:00 [DBG] Window: SingleView
+2025-08-24 20:13:00.358 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:13:00.382 +02:00 [INF] Width: 663px
+2025-08-24 20:13:00.441 +02:00 [INF] Height: 743px
+2025-08-24 20:13:00.444 +02:00 [INF] Top: 117px
+2025-08-24 20:13:00.445 +02:00 [INF] Left: -1074px
+2025-08-24 20:13:00.448 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:13:00.457 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:13:00.468 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:13:00.473 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:13:00.482 +02:00 [INF] Response: 
+{}
+2025-08-24 20:13:00.485 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:13:00.489 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:13:00.490 +02:00 [INF] Color: Dark
+2025-08-24 20:13:00.527 +02:00 [INF] Syntax: Dark
+2025-08-24 20:13:01.276 +02:00 [DBG] Window: SingleView
+2025-08-24 20:13:21.257 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:13:21.280 +02:00 [INF] Width: 663px
+2025-08-24 20:13:21.289 +02:00 [INF] Height: 743px
+2025-08-24 20:13:21.289 +02:00 [INF] Top: 117px
+2025-08-24 20:13:21.289 +02:00 [INF] Left: -1074px
+2025-08-24 20:13:21.290 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:13:21.290 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:13:21.290 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:13:21.290 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:13:21.291 +02:00 [INF] Response: 
+{}
+2025-08-24 20:13:21.292 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:13:21.292 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:13:21.292 +02:00 [INF] Color: Dark
+2025-08-24 20:13:21.298 +02:00 [INF] Syntax: Dark
+2025-08-24 20:13:21.485 +02:00 [DBG] Window: SingleView
+2025-08-24 20:13:26.807 +02:00 [INF] Color: Light
+2025-08-24 20:13:26.834 +02:00 [INF] Syntax: Light
+2025-08-24 20:14:02.810 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:14:02.834 +02:00 [INF] Width: 663px
+2025-08-24 20:14:02.842 +02:00 [INF] Height: 743px
+2025-08-24 20:14:02.842 +02:00 [INF] Top: 117px
+2025-08-24 20:14:02.843 +02:00 [INF] Left: -1074px
+2025-08-24 20:14:02.843 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:14:02.843 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:14:02.843 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:14:02.844 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:14:02.844 +02:00 [INF] Response: 
+{}
+2025-08-24 20:14:02.845 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:14:02.845 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:14:02.845 +02:00 [INF] Color: Dark
+2025-08-24 20:14:02.850 +02:00 [INF] Syntax: Dark
+2025-08-24 20:14:03.775 +02:00 [DBG] Window: SingleView
+2025-08-24 20:15:09.408 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:15:09.558 +02:00 [INF] Width: 663px
+2025-08-24 20:15:09.608 +02:00 [INF] Height: 743px
+2025-08-24 20:15:09.609 +02:00 [INF] Top: 117px
+2025-08-24 20:15:09.610 +02:00 [INF] Left: -1074px
+2025-08-24 20:15:09.612 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:15:09.614 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:15:09.616 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:15:09.617 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:15:09.621 +02:00 [INF] Response: 
+{}
+2025-08-24 20:15:09.623 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:15:09.630 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:15:09.632 +02:00 [INF] Color: Dark
+2025-08-24 20:15:09.680 +02:00 [INF] Syntax: Dark
+2025-08-24 20:15:09.988 +02:00 [DBG] Window: SingleView
+2025-08-24 20:15:16.333 +02:00 [INF] Color: Light
+2025-08-24 20:15:16.346 +02:00 [INF] Syntax: Light
+2025-08-24 20:15:17.562 +02:00 [INF] Color: Dark
+2025-08-24 20:15:17.583 +02:00 [INF] Syntax: Dark
+2025-08-24 20:15:38.266 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:15:38.395 +02:00 [INF] Width: 663px
+2025-08-24 20:15:38.443 +02:00 [INF] Height: 743px
+2025-08-24 20:15:38.444 +02:00 [INF] Top: 117px
+2025-08-24 20:15:38.445 +02:00 [INF] Left: -1074px
+2025-08-24 20:15:38.446 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:15:38.448 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:15:38.450 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:15:38.451 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:15:38.455 +02:00 [INF] Response: 
+{}
+2025-08-24 20:15:38.456 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:15:38.460 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:15:38.461 +02:00 [INF] Color: Dark
+2025-08-24 20:15:38.496 +02:00 [INF] Syntax: Dark
+2025-08-24 20:15:39.075 +02:00 [DBG] Window: SingleView
+2025-08-24 20:15:45.048 +02:00 [INF] Color: Light
+2025-08-24 20:15:45.052 +02:00 [INF] Syntax: Light
+2025-08-24 20:15:46.287 +02:00 [INF] Color: Dark
+2025-08-24 20:15:46.302 +02:00 [INF] Syntax: Dark
+2025-08-24 20:16:31.538 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:16:31.672 +02:00 [INF] Width: 663px
+2025-08-24 20:16:31.721 +02:00 [INF] Height: 743px
+2025-08-24 20:16:31.721 +02:00 [INF] Top: 117px
+2025-08-24 20:16:31.722 +02:00 [INF] Left: -1074px
+2025-08-24 20:16:31.724 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:16:31.725 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:16:31.728 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:16:31.730 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:16:31.746 +02:00 [INF] Response: 
+{}
+2025-08-24 20:16:31.750 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:16:31.758 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:16:31.759 +02:00 [INF] Color: Dark
+2025-08-24 20:16:31.808 +02:00 [INF] Syntax: Dark
+2025-08-24 20:16:32.199 +02:00 [DBG] Window: SingleView
+2025-08-24 20:16:35.355 +02:00 [INF] Color: Light
+2025-08-24 20:16:35.361 +02:00 [INF] Syntax: Light
+2025-08-24 20:16:49.463 +02:00 [INF] Color: Dark
+2025-08-24 20:16:49.466 +02:00 [INF] Syntax: Dark
+2025-08-24 20:16:53.051 +02:00 [INF] Color: Light
+2025-08-24 20:16:53.054 +02:00 [INF] Syntax: Light
+2025-08-24 20:16:54.636 +02:00 [INF] Color: Dark
+2025-08-24 20:16:54.638 +02:00 [INF] Syntax: Dark
+2025-08-24 20:16:56.633 +02:00 [INF] Color: Light
+2025-08-24 20:16:56.635 +02:00 [INF] Syntax: Light
+2025-08-24 20:17:08.205 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:17:08.233 +02:00 [INF] Width: 663px
+2025-08-24 20:17:08.243 +02:00 [INF] Height: 743px
+2025-08-24 20:17:08.243 +02:00 [INF] Top: 117px
+2025-08-24 20:17:08.243 +02:00 [INF] Left: -1074px
+2025-08-24 20:17:08.243 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:17:08.244 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:17:08.244 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:17:08.245 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:17:08.245 +02:00 [INF] Response: 
+{}
+2025-08-24 20:17:08.246 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:17:08.246 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:17:08.247 +02:00 [INF] Color: Dark
+2025-08-24 20:17:08.253 +02:00 [INF] Syntax: Dark
+2025-08-24 20:17:08.425 +02:00 [DBG] Window: SingleView
+2025-08-24 20:17:10.737 +02:00 [INF] Color: Light
+2025-08-24 20:17:10.772 +02:00 [INF] Syntax: Light
+2025-08-24 20:17:14.509 +02:00 [INF] Color: Dark
+2025-08-24 20:17:14.512 +02:00 [INF] Syntax: Dark
+2025-08-24 20:17:17.296 +02:00 [INF] Color: Light
+2025-08-24 20:17:17.310 +02:00 [INF] Syntax: Light
+2025-08-24 20:17:20.541 +02:00 [INF] Color: Dark
+2025-08-24 20:17:20.543 +02:00 [INF] Syntax: Dark
+2025-08-24 20:17:22.571 +02:00 [INF] Color: Light
+2025-08-24 20:17:22.573 +02:00 [INF] Syntax: Light
+2025-08-24 20:17:48.507 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:17:48.635 +02:00 [INF] Width: 663px
+2025-08-24 20:17:48.683 +02:00 [INF] Height: 743px
+2025-08-24 20:17:48.684 +02:00 [INF] Top: 117px
+2025-08-24 20:17:48.685 +02:00 [INF] Left: -1074px
+2025-08-24 20:17:48.686 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:17:48.688 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:17:48.690 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:17:48.691 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:17:48.695 +02:00 [INF] Response: 
+{}
+2025-08-24 20:17:48.696 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:17:48.699 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:17:48.701 +02:00 [INF] Color: Dark
+2025-08-24 20:17:48.741 +02:00 [INF] Syntax: Dark
+2025-08-24 20:17:48.951 +02:00 [DBG] Window: SingleView
+2025-08-24 20:17:51.827 +02:00 [INF] Color: Light
+2025-08-24 20:17:51.861 +02:00 [INF] Syntax: Light
+2025-08-24 20:17:58.114 +02:00 [INF] Color: Dark
+2025-08-24 20:17:58.118 +02:00 [INF] Syntax: Dark
+2025-08-24 20:18:00.174 +02:00 [INF] Color: Light
+2025-08-24 20:18:00.187 +02:00 [INF] Syntax: Light
+2025-08-24 20:18:00.675 +02:00 [INF] Color: Dark
+2025-08-24 20:18:00.677 +02:00 [INF] Syntax: Dark
+2025-08-24 20:18:01.177 +02:00 [INF] Color: Light
+2025-08-24 20:18:01.206 +02:00 [INF] Syntax: Light
+2025-08-24 20:18:02.728 +02:00 [INF] Color: Dark
+2025-08-24 20:18:02.730 +02:00 [INF] Syntax: Dark
+2025-08-24 20:18:47.041 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:18:47.181 +02:00 [INF] Width: 663px
+2025-08-24 20:18:47.229 +02:00 [INF] Height: 743px
+2025-08-24 20:18:47.230 +02:00 [INF] Top: 117px
+2025-08-24 20:18:47.231 +02:00 [INF] Left: -1074px
+2025-08-24 20:18:47.233 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:18:47.234 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:18:47.236 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:18:47.237 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:18:47.241 +02:00 [INF] Response: 
+{}
+2025-08-24 20:18:47.242 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:18:47.245 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:18:47.247 +02:00 [INF] Color: Dark
+2025-08-24 20:18:47.281 +02:00 [INF] Syntax: Dark
+2025-08-24 20:18:47.753 +02:00 [DBG] Window: SingleView
+2025-08-24 20:18:50.242 +02:00 [INF] Color: Light
+2025-08-24 20:18:50.247 +02:00 [INF] Syntax: Light
+2025-08-24 20:18:53.505 +02:00 [INF] Color: Dark
+2025-08-24 20:18:53.523 +02:00 [INF] Syntax: Dark
+2025-08-24 20:18:55.102 +02:00 [INF] Color: Light
+2025-08-24 20:18:55.104 +02:00 [INF] Syntax: Light
+2025-08-24 20:19:16.546 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:19:16.567 +02:00 [INF] Width: 663px
+2025-08-24 20:19:16.576 +02:00 [INF] Height: 743px
+2025-08-24 20:19:16.576 +02:00 [INF] Top: 117px
+2025-08-24 20:19:16.576 +02:00 [INF] Left: -1074px
+2025-08-24 20:19:16.577 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:19:16.577 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:19:16.577 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:19:16.577 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:19:16.578 +02:00 [INF] Response: 
+{}
+2025-08-24 20:19:16.578 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:19:16.579 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:19:16.579 +02:00 [INF] Color: Dark
+2025-08-24 20:19:16.585 +02:00 [INF] Syntax: Dark
+2025-08-24 20:19:16.960 +02:00 [DBG] Window: SingleView
+2025-08-24 20:19:18.847 +02:00 [INF] Color: Light
+2025-08-24 20:19:18.878 +02:00 [INF] Syntax: Light
+2025-08-24 20:20:37.408 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:20:37.542 +02:00 [INF] Width: 663px
+2025-08-24 20:20:37.594 +02:00 [INF] Height: 743px
+2025-08-24 20:20:37.595 +02:00 [INF] Top: 117px
+2025-08-24 20:20:37.596 +02:00 [INF] Left: -1074px
+2025-08-24 20:20:37.598 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:20:37.599 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:20:37.602 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:20:37.603 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:20:37.611 +02:00 [INF] Response: 
+{}
+2025-08-24 20:20:37.615 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:20:37.619 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:20:37.621 +02:00 [INF] Color: Dark
+2025-08-24 20:20:37.677 +02:00 [INF] Syntax: Dark
+2025-08-24 20:20:38.188 +02:00 [DBG] Window: SingleView
+2025-08-24 20:21:11.006 +02:00 [INF] Color: Light
+2025-08-24 20:21:11.010 +02:00 [INF] Syntax: Light
+2025-08-24 20:21:14.093 +02:00 [DBG] Window: SplitView
+2025-08-24 20:21:17.945 +02:00 [INF] Color: Dark
+2025-08-24 20:21:17.962 +02:00 [INF] Syntax: Dark
+2025-08-24 20:21:19.691 +02:00 [DBG] Window: SingleView
+2025-08-24 20:21:38.907 +02:00 [INF] Color: Light
+2025-08-24 20:21:38.909 +02:00 [INF] Syntax: Light
+2025-08-24 20:21:44.404 +02:00 [INF] Color: Dark
+2025-08-24 20:21:44.415 +02:00 [INF] Syntax: Dark
+2025-08-24 20:21:46.476 +02:00 [INF] Color: Light
+2025-08-24 20:21:46.478 +02:00 [INF] Syntax: Light
+2025-08-24 20:22:24.971 +02:00 [DBG] No headers provided
+2025-08-24 20:22:25.091 +02:00 [DBG] Response is HTML
+2025-08-24 20:22:26.432 +02:00 [DBG] No headers provided
+2025-08-24 20:22:26.451 +02:00 [DBG] Response is JSON
+2025-08-24 20:22:27.874 +02:00 [DBG] No headers provided
+2025-08-24 20:22:31.095 +02:00 [INF] Color: Dark
+2025-08-24 20:22:31.097 +02:00 [INF] Syntax: Dark
+2025-08-24 20:22:32.884 +02:00 [WRN] Request timed out after 5 seconds!
+2025-08-24 20:22:34.838 +02:00 [DBG] No headers provided
+2025-08-24 20:22:34.876 +02:00 [DBG] Response is XML
+2025-08-24 20:22:37.485 +02:00 [DBG] No headers provided
+2025-08-24 20:22:37.497 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:23:07.111 +02:00 [DBG] No headers provided
+2025-08-24 20:23:11.037 +02:00 [INF] Color: Light
+2025-08-24 20:23:11.048 +02:00 [INF] Syntax: Light
+2025-08-24 20:23:12.119 +02:00 [WRN] Request timed out after 5 seconds!
+2025-08-24 20:23:14.097 +02:00 [DBG] No headers provided
+2025-08-24 20:23:14.171 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:14.455 +02:00 [DBG] No headers provided
+2025-08-24 20:23:14.460 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:14.622 +02:00 [DBG] No headers provided
+2025-08-24 20:23:14.631 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:14.773 +02:00 [DBG] No headers provided
+2025-08-24 20:23:14.783 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:14.929 +02:00 [DBG] No headers provided
+2025-08-24 20:23:14.939 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:15.076 +02:00 [DBG] No headers provided
+2025-08-24 20:23:15.085 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:15.225 +02:00 [DBG] No headers provided
+2025-08-24 20:23:15.227 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:15.374 +02:00 [DBG] No headers provided
+2025-08-24 20:23:15.376 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:15.560 +02:00 [DBG] No headers provided
+2025-08-24 20:23:15.569 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:19.569 +02:00 [DBG] Adding headers:
+2025-08-24 20:23:19.569 +02:00 [DBG] > Authorization = 123
+2025-08-24 20:23:19.578 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:21.602 +02:00 [DBG] Adding headers:
+2025-08-24 20:23:21.602 +02:00 [DBG] > Authorization = 123
+2025-08-24 20:23:21.618 +02:00 [DBG] Response is JSON
+2025-08-24 20:23:23.289 +02:00 [DBG] Adding headers:
+2025-08-24 20:23:23.289 +02:00 [DBG] > Authorization = 123
+2025-08-24 20:23:23.346 +02:00 [DBG] Response is XML
+2025-08-24 20:23:25.417 +02:00 [DBG] Adding headers:
+2025-08-24 20:23:25.418 +02:00 [DBG] > Authorization = 123
+2025-08-24 20:23:25.461 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:23:35.471 +02:00 [DBG] Adding headers:
+2025-08-24 20:23:35.472 +02:00 [DBG] > Authorization = 123
+2025-08-24 20:23:35.472 +02:00 [DBG] > Accept = 123
+2025-08-24 20:23:35.472 +02:00 [DBG] > AcceptLanguage = 123
+2025-08-24 20:23:35.472 +02:00 [DBG] > AcceptEncoding = 123
+2025-08-24 20:23:35.472 +02:00 [DBG] > CacheControl = 123
+2025-08-24 20:23:35.476 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:23:43.587 +02:00 [DBG] No headers provided
+2025-08-24 20:23:43.606 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:23:44.697 +02:00 [DBG] No headers provided
+2025-08-24 20:23:44.700 +02:00 [DBG] Response is HTML
+2025-08-24 20:23:47.792 +02:00 [INF] Color: Dark
+2025-08-24 20:23:47.803 +02:00 [INF] Syntax: Dark
+2025-08-24 20:23:55.023 +02:00 [INF] Color: Light
+2025-08-24 20:23:55.025 +02:00 [INF] Syntax: Light
+2025-08-24 20:24:38.197 +02:00 [INF] Color: Dark
+2025-08-24 20:24:38.207 +02:00 [INF] Syntax: Dark
+2025-08-24 20:24:43.248 +02:00 [INF] Color: Light
+2025-08-24 20:24:43.259 +02:00 [INF] Syntax: Light
+2025-08-24 20:25:18.731 +02:00 [INF] Color: Dark
+2025-08-24 20:25:18.733 +02:00 [INF] Syntax: Dark
+2025-08-24 20:25:44.453 +02:00 [INF] Color: Light
+2025-08-24 20:25:44.455 +02:00 [INF] Syntax: Light
+2025-08-24 20:26:04.594 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:26:04.615 +02:00 [INF] Width: 663px
+2025-08-24 20:26:04.624 +02:00 [INF] Height: 743px
+2025-08-24 20:26:04.624 +02:00 [INF] Top: 117px
+2025-08-24 20:26:04.624 +02:00 [INF] Left: -1074px
+2025-08-24 20:26:04.624 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:26:04.625 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:26:04.625 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:26:04.625 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:26:04.625 +02:00 [INF] Response: 
+{}
+2025-08-24 20:26:04.625 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:26:04.626 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:26:04.627 +02:00 [INF] Color: Dark
+2025-08-24 20:26:04.632 +02:00 [INF] Syntax: Dark
+2025-08-24 20:26:04.821 +02:00 [DBG] Window: SingleView
+2025-08-24 20:26:12.272 +02:00 [INF] Color: Light
+2025-08-24 20:26:12.301 +02:00 [INF] Syntax: Light
+2025-08-24 20:26:16.929 +02:00 [INF] Color: Dark
+2025-08-24 20:26:16.953 +02:00 [INF] Syntax: Dark
+2025-08-24 20:26:18.935 +02:00 [INF] Color: Light
+2025-08-24 20:26:18.948 +02:00 [INF] Syntax: Light
+2025-08-24 20:26:39.539 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:26:39.564 +02:00 [INF] Width: 663px
+2025-08-24 20:26:39.575 +02:00 [INF] Height: 743px
+2025-08-24 20:26:39.576 +02:00 [INF] Top: 117px
+2025-08-24 20:26:39.576 +02:00 [INF] Left: -1074px
+2025-08-24 20:26:39.577 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:26:39.577 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:26:39.578 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:26:39.578 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:26:39.579 +02:00 [INF] Response: 
+{}
+2025-08-24 20:26:39.579 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:26:39.580 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:26:39.580 +02:00 [INF] Color: Dark
+2025-08-24 20:26:39.589 +02:00 [INF] Syntax: Dark
+2025-08-24 20:26:39.767 +02:00 [DBG] Window: SingleView
+2025-08-24 20:26:41.979 +02:00 [INF] Color: Light
+2025-08-24 20:26:41.984 +02:00 [INF] Syntax: Light
+2025-08-24 20:27:10.226 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:27:10.361 +02:00 [INF] Width: 663px
+2025-08-24 20:27:10.421 +02:00 [INF] Height: 743px
+2025-08-24 20:27:10.422 +02:00 [INF] Top: 117px
+2025-08-24 20:27:10.423 +02:00 [INF] Left: -1074px
+2025-08-24 20:27:10.424 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:27:10.426 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:27:10.428 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:27:10.429 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:27:10.433 +02:00 [INF] Response: 
+{}
+2025-08-24 20:27:10.434 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:27:10.438 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:27:10.439 +02:00 [INF] Color: Dark
+2025-08-24 20:27:10.472 +02:00 [INF] Syntax: Dark
+2025-08-24 20:27:11.072 +02:00 [DBG] Window: SingleView
+2025-08-24 20:27:12.783 +02:00 [INF] Color: Light
+2025-08-24 20:27:12.812 +02:00 [INF] Syntax: Light
+2025-08-24 20:27:34.068 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:27:34.090 +02:00 [INF] Width: 663px
+2025-08-24 20:27:34.118 +02:00 [INF] Height: 743px
+2025-08-24 20:27:34.119 +02:00 [INF] Top: 117px
+2025-08-24 20:27:34.121 +02:00 [INF] Left: -1074px
+2025-08-24 20:27:34.123 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:27:34.124 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:27:34.126 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:27:34.128 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:27:34.132 +02:00 [INF] Response: 
+{}
+2025-08-24 20:27:34.134 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:27:34.137 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:27:34.139 +02:00 [INF] Color: Dark
+2025-08-24 20:27:34.175 +02:00 [INF] Syntax: Dark
+2025-08-24 20:27:34.877 +02:00 [DBG] Window: SingleView
+2025-08-24 20:27:36.732 +02:00 [INF] Color: Light
+2025-08-24 20:27:36.737 +02:00 [INF] Syntax: Light
+2025-08-24 20:27:42.752 +02:00 [INF] Color: Dark
+2025-08-24 20:27:42.772 +02:00 [INF] Syntax: Dark
+2025-08-24 20:27:44.436 +02:00 [INF] Color: Light
+2025-08-24 20:27:44.438 +02:00 [INF] Syntax: Light
+2025-08-24 20:28:00.032 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:28:00.056 +02:00 [INF] Width: 663px
+2025-08-24 20:28:00.065 +02:00 [INF] Height: 743px
+2025-08-24 20:28:00.066 +02:00 [INF] Top: 117px
+2025-08-24 20:28:00.066 +02:00 [INF] Left: -1074px
+2025-08-24 20:28:00.066 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:28:00.067 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:28:00.067 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:28:00.067 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:28:00.068 +02:00 [INF] Response: 
+{}
+2025-08-24 20:28:00.068 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:28:00.068 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:28:00.069 +02:00 [INF] Color: Dark
+2025-08-24 20:28:00.094 +02:00 [INF] Syntax: Dark
+2025-08-24 20:28:01.016 +02:00 [DBG] Window: SingleView
+2025-08-24 20:28:04.917 +02:00 [INF] Color: Light
+2025-08-24 20:28:04.946 +02:00 [INF] Syntax: Light
+2025-08-24 20:28:08.745 +02:00 [INF] Color: Dark
+2025-08-24 20:28:08.779 +02:00 [INF] Syntax: Dark
+2025-08-24 20:28:20.146 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:28:20.172 +02:00 [INF] Width: 663px
+2025-08-24 20:28:20.182 +02:00 [INF] Height: 743px
+2025-08-24 20:28:20.182 +02:00 [INF] Top: 117px
+2025-08-24 20:28:20.183 +02:00 [INF] Left: -1074px
+2025-08-24 20:28:20.183 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:28:20.184 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:28:20.184 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:28:20.185 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:28:20.185 +02:00 [INF] Response: 
+{}
+2025-08-24 20:28:20.186 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:28:20.186 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:28:20.187 +02:00 [INF] Color: Dark
+2025-08-24 20:28:20.195 +02:00 [INF] Syntax: Dark
+2025-08-24 20:28:21.406 +02:00 [DBG] Window: SingleView
+2025-08-24 20:28:30.232 +02:00 [DBG] No headers provided
+2025-08-24 20:28:30.742 +02:00 [DBG] Response is HTML
+2025-08-24 20:28:33.575 +02:00 [INF] Color: Light
+2025-08-24 20:28:33.597 +02:00 [INF] Syntax: Light
+2025-08-24 20:28:35.363 +02:00 [INF] Color: Dark
+2025-08-24 20:28:35.380 +02:00 [INF] Syntax: Dark
+2025-08-24 20:29:14.719 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:29:14.851 +02:00 [INF] Width: 663px
+2025-08-24 20:29:14.906 +02:00 [INF] Height: 743px
+2025-08-24 20:29:14.907 +02:00 [INF] Top: 117px
+2025-08-24 20:29:14.907 +02:00 [INF] Left: -1074px
+2025-08-24 20:29:14.909 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:29:14.911 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:29:14.914 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:29:14.915 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:29:14.921 +02:00 [INF] Response: 
+{}
+2025-08-24 20:29:14.923 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:29:14.926 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:29:14.928 +02:00 [INF] Color: Dark
+2025-08-24 20:29:14.974 +02:00 [INF] Syntax: Dark
+2025-08-24 20:29:15.541 +02:00 [DBG] Window: SingleView
+2025-08-24 20:29:18.683 +02:00 [INF] Color: Light
+2025-08-24 20:29:18.718 +02:00 [INF] Syntax: Light
+2025-08-24 20:29:20.466 +02:00 [INF] Color: Dark
+2025-08-24 20:29:20.485 +02:00 [INF] Syntax: Dark
+2025-08-24 20:29:46.286 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:29:46.345 +02:00 [INF] Width: 663px
+2025-08-24 20:29:46.354 +02:00 [INF] Height: 743px
+2025-08-24 20:29:46.354 +02:00 [INF] Top: 117px
+2025-08-24 20:29:46.354 +02:00 [INF] Left: -1074px
+2025-08-24 20:29:46.355 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:29:46.355 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:29:46.355 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:29:46.355 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:29:46.356 +02:00 [INF] Response: 
+{}
+2025-08-24 20:29:46.356 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:29:46.357 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:29:46.357 +02:00 [INF] Color: Dark
+2025-08-24 20:29:46.362 +02:00 [INF] Syntax: Dark
+2025-08-24 20:29:46.564 +02:00 [DBG] Window: SingleView
+2025-08-24 20:30:09.381 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:30:09.402 +02:00 [INF] Width: 663px
+2025-08-24 20:30:09.411 +02:00 [INF] Height: 743px
+2025-08-24 20:30:09.411 +02:00 [INF] Top: 117px
+2025-08-24 20:30:09.411 +02:00 [INF] Left: -1074px
+2025-08-24 20:30:09.411 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:30:09.411 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:30:09.412 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:30:09.412 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:30:09.413 +02:00 [INF] Response: 
+{}
+2025-08-24 20:30:09.413 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:30:09.414 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:30:09.414 +02:00 [INF] Color: Dark
+2025-08-24 20:30:09.419 +02:00 [INF] Syntax: Dark
+2025-08-24 20:30:09.603 +02:00 [DBG] Window: SingleView
+2025-08-24 20:30:13.991 +02:00 [INF] Color: Light
+2025-08-24 20:30:14.021 +02:00 [INF] Syntax: Light
+2025-08-24 20:30:14.846 +02:00 [INF] Color: Dark
+2025-08-24 20:30:14.867 +02:00 [INF] Syntax: Dark
+2025-08-24 20:31:23.062 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:31:23.084 +02:00 [INF] Width: 663px
+2025-08-24 20:31:23.093 +02:00 [INF] Height: 743px
+2025-08-24 20:31:23.094 +02:00 [INF] Top: 117px
+2025-08-24 20:31:23.094 +02:00 [INF] Left: -1074px
+2025-08-24 20:31:23.094 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:31:23.095 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:31:23.095 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:31:23.095 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:31:23.096 +02:00 [INF] Response: 
+{}
+2025-08-24 20:31:23.096 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:31:23.097 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:31:23.097 +02:00 [INF] Color: Dark
+2025-08-24 20:31:23.104 +02:00 [INF] Syntax: Dark
+2025-08-24 20:31:23.370 +02:00 [DBG] Window: SingleView
+2025-08-24 20:31:27.237 +02:00 [INF] Color: Light
+2025-08-24 20:31:27.241 +02:00 [INF] Syntax: Light
+2025-08-24 20:31:29.782 +02:00 [INF] Color: Dark
+2025-08-24 20:31:29.803 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:06.582 +02:00 [INF] ---- Starting App ----
+2025-08-24 20:32:06.725 +02:00 [INF] Width: 663px
+2025-08-24 20:32:06.774 +02:00 [INF] Height: 743px
+2025-08-24 20:32:06.775 +02:00 [INF] Top: 117px
+2025-08-24 20:32:06.776 +02:00 [INF] Left: -1074px
+2025-08-24 20:32:06.777 +02:00 [INF] IsFirstBoot: false
+2025-08-24 20:32:06.779 +02:00 [INF] IsDarkTheme: true
+2025-08-24 20:32:06.781 +02:00 [INF] Url: https://localhost:7291/test
+2025-08-24 20:32:06.782 +02:00 [INF] Payload: 
+{
+  "id": 42,
+  "name": "peppson",
+  "isActive": true,
+  "projects": [
+    {
+      "id": 1,
+      "name": "random WPF app",
+      "status": "done-in-a-day-maybe"
+    },
+    {
+      "id": 2,
+      "name": "ESP32 shenanigans",
+      "status": "completed"
+    }
+  ]
+}
+2025-08-24 20:32:06.785 +02:00 [INF] Response: 
+{}
+2025-08-24 20:32:06.786 +02:00 [INF] Header: 
+{
+  "Authorization": "",
+  "Accept": "",
+  "AcceptLanguage": "",
+  "AcceptEncoding": "",
+  "UserAgent": "",
+  "CacheControl": "",
+  "Connection": ""
+}
+2025-08-24 20:32:06.789 +02:00 [INF] Loaded Theme: Dark
+2025-08-24 20:32:06.791 +02:00 [INF] Color: Dark
+2025-08-24 20:32:06.824 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:07.434 +02:00 [DBG] Window: SingleView
+2025-08-24 20:32:10.081 +02:00 [INF] Color: Light
+2025-08-24 20:32:10.113 +02:00 [INF] Syntax: Light
+2025-08-24 20:32:11.741 +02:00 [INF] Color: Dark
+2025-08-24 20:32:11.764 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:12.500 +02:00 [INF] Color: Light
+2025-08-24 20:32:12.519 +02:00 [INF] Syntax: Light
+2025-08-24 20:32:13.082 +02:00 [INF] Color: Dark
+2025-08-24 20:32:13.085 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:13.962 +02:00 [INF] Color: Light
+2025-08-24 20:32:13.964 +02:00 [INF] Syntax: Light
+2025-08-24 20:32:14.324 +02:00 [INF] Color: Dark
+2025-08-24 20:32:14.337 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:17.521 +02:00 [INF] Color: Light
+2025-08-24 20:32:17.533 +02:00 [INF] Syntax: Light
+2025-08-24 20:32:34.579 +02:00 [DBG] Window: SplitView
+2025-08-24 20:32:36.591 +02:00 [INF] Color: Dark
+2025-08-24 20:32:36.601 +02:00 [INF] Syntax: Dark
+2025-08-24 20:32:49.875 +02:00 [ERR] Failed to parse headers:
+Newtonsoft.Json.JsonSerializationException: Unexpected end when deserializing object. Path 'UserAgent', line 7, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ThrowUnexpectedEndException(JsonReader reader, JsonContract contract, Object currentObject, String message)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at to_lazy_to_curl.Services.HttpService.GetHeaders() in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 139
+   at to_lazy_to_curl.Services.HttpService.SendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 71
+   at to_lazy_to_curl.Services.HttpService.TrySendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 37
+2025-08-24 20:32:56.361 +02:00 [DBG] No headers provided
+2025-08-24 20:33:01.817 +02:00 [ERR] HTTP request failed:
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:7291)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at to_lazy_to_curl.Services.HttpService.SendHttpRequestAsync(String url, String body, HttpClient client, HttpAction httpAction, Dictionary`2 headers) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 93
+   at to_lazy_to_curl.Services.HttpService.SendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 72
+   at to_lazy_to_curl.Services.HttpService.TrySendRequestAsync(String url, String body, HttpAction httpAction) in C:\Users\jw\Desktop\to-lazy-to-curl-Project\to-lazy-to-curl\Services\HttpService.cs:line 37
+2025-08-24 20:33:04.261 +02:00 [DBG] Window: SingleView
+2025-08-24 20:33:27.509 +02:00 [INF] Color: Light
+2025-08-24 20:33:27.511 +02:00 [INF] Syntax: Light
+2025-08-24 20:33:32.500 +02:00 [DBG] Window: SplitView
+2025-08-24 20:34:38.720 +02:00 [INF] Color: Dark
+2025-08-24 20:34:38.731 +02:00 [INF] Syntax: Dark
+2025-08-24 20:34:40.066 +02:00 [INF] Color: Light
+2025-08-24 20:34:40.068 +02:00 [INF] Syntax: Light
+2025-08-24 20:34:40.590 +02:00 [INF] Color: Dark
+2025-08-24 20:34:40.591 +02:00 [INF] Syntax: Dark
+2025-08-24 20:34:42.075 +02:00 [INF] Color: Light
+2025-08-24 20:34:42.078 +02:00 [INF] Syntax: Light
+2025-08-24 20:34:47.959 +02:00 [DBG] Window: SingleView
+2025-08-24 20:34:49.728 +02:00 [INF] Color: Dark
+2025-08-24 20:34:49.730 +02:00 [INF] Syntax: Dark
+2025-08-24 20:37:06.809 +02:00 [DBG] No headers provided
+2025-08-24 20:37:06.896 +02:00 [DBG] Response is JSON
+2025-08-24 20:37:09.614 +02:00 [DBG] No headers provided
+2025-08-24 20:37:09.625 +02:00 [DBG] Response is HTML
+2025-08-24 20:37:11.622 +02:00 [DBG] No headers provided
+2025-08-24 20:37:11.648 +02:00 [DBG] Response is HTML
+2025-08-24 20:37:15.703 +02:00 [DBG] Adding headers:
+2025-08-24 20:37:15.704 +02:00 [DBG] > CacheControl = 123
+2025-08-24 20:37:15.704 +02:00 [DBG] > Connection = 123
+2025-08-24 20:37:15.728 +02:00 [DBG] Response is HTML
+2025-08-24 20:37:17.744 +02:00 [DBG] Adding headers:
+2025-08-24 20:37:17.744 +02:00 [DBG] > CacheControl = 123
+2025-08-24 20:37:17.745 +02:00 [DBG] > Connection = 123
+2025-08-24 20:37:17.750 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:37:19.191 +02:00 [DBG] Adding headers:
+2025-08-24 20:37:19.191 +02:00 [DBG] > CacheControl = 123
+2025-08-24 20:37:19.191 +02:00 [DBG] > Connection = 123
+2025-08-24 20:37:19.193 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:37:21.648 +02:00 [DBG] No headers provided
+2025-08-24 20:37:21.663 +02:00 [DBG] Response fallback: Plain Text
+2025-08-24 20:37:26.094 +02:00 [DBG] No headers provided
+2025-08-24 20:37:26.096 +02:00 [DBG] Response is HTML
+2025-08-24 20:37:34.414 +02:00 [INF] Color: Light
+2025-08-24 20:37:34.424 +02:00 [INF] Syntax: Light
+2025-08-24 20:37:40.712 +02:00 [INF] Color: Dark
+2025-08-24 20:37:40.714 +02:00 [INF] Syntax: Dark
+2025-08-24 20:37:44.332 +02:00 [DBG] Window: SplitView
+2025-08-24 20:37:46.066 +02:00 [INF] Color: Light
+2025-08-24 20:37:46.068 +02:00 [INF] Syntax: Light
+2025-08-24 20:37:47.083 +02:00 [INF] Color: Dark
+2025-08-24 20:37:47.085 +02:00 [INF] Syntax: Dark
+2025-08-24 20:37:48.851 +02:00 [INF] Color: Light
+2025-08-24 20:37:48.853 +02:00 [INF] Syntax: Light
+2025-08-24 20:37:53.145 +02:00 [INF] Color: Dark
+2025-08-24 20:37:53.156 +02:00 [INF] Syntax: Dark
+2025-08-24 20:38:01.596 +02:00 [INF] Color: Light
+2025-08-24 20:38:01.607 +02:00 [INF] Syntax: Light
+2025-08-24 20:38:16.590 +02:00 [INF] Color: Dark
+2025-08-24 20:38:16.592 +02:00 [INF] Syntax: Dark
+2025-08-24 20:38:18.262 +02:00 [DBG] Window: SingleView

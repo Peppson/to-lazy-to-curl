@@ -277,7 +277,7 @@ public partial class EditorInput : UserControl
     {
         // Reset all tabs colors
         var selectedColor = (Brush)FindResource("EditorsBackground");
-        var defaultColor = (Brush)FindResource("UrlInputBackground");
+        var defaultColor = (Brush)FindResource("ButtonTabsBackground");
 
         ((Border)PayloadButton.Template.FindName("border", PayloadButton)).Background = defaultColor;
         ((Border)ResponseButton.Template.FindName("border", ResponseButton)).Background = defaultColor;
@@ -313,7 +313,7 @@ public partial class EditorInput : UserControl
     {
         // Reset All tabs colors
         var selectedColor = (Brush)FindResource("EditorsBackground");
-        var defaultColor = (Brush)FindResource("UrlInputBackground");
+        var defaultColor = (Brush)FindResource("ButtonTabsBackground");
 
         ((Border)SplitPayloadButton.Template.FindName("border", SplitPayloadButton)).Background = defaultColor;
         ((Border)SplitResponseButton.Template.FindName("border", SplitResponseButton)).Background = defaultColor;

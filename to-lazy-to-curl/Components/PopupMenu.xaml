@@ -16,25 +16,24 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="CheckBox">
                         <Grid Width="44" Height="21">
+
                             <!--  Track  -->
                             <Border
                                 x:Name="SwitchTrack"
                                 Width="44"
                                 Height="21"
                                 Background="{DynamicResource BorderHover}"
-                                CornerRadius="4" />
+                                CornerRadius="10" />
 
                             <!--  Thumb  -->
-                            <Rectangle
+                            <Ellipse
                                 x:Name="SwitchThumb"
                                 Width="17"
                                 Height="17"
                                 Margin="2"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                Fill="White"
-                                RadiusX="4"
-                                RadiusY="4"
+                                Fill="{DynamicResource ThemeToggle}"
                                 StrokeThickness="1" />
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -43,7 +42,7 @@
                                 <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Right" />
                             </Trigger>
                             <Trigger Property="IsChecked" Value="False">
-                                <Setter TargetName="SwitchTrack" Property="Background" Value="{DynamicResource BorderHover}" />
+                                <Setter TargetName="SwitchTrack" Property="Background" Value="{DynamicResource TitleBarButtonHover}" />
                                 <Setter TargetName="SwitchThumb" Property="HorizontalAlignment" Value="Left" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -72,7 +71,7 @@
                 Grid.Row="0"
                 Margin="0,1,26,0"
                 HorizontalAlignment="Right"
-                Fill="{DynamicResource UrlInputBackground}"
+                Fill="{DynamicResource ButtonTabsBackground}"
                 Points="0,10 10,0 20,10"
                 Stroke="{Binding BorderBrush, ElementName=PopupBox}"
                 StrokeThickness="1" />
@@ -81,7 +80,7 @@
                 x:Name="PopupBox"
                 Grid.Row="1"
                 Width="220"
-                Background="{DynamicResource UrlInputBackground}"
+                Background="{DynamicResource ButtonTabsBackground}"
                 BorderThickness="1"
                 CornerRadius="6">
                 <Border.Style>
@@ -104,7 +103,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             Panel.ZIndex="0"
-                            Foreground="{DynamicResource PrimaryText}"
+                            Foreground="{DynamicResource IconBackground}"
                             Icon="Cog"
                             Opacity="0.08" />
                     </Grid>
@@ -176,13 +175,19 @@
                                     FontWeight="Bold"
                                     Foreground="{DynamicResource PrimaryText}"
                                     Text="Dark Mode" />
-                                <CheckBox
-                                    x:Name="ThemeToggleCheckBox"
-                                    Margin="48,0,0,0"
-                                    Checked="CheckBox_Checked"
-                                    Cursor="Hand"
-                                    Style="{StaticResource ModernToggleSwitchStyle}"
-                                    Unchecked="CheckBox_Unchecked" />
+                                <Border
+                                    Margin="48,0,0,0" 
+                                    BorderThickness="1" 
+                                    CornerRadius="10" 
+                                    VerticalAlignment="Center" 
+                                    BorderBrush="{DynamicResource Border}">
+                                    <CheckBox
+                                        x:Name="ThemeToggleCheckBox"
+                                        Checked="CheckBox_Checked"
+                                        Cursor="Hand"
+                                        Style="{StaticResource ModernToggleSwitchStyle}"
+                                        Unchecked="CheckBox_Unchecked" />
+                                </Border>
                             </StackPanel>
 
                             <StackPanel Grid.Row="3" Orientation="Horizontal">
@@ -195,7 +200,7 @@
                                 <Button
                                     Width="46"
                                     Height="23"
-                                    Margin="85,0,0,0"
+                                    Margin="86,0,0,0"
                                     Click="OpenLogs_Click"
                                     Cursor="Hand"
                                     FontSize="{StaticResource FontSizeTabs}"
