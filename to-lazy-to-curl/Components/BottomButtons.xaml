@@ -35,22 +35,11 @@
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
                     Foreground="{DynamicResource Icons}"
-                    Icon="PaperPlane" />
-                <fa:ImageAwesome
-                    x:Name="SendButtonSpinnerIcon"
-                    Width="16"
-                    Height="16"
-                    Margin="0,0,6,0"
-                    VerticalAlignment="Center"
-                    Foreground="{DynamicResource PrimaryText}"
-                    Icon="Spinner"
-                    Spin="True"
-                    SpinDuration="2"
-                    Visibility="Collapsed" />
+                    Icon="Send" />
                 <TextBlock
                     VerticalAlignment="Center"
                     FontSize="{StaticResource FontSizeBottomButtons}"
-                    Text="Submit" />
+                    Text="Send" />
             </StackPanel>
 
             <Button.Template>
@@ -99,15 +88,15 @@
                     Margin="0,0,6,0"
                     VerticalAlignment="Center"
                     Foreground="{DynamicResource Icons}"
-                    Icon="Refresh">
+                    Icon="Trash">
                     <fa:ImageAwesome.RenderTransform>
-                        <RotateTransform x:Name="ClearButtonRotate" CenterX="7.5" CenterY="7.5" />
+                        <TranslateTransform x:Name="ClearButtonShake" />
                     </fa:ImageAwesome.RenderTransform>
                 </fa:ImageAwesome>
                 <TextBlock
                     VerticalAlignment="Center"
                     FontSize="{StaticResource FontSizeBottomButtons}"
-                    Text="Reset" />
+                    Text="Clear" />
             </StackPanel>
 
             <Button.Template>

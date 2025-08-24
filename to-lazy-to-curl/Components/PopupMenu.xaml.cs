@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using to_lazy_to_curl.Services;
 
@@ -26,6 +28,8 @@ public partial class PopupMenu : UserControl
         };
     }
 
+    private void Close_Click(object sender, RoutedEventArgs e) => IsOpen = false;
+
     private void CheckBox_Checked(object sender, RoutedEventArgs e)
     {
         if (!_loaded) return;
@@ -37,9 +41,19 @@ public partial class PopupMenu : UserControl
         if (!_loaded) return;
         ThemeService.ToggleTheme();
     }
-    
+
+    private void OpenLogs_Click(object sender, RoutedEventArgs e)
+    {
+        var path = LogService.FilePath;
+
+        if (!string.IsNullOrEmpty(path) && File.Exists(path))
+            Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        
+        e.Handled = true;
+    }
+
     public void ToggleAtPosition(Button position)
-    {   
+    {
         this.PopupMenuWindow.PlacementTarget = position;
         this.IsOpen = !this.IsOpen;
     }

@@ -16,7 +16,7 @@ static public class AppState
     public static MainWindow MainWindow { get; set; } = null!;
     public static UrlInput UrlInput { get; set; } = null!;
     public static EditorInput EditorInput { get; set; } = null!;
-    public static HttpMessageBox MessageBox { get; set; } = null!;
+    public static HttpMessageBox HttpMessageBox { get; set; } = null!;
     public static PopupMenu PopupMenu { get; set; } = null!;
     public static bool IsFirstBoot { get; set; } = false;
     public static bool IsDarkTheme { get; set; } = true;

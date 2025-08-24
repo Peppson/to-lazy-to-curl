@@ -12,8 +12,8 @@
     Title="ToLazyToCurl"
     Width="590"
     Height="673"
-    MinWidth="400"
-    MinHeight="570"
+    MinWidth="460"
+    MinHeight="580"
     AllowsTransparency="True"
     Background="{DynamicResource WindowBackground}"
     FontFamily="Consolas"
@@ -49,7 +49,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <!--  URL Input todo  -->
+                <!--  URL Input  -->
                 <components:UrlInput x:Name="UrlInputControl" Grid.Row="0" />
 
                 <!--  Editors  -->

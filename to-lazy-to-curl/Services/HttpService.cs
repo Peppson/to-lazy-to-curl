@@ -10,12 +10,20 @@ namespace to_lazy_to_curl.Services;
 
 public static class HttpService
 {
+    private const int _httpTimeoutMs = (int)(Config.HttpConnectionTimeout * 1000);
+    
     public static async Task SubmitRequestAsync(string url, string body)
     {
         var httpAction = AppState.SelectedHttpAction;
+
         if (!CanSubmitRequest(url, httpAction)) return;
 
-        _ = MessageService.ShowTextMessageAsync("Sending...", "PrimaryText", 10000);
+        _ = MessageService.ShowTextMessageAsync(
+            "Sending",
+            "PrimaryText",
+            StatusIcon.Send,
+            _httpTimeoutMs + 1000 // Ensure longer message than timeout
+        );
 
         await TrySendRequestAsync(url, body, httpAction);
     }
@@ -30,26 +38,26 @@ public static class HttpService
         }
         catch (Newtonsoft.Json.JsonException ex)
         {
-            _ = MessageService.ShowTextMessageAsync("Failed to parse headers", "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Failed to parse headers", "Failure", StatusIcon.Failure);
             _ = AnimationService.InvalidHeaderAnimationAsync(AppState.EditorInput);
-            Log.Error($"Failed to parse headers", ex);
+            Log.Error(ex, "Failed to parse headers:");
         }
         catch (HttpRequestException ex)
         {
-            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", StatusIcon.Failure);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
-            Log.Error($"HTTP request failed", ex);
+            Log.Error(ex, "HTTP request failed:");
         }
         catch (TaskCanceledException)
         {
-            _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync(GetTimeoutMessage(), "Failure", StatusIcon.Failure);
             Log.Warning(GetTimeoutMessage());
         }
         catch (Exception ex)
         {
-            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync(errorMsg, "Failure", StatusIcon.Failure);
             MessageService.ShowMessageBox($"{errorMsg}:\n\n{ex.Message}");
-            Log.Error($"An unexpected error occurred", ex);
+            Log.Error(ex, "An unexpected error occurred:");
         }
     }
 
@@ -78,23 +86,23 @@ public static class HttpService
             Content = new StringContent(body, Encoding.UTF8, GetContentType(contentType))
         };
 
-        // Headers
-        if (headers != null)
-        {
-            Log.Debug("Adding headers:");
-            foreach (var header in headers)
-            {
-                if (request.Headers.TryAddWithoutValidation(header.Key, header.Value))
-                {
-                    Log.Debug($"> {header.Key} = {header.Value}");
-                }
-            }
-        }
-        else
+        // No headers
+        if (headers == null)
         {
             Log.Debug("No headers provided");
+            return await client.SendAsync(request);
         }
 
+        // Headers found
+        Log.Debug("Adding headers:");
+        foreach (var header in headers)
+        {
+            if (request.Headers.TryAddWithoutValidation(header.Key, header.Value))
+            {
+                Log.Debug($"> {header.Key} = {header.Value}");
+            }
+        }
+        
         return await client.SendAsync(request);
     }
     
@@ -203,13 +211,13 @@ public static class HttpService
         if (!IsUrlValid)
         {   
             _ = AnimationService.InvalidBorderAnimationAsync(AppState.UrlInput.UrlBorder);
-            _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please enter a valid URL!", "Failure", StatusIcon.Failure);
             return false;
         }
 
         if (httpAction == HttpAction.NONE)
         {
-            _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", Config.StatusMessageDuration);
+            _ = MessageService.ShowTextMessageAsync("Please choose an HTTP action!", "Failure", StatusIcon.Failure);
             _ = AnimationService.InvalidBorderAnimationAsync(AppState.MainWindow.HttpActionButtonsBorder);
             return false;
         }
@@ -219,8 +227,17 @@ public static class HttpService
 
     private static void ShowHttpResponseMessage(HttpResponseMessage response)
     {
-        string color = response.IsSuccessStatusCode ? "Success" : "Failure";
-        _ = MessageService.ShowTextMessageAsync($"{(int)response.StatusCode}: {response.ReasonPhrase}", color, Config.StatusMessageDuration);
+        (var color, var icon) = response.IsSuccessStatusCode
+            ? ("Success", StatusIcon.Success)
+            : ("Failure", StatusIcon.Failure);
+
+        var statusCode = (int)response.StatusCode;
+
+        _ = MessageService.ShowTextMessageAsync(
+            $"{statusCode}: {response.ReasonPhrase}",
+            color,
+            icon
+        );
     }
 
     private static string GetBodyRequiredMessage()
@@ -237,8 +254,7 @@ public static class HttpService
 
     private static string GetTimeoutMessage()
     {
-        var httpAction = AppState.SelectedHttpAction.ToString();
-        return $"{httpAction} request timed out after {Config.HttpConnectionTimeout} seconds!";
+        return $"Request timed out after {Config.HttpConnectionTimeout} seconds!";
     }
     
     private static string GetSuccessMessage()

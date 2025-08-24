@@ -1,11 +1,11 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using to_lazy_to_curl.Services;
-using to_lazy_to_curl.Models;
-using to_lazy_to_curl.Settings;
-using Serilog;
 using System.Windows.Media;
+using Serilog;
+using to_lazy_to_curl.Models;
+using to_lazy_to_curl.Services;
+using to_lazy_to_curl.Settings;
 
 namespace to_lazy_to_curl.Components;
 

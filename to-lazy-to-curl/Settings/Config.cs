@@ -4,22 +4,22 @@ namespace to_lazy_to_curl.Settings;
 
 static public class Config
 {
-    public const int StatusMessageDuration = 9000;          // Show status message for x ms
-    public const long HttpConnectionTimeout = 5;            // Http timeout in Seconds
-    public const double SplitEditorThreshold = 900;         // App width in px to switch editor layout
+    public const int StatusMessageDuration = 9000;      // Show status message for x ms
+    public const long HttpConnectionTimeout = 5;        // Http timeout in Seconds
+    public const double SplitEditorThreshold = 900;     // App width in px to switch editor layout
+    public const string AppVersionNumber = "1.0.1";     // Hardcode that shit
 
     public static readonly string PayloadIsFirstBootData =
         JsonConvert.SerializeObject(
             new
             {
                 id = 42,
-                name = "Peppson",
-                email = "Peppson@hottestMail.com",
+                name = "peppson",
                 isActive = true,
                 projects = new[]
                 {
-                    new { id = 1, name = "Worst WPF App in History", status = "Done-in-a-day-maybe" },
-                    new { id = 2, name = "ESP32 Shenanigans", status = "Completed" }
+                    new { id = 1, name = "random WPF app", status = "done-in-a-day-maybe" },
+                    new { id = 2, name = "ESP32 shenanigans", status = "completed" }
                 }
             },
             Formatting.Indented
