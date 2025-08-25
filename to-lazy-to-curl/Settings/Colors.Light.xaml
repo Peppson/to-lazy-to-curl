@@ -18,10 +18,10 @@
     <SolidColorBrush x:Key="TitleBarButtonHover" Color="#E1E1E1" />
     <SolidColorBrush x:Key="TitleBarButtonCloseHover" Color="#e81123" />
 
-    <SolidColorBrush x:Key="Border" Color="#cccccc" />
-    <SolidColorBrush x:Key="EditorBorder" Color="#cccccc" />
-    <SolidColorBrush x:Key="BorderHover" Color="#989b9e" />
-    <SolidColorBrush x:Key="PopupBorder" Color="#cccccc" />
+    <SolidColorBrush x:Key="Border" Color="#b3b3b3" />
+    <SolidColorBrush x:Key="EditorBorder" Color="#b3b3b3" />
+    <SolidColorBrush x:Key="BorderHover" Color="#8c8d8f" />
+    <SolidColorBrush x:Key="PopupBorder" Color="#b3b3b3" />
     <SolidColorBrush x:Key="BottomButtonsBorder" Color="Transparent" />
 
     <SolidColorBrush x:Key="PrimaryText" Color="#333333" />

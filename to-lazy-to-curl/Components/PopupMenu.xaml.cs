@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using to_lazy_to_curl.Models;
 using to_lazy_to_curl.Services;
 
 namespace to_lazy_to_curl.Components;
@@ -46,8 +47,10 @@ public partial class PopupMenu : UserControl
     {
         var path = LogService.FilePath;
 
-        if (!string.IsNullOrEmpty(path) && File.Exists(path))
+        if (!string.IsNullOrEmpty(path) && File.Exists(path)) 
             Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+        else
+            _ = MessageService.ShowTextMessageAsync("Failed to find logfile", "Failure", StatusIcon.Failure);
         
         e.Handled = true;
     }

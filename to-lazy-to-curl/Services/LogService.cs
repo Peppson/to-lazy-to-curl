@@ -30,6 +30,12 @@ public static class LogService
         }
     }
 
+    private static void RemoveOldLogFile(string filePath)
+    {
+        if (File.Exists(filePath))
+            File.Delete(filePath);
+    }
+
     public static void InitRelease()
     {
         var baseDir = Path.Combine(
@@ -37,10 +43,13 @@ public static class LogService
             _appName
         );
 
+        // Dir
         var dir = Path.Combine(baseDir, "Logs");
         EnsureDirectoryExists(dir);
 
+        // File
         FilePath = Path.Combine(dir, _logFileName);
+        RemoveOldLogFile(FilePath);
 
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Warning()
@@ -55,20 +64,25 @@ public static class LogService
         {
             Log.Warning($"Log directory did not exist. Created new directory at: \n{dir}");
         }
+
+        LogStartupData(dir);
     }
 
     private static void InitDebug()
     {
         // Get project root directory
         var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-        var projectDir = Directory.GetParent(baseDir)?.Parent?.Parent?.Parent?.FullName; // ../../../../../../../../ x13
+        var projectDir = Directory.GetParent(baseDir)?.Parent?.Parent?.Parent?.FullName; // ../../../../../../../../
         if (projectDir == null)
             throw new InvalidOperationException("Project root directory could not be found");
 
+        // Dir
         var dir = Path.Combine(projectDir, "Logs");
         EnsureDirectoryExists(dir);
 
+        // File
         FilePath = Path.Combine(dir, _logFileName);
+        RemoveOldLogFile(FilePath);
 
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -85,7 +99,7 @@ public static class LogService
 
     private static void LogStartupData(string createdLogDirectory)
     {
-        Log.Information("---- Starting App ----");
+        Log.Warning("---- Starting App ----"); // Makes sure logfile is created on "Release" too
 
         Log.Information("Width: {Width}px", AppState.MainWindow.Width);
         Log.Information("Height: {Height}px", AppState.MainWindow.Height);

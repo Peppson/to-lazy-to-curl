@@ -227,7 +227,7 @@
             </Grid.ColumnDefinitions>
 
             <!--  Payload Container  -->
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" Margin="0,0,-1,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
                     <RowDefinition Height="*" />
@@ -326,7 +326,7 @@
                 ShowsPreview="False" />
 
             <!--  Response Container  -->
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="2" Margin="0,0,-1,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
                     <RowDefinition Height="*" />
@@ -348,19 +348,31 @@
                         FontSize="{StaticResource FontSizeTabs}"
                         PreviewMouseLeftButtonDown="ResponseButtonSplit_PreviewMouseLeftButtonDown">
 
-                        <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Width="14"
+                                    Height="14"
+                                    Margin="0,0,6,0"
+                                    VerticalAlignment="Center"
+                                    Foreground="{DynamicResource Icons}"
+                                    Icon="Download" />
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="{StaticResource FontSizeTabs}"
+                                    Text="Response" />
+                            </StackPanel>
                             <fa:ImageAwesome
-                                Width="14"
-                                Height="14"
-                                Margin="0,0,6,0"
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,-40,-20"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
-                                Foreground="{DynamicResource Icons}"
-                                Icon="Download" />
-                            <TextBlock
-                                VerticalAlignment="Center"
-                                FontSize="{StaticResource FontSizeTabs}"
-                                Text="Response" />
-                        </StackPanel>
+                                Foreground="{DynamicResource PrimaryText}"
+                                Icon="CaretRight"
+                                Opacity="0.2"
+                                Rotation="45" />
+                        </Grid>
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -447,19 +459,31 @@
                         FontSize="{StaticResource FontSizeTabs}"
                         PreviewMouseLeftButtonDown="HeaderButtonSplit_PreviewMouseLeftButtonDown">
 
-                        <StackPanel Orientation="Horizontal">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Width="14"
+                                    Height="14"
+                                    Margin="0,0,6,0"
+                                    VerticalAlignment="Center"
+                                    Foreground="{DynamicResource Icons}"
+                                    Icon="FileTextOutline" />
+                                <TextBlock
+                                    VerticalAlignment="Center"
+                                    FontSize="{StaticResource FontSizeTabs}"
+                                    Text="Headers" />
+                            </StackPanel>
                             <fa:ImageAwesome
-                                Width="14"
-                                Height="14"
-                                Margin="0,0,6,0"
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,-44,-20"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
-                                Foreground="{DynamicResource Icons}"
-                                Icon="FileTextOutline" />
-                            <TextBlock
-                                VerticalAlignment="Center"
-                                FontSize="{StaticResource FontSizeTabs}"
-                                Text="Headers" />
-                        </StackPanel>
+                                Foreground="{DynamicResource PrimaryText}"
+                                Icon="CaretRight"
+                                Opacity="0.2"
+                                Rotation="45" />
+                        </Grid>
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
