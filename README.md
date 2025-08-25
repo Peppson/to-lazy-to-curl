@@ -13,7 +13,8 @@ A simple WPF app for playing with REST APIs and viewing responses.
 * Dynamic syntax highlighting (JSON, XML, HTML, etc.)
 * Responsive design with animations for messages and controls
 * Dark/light mode
-* Session-based logging (resets on app restart)
+* Logging
+* Restores last session on startup
 
 ## Screenshots
 
