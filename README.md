@@ -26,15 +26,30 @@ Error Examples
 
 ## Try It Out?
 
-**Requirements:**  
+<details>
+<summary>Run from source</summary>  
+
+#### Requirements: 
 * Windows  
 * [.NET 9.0](https://dotnet.microsoft.com/en-us/download/dotnet)
-
 
 ``` bash
 git clone "https://github.com/Peppson/to-lazy-to-curl.git" &&
 cd "to-lazy-to-curl" &&
 dotnet publish -c Release -r win-x64 --self-contained true -o "$HOME/Desktop"
 ```
+
+</details> 
+
+<details> 
+<summary>Download prebuilt</summary>
+
+#### Requirements:
+
+* A computer! (Windows)
+
+Grab the latest release from the [Releases tab](https://github.com/Peppson/to-lazy-to-curl/releases)  
+
+</details>
 
 <br>
