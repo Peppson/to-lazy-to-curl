@@ -1,5 +1,5 @@
 # ToLazyToCurl
-A simple WPF app for playing with REST APIs and viewing responses.
+Simple WPF app for playing with REST APIs and viewing responses.
 
 > *Why bother with anything actually good, when you can make your own version?*
 
