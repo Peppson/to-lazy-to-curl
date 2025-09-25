@@ -11,7 +11,7 @@ Simple WPF app for playing with REST APIs and viewing responses.
 * Supports `GET`, `POST`, `PATCH`, `PUT` and `DELETE` requests
 * Optional custom HTTP headers
 * Dynamic syntax highlighting (JSON, XML, HTML, etc.)
-* Responsive design with animations for messages and controls
+* Responsive
 * Dark/light mode
 * Logging
 * Restores last session on startup
